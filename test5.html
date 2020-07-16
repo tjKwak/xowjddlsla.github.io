@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .header.on{
+            position: static;
+            background-color: pink;
+            width: 100%;
+            height: 100px;
+            text-align: center;
+        }
+        p.on{
+            font-size: 1rem;
+        }
+        .header.off{
+            position: fixed;
+            background-color: lightblue;
+            top: 0;
+            left: 0;
+            right: 0;
+            width: 100%;
+            height: 100px;
+            text-align: center;
+        }
+        p.off{
+            font-size: 3rem;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="header on">
+        <p class="on">헤더입니다.</p>
+    </div>
+    <div class="any">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam molestiae iusto nesciunt ea dicta corrupti molestias odio perferendis id veniam, itaque, quis amet tempore animi quisquam hic eveniet et inventore.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam molestiae iusto nesciunt ea dicta corrupti molestias odio perferendis id veniam, itaque, quis amet tempore animi quisquam hic eveniet et inventore.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam molestiae iusto nesciunt ea dicta corrupti molestias odio perferendis id veniam, itaque, quis amet tempore animi quisquam hic eveniet et inventore.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam molestiae iusto nesciunt ea dicta corrupti molestias odio perferendis id veniam, itaque, quis amet tempore animi quisquam hic eveniet et inventore.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam molestiae iusto nesciunt ea dicta corrupti molestias odio perferendis id veniam, itaque, quis amet tempore animi quisquam hic eveniet et inventore.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam molestiae iusto nesciunt ea dicta corrupti molestias odio perferendis id veniam, itaque, quis amet tempore animi quisquam hic eveniet et inventore.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam molestiae iusto nesciunt ea dicta corrupti molestias odio perferendis id veniam, itaque, quis amet tempore animi quisquam hic eveniet et inventore.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam molestiae iusto nesciunt ea dicta corrupti molestias odio perferendis id veniam, itaque, quis amet tempore animi quisquam hic eveniet et inventore.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam molestiae iusto nesciunt ea dicta corrupti molestias odio perferendis id veniam, itaque, quis amet tempore animi quisquam hic eveniet et inventore.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam molestiae iusto nesciunt ea dicta corrupti molestias odio perferendis id veniam, itaque, quis amet tempore animi quisquam hic eveniet et inventore.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam molestiae iusto nesciunt ea dicta corrupti molestias odio perferendis id veniam, itaque, quis amet tempore animi quisquam hic eveniet et inventore.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam molestiae iusto nesciunt ea dicta corrupti molestias odio perferendis id veniam, itaque, quis amet tempore animi quisquam hic eveniet et inventore.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam molestiae iusto nesciunt ea dicta corrupti molestias odio perferendis id veniam, itaque, quis amet tempore animi quisquam hic eveniet et inventore.
+    </div>
+    
+    <script>
+        window.addEventListener('scroll',headWork);
+        const html = document.querySelector('html');
+        var ons = document.querySelectorAll('.on');
+        
+        function headWork(){
+            console.log(html.scrollTop);
+            if(html.scrollTop>150){
+                for(var i=0; i<ons.length; i++){
+                    ons[i].classList.remove('on');
+                    ons[i].classList.add('off');
+                }
+            }
+            else{
+                for(var i=0; i<ons.length; i++){
+                    ons[i].classList.remove('off');
+                    ons[i].classList.add('on');
+                }
+            }
+        }
+    </script>
+</body>
+</html>

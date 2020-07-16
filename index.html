@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/content.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/tool.css">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Kreon:wght@300;400;500;515;600;700&family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Patua+One&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+    
+    <style>
+        /* 피드아이템 - 슬라이드 */
+        .feed-item .bx-wrapper {
+            box-shadow: none;
+            border: none;
+            width: 100%;
+            position: relative;
+        }
+        .feed-item .bx-wrapper img {
+            width: 60%;
+            margin: 0 auto;
+        }
+        .feed-item .bx-wrapper .slide-box{
+            margin-top: 20px;
+            border-top: 1px solid lightgray;
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+        }
+        .feed-item .bx-wrapper .slide-cont-box{
+            width: 60%;
+        }
+        .feed-item .bx-wrapper .slide-page-box{
+            position: absolute;
+            right: 0;
+            bottom: 0;
+        }
+        .feed-item .bx-wrapper .page-now{
+            font-family: 'Lato', sans-serif;
+            color: black;
+            font-size: 3rem;
+            font-weight: 300;
+            line-height: 0.7;
+            letter-spacing: 10px;
+            font-style: italic;
+            text-align: right;
+            margin-right: 35px;
+        }
+        .feed-item .bx-wrapper .page-whole{
+            font-family: 'Lato', sans-serif;
+            color: #a7a7a7;
+            font-size: 2rem;
+            font-weight: 300;
+            letter-spacing: 5px;
+            font-style: italic;
+            text-align: right;
+        }
+        .feed-item .bx-wrapper p{
+            font-family: 'Noto Sans KR', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 300;
+            line-height: 1.4;
+        }
+        .feed-item .bx-wrapper p:nth-of-type(1){
+            text-decoration: underline;
+            margin: 20px 0 10px 0;
+            font-weight: 600;
+        }
+        .feed-item .bx-wrapper p:last-of-type{
+            margin: 8px 0;
+            font-weight: 400;
+            color: red;
+        }
+        .feed-item .bx-wrapper p:last-of-type>span{
+            margin-left: 10px;
+            font-weight: 400;
+            color: red;
+        }
+        
+        .feed-item .bx-wrapper .bx-controls-direction .bx-prev{
+            position: absolute;
+            top: 30%;
+            left: 0%;
+            background-image: url(img/arrow.png);
+            background-size: 50px;
+            background-position: 0px 0px;
+            width: 30px;
+            height: 40px;
+        }
+        .feed-item .bx-wrapper .bx-controls-direction .bx-next{
+            position: absolute;
+            top: 30%;
+            right: 0%;
+            background-image: url(img/arrow.png);
+            background-size: 50px;
+            background-position: -20px 0px;
+            width: 30px;
+            height: 40px;
+        }
+        .feed-item .bx-pager.bx-default-pager{
+            display: none;
+        }
+
+
+    </style>
+</head>
+
+<body>
+   <div class="add" role="banner">
+    <div class="add-box">
+        <div class="add-left"><strong>29cm</strong>첫 쇼핑을 지원하는 앱<strong>15%</strong>할인 쿠폰</div>
+        <div class="add-right">
+            <a href="#" class="download">
+                쿠폰받기
+            </a>
+        </div>
+    </div>
+    </div>
+    <header>
+        <div class="header-wrap on">
+            <div class="logo-box on">
+                    <h1><a href="#" class="on">29cm 홈페이지</a></h1>
+                </div>
+            <div class="tool-box on">
+                    <ul>
+                        <li><a href="#" class="on"><span class="iconMypage"></span>MY PAGE</a></li>
+                        <li><a href="#" class="on"><span class="iconMyheart"></span>MY HEART</a></li>
+                        <li><a href="#" class="on"><span class="iconShopping"></span>SHOPPING BAG</a></li>
+                        <li><a href="#" class="on"><span class="iconLogin"></span>LOGIN</a></li>
+                    </ul>
+                </div>
+            <div class="title-box on">
+                    <ul>
+                        <li>Special-Order</li>
+                        <li>Showcase</li>
+                        <li>29TV<span class="redDot"></span></li>
+                        <li>PT</li>
+                        <li>Welove</li>
+                    </ul>
+            </div>
+            <div class="search-box on">
+                    <a href="#"><i class="fa fa-search"></i></a>
+            </div>
+            <div class="menu-box on">
+                    <ul class="bold-menu">
+                        <li><a href="#">WOMEN</a></li>
+                        <li><a href="#">ACC</a></li>
+                        <li><a href="#">MEN</a></li>
+                        <li><a href="#">HOME</a></li>
+                        <li><a href="#">BEAUTY</a></li>
+                        <li><a href="#">TECH+</a></li>
+                        <li><a href="#">CULTURE</a></li>
+                    </ul>
+                    <ul class="italic-menu">
+                        <li><a href="#">Best</a></li>
+                        <li><a href="#">Event</a></li>
+                        <li><a href="#">Brand</a></li>
+                        <li><a href="#">Lookbook</a></li>
+                    </ul>
+                </div>
+        </div>
+    </header>
+    <div class="contents on">
+        <div class="contents-wrap">
+                <div class="left">
+                    <ul>
+                        <li><a href="#">
+                            <img src="img/8d315be2828542c497a02537772e2f60_20200707111617.jpg" alt="">
+                        </a></li>
+                        <li><a href="#">
+                            <img src="img/a6460116ecd34242aeb1b1662512fffe_20200707113840.jpg" alt="">
+                        </a></li>
+                        <li><a href="#">
+                            <img src="img/e091e5d4bffd4035855d3c443f4fde12_20200708111023.jpg" alt="">
+                        </a></li>
+                        <li><a href="#">
+                            <img src="img/919b10143f8f48148dd4f0428e2f4d18_20200618113147.jpg" alt="">
+                        </a></li>
+                        <li><a href="#">
+                            <img src="img/f07fa9bb05b640749aa29d453da261f8_20200708104604.jpg" alt="">
+                        </a></li>
+                        <li><a href="#">
+                        <img src="img/c211565082574af8a2815f028a1e3e79_20200616121144.jpg" alt="">
+                        </a></li>
+                        <li><a href="#">
+                        <img src="img/f4313218a3804373b3771414c516712f_20200709145653.jpg" alt="">
+                        </a></li>
+                        <li><a href="#">
+                        <img src="img/0641fc5f3df74e8da820aa1455f23bbd_20200708110539.jpg" alt="">
+                        </a></li>
+                    </ul>
+                </div>
+                <div class="right">
+                    <ul>
+                        <li class="feed-item feed-banner">
+                    <a href="#"><img src="img/66a5fa621ed94719acd84ed0a7a819c4_20200707160730.jpg" alt=""></a>
+                </li>
+                        <li class="feed-item feed-banner">
+                    <a href="#"><img src="img/74b5cf2bca354eb89a7692721d8def46_20200707160626.jpg" alt=""></a>
+                </li>
+                        <li class="feed-item feed-banner">
+                    <a href="#"><img src="img/7ddff9e9700645719488cc4f08fd4fe5_20200710142124.jpg" alt="">
+                        <h3>여자들의 쇼핑하기 좋은 72시간</h3>
+                        <p>이번 시즌 꼭 필요했던 아이템들로 구성괸 10개 우먼패션 브랜드의 최대 70% 세일 목록을 살펴보세요.</p>
+                    </a>
+                </li>
+                        <li class="feed-item feed-banner">
+                    <a href="#"><img src="img/0a32ae02fcbf4a8e925ee5f15219bb79_20200713092449.jpg" alt="">
+                        <h3>장마철에도 뽀송뽀송한 신발을 위하여</h3>
+                        <p>예고 없이 쏟아져 버린 폭우에도, 아직 덜 마른 운동화 때문에 정신없는 아침에도 간편하게 사용할 수 있는 PTC 히팅 신발 건조기를 소개합니다. USB전원 코드로 사용 가능해 실용적이죠. 29CM에서 단독 특가로 준비했어요. 구매 후 포토후기를 남겨주시는 분 중 10명을 추첨해 보조배터리도 드립니다.</p>
+                    </a>
+                    <a href="#" class="sub-item-mini">
+                        <div class="mini-cont">
+                            <p>퓨어코치</p>
+                            <p>[단독특가]_[퓨어코치] 신발 건조기 SD01 살균 냄새제거</p>
+                            <p>43% 19,900won</p>
+                            <img src="img/0a32ae02fcbf4a8e925ee5f15219bb79_20200713092449.jpg" alt="">
+                        </div>
+                        <div class="mini-heart">
+                            <button>
+                                <i class="fa fa-heart"></i>
+                                <p>5</p>
+                            </button>
+                        </div>
+                    </a>
+                </li>
+                        <li class="feed-item feed-banner">
+                    <a href="#"><img src="img/50d467d4e9f6443ba5868c086f6e7741_20200713114130.jpg" alt="">
+                    <h3>특별한 날 함께하는 옷</h3>
+                    <p>션메익스클로스가 제안하는 서머룩을 만나보세요. 보통의 날도 빛나는 하루로 만들어 줄거예요.</p>
+                    </a>
+                </li>
+                        <li class="feed-item feed-banner">
+                    <a href="#"><img src="img/f6ab91a9c1364a9bbee338ee25af56c8_20200708103541.jpg" alt=""></a>
+                    <a href="#" class="sub-item-mini">
+                       <div class="mini-cont">
+                           <p>어나더오피스</p>
+                           <p>[재입고]Writer Shirt</p>
+                           <p>(Dove Gray)</p>
+                           <p>10% 75,600won</p>
+                           <img src="img/ff9af22e8c504a0f870040df4d76988f_20200522140905.jpg" alt="">
+                       </div>
+                       <div class="mini-heart">
+                           <button>
+                               <i class="fa fa-heart"></i>
+                               <p>600</p>
+                           </button>
+                       </div>
+                        
+                    </a>
+                    <a href="#" class="sub-item-mini">
+                        <div class="mini-cont">
+                            <p>어나더오피스</p>
+                            <p>[재입고]Pumping Shoes</p>
+                            <p>(Dark Gray)</p>
+                            <p>17% 34,500won</p>
+                            <img src="img/0769ecb50b8f4e8981034b413b299ec8_20200416150011.jpg" alt="">
+                        </div>
+                        <div class="mini-heart">
+                            <button>
+                                <i class="fa fa-heart"></i>
+                                <p>400</p>
+                            </button>
+                        </div>
+
+                    </a>
+                </li>
+                        <li class="feed-item feed-banner">
+                   <h3>쇼핑하기 좋은 72시간, 7월 15일 까지</h3>
+                <ul class="slider">
+                    <li>
+                        <a href="#"><img src="img/02d231d6e5d149d1bb6eec3f864b37f7_20200706173956.jpg" alt=""></a>
+                        <div class="slide-box">
+                            <div class="slide-cont-box">
+                               <a href="#">
+                                <p>유라고</p>
+                                <p>[성유리 착용]카치온 점프슈트_카치온 점프슈트</p>
+                                <p>25%<span>90,440원</span></p>
+                                </a>
+                            </div>
+                            <div class="slide-page-box">
+                                <div class="page-now">1</div>
+                                <div class="page-whole">/10</div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#"><img src="img/970cc94cf81045e0bf12de96c0f3be4f_20200305111121.jpg" alt=""></a>
+                        <div class="slide-box">
+                            <div class="slide-cont-box">
+                                <a href="#">
+                                    <p>레이브</p>
+                                    <p>[정려원/송민호/레드벨벳 슬기 착용]_Vintage Washing Print Ree in D/Greay_VW0Se095S</p>
+                                    <p>15%<span>55,100원</span></p>
+                                </a>
+                            </div>
+                            <div class="slide-page-box">
+                                <div class="page-now">2</div>
+                                <div class="page-whole">/10</div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#"><img src="img/3677107f8648459385046218fd9db22a_20190317214000.jpg" alt=""></a>
+                        <div class="slide-box">
+                            <div class="slide-cont-box">
+                                <a href="#">
+                                    <p>스프링크로커스</p>
+                                    <p>[7/20 예약배송]_button slit dress-beige</p>
+                                    <p>52%<span>99,180원</span></p>
+                                </a>
+                            </div>
+                            <div class="slide-page-box">
+                                <div class="page-now">3</div>
+                                <div class="page-whole">/10</div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#"><img src="img/7462504471c64081bc01e3d60b41ec80_20200713113659.jpg" alt=""></a>
+                        <div class="slide-box">
+                            <div class="slide-cont-box">
+                                <a href="#">
+                                    <p>브렌다 브렌든 서울</p>
+                                    <p>LINEN PINTUCK SHIRTS - DEEP GREEN</p>
+                                    <p>15%<span>72,675원</span></p>
+                                </a>
+                            </div>
+                            <div class="slide-page-box">
+                                <div class="page-now">4</div>
+                                <div class="page-whole">/10</div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                </li>
+                        <li class="feed-item feed-banner">
+                    <a href="#"><img src="img/fc760a3387e9414db3fff281a39db76e_20200708165347.jpg" alt="">
+                        <h3>대학생 재영님의 리넨팬츠</h3>
+                        <p>아방가르드한 벌룬 핏을 가진 네이비 컬러의 오버사이즈 리넨 팬츠입니다. 입체적으로 강조된 실루엣은 착용자를 한껏 스타일리시하게 보이도록 만들어 줍니다. 같은 컬러의 솔리드 티셔츠로 차분하게 바탕을 잡고 심심하지 않도록 목에 페이즐리 반다나를 둘러주었는데요. 톤-온-톤 매치로 버캣햇과 스니커즈를 착용해 리듬감을 준 것이 재미있습니다.</p></a>
+                </li>
+                        <li class="feed-item feed-banner">
+                    <a href="#"><img src="img/219c747055e74fb2903d7629506ce928_20200514110000.jpg" alt="">
+                    <h3>카톡 플친을 위한 10% 쿠폰</h3>
+                    <p>29CM의 카톡 플친이 되어주세요. 선착순 1만 명 한정 10% 쿠폰을 즉시 지급합니다. 29CM 단독 상품과 혜택, 이벤트 정보까지 한 번에, 편하게 받아보세요.</p></a>
+                </li>
+                        <li class="feed-item feed-banner">
+                    <a href="#"><img src="img/c061556279d64ff99b83ac02ad12362d_20200701174201.jpg" alt="">
+                        <h3>CC커플룩 리넨세트</h3>
+                        <p>29CM 고객이 사랑하는 마지셔우드의 72시간 단독 특가소식! 최대 45% 할인으로 만나보세요. 7.13(월) ~ 7/15(수)까지</p>
+                    </a>
+                    <a href="#" class="sub-item-mini">
+                        <div class="mini-cont">
+                            <p>어나더오피스</p>
+                            <p>[재입고]Writer Shirt</p>
+                            <p>(Dove Gray)</p>
+                            <p>10% 75,600won</p>
+                            <img src="img/2049853084f54ee187268716356b0480_20200508104124.jpg" alt="">
+                        </div>
+                        <div class="mini-heart">
+                            <button>
+                                <i class="fa fa-heart"></i>
+                                <p>600</p>
+                            </button>
+                        </div>
+
+                    </a>
+                </li>
+                        <li class="feed-item feed-banner">
+                    <a href="#">
+                        <img src="img/857915c52df4424b988d93bcae93b844_20200608150830.jpg" alt="">
+                    <h3>강렬한 색을 입다</h3>
+                    <p>
+                        브룬이 가지고 있는 감성과 디자인을 좋아합니다. 브룬의 감성을 여러분도 좋아해 주실 거라 생각해요. 29CM쇼케이스를 통해 전 상품 단독 할인은 물론 선착순 사은품까지 있으니 둘러보세요. 여름의 강렬한 색을 입은 브룬 네일 어떠세요?
+                    </p>
+                    </a>
+                    <ul class="slider" style="margin-top: 30px">
+                        <li>
+                            <a href="#"><img src="img/ba76897fa7454393b993f6ae09fb1e47_20200608151418.jpg" alt=""></a>
+                            <div class="slide-box">
+                                <div class="slide-cont-box">
+                                    <a href="#">
+                                        <p>유라고</p>
+                                        <p>[성유리 착용]카치온 점프슈트_카치온 점프슈트</p>
+                                        <p>25%<span>90,440원</span></p>
+                                    </a>
+                                </div>
+                                <div class="slide-page-box">
+                                    <div class="page-now">1</div>
+                                    <div class="page-whole">/10</div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#"><img src="img/c211565082574af8a2815f028a1e3e79_20200616121144.jpg" alt=""></a>
+                            <div class="slide-box">
+                                <div class="slide-cont-box">
+                                    <a href="#">
+                                        <p>레이브</p>
+                                        <p>[정려원/송민호/레드벨벳 슬기 착용]_Vintage Washing Print Ree in D/Greay_VW0Se095S</p>
+                                        <p>15%<span>55,100원</span></p>
+                                    </a>
+                                </div>
+                                <div class="slide-page-box">
+                                    <div class="page-now">2</div>
+                                    <div class="page-whole">/10</div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#"><img src="img/e9e007e0c23349c49d029cf2f77968ef_20200608151243.jpg" alt=""></a>
+                            <div class="slide-box">
+                                <div class="slide-cont-box">
+                                    <a href="#">
+                                        <p>스프링크로커스</p>
+                                        <p>[7/20 예약배송]_button slit dress-beige</p>
+                                        <p>52%<span>99,180원</span></p>
+                                    </a>
+                                </div>
+                                <div class="slide-page-box">
+                                    <div class="page-now">3</div>
+                                    <div class="page-whole">/10</div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#"><img src="img/e369438c8f024295a74029d27a896bb0_20200616123935.jpg" alt=""></a>
+                            <div class="slide-box">
+                                <div class="slide-cont-box">
+                                    <a href="#">
+                                        <p>브렌다 브렌든 서울</p>
+                                        <p>LINEN PINTUCK SHIRTS - DEEP GREEN</p>
+                                        <p>15%<span>72,675원</span></p>
+                                    </a>
+                                </div>
+                                <div class="slide-page-box">
+                                    <div class="page-now">4</div>
+                                    <div class="page-whole">/10</div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+                    </ul>
+                </div>
+            </div>
+    </div>
+    <div class="contents-more">
+        <a href="#">more<i class="fa fa-angle-down"></i></a>
+    </div>
+    <footer>
+       <div class="footer-wrap">
+            <div class="footRow1">
+            <p>1644-0560</p>
+            <p>AM 10:00 ~ PM 05:00 Off-time PM 12:00 ~ PM 02:00</p>
+            <p>DAY OFF (SATURDAY, SUNDAY, HOLIDAY)</p>
+            <div class="btn-box">
+                <div class="btn-left">
+                   <button>FAQ<i class="fa fa-angle-right"></i></button>
+               </div>
+                <div class="btn-right">
+                    <a href="#">facebook<i class="fa fa-facebook"></i></a>
+                    <a href="#">instagram<i class="fa fa-instagram"></i></a>
+                    <a href="#">twitter<i class="fa fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+            <div class="footRow2">
+           <div class="notice-box">
+               <div class="notice-left">
+                   <h3>NOTICE</h3>
+                   <ul>
+                       <li class="notice-item"><a href="#">[당첨자 발표]필보이드 후기 이벤트 당첨자발표</a></li>
+                       <li class="notice-item"><a href="#">[당첨자 발표]캐치볼 포토후기 이벤트 당첨자 발표</a></li>
+                       <li class="notice-item"><a href="#">비아플레인 포토후기 이벤트 당첨자 발표</a></li>
+                       <li class="notice-item"><a href="#">[당첨자 발표]블루아워 댓글 이벤트 당첨자 발표</a></li>
+                       <li class="notice-item"><a href="#">[당첨자 발표]제로 감상평 이벤트 당첨자 발표</a></li>
+                   </ul>
+               </div>
+               <div class="notice-right">
+                   <ul>
+                       <li class="notice-list"><h3>ABOUT US</h3>
+                           <ul>
+                               <li class="notice-item"><a href="#">회사소개</a></li>
+                               <li class="notice-item"><a href="#">인재채용</a></li>
+                               <li class="notice-item"><a href="#">상시 할인 혜택</a></li>
+                           </ul>
+                       </li>
+                       <li class="notice-list"><h3>MY ORDER</h3>
+                           <ul>
+                               <li class="notice-item"><a href="#">주문배송</a></li>
+                               <li class="notice-item"><a href="#">취소/교환/반품 내역</a></li>
+                               <li class="notice-item"><a href="#">상품리뷰 내역</a></li>
+                               <li class="notice-item"><a href="#">증빙서류발급</a></li>
+                           </ul>
+                       </li>
+                       <li class="notice-list"><h3>MY ACCOUNT</h3>
+                           <ul>
+                               <li class="notice-item"><a href="#">회원정보수정</a></li>
+                               <li class="notice-item"><a href="#">회원등급</a></li>
+                               <li class="notice-item"><a href="#">마일리지현황</a></li>
+                               <li class="notice-item"><a href="#">쿠폰</a></li>
+                           </ul>
+                       </li>
+                       <li class="notice-list"><h3>HELP</h3>
+                           <ul>
+                               <li class="notice-item"><a href="#">1:1 상담내역</a></li>
+                               <li class="notice-item"><a href="#">상품 QNA내역</a></li>
+                               <li class="notice-item"><a href="#">공지사항</a></li>
+                               <li class="notice-item"><a href="#">FAQ</a></li>
+                           </ul>
+                       </li>
+                   </ul>
+               </div>
+           </div>
+        </div>
+            <div class="footRow3">
+            <a href="#"><h3>개인정보 처리방침</h3></a>
+            <a href="#"><p>이용약관</p></a>
+            <div class="info-box">
+                <div class="info-left">
+                    <ul>
+                        <li>상호명: (주)에이플러스비</li>
+                        <li>사업장소재지:서울특별시 강남구 선릉로93길 35 나라키움 역삼B빌딩 4층</li>
+                        <li>팩스:070-862-7737</li>
+                    </ul>
+                    <ul>
+                        <li>사업자등록번호:101-86-64617</li>
+                        <li>통신판매업신고:2019-서울강남-02774</li>
+                        <li><a href="#">사업자정보확인</a></li>
+                    </ul>
+                    <ul>
+                        <li>고객센터:1644-0560</li>
+                        <li>평일 10:00 ~ 17:00 / Off-time 12:00 ~ 14:00 (토/일/공휴일 휴무)</li>
+                        <li>이메일:customer@29cm.co.kr</li>
+                        <li>대표이사:윤자영</li>
+                    </ul>
+                    <ul>
+                        <li>개인정보책임자: 김평수</li>
+                        <li>호스팅서비스: (주)에이플러스비</li>
+                    </ul>
+                </div>
+                <div class="info-right">
+                    <ul>
+                        <li><a href="#" class="lucyIcon">Lucy 바로가기</a></li>
+                        <li><a href="#" class="appleIcon">애플스토어 바로가기</a></li>
+                        <li><a href="#" class="googleIcon">구글플레이스토어 바로가기</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        </div>
+    </footer>
+    <script>
+        //헤더 - 스크롤다운시 변형
+        window.addEventListener('scroll',headWork);
+        const html = document.querySelector('html');
+        var ons = document.querySelectorAll('.on');
+
+        function headWork(){
+            if(html.scrollTop>50){
+                for(var i=0; i<ons.length; i++){
+                    ons[i].classList.remove('on');
+                    ons[i].classList.add('off');
+                }
+            }
+            else{
+                for(var i=0; i<ons.length; i++){
+                    ons[i].classList.remove('off');
+                    ons[i].classList.add('on');
+                }
+            }
+        }
+        
+        //피드아이템 내부의 슬라이드
+        $('.slider').bxSlider({
+            pagerType : 'short',
+            pagerShortSeparator : '/'
+        });
+        
+        
+        //피드아이템의 높이를 저장
+        window.addEventListener('load',itemLoad);
+        window.addEventListener('resize', itemLoad);
+        var start;
+
+        function itemLoadReal(){
+            var feed_items = document.querySelectorAll('.feed-item');
+            var feedHeight =[];
+
+            for(var i=0; i<feed_items.length; i++){
+                //feedHeight = feed_items[i].scrollHeight 이러면 배열에 안담김
+                feedHeight.push(feed_items[i].scrollHeight);
+            }
+
+            for(var i=2; i<feed_items.length; i++){
+                feed_items[i].style.top = feed_items[i-2].style.top.split('px')[0]*1 + feedHeight[i-2] + 'px';
+
+                //글자를 제거하기위해 split 대신 replace를 써도 된다.
+                //feed_items[i].style.top = feed_items[i-2].style.top.replace(/px/,"")*1 + feedHeight[i-2] + 'px';
+
+                //두번째줄 피드아이템의 높이
+                //feed_items[2].style.top = feed_items[0].style.top.split('px')[0]*1 + feedHeight[0] + 'px';
+                //feed_items[3].style.top = feed_items[1].style.top.split('px')[0]*1 + feedHeight[1] + 'px';
+                //세번째줄 피드아이템의 높이
+                //feed_items[4].style.top = feed_items[2].style.top.split('px')[0]*1 + feedHeight[2] + 'px';
+                //feed_items[5].style.top = feed_items[3].style.top.split('px')[0]*1 + feedHeight[3] + 'px';
+                //네번째줄 피드아이템의 높이
+                //feed_items[6].style.top = feed_items[4].style.top.split('px')[0]*1 + feedHeight[4] + 'px';
+                //feed_items[7].style.top = feed_items[5].style.top.split('px')[0]*1 + feedHeight[5] + 'px';
+            }
+        }
+
+        function itemLoad(){
+            clearTimeout(start);
+            start = setTimeout(itemLoadReal, 200);
+        }
+        
+        
+        //contents의 높이값을 지정
+        window.addEventListener('resize', contHeightReal);
+        window.addEventListener('load', contHeightReal);
+
+        function contHeightReal(){
+            //var cont1 = document.querySelector('.left>ul>li:last-child');
+            //var cont2 = document.querySelector('.feed-item:nth-last-child(1)');
+            //var cont3 = document.querySelector('.feed-item:nth-last-child(2)');
+            var cont1 = document.querySelectorAll('.left>ul>li');
+            var cont2 = document.querySelectorAll('.feed-item:nth-child(odd)');
+            var cont3 = document.querySelectorAll('.feed-item:nth-child(even)');
+            var height1 = [];
+            var height2 = [];
+            var height3 = [];
+            var height1Sum = 0;
+            var height2Sum = 0;
+            var height3Sum = 0;
+            
+            for(var i=0; i<cont1.length; i++){
+                height1.push(cont1[i].scrollHeight);
+                height1Sum+= height1[i];
+            }
+            for(var i=0; i<cont2.length; i++){
+                height2.push(cont2[i].scrollHeight);
+                height2Sum+= height2[i];
+            }
+            for(var i=0; i<cont3.length; i++){
+                height3.push(cont3[i].scrollHeight);
+                height3Sum+= height3[i];
+            }
+            
+            var maxHeight = Math.max( height1Sum, height2Sum, height3Sum);
+            console.log(maxHeight);
+            document.querySelector('.contents').style.height = maxHeight + 100 +'px';
+        }
+    
+        
+        
+        
+    
+    </script>
+    
+</body></html>
