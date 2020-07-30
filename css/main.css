@@ -1,0 +1,95 @@
+#content{
+    background-color: lightgray;
+}
+.c_intro{
+    z-index: -1;
+    height: 100px;
+    max-width: 70%;
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 100px;
+}
+.c_intro h4{
+    text-transform: uppercase;
+    color: #9999;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 8rem;
+    font-weight: 600;
+}
+
+
+.c_portfolio{
+    background-color: white;
+    z-index: 10;
+    position: relative;
+    border-radius: 30px;
+    box-shadow: 0px -10px 20px 10px #888888;
+    padding: 50px 5%;
+    max-width: 70%;
+    margin: 0 auto;
+}
+.c_portfolio ul li{
+    padding : 5%;
+}
+.c_portfolio ul li+li{
+    padding-top : 5%;
+    border-top: 1px solid lightgray;
+}
+.c_portfolio .left{
+    display: inline-block;
+    vertical-align: top;
+    margin-right : 5%;
+    border: 1px solid 
+}
+.c_portfolio .left .portImg{
+    background-image: url(../img/kakao.jpg);
+    background-size: cover;
+    width: 400px;
+    height: 300px;
+    box-shadow: 0px 0px 20px 2px #888888;
+}
+.c_portfolio .right{
+    display: inline-block;
+    position: relative;
+    
+    width: 40%;
+    height: 250px;
+}
+.c_portfolio .right::before{
+    content: '';
+    display: inline-block;
+    position: absolute;
+    left: -20px;
+    top: 20px;
+    width: 5px;
+    height: 60px;
+    background-color: black;
+}
+
+.c_portfolio .right h5{
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 1rem;
+    color: #00b1ff;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+.c_portfolio .right h4{
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 2rem;
+    color: black;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+.c_portfolio .right p:nth-of-type(1){
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 1rem;
+    color: black;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+.c_portfolio .right p{
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 0.7rem;
+    color: black;
+    line-height: 1.5;
+}
