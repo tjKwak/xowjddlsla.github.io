@@ -1,0 +1,359 @@
+
+
+/* Button */
+.btn1 a:hover{
+    text-decoration: underline;
+}
+.btn2 a:hover{
+    text-decoration: underline;
+}
+
+.btn1 {
+    background-color: #eeeeee;
+    border-radius: 10px;
+    width: 250px;
+    height: 50px;
+    
+    position: relative;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}
+.btn2 {
+    background-color: #eeeeee;
+    border-radius: 10px;
+    width: 150px;
+    height: 50px;
+    
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    margin-right: 10px;
+    
+    overflow: hidden;
+    line-height: 45px;
+}
+.btn4 {
+    background-color: rgba(255,255,255,0.2);
+    border-radius: 10px;
+    width: 160px;
+    height: 50px;
+    
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    margin-right: 5px;
+    
+    overflow: hidden;
+    line-height: 50px;
+}
+
+
+
+
+
+/* Banner */
+
+.banner{
+    margin-top: 50px;
+    position: relative;
+    background-color: #FEDE22;
+    width: 100%;
+    height: 720px;
+    margin-bottom: 160px;
+}
+
+.bn-wrap {
+    display: flex;
+    justify-content: center;
+    min-width: 1080px;
+}
+.bn-img{ background-image: url(../img/main-bg2.png);
+    background-repeat: no-repeat;
+    background-size: 1200px;
+    
+    position: relative;
+    width: 1080px;
+    height: 900px;
+}
+.bn-box {
+    width: 500px;
+    height: 320px;
+    
+    position: relative;
+    top: 25%;
+    left: 8%;
+    z-index: 1;
+}
+.bn-cont-btn {
+    position: absolute;
+    bottom: 0;
+}
+
+.bn-cont-btn>li{
+    background-color: white;
+}
+.google {
+    background-image: url(../img/img-kabang-200417.png);
+    background-repeat: no-repeat;
+    width: 25px;
+    height: 25px;
+    background-position: -340px -291px;
+    margin-right: 5px;
+    
+    display: inline-block;
+    vertical-align: middle;
+}
+.apple {
+    background-image: url(../img/img-kabang-200417.png);
+    background-repeat: no-repeat;
+    width: 25px;
+    height: 25px;
+    background-position: -370px -293px;
+    margin-right: 5px;
+    
+    display: inline-block;
+    vertical-align: middle;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* CONTENT Index */
+
+.cont{
+    display: block;
+    width: 1080px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.cont-wrap{
+    display: inline-flex;
+    margin-left:auto;
+    margin-right:auto;
+}
+.cont-divider{
+    background-color: #FAFAFA;
+    height: 30px;
+    margin: 30px 0;
+}
+
+
+/* CONTENT_1  */
+#cont1-pc .txt-box{
+    width: 600px;
+    margin: 200px 0 0 100px;
+}
+#cont1-pc .cont-img{
+    width: 500px;
+}
+
+
+/* CONTENT_2  */
+#cont2-pc .txt-box{
+    width: 600px;
+    margin: 200px 0 0 50px;
+}
+#cont2-pc .cont-img{
+    width: 500px;
+}
+#cont2-pc .cont-img2{
+    margin-top: 50px;
+    width: 450px;
+}
+
+
+/* CONTENT_3  */
+#cont3-pc .txt-box{
+    width: 600px;
+    margin: 150px 0 0 100px;
+}
+#cont3-pc .cont-img{
+    width: 500px;
+}
+
+
+/* CONTENT_4  */
+#cont4-pc .txt-box{
+    width: 450px;
+    margin: 50px 0 0 130px;
+}
+#cont4-pc .cont-img{
+    width: 500px;
+}
+
+
+/* CONTENT_5  */
+#cont5-pc{
+    position: relative;
+}
+
+#cont5-pc .txt-box{
+    width: 600px;
+    margin: 150px 0 0 100px;
+}
+#cont5-pc .cont-img{
+    margin-left: 100px;
+    width: 400px;
+}
+
+.cont5-bg{
+    width: 100%;
+    height: 700px;
+    background-image: url(../img/home-map.png);
+    background-repeat: no-repeat;
+    background-position: 0 50%;
+}
+
+
+
+
+
+
+
+/* Every */
+
+#every-pc{}
+
+.sky{
+    background-color: #373c6a;
+    width: 100%;
+    height: 900px;
+    overflow: hidden;
+    position: relative;
+}
+
+#every-pc .cont-btn{
+    text-align: center;
+}
+.btn4>a:hover{
+    text-decoration: underline;
+}
+
+.every-img{
+    width: 400px;
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+/* CheckCard */
+#checkcard-pc{
+    margin-bottom: 150px;
+}
+#checkcard-pc>div{
+    margin-top: 150px;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+}
+#checkcard-pc .cont-btn{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 100px;
+}
+#checkcard-pc .btn-txt-bk{
+    line-height: 3;
+}
+#checkcard-pc .btn1{
+    width: 300px;
+}
+
+
+
+/* CheckCard - slide */
+
+.cont-card{
+    width: 1080px;
+    height: 500px;   
+}
+.card-wrap{
+    position: relative;
+}
+.card-slide{
+    width: 800px;
+    margin: 0 auto;
+}
+.card-img{height: 500px;
+}
+
+
+/* CheckCard - slide-button */
+.button{
+    position: absolute;
+    top: 50%;
+    width: 100%;
+}
+.lf-btn{
+    float: left;
+    filter: invert(100%);
+    opacity: 30%;
+    background-image: url(../img/img-kabang-200417.png);
+    background-position: 185px 205px;
+    width: 50px;
+    height: 90px;
+}
+.rt-btn{
+    float: right;
+    filter: invert(100%);
+    opacity: 30%;
+    background-image: url(../img/img-kabang-200417.png);
+    background-position: 135px 205px;
+    width: 50px;
+    height: 90px;
+}
+
+
+
+
+
+
+
+
+
+
+/* IT-pc */
+
+#IT-pc{
+    background-color: #f7f7f7;
+    width: 100%;
+    height: 1050px;
+    padding: 150px 0;
+}
+.divider{
+    background-color: black;
+    width: 100px;
+    height: 1px;
+    margin: 50px auto;
+}
+.it-img{
+    margin: 80px 0 40px 0;
+    width: 1080px;
+}
+.it-txt{
+    display: inline-grid;
+    grid-template-columns: 1fr 0.9fr 1fr 1fr;
+    width: 99%;
+}

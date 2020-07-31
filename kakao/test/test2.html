@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <title>jQuery</title>
+    <style>
+      .bg { background-color: pink; }
+      .bd { border: 1px solid red; }
+    </style>
+    <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script>
+      $( document ).ready( function() {
+        $( 'h1' ).removeClass( 'bg' );
+        $( 'h2' ).removeClass( 'bd' );
+      });
+    </script>
+  </head>
+  <body>
+    <h1 class="bg bd">Lorem ipsum dolor.</h1>
+    <h2 class="bg bd">Lorem ipsum dolor.</h2>
+  </body>
+</html>
