@@ -1,0 +1,310 @@
+/* contents */
+#contents{
+    background-color: rgb(240,240,250);
+    border-top: 1px solid lightgray;
+    width: 100%;
+    overflow: hidden;
+}
+.contents-wrap{
+    max-width: 1080px;
+    margin: 0 auto;
+    
+}
+/* contents - banner-pc*/
+
+.banner-pc{
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+.banner-slide{
+}
+.banner-frame{
+    max-width: 1080px;
+    height: 400px;
+    border: 1px solid lightgray;
+}
+.banner-wrap{
+    width: 100%;
+    height: 100%;
+    display: inline-grid;
+    grid-template-columns:2fr 1.5fr;
+}
+.img-box{
+    overflow: hidden;
+}
+.txt-box{
+    overflow: hidden;
+    background-color: #fff;
+}
+
+.banner-img-1{
+    background-image: url(../img/samsung-galaxy-z-flip-mirror-gold-1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 105%;
+}
+.bn-end{
+    width: 15px;
+    height: 1px;
+    background-color: black;
+    margin: 10px 0 25px 40px;
+}
+.hashtags{
+    display: inline-flex;
+    margin-left: 40px;
+}
+.hashtag>a{
+    color: orange;
+    margin-right: 20px;
+    letter-spacing: -1px;
+}
+
+
+
+
+
+
+/*contents - News */
+.news-pc{
+    margin-bottom: 70px;
+}
+
+.cont-title {
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.news-pc .cont-column{
+    max-width: 1080px;
+    column-count: 4;
+    column-gap: 15px;
+    font-size: 0;
+    column-width: 200px;
+}
+.cont-column>figure{
+    display: inline-block;
+    text-align: center;
+    font-size: 0;
+    background-color: #fff;
+    margin-bottom: 15px;
+}
+
+.cont-column figure img{
+    width: 100%;
+}
+
+.news-pc figcaption{
+    padding: 20px 10px 0;
+    height: 110px;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn{
+    width: 105px;
+    height: 35px;
+    border: 1px solid gray;
+    background-color: #fff;
+    color: gray;
+}
+
+.btn:hover{
+    background-color: orange;
+    color: white;
+    border: 1px solid orange;
+}
+
+
+
+
+
+/*contents - Review */
+.review-pc{
+    margin-bottom: 70px;
+}
+
+.review-pc .cont-column{
+    max-width: 1080px;
+    column-count: 4;
+    column-gap: 15px;
+    font-size: 0;
+    column-width: 200px;
+}
+
+.review-pc figcaption{
+    padding: 20px 10px 0;
+    height: 150px;
+    position: relative;
+    overflow: hidden;
+}
+.cont-more{
+    margin-top: 20px;
+   text-align: center;
+}
+
+.right{
+    display: inline-flex;
+    position: absolute;
+    left: 250px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.btn-follow{
+    width: 130px;
+    height: 50px;
+    border: 1px solid gray;
+    background-color: #fff;
+    color: gray;
+}
+
+.btn-follow:hover{
+    background-color: orange;
+    color: white;
+    border: 1px solid orange;
+}
+
+
+
+
+
+
+
+/*contents - insta */
+
+.insta-pc{
+    margin-bottom: 70px;
+}
+.cont-box{
+    max-width: 1080px;
+    column-count: 5;
+    font-size: 0;
+}
+.insta-box{
+    
+}
+.insta-item{
+    margin: 5px 10px;
+    display: inline-block;
+    position: relative;
+    
+}
+.insta-effect{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color:rgba(255,255,255,0.2);
+    width: 100%;
+    height: 100%;
+    
+    opacity: 0;
+}
+.effect-box{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-left: 8px;
+    
+    width: 90%;
+    height: 90%;
+    border: 1px solid white;
+}
+
+.insta-item:hover .insta-effect{
+    opacity: 1;
+    transition: opacity 0.5s;
+}
+
+
+
+
+
+
+.img-1{
+    background-image: url(../img/1.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 208px;
+    height: 208px;
+}
+.img-2{
+    background-image: url(../img/2.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 208px;
+    height: 208px;
+}
+.img-3{
+    background-image: url(../img/3.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 208px;
+    height: 208px;
+}
+.img-4{
+    background-image: url(../img/4.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 208px;
+    height: 208px;
+}
+.img-5{
+    background-image: url(../img/5.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 208px;
+    height: 208px;
+}
+.img-6{
+    background-image: url(../img/6.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 208px;
+    height: 208px;
+}
+.img-7{
+    background-image: url(../img/7.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 208px;
+    height: 208px;
+}
+.img-8{
+    background-image: url(../img/8.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 208px;
+    height: 208px;
+}
+.img-9{
+    background-image: url(../img/9.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 208px;
+    height: 208px;
+}
+.img-10{
+    background-image: url(../img/10.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 208px;
+    height: 208px;
+}
+
+
+
+
+
+
+
+
+
+
+
+/*footer */
+
+#footer {
+    background-color: rgb(50,50,50);
+    width:1000%;
+    height: 500px;
+}

@@ -24,8 +24,8 @@
     position: relative;
     border-radius: 30px;
     box-shadow: 0px -10px 20px 10px #888888;
-    padding: 50px 5%;
-    width: 70%;
+    padding: 50px 10%;
+    width: 60%;
     margin: 0 auto;
     height: 1500px;
 }
@@ -112,23 +112,60 @@
 }
 
 .portImg{
-    background-image: url(../img/kakao.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
+    
     box-shadow: 0 30px 60px rgba(17, 20, 39, 0.25);
     
     width: 100%;
     height: 100%;
     position: relative;
 }
+/*-----------------*/
+/* 이미지 모음 */
+/*-----------------*/
+.img1{
+    background-image: url(../img/29cm.PNG);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    
+    width: 100%;
+    height: 100%;
+}
+.img2{
+    background-image: url(../img/kakaobank.PNG);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    width: 100%;
+    height: 100%;
+}
+.img3{
+    background-image: url(../img/kakao.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    width: 100%;
+    height: 100%;
+}
+.img4{
+    background-image: url(../img/kakao.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    width: 100%;
+    height: 100%;
+}
+
 
 /*-----------------*/
 /* 포트이미지에 호버시 */
 /*-----------------*/
 .portImg:hover{
     transform: scale(1.1);
-    box-shadow: 0px 10px 20px 10px #626262;
+    box-shadow: 0 30px 80px rgba(17, 20, 39, 0.7);
     transition: all .5s;
 }
 .portImg:hover .more{
@@ -143,9 +180,9 @@
     left: 0;
 }
 .portImg:hover .more::after{
-    content: 'MORE';
     display: block;
-    color: orange;
+    content: 'MORE';
+    color: yellow;
     position: absolute;
     top: 50%;
     left: 50%;
