@@ -30,34 +30,30 @@
     height: 1500px;
 }
 .c_portfolio ul li{
-    padding : 5%;
-}
-.c_portfolio ul li+li{
-    padding-top : 5%;
-    border-top: 1px solid lightgray;
-}
-.c_portfolio .left{
-    display: inline-block;
-    vertical-align: top;
-    margin-right : 5%;
-    
-    box-sizing: border-box;
-}
-.c_portfolio .left .portImg{
-    background-image: url(../img/kakao.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 400px;
-    height: 300px;
-    box-shadow: 0px 0px 20px 2px #888888;
-}
-.c_portfolio .right{
-    display: inline-block;
-    position: relative;
-    width: 40%;
+    width: 100%;
+/* 높이는 미디어쿼리마다 바뀜   */
     height: 250px;
 }
-.c_portfolio .right::before{
+.c_portfolio ul li::after {     content:"";
+    clear:both; display:block;
+}
+
+.c_portfolio ul li{
+    padding : 5% 0;
+    border-bottom: 1px solid lightgray;
+}
+
+
+/*-----------------*/
+/* ----레프트------ */
+/*-----------------*/
+.c_portfolio .left{
+    float: left;
+    position: relative;
+    width: 40%;
+    height: 100%;
+}
+.c_portfolio .left::before{
     content: '';
     display: inline-block;
     position: absolute;
@@ -68,30 +64,117 @@
     background-color: black;
 }
 
-.c_portfolio .right h5{
+.c_portfolio .left h5{
     font-family: 'Noto Sans KR', sans-serif;
     font-size: 1rem;
     color: #00b1ff;
     font-weight: 600;
     margin-bottom: 15px;
 }
-.c_portfolio .right h4{
+.c_portfolio .left h4{
     font-family: 'Noto Sans KR', sans-serif;
     font-size: 2rem;
     color: black;
     font-weight: 600;
     margin-bottom: 15px;
 }
-.c_portfolio .right p:nth-of-type(1){
+.c_portfolio .left p:nth-of-type(1){
     font-family: 'Noto Sans KR', sans-serif;
     font-size: 1rem;
     color: black;
     line-height: 1.2;
     margin-bottom: 20px;
 }
-.c_portfolio .right p{
+.c_portfolio .left p:nth-of-type(2){
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 1rem;
+    color: black;
+    line-height: 1.5;
+}
+.c_portfolio .left p:nth-of-type(3){
     font-family: 'Noto Sans KR', sans-serif;
     font-size: 0.7rem;
     color: black;
     line-height: 1.5;
+    position: absolute;
+    bottom: 0;
 }
+
+
+/*-----------------*/
+/* ----롸ㅣ이트------ */
+/*-----------------*/
+.c_portfolio .right{
+    float: right;
+    position: relative;
+    width: 40%;
+    height: 100%;
+}
+
+.portImg{
+    background-image: url(../img/kakao.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 30px 60px rgba(17, 20, 39, 0.25);
+    
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+/*-----------------*/
+/* 포트이미지에 호버시 */
+/*-----------------*/
+.portImg:hover{
+    transform: scale(1.1);
+    box-shadow: 0px 10px 20px 10px #626262;
+    transition: all .5s;
+}
+.portImg:hover .more{
+    display: block;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    background-color: rgba(0,0,0,0.7);
+    transition: all .5s;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.portImg:hover .more::after{
+    content: 'MORE';
+    display: block;
+    color: orange;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    transition: all .5s;
+    
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 2rem;
+    font-weight: 500;
+}
+.portImg .more::after{
+    content: 'MORE';
+    display: block;
+    color: transparent;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    transition: all .5s;
+
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 4rem;
+    font-stretch: expanded;
+    font-weight: 500;
+}
+
+
+
+
+
+
+
