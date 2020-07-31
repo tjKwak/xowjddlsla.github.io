@@ -40,15 +40,15 @@
     display: inline-block;
     vertical-align: top;
     margin-right : 5%;
-    width: 40%;
-    height: 30%;
+    
+    box-sizing: border-box;
 }
 .c_portfolio .left .portImg{
     background-image: url(../img/kakao.jpg);
     background-repeat: no-repeat;
-    background-size: contain;
-    width: 100%;
-    height: 100%;
+    background-size: cover;
+    width: 400px;
+    height: 300px;
     box-shadow: 0px 0px 20px 2px #888888;
 }
 .c_portfolio .right{
