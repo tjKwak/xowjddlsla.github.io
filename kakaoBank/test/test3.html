@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <title>jQuery</title>
+    <style>
+        ol,ul,li{
+            list-style: none;
+        }
+        .slide-list{
+            position: relative;
+            background-color: black;
+            width: 700px;
+            height: 300px;
+        }
+
+        .slide{
+            animation-name: MovingSlide;
+            animation-duration: 30s;
+            animation-iteration-count: infinite;
+            
+            width: 500px;
+            height:300px;
+            background-repeat: no-repeat;
+            background-size: 550px;
+            
+            background-position: left;
+        }
+        
+         @-webkit-keyframes MovingSlide{
+            0% {background-image: url(img/img_1_20200415.jpg);
+                background-position: right;}
+            30%{
+                background-image: url(img/img_2_20180109.jpg);
+                }
+            60%{
+                background-image: url(img/img_3_20180109.jpg);
+                }
+            80%{
+                background-image: url(img/img_4_20180109.jpg);
+                background-position: left;}
+        }
+        
+        @keyframes MovingSlide{
+            20% {background-image: url(../img/img_1_20200415.jpg);
+                background-position: right;
+                }
+            40%{
+                background-image: url(../img/img_2_20180109.jpg);
+                background-position: left;
+                }
+            60%{
+                background-image: url(../img/img_3_20180109.jpg);
+                background-position: right;
+                }
+            80%{
+                background-image: url(../img/img_4_20180109.jpg);
+                background-position: left;}
+        }
+        
+    </style>
+    
+    
+  </head>
+  <body>
+    <button>Click</button>
+    <ul class="slide-list">
+        <li class="slide"></li>
+    </ul>
+  </body>
+</html>

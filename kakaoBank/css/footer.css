@@ -1,0 +1,98 @@
+
+/* footer */
+
+footer{
+    background-color: #eee;
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+}
+
+.footer-wrap{
+    margin-top: 50px;
+}
+
+.row1>a:hover{
+    text-decoration: underline;
+}
+
+.divider-mini{
+    width: 1px;
+    height: 12px;
+    background-color: #999999;
+    margin: 0 10px;
+    
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.footer-img{
+    height: 40px;
+}
+.ft-inbm{
+    height: 50px;
+    display: inline-block;
+    vertical-align: middle;
+}
+.row3{
+    margin-top: 10px;
+    height: 50px;
+}
+.footer-icon{
+    margin-top: 10px;
+}
+.footer-icon>li{
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 5px;
+}
+
+.ft-facebook{
+    background-image: url(../img/img-kabang-200417.png);
+    background-position: -116px -359px;
+    background-repeat: no-repeat;
+    
+    display: inline-block;
+    width: 15px;
+    height: 20px;
+    
+    text-align: left;
+    text-indent: -9000px;
+}
+.ft-blog{
+    background-image: url(../img/img-kabang-200417.png);
+    background-position: -134px -359px;
+    background-repeat: no-repeat;
+    
+    display: inline-block;
+    width: 20px;
+    height: 23px;
+    
+    text-align: left;
+    text-indent: -9000px;
+}
+.ft-naver{
+    background-image: url(../img/img-kabang-200417.png);
+    background-position: -386px -359px;
+    background-repeat: no-repeat;
+    
+    display: inline-block;
+    width: 23px;
+    height: 23px;
+    
+    text-align: left;
+    text-indent: -9000px;
+}
+.ft-youtube{
+    background-image: url(../img/img-kabang-200417.png);
+    background-position: -160px -359px;
+    background-repeat: no-repeat;
+    
+    display: inline-block;
+    width: 23px;
+    height: 23px;
+    
+    text-align: left;
+    text-indent: -9000px;
+}
+
