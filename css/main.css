@@ -25,8 +25,9 @@
     border-radius: 30px;
     box-shadow: 0px -10px 20px 10px #888888;
     padding: 50px 5%;
-    max-width: 70%;
+    width: 70%;
     margin: 0 auto;
+    height: 1500px;
 }
 .c_portfolio ul li{
     padding : 5%;
@@ -39,19 +40,20 @@
     display: inline-block;
     vertical-align: top;
     margin-right : 5%;
-    border: 1px solid 
+    width: 40%;
+    height: 30%;
 }
 .c_portfolio .left .portImg{
     background-image: url(../img/kakao.jpg);
-    background-size: cover;
-    width: 400px;
-    height: 300px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 100%;
+    height: 100%;
     box-shadow: 0px 0px 20px 2px #888888;
 }
 .c_portfolio .right{
     display: inline-block;
     position: relative;
-    
     width: 40%;
     height: 250px;
 }
