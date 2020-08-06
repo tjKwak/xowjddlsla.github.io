@@ -5,7 +5,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="css/intro.css">
     <link rel="stylesheet" href="css/content.css">
-    <link rel="stylesheet" href="css/aside">
+    <link rel="stylesheet" href="css/aside.css">
     
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/tool.css">
@@ -15,14 +15,22 @@
     
     <!--제이쿼리-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="//code.jquery.com/jquery-3.4.1.min.js"></script>
     
     <!--미디어쿼리-->
     <meta name="viewport" content="width=device-width, initial-scale=1">
 <!--    <link rel="stylesheet" media="screen and (max-width:1200px)" href="css/main_min.css">-->
 </head>
 <body>
-    <header></header>
+    <header>
+        <div class="header-left">
+            <h1 class="logo"><a href="#">Taejeong's Website</a></h1>
+            <ul class="menu">
+                <li><a href="#">About</a></li>
+                <li><a href="#">Portfolio</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+    </header>
     <aside>
         
     </aside>
@@ -103,7 +111,7 @@
                     <div class="right">
                         <div class="portImg">
                            <div class="img4">
-                            <a class="more" href="./ed_copy/ed.html">
+                            <a class="more" href="./naver/index.html">
                             </a>
                             </div>
                         </div>
@@ -140,11 +148,17 @@
         var contBox = document.querySelector('.content');
         var scrolled = 100;
         
+        intro.style.height = window.innerHeight + scrolled + 'px';
+        contBox.style.top = intro.style.height - scrolled + 'px';
         
         //로드시 intro의 height값 자동생성
         window.addEventListener('load', function(){
+            html.scrollTop = 0;
             intro.style.height = window.innerHeight + scrolled + 'px';
             contBox.style.top = intro.style.height - scrolled + 'px';
+            
+            //스크롤시 smooth 스크롤
+            window.addEventListener('scroll', scrollWork);
         });
         
         //리사이즈시 intro의 height값 구하기
@@ -154,21 +168,18 @@
             console.log(contBox.style.top);
         });
         
-        //스크롤시 smooth 스크롤
-        window.addEventListener('scroll', scrollWork);
-        window.addEventListener('load', scrollWork);
-
+        
         var old = html.scrollTop;
         function scrollWork(){
             //스크롤 내렸을때
-            if(html.scrollTop > 10 && old < html.scrollTop){
+            if(html.scrollTop > 100 && old < html.scrollTop){
                 contBox.classList.add('on');
                 contBox.style.top = scrolled + 'px';
                 //html.scrollTop = intro.style.height.split('px')[0]*1;
                 console.log('내린다');
             }
             //스크롤 올렸을때
-            else if(html.scrollTop < 10 && old > html.scrollTop ){
+            else if(html.scrollTop < 100 && old > html.scrollTop ){
                 contBox.classList.remove('on');
                 contBox.style.top = intro.style.height.split('px')[0]*1 - scrolled + 'px';
                 //contBox.style.top = intro.style.height.split('px')[0]*1;
@@ -177,6 +188,7 @@
             old = html.scrollTop;
             console.log('콘트박스의 높이는');
             console.log(contBox.style.top);
+            console.log(html.scrollTop);
         }
         
         

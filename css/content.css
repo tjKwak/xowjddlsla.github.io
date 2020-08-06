@@ -89,7 +89,7 @@
 /* 높이는 미디어쿼리마다 바뀜   */
     height: 250px;
 }
-.p_page li::after {                     content:"";
+.p_page li::after {           content:"";
     clear:both;
     display:block;
 }
@@ -98,7 +98,9 @@
     padding : 5% 0;
     border-bottom: 1px solid lightgray;
 }
-
+.p_page li:last-child{
+    border-bottom: none;
+}
 
 /*-----------------*/
 /* ----레프트------ */
