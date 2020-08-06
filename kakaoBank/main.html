@@ -24,15 +24,10 @@
     <script src="script/common.js"></script>
     <script src="script/slick.js"></script>
     
-    <style>
-        div {
-            box-sizing: border-box;
-            border: 0px solid red;
-        }
-    </style>
 </head>
 
 <body>
+   <div class="loading"></div>
     <div id="header" style="background-color: white;">
         <div class="gnb-pc">
             <div class="fl">
@@ -421,6 +416,18 @@
        </div>
         
     </footer>
+    <script>
+        //load
+        window.addEventListener("load", loadWork)
+        function loadWork() {
+            const loader = document.querySelector(".loading");
+            loading.classList.add("hidden");
+            setTimeout(function(){
+                loader.classList.remove("hidden");
+            }, 5000)
+        };
+        
+    </script>
 </body></html>
 
 

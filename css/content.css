@@ -1,44 +1,100 @@
-#content{
-    background-color: lightgray;
+.content{
+    background-color: #F5F6F9;
+
+    position: absolute;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    transition: all .5s;
 }
-.c_intro{
+
+.content.on{
+    background-color: #F5F6F9;
+    
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    opacity: 1;
+    transition: all .5s;
+}
+.c_title{
     z-index: -1;
     height: 100px;
-    max-width: 70%;
+    width: 50%;
     margin: 0 auto;
     text-align: center;
     padding-top: 100px;
 }
-.c_intro h4{
+.c_title h4{
     text-transform: uppercase;
-    color: #9999;
+    color: #ECEDEF;
     font-family: 'Noto Sans KR', sans-serif;
     font-size: 8rem;
     font-weight: 600;
 }
 
-
-.c_portfolio{
+.c_page{
     background-color: white;
     z-index: 10;
     position: relative;
     border-radius: 30px;
-    box-shadow: 0px -10px 20px 10px #888888;
+    box-shadow: 0px -10px 20px 10px #ECEDEF;
     padding: 50px 10%;
-    width: 60%;
+    width: 50%;
     margin: 0 auto;
-    height: 1500px;
 }
-.c_portfolio ul li{
+
+
+
+
+
+.p_title{
+    width: 100%;
+    height: 50px;
+    margin : 30px 0;
+    
+    display: flex;
+    text-align: center;
+}
+.p_title li{
+    background-color: white;
+    border-radius: 50px;
+    width: 100%;
+    box-shadow: 0px 0px 20px 5px rgba(0,0,0,0.2);
+}
+.p_title li.on{
+    background-color: #00b1ff;
+    box-shadow: 0px 0px 20px 5px rgba(0,0,0,0.2);
+}
+.p_title li+li{
+    margin-left: 10px;
+}
+.p_title li a{
+    padding: 15px 20px;
+    
+    text-transform: uppercase;
+    color: black;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 1rem;
+    line-height: 50px;
+    font-weight: 800;
+}
+
+
+
+
+.p_page li{
     width: 100%;
 /* 높이는 미디어쿼리마다 바뀜   */
     height: 250px;
 }
-.c_portfolio ul li::after {     content:"";
-    clear:both; display:block;
+.p_page li::after {                     content:"";
+    clear:both;
+    display:block;
 }
 
-.c_portfolio ul li{
+.p_page li{
     padding : 5% 0;
     border-bottom: 1px solid lightgray;
 }
@@ -47,13 +103,13 @@
 /*-----------------*/
 /* ----레프트------ */
 /*-----------------*/
-.c_portfolio .left{
+.p_page .left{
     float: left;
     position: relative;
     width: 40%;
     height: 100%;
 }
-.c_portfolio .left::before{
+.p_page .left::before{
     content: '';
     display: inline-block;
     position: absolute;
@@ -64,34 +120,34 @@
     background-color: black;
 }
 
-.c_portfolio .left h5{
+.p_page .left h5{
     font-family: 'Noto Sans KR', sans-serif;
     font-size: 1rem;
     color: #00b1ff;
     font-weight: 600;
     margin-bottom: 15px;
 }
-.c_portfolio .left h4{
+.p_page .left h4{
     font-family: 'Noto Sans KR', sans-serif;
     font-size: 2rem;
     color: black;
     font-weight: 600;
     margin-bottom: 15px;
 }
-.c_portfolio .left p:nth-of-type(1){
+.p_page .left p:nth-of-type(1){
     font-family: 'Noto Sans KR', sans-serif;
     font-size: 1rem;
     color: black;
     line-height: 1.2;
     margin-bottom: 20px;
 }
-.c_portfolio .left p:nth-of-type(2){
+.p_page .left p:nth-of-type(2){
     font-family: 'Noto Sans KR', sans-serif;
     font-size: 1rem;
     color: black;
     line-height: 1.5;
 }
-.c_portfolio .left p:nth-of-type(3){
+.p_page .left p:nth-of-type(3){
     font-family: 'Noto Sans KR', sans-serif;
     font-size: 0.7rem;
     color: black;
@@ -104,10 +160,10 @@
 /*-----------------*/
 /* ----롸ㅣ이트------ */
 /*-----------------*/
-.c_portfolio .right{
+.p_page .right{
     float: right;
     position: relative;
-    width: 40%;
+    width: 45%;
     height: 100%;
 }
 
@@ -118,6 +174,7 @@
     width: 100%;
     height: 100%;
     position: relative;
+    transition: all .5s;
 }
 /*-----------------*/
 /* 이미지 모음 */
@@ -126,7 +183,7 @@
     background-image: url(../img/29cm.PNG);
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center;
+    background-position: top center;
     
     width: 100%;
     height: 100%;
@@ -135,7 +192,7 @@
     background-image: url(../img/kakaobank.PNG);
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center;
+    background-position: top center;
 
     width: 100%;
     height: 100%;
@@ -144,16 +201,25 @@
     background-image: url(../img/kakao.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center;
+    background-position: top center;
 
     width: 100%;
     height: 100%;
 }
 .img4{
-    background-image: url(../img/kakao.jpg);
+    background-image: url(../img/naver.PNG);
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center;
+    background-position: top center;
+
+    width: 100%;
+    height: 100%;
+}
+.img5{
+    background-image: url(../img/ed.PNG);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top center;
 
     width: 100%;
     height: 100%;
