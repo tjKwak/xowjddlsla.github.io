@@ -1,0 +1,395 @@
+body, input, textarea, button {
+    font-family: "NanumSquare", "나눔고딕", "Dotum", "돋움", "Helvetica", "Arial", "AppleSDGothicNeo", sans-serif;
+    font-size: 14px;}
+#wrap{
+    min-width: 1120px;
+    min-height: 100%;
+    position: relative;
+}
+header{
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 10000;
+    min-width: 1100px;
+    background-color: rgba(255, 255, 255, 0.97);
+    transition: top .4s ease-in-out;
+    -webkit-transition: top .4s ease-in-out;
+}
+header.on {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0; 
+}
+header.hide {
+    top: -81px;
+    /* transition: top .4s ease-in-out; */
+}
+/*header start*/
+.header_wrap{
+    max-width: 1600px; /*최대 넓이로 움직임*/
+    margin: 0 auto;
+    text-align: center; 
+    position: relative;
+}
+
+/* logo */
+h1.header_logo{
+    margin: 32PX 0 0 32px;
+    width: 87px;
+    height: 17px;
+    background-image: url(../images/header_logo.png);
+    float: left;
+    position: absolute;
+    z-index: 9999;
+}
+.header_logo a{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+
+/*mainmenu*/
+nav{
+    display: inline-block;
+}
+ul.nav_menu{
+    font-size: 0;
+    text-align: center;
+}
+li.main_menu, li.main_menu_recruit{
+    display: inline-block;
+    font-size: 1rem;
+}
+a.main_menu_item{
+    display: block;
+    margin: 0 30px;
+    padding: 30px 0 30px;
+    font-family: "NanumSquare-EB", "나눔고딕", "Dotum", "돋움", "Helvetica", "Arial", "AppleSDGothicNeo", sans-serif;
+    font-size: 15px;
+    color: #333;
+    position: relative;
+}
+.main_menu_item:before{/*가상 선택자 :before트랜지션 주기 위한 요소*/
+    content: '';
+    position: absolute;
+    left: -1px; /*네이버와 같은 위치에 있으며 a기준으로 숨어있기 위해 -1px을 준다*/
+    bottom: 20px;
+    width: calc(100% + 2px); /*a태그 만큼의 100%*/
+    height: 2px;
+    background-color: #1ec545;
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    transition: transform 0.3s cubic-bezier(0.215, 0.61, 0.355, 1), -webkit-transform 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+} 
+.main_menu:hover .main_menu_item:before,
+.main_menu_item:focus:before{
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+}
+
+
+/*dropmenu*/
+.nav_dropmenu{
+    display: none;
+    min-width: 1100px;
+    height: 276px;
+    background-color: #1ec545;
+    z-index: 999;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 80px;
+    text-align: center;
+    font-size: 0;
+    /*DROPDOWN SHADOW*/
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.nav_dropmenu > li{
+    display: inline-block;
+    width: 190px;
+    height: 276px;
+    padding-top: 28px;
+    font-size: 1rem;
+    vertical-align: top;
+    border-left: 1px solid rgba(255,255,255,0.3)
+}
+.nav_dropmenu>li:hover{
+    background-color: #0fb93c;
+
+}
+.main_menu:hover .nav_dropmenu{
+    display: block;
+}
+.nav_dropmenu > li:last-child{
+    border-right: 1px solid rgba(255,255,255,0.3)
+}
+
+/*dropmenu style*/
+.nav_dropmenu_list > li{
+    margin: 0 0 5px;
+    font-size: 15px;
+    text-align: left;
+}
+.nav_dropmenu_list a{
+    color: #fff;
+    font-size: 15px;
+}
+.nav_dropmenu_list > li.depth_blank{
+    margin-bottom: 14px;
+}
+.classify{
+    margin-bottom: 25px;
+}
+
+.classify{
+    border-top: 1px solid rgba(255,255,255,0.3);
+    padding-top: 17px;
+    margin-bottom: 25px;
+}
+.classify1 li{
+    padding-top: 0;
+    border-top: 0;
+}
+
+.dropmenu_item{
+    display: block;
+    padding-left: 28px;  
+}
+
+.dropmenu_item .depth{
+    color: rgba(255,255,255,0.7);
+}
+.dropmenu_item .depth:hover{
+    color: rgba(255,255,255,1);
+}
+
+/*dropmenu style end*/
+
+/*utilbox*/
+.header_util {
+    width: 144px; 
+    height: 30px;
+    position: absolute;
+    z-index: 1000;
+    right: 50px;
+    top: 30px;
+}
+
+.header_lang {
+    display: inline-block;
+    vertical-align: middle;
+    left: 0;
+    top: 2px;
+    font-size: 13px;
+    position: absolute;
+    z-index: 1000;
+    font-family: "NanumSquare", "나눔고딕", "Dotum", "돋움", "Helvetica", "Arial", "AppleSDGothicNeo", sans-serif;
+}
+
+.header_lang a:first-child {
+    color: #333;
+    border-right: 1px solid rgba(0, 0, 0, 0.3);
+    padding-right: 10px;
+}
+
+.header_lang a:last-child {
+    color: #333;
+    padding-left: 10px;
+
+}
+.sitemap_box{
+    display: inline-block;
+    vertical-align: middle;
+    width: 24px;
+    height: 23px;
+    position: absolute;
+    z-index: 1000;
+    right: 0;
+}
+.btn_sitemap{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.header_util .btn_sitemap .btn_first,
+.header_util .btn_sitemap .btn_middle,
+.header_util .btn_sitemap .btn_last {
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: black;
+    left: 0;
+    transition: all .3s;
+}
+.sitemap_box .btn_sitemap .btn_first {
+    top: 4px;
+}
+
+.sitemap_box .btn_sitemap .btn_middle {
+    top: 10px;
+}
+
+.sitemap_box .btn_sitemap .btn_last {
+    bottom: 5px;
+}
+.sitemap_box .btn_sitemap:hover .btn_first,
+.header_util .btn_sitemap:hover .btn_middle,
+.header_util .btn_sitemap:hover .btn_last {
+    background-color: #00c73c;
+}
+
+/* siteMap */
+.header_util.ck h1.header_logo {
+    background-image: url(../images/header_logo_v2.png) no-repeat;
+}
+
+.header_util.ck {
+    height: 80px;
+    background-color: #0fb93c;
+}
+.header_wrap .sitemap{
+    text-align: left;
+}
+.sitemap {
+    display: none;
+}
+.sitemap_container{
+    width: 1280px;
+    margin: 0 auto;
+    padding: 116px 35px 150px;
+}
+.sitemap_container:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+.sitemap_list{
+    float: left;
+    width: 160px;
+    color: #fff;
+    margin-left: 50px;
+}
+.sitemap_list:first-child{
+    margin-left: 0;
+}
+.sitemap_list .sitemap_menu{
+    padding: 24px 0 0;
+}
+.sitemap_list_title{
+    display: block;
+    padding-bottom: 30px;
+    font-size: 20px;
+    font-family: "NanumSquare-EB","나눔고딕","Dotum","돋움","Helvetica","Arial","AppleSDGothicNeo",sans-serif;
+    position: relative;
+}
+.sitemap_list_title::after{
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: 4px;
+    width: 10px;
+    height: 2px;
+    background-color: #fff;
+}
+.sitemap_menu .sitemap_menu_list a{
+    color: #fff;
+}
+.sitemap_menu .sitemap_menu_list a strong{
+    font-size: 15px;
+}
+.sitemap_menu_list .depth{
+    font-family: "NanumSquare-L", "나눔고딕", "Dotum", "돋움", "Helvetica", "Arial", "AppleSDGothicNeo", sans-serif;
+    font-size: 14px;
+    opacity: .8;
+}
+.sitemap_menu_list .depth:hover{
+    opacity: 1;
+}
+.btn_link {
+    position: relative;
+    display: inline-block;
+    padding-right: 26px;
+}
+.btn_link::after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    background: url(../images/sprite.png) no-repeat;
+    background-size: 474px 1300px;
+    background-position: -81px 0;
+    top: -1px;
+    right: 0;
+}
+
+/* .header_util에 ck붙였을 때 */
+h1.header_logo.ck {
+    background: url(../images/header_logo_v2.png) no-repeat;
+}
+
+.header_util.ck .sitemap {
+    display: block;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 200;
+    min-width: 1100px;
+    background-color: #0fb93c;
+
+}
+.header_util.ck .btn_sitemap {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: #0fb93c;
+}
+
+header.hide .sitemap_container {
+    width: 1280px;
+    margin: 0 auto;
+    padding: 35px 35px 150px;
+    transition: all .5s ease;
+}
+.header_util.hiden{
+    top: -81px;
+}
+.header_util.ck .sitemap_box .btn_sitemap .btn_first {
+    bottom: -10px;
+    transform: translateY(6px) rotate(-45deg);
+    background-color: #fff;
+}
+.header_util.ck .sitemap_box .btn_sitemap .btn_middle{
+    display: none;
+}
+
+.header_util.ck .sitemap_box .btn_sitemap .btn_last {
+    bottom: -9px;
+    transform: translateY(-20px) rotate(45deg);
+    background-color: #fff;
+}
+.header_util.ck .header_lang a:first-child,
+.header_util.ck .header_lang a:last-child{
+    color: #fff;
+}
+
+.header_util.ck+.sitemap_dimmed {
+    display: block;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 100;
+    background-color: rgba(58, 62, 80, 0.97);
+}

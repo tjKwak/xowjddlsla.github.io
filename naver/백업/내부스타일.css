@@ -1,0 +1,87 @@
+<style>
+		
+		#wrap{
+			margin: 0 auto;
+			width: 1120px;
+			max-height: 100%;
+			position: relative;
+		}
+
+		.blind {
+		    visibility: hidden;
+		    text-indent: -10000px;
+		    overflow: hidden;
+		    position: absolute;
+		    top: 0;
+		    left: 0;
+		    width: 1px;
+		    height: 1px;
+		    margin: -1px;
+		}
+			/* header */
+		.header_wrap{
+			width: 1600px;
+			margin: 0 auto;
+			text-align: center;
+		}
+		h1.header_logo{
+			margin: 32PX 0 0 32px;
+			width: 87px;
+			height: 17px;
+			background-image: url(images/header_logo.png);
+			float: left;
+		}
+
+		li, ul {
+    	list-style: none;
+		}
+		.navbar{
+			
+			float: left;
+		}
+		.nav_menu{
+			background-color: powderblue;
+		}
+		.nav_menu > li{
+			display: inline-block;
+		}
+		
+		.main_menu {
+			margin: 0 30px;
+			padding: 30px 0;
+			font-family: 'Nanum Gothic', sans-serif;
+			font-weight: 800;
+			color: #333;
+
+		}
+		.main_menu > a{
+			/* a태그의 밑줄 없애는 방법*/
+			text-decoration: none;
+			color: #333;
+
+		}
+		.nav_dropmenu{
+			display: none;
+		}  
+		
+		
+		.lang{
+			float: right;
+			background-color: pink;
+		}
+		.lang > li{
+			display: inline-block;
+			float: left;
+			padding: 30px 5px ;
+		}
+
+	/*container*/
+		.container{
+			clear: both;
+		}
+		.summary_title{
+			font-family: 'Nanum Gothic', sans-serif;
+		}
+		
+
+	</style>

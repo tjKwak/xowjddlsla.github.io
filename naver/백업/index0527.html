@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<title>NAVER Company</title>
+	<meta charset=" UTF-8">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap" rel="stylesheet">
+	<style>
+		*{
+			margin: 0;
+		}
+		#wrap{
+			margin: 0 auto;
+			width: 1120px;
+			max-height: 100%;
+			position: relative;
+		}
+	/* header */
+		.header_wrap{
+			
+		}
+		.header_logo{
+			margin: 32PX 0 30px;
+			width: 87px;
+			height: 17px;
+			background-image: url(images/header_logo.png);
+			text-indent: -9999px;
+			overflow: hidden;
+			float: left;
+		}
+		h2{
+			visibility: hidden;
+			text-indent: -9999px;
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 1px;
+			height: 1px;
+			margin: -1px;
+
+			/*overflow: hidden;*/
+			/*visibility: hidden;*/
+		}
+		li, ul {
+    	list-style: none;
+		}
+		.navbar{
+			
+			float: left;
+		}
+		.nav_menu{
+			background-color: powderblue;
+		}
+		.nav_menu > li{
+			display: inline-block;
+		}
+		
+		.sub_menu {
+			margin: 0 30px;
+			padding: 30px 0;
+			font-family: 'Nanum Gothic', sans-serif;
+			font-weight: 800;
+			color: #333;
+
+		}
+		.sub_menu > a{
+			/* a태그의 밑줄 없애는 방법*/
+			text-decoration: none;
+			color: #333;
+
+		}
+		.depth3{
+			display: none;
+		}  
+		
+		
+		.lang{
+			float: right;
+			background-color: pink;
+		}
+		.lang > li{
+			display: inline-block;
+			float: left;
+			padding: 30px 5px ;
+		}
+
+	/*container*/
+		.container{
+			clear: both;
+		}
+		.summary_title{
+			font-family: 'Nanum Gothic', sans-serif;
+		}
+		
+
+	</style>
+
+</head>
+<body>
+	<div id="wrap">
+		<!-- header start -->
+		<header class="header">
+			<div class="wrap-header">
+				<h1 class="header_logo"><a href=""><img src="images/header_logo.png"></a></h1>
+				<h2>네이버 주메뉴 </h2>
+				<nav class="navbar">					
+					<ul class="nav-menu">
+						<li class="sub-menu"><a href="#"> 네이버</a>
+							<ul class="depth3">
+								<li><a href="#"><strong>NAVER</strong></a>
+									<ul>
+										<li><a href="#">네이버소개</a></li>
+										<li><a href="#">주요연혁</a></li>
+										<li><a href="#">수상내역</a></li>
+									</ul>
+								</li>
+								<li><a href="#"><strong>주요관계사</strong></a></li>
+								<li><a href="#"><strong>제휴제안</strong></a>
+									<ul>
+										<li><a href="#">제휴제안 안내</a></li>
+										<li><a href="#">제휴제안 등록</a></li>
+										<li><a href="#">검토현황 조회</a></li>
+									</ul>
+								</li>
+								<li><a href="#"><strong>CONTACT</strong></a></li>
+							</ul>
+						<li class="sub-menu"><a href="#"> 서비스</a>
+							<ul class="depth3">
+								<li><a href="#"><strong>Featured Services</strong></a></li>
+								<li><a href="#"><strong>For Business</strong></a></li>
+								<li><a href="#"><strong>For Creators</strong></a></li>
+								<li><a href="#"><strong>For Developers</strong></a></li>
+								<li><a href="#" target="_bank"><strong>ALL SERVICE</strong></a></li>
+
+							</ul>	
+						<li class="sub-menu"><a href="#"> 가치실현</a>
+							<ul class="depth3">
+								<li><a href="#"><strong>프로젝트 꽃</strong></a></li>
+								<li><a href="#"><strong>기업윤리</strong></a>
+									<ul>
+										<li><a href="#">기업윤리규범</a></li>
+										<li><a href="#">기업윤리 상담센터</a></li>
+									</ul>
+								</li>
+								<li><a href="#"><strong>프라이버시 센터</strong></a>
+									<ul>
+										<li><a href="#">네이버 리포트</a></li>
+										<li><a href="#">개인정보보호</a></li>
+										<li><a href="#">정보보호인증</a></li>
+									</ul>
+								</li>
+								<li><a href="#"><strong>동장성반</strong></a>
+								<li><a href="#"><strong>환경</strong></a></li>
+									<ul>
+										<li><a href="#">데이터센터 각</a></li>
+										<li><a href="#">네이버 사옥</a></li>
+									</ul>
+								</li>
+								<li><a href="#"><strong>With Naver</strong></a>
+									<ul>
+										<li><a href="#">재단법인 해피빈</a></li>
+										<li><a href="#">네이버 문화재단</a></li>
+										<li><a href="#">커넥트 재단</a></li>
+										<li><a href="#">접근성</a></li>
+										<li><a href="#">네이버 라이브러리</a></li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+						<li class="sub-menu"><a href="#"> 홍보</a>
+							<ul class="depth3">
+								<li><a href="#"><strong>보도자료</strong></a></li>
+								<li><a href="#"><strong>TV광고</strong></a></li>
+								<li><a href="#"><strong>미디어 행사</strong></a></li>
+								<li><a href="#"><strong>커뮤니케이션 채널</strong></a></li>
+							</ul>
+						</li>
+						<li class="sub-menu"><a href="#"> 투자정보</a>
+							<ul class="depth3" >
+								<li><a href="#"><strong>기업지배구조</strong></a>
+									<ul>
+										<li><a href="#">주주구성</a></li>
+										<li><a href="#">이사회</a></li>
+										<li><a href="#">정관</a></li>
+									</ul>
+								</li>
+								<li><a href="#"><strong>공시정보</strong></a></li>
+								<li><a href="#"><strong>주가정보</strong></a></li>
+								<li><a href="#"><strong>재무제표</strong></a></li>
+								<li><a href="#"><strong>IR일정</strong></a>
+									<ul>
+										<li><a href="#">IR행사</a></li>
+										<li><a href="#">IR MEETING</a></li>
+										<li><a href="#">주주총회</a></li>
+									</ul>
+								</li>
+								<li><a href="#"><strong>IR자료실</strong></a>
+									<ul>
+										<li><a href="#">실적발표</a></li>
+										<li><a href="#">감사보고서</a></li>
+										<li><a href="#">사업보고서</a></li>
+										<li><a href="#">연차보고서</a></li>
+										<li><a href="#">FAQ</a></li>
+									</ul>
+								</li>
+								<li><a href="#"><strong>결산공고</strong></a></li>
+								<li><a href="#"><strong>공고</strong></a></li>
+							</ul>
+						</li>
+						<li class="sub-menu"><a href="#" target="_blank"> 채용</a></li>
+					</ul>
+				</nav>
+				<h2> 언어</h2>
+				<ul class="lang">
+					<li>KOR</li>
+					<li>ENG</li>
+				</ul>
+			</div>
+		</header>
+
+		<div class="container">
+			<div class="main_slide">
+				<a href="" target="_bank">
+					<h3>슬라이드 영역</h3><!-- <img src="images/img_main_slide1.jpg"> --></a>
+			</div>
+			<div class="content">
+				<ul class="content_summary">
+					<li>
+						<h3 class="summary_title">NEWS</h3>
+						<a href="#">
+							<p><strong>네이버-NBP, 카이스트와 AI 전문 인력 양성 위한 협약식</strong></p>
+							<p>네이버-NBP, 카이스트와 AI 전문 인력 양성 위한 협약식 진행 - 카이스트, 네이버의 실제 데이터와 서비스 운영 과정에서</p>
+						</a>
+					</li>
+
+					<li>
+						<h3 class="summary_title">CAREER</h3>
+						<p><strong>수 많은 사용자의 목소리에서 내 일의 자부심과 무게를 느낍니다.</strong></p>
+						<a href="#">네이버에서 일한다는 것</a>
+					</li>
+
+					<li>
+						<h3 class="summary_title">STOCK</h3>
+						<p>212,000</p>
+						<a href="#">주가정보</a>
+					</li>
+
+					<li>
+						<h3 class="summary_title">결산공고</h3>
+						<p><strong>네이버 상세 재무상태표를 확인할 수 있습니다.</strong></p>
+						<a href="#">결산공고 보러가기</a>
+					</li>
+				</ul>
+				</div>
+				<section>
+					<a href=""><img src=""></a>
+					<a href=""><img src=""></a>
+					<a href=""><img src=""></a>
+					<a href=""><img src=""></a>
+					<a href=""><img src=""></a>
+					<a href=""><img src=""></a>
+					<a href=""><img src=""></a>
+					<a href=""><img src=""></a>
+					<a href=""><img src=""></a>
+				</section>
+				<section>
+					<h3>기술로 다양성을 꽃피우는 플랫폼</h3>
+					<p>개인의 다양한 가능성이 의미있는 성공으로 꽃 피울 수 있도록<br>
+						네이버가 서비스와 기술플랫폼을 통해 더 가까이 서포트(SUPPORT) 합니다.</p>
+				</section>
+				<section>
+					<img src="">
+
+				</section>
+			</div>
+			<footer>
+				<div class="footer_wrap">
+					<div class="footer_logo"></div>
+					<ul>
+						<li>제휴제안</li>
+						<li>기업윤리 상담센터</li>
+						<li>개인정보 처리방침</li>
+					</ul>
+					<p>Copyright ⓒ NAVER Corp. All Rights Reserved.</p>
+					<p>자회사 바로가기</p>
+				</div>
+			</footer>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,142 @@
+/*footer style*/
+footer{
+	width: 100%;
+	background-color: #f8f9fa;
+}
+.footer_wrap{
+	max-width: 1600px;
+	margin: 0 auto;
+	padding: 74px 0 70px;
+	text-align: center;
+	position: relative;
+}
+
+.footer_logo{
+	position: absolute;
+	left: 30px;
+	top: 76px;
+	width: 63px;
+	height: 13px;
+	background: url(../images/footer_logo.png) no-repeat;
+	-webkit-background-size: 63px 13px;
+	background-size: 63px 13px;
+}
+.footer_menu{
+	position: absolute;
+	left: 105px;
+	top: 74px;
+	font-size: 0;
+}
+
+.footer_menu>li{
+	display: inline-block;
+	margin: 0 10px;
+	font-size: 14px;
+	position: relative;
+}
+.footer_menu a{
+	color: #878890;
+}
+
+.footer_menu>li:before{
+	content: '';
+	position: absolute;
+	top: 3px;
+	left: -10px; /*footer_menu 밖으로 벗어나기 위해 -10을 준다*/
+	width: 1px;
+	height: 12px;
+	background-color: #dfe0e1;
+}
+.footer_menu>li:first-child:before{
+	display: none;
+}
+
+.affiliate_box{
+	position: absolute;
+	right: 30px;
+	top: 74px;
+}
+button{
+	background: none;
+	border: 0;
+}
+.btn_affiliate{
+	position: relative;
+	padding-right: 26px;
+}
+.affiliate_box .btn_affiliate:before{
+	content: '';
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 16px;
+	height: 16px;
+	background: url(../images/sprite.png) no-repeat;
+	-webkit-background-size: 474px 1250px;
+	background-size: 474px 1250px;
+	background-position: -222px -26px;
+}
+
+ul.affiliate_list{
+	display: none;
+	position: absolute;
+	left: -91px;
+	bottom: 0;
+	width: 200px;
+	padding: 27px 0 25px;
+	text-align: left;
+	background-color: #fff;
+	border: 1px solid #dfe0e1;
+}
+li.affiliate_item{
+	margin: 13px 0;
+}
+li.affiliate_item:first-child{
+	margin-top: 0;
+}
+.affiliate_item>a{
+	display: block;
+	padding: 0 24px; /*여백을 클릭해도 작동이 되도록 a태그에 패딩값을 준다*/
+	width: 100%;
+	color: #878890;
+}
+
+.affiliate_item>a span{
+	position: relative;
+}
+.affiliate_item>a span:before{
+	display: none;
+	content: '';
+	position: absolute;
+	right: -25px;
+	top: -3px;
+	width: 18px;
+	height: 18px;
+	background: url(../images/sprite.png) no-repeat;
+	-webkit-background-size: 474px 1250px;
+	background-size: 474px 1250px;
+	background-position: -104px -68px;
+}
+
+.affiliate_item > a:hover, 
+.affiliate_item > a:focus {
+	color: #00b843;
+}
+
+button{
+	background: none;
+	border: 0;
+}
+.affiliate_box:hover .affiliate_list{
+	display: block;
+}
+.affiliate_item > a:hover span:before,
+.affiliate_item > a:focus span:before{
+	display: block;
+}
+
+
+.footer_copy{
+	margin: 0 auto;
+	margin-left: 200px;
+}
