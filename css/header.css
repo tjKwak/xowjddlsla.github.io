@@ -1,0 +1,83 @@
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 85%;
+    z-index: 999999;
+}
+
+.header-wrap{
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 30%;
+}
+.header-wrap .logo{
+    width: 100%;
+}
+.header-wrap .logo a{
+    display: block;
+    background-image: url(../img/29cm.PNG);
+    background-size: cover;
+    
+    width: 100%;
+    height: 100%;
+    
+    text-indent: -999999px;
+    background-color: black;
+}
+.header-wrap .menu{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 80%;
+    height: 340px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+}
+.header-wrap .menu li{
+    width: 80px;
+    height: 80px;
+    border-radius: 20px;
+    background-color: #fff;
+    box-shadow: 0px 0px 20px 5px rgba(0,0,0,0.2);
+}
+
+.header-wrap .myIcon{
+    background-image: url(../img/icons.png);
+    background-position: 0px 5px;
+    width: 100%;
+    height: 100%;
+    display: block;
+    margin-bottom: 5px;
+}
+.header-wrap .portfolioIcon{
+    background-image: url(../img/icons.png);
+    background-position: -87px 3px;
+    width: 100%;
+    height: 100%;
+    display: block;
+    margin-bottom: 5px;
+}
+.header-wrap .studyIcon{
+    background-image: url(../img/icons.png);
+    background-position: -176px 0px;
+    width: 100%;
+    height: 100%;
+    display: block;
+    margin-bottom: 5px;
+}
+
+
+.header-wrap .menu a{
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 400;
+    line-height: 15;
+    width: 100%;
+    height: 100%;
+    display: block;
+}

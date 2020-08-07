@@ -122,14 +122,14 @@
     background-color: black;
 }
 
-.p_page .left h5{
+.p_page .left h4{
     font-family: 'Noto Sans KR', sans-serif;
     font-size: 1rem;
     color: #00b1ff;
     font-weight: 600;
     margin-bottom: 15px;
 }
-.p_page .left h4{
+.p_page .left h3{
     font-family: 'Noto Sans KR', sans-serif;
     font-size: 2rem;
     color: black;

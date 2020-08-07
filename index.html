@@ -5,12 +5,15 @@
     <title>Document</title>
     <link rel="stylesheet" href="css/intro.css">
     <link rel="stylesheet" href="css/content.css">
+    <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/aside.css">
     
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/tool.css">
     
+    <!--폰트어썸 / 폰트-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Kreon:wght@300;400;500;515;600;700&family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Patua+One&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     
     <!--제이쿼리-->
@@ -22,17 +25,21 @@
 </head>
 <body>
     <header>
-        <div class="header-left">
+        <div class="header-wrap">
             <h1 class="logo"><a href="#">Taejeong's Website</a></h1>
             <ul class="menu">
-                <li><a href="#">About</a></li>
-                <li><a href="#">Portfolio</a></li>
-                <li><a href="#">Contact</a></li>
+                <li class="myIcon"><a href="#">About Me</a></li>
+                <li class="portfolioIcon"><a href="#">Portfolio</a></li>
+                <li class="studyIcon"><a href="#">Study</a></li>
             </ul>
         </div>
     </header>
     <aside>
-        
+        <div class="contact-area">
+            <div class="contact-box on">
+                <a class="contact-icon" href="#">Contact</a><h3 class="contact-hidden">xowjddlsla@naver.com</h3>
+            </div>
+        </div>
     </aside>
     <div id ="content">
        <section class="intro"></section>
@@ -51,8 +58,8 @@
             <ul class="p_page">
                 <li>
                    <div class="left">
-                       <h5>Clone Coding</h5>
-                       <h4>29CM</h4>
+                       <h4>Clone Coding</h4>
+                       <h3><a href="./29cm_taejeongKwak/index.html">29CM</a></h3>
                        <p>React + Redux + Node.js(Koa) + MongoDB를 이용하여 로그인 기능이 구현된 간단한 SPA 팬사이트.</p>
                        <p>개발기간 : 2019.05.10 ~ 2020.07.01</p>
                        <p>#html #css #javascript</p>
@@ -68,8 +75,8 @@
                 </li>
                 <li>
                     <div class="left">
-                        <h5>Clone Coding</h5>
-                        <h4>카카오 뱅크</h4>
+                        <h4>Clone Coding</h4>
+                        <a href="./kakaoBank/main.html"><h3>카카오 뱅크</h3></a>
                         <p>React + Redux + Node.js(Koa) + MongoDB를 이용하여 로그인 기능이 구현된 간단한 SPA 팬사이트.</p>
                         <p>개발기간 : 2019.05.10 ~ 2020.07.01</p>
                         <p>#html #css #javascript</p>
@@ -85,8 +92,8 @@
                 </li>
                 <li>
                     <div class="left">
-                        <h5>Clone Coding</h5>
-                        <h4>카카오 Corp</h4>
+                        <h4>Clone Coding</h4>
+                        <a href="./kakao/main.html"><h3>카카오 Corp</h3></a>
                         <p>React + Redux + Node.js(Koa) + MongoDB를 이용하여 로그인 기능이 구현된 간단한 SPA 팬사이트.</p>
                         <p>개발기간 : 2019.05.10 ~ 2020.07.01</p>
                         <p>#html #css #javascript</p>
@@ -102,8 +109,8 @@
                 </li>
                 <li>
                     <div class="left">
-                        <h5>Clone Coding</h5>
-                        <h4>네이버 Corp</h4>
+                        <h4>Clone Coding</h4>
+                        <a href="./naver/index.html"><h3>네이버 Corp</h3></a>
                         <p>React + Redux + Node.js(Koa) + MongoDB를 이용하여 로그인 기능이 구현된 간단한 SPA 팬사이트.</p>
                         <p>개발기간 : 2019.05.10 ~ 2020.07.01</p>
                         <p>#html #css #javascript</p>
@@ -119,8 +126,8 @@
                 </li>
                 <li>
                     <div class="left">
-                        <h5>Clone Coding</h5>
-                        <h4>EARLY ADOPTER</h4>
+                        <h4>Clone Coding</h4>
+                        <a href="./ed_copy/ed.html"><h3>EARLY ADOPTER</h3></a>
                         <p>React + Redux + Node.js(Koa) + MongoDB를 이용하여 로그인 기능이 구현된 간단한 SPA 팬사이트.</p>
                         <p>개발기간 : 2019.05.10 ~ 2020.07.01</p>
                         <p>#html #css #javascript</p>
@@ -191,6 +198,20 @@
             console.log(html.scrollTop);
         }
         
+        //컨택트 버튼
+        var contactBox = document.querySelector('.contact-box');
+        var contactWord = document.querySelector('.contact-icon');
+        contactBox.addEventListener('mouseover',function(e){
+            e.preventDefault();
+            contactBox.classList.add('on');
+            contactWord.textContent = 'Email';
+        })
+        contactBox.addEventListener('mouseleave',function(e){
+            e.preventDefault();
+            contactBox.classList.remove('on');
+            contactWord.textContent = 'Contact';
+        })
+
         
     </script>
 </body>
