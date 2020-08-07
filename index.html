@@ -36,16 +36,23 @@
     </header>
     <aside>
         <div class="contact-area">
-            <div class="contact-box on">
-                <a class="contact-icon" href="#">Contact</a><h3 class="contact-hidden">xowjddlsla@naver.com</h3>
-            </div>
+           <div class="contact-txt">
+               <div class="contact-box">
+                   <a class="contact-icon" href="#">Contact</a>
+                    <h3 class="contact-hidden">xowjddlsla@naver.com</h3>
+               </div>
+           </div>
         </div>
     </aside>
     <div id ="content">
-       <section class="intro"></section>
+       <section class="intro">
+           <div class="img-box">
+           </div>
+       </section>
        <section class="content">
             <div class="c_title">
-                <h4>portfolio</h4>
+            <h3>"진실한 마음으로 포트폴리오를 만듭니다."</h3>
+             <h4>portfolio</h4>
             </div>
             <div class="c_page">
             <ul class="p_title">
@@ -200,19 +207,26 @@
         
         //컨택트 버튼
         var contactBox = document.querySelector('.contact-box');
-        var contactWord = document.querySelector('.contact-icon');
         contactBox.addEventListener('mouseover',function(e){
             e.preventDefault();
             contactBox.classList.add('on');
-            contactWord.textContent = 'Email';
         })
         contactBox.addEventListener('mouseleave',function(e){
             e.preventDefault();
             contactBox.classList.remove('on');
-            contactWord.textContent = 'Contact';
         })
 
+        //로드시 애니메이션
+        var phone = document.querySelector('.img-box')
         
+        window.addEventListener('load',function(){
+            if(html.scrollTop === 0 ){
+                phone.style.bottom = '100px';
+            }
+            else{
+                phone.style.bottom = '0';
+            }
+        })
     </script>
 </body>
 </html>

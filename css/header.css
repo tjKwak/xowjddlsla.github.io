@@ -13,20 +13,34 @@ header{
     box-sizing: border-box;
     padding: 30%;
 }
-.header-wrap .logo{
-    width: 100%;
-}
 .header-wrap .logo a{
     display: block;
-    background-image: url(../img/29cm.PNG);
+    background-image: url(../img/tjlogo.png);
     background-size: cover;
-    
-    width: 100%;
-    height: 100%;
+    width: 210px;
+    height: 50px;
     
     text-indent: -999999px;
-    background-color: black;
 }
+.header-wrap .logo a::after{
+    content: '';
+    display: block;
+    width: 100%;
+    height: 5px;
+    margin-top: 40px;
+    background-color: black;
+    
+    transform: scaleX(0);
+    transform-origin: 0 0;
+    -webkit-transform: scaleX(0);
+    -webkit-transform-origin: 0 0;
+    transition: all .3s;
+}
+.header-wrap .logo a:hover::after{
+    transform: scaleX(1);
+    transition: all .3s;
+}
+
 .header-wrap .menu{
     position: absolute;
     top: 50%;
@@ -44,6 +58,17 @@ header{
     border-radius: 20px;
     background-color: #fff;
     box-shadow: 0px 0px 20px 5px rgba(0,0,0,0.2);
+    
+    transition: all .3s;
+}
+.header-wrap .menu li:hover{
+    width: 80px;
+    height: 80px;
+    border-radius: 20px;
+    background-color: #00b1ff;
+    box-shadow: 0px 0px 20px 5px rgba(0,0,0,0.2);
+    
+    transition: all .3s;
 }
 
 .header-wrap .myIcon{
@@ -71,7 +96,6 @@ header{
     margin-bottom: 5px;
 }
 
-
 .header-wrap .menu a{
     font-family: 'Noto Sans KR', sans-serif;
     font-size: 0.8rem;
@@ -81,3 +105,16 @@ header{
     height: 100%;
     display: block;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+

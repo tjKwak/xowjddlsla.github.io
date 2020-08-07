@@ -20,11 +20,17 @@
 }
 .c_title{
     z-index: -1;
-    height: 100px;
+    height: 170px;
     width: 50%;
     margin: 0 auto;
     text-align: center;
-    padding-top: 100px;
+    padding-top: 150px;
+}
+.c_title h3{
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 20px;
 }
 .c_title h4{
     text-transform: uppercase;
