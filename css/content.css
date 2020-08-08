@@ -1,7 +1,214 @@
+#content{
+    position: relative;
+}
+
+/*---------*/
+/* intro*/
+/*------------*/
+
+/*
+* {
+    scroll-behavior: smooth;
+}
+*/
+
+.intro{
+    width: 100%;
+    position: relative;
+    
+    animation: backcolor 6s infinite;
+}
+@keyframes backcolor {
+  0% {
+    background:#3495fe;
+  }
+  33% {
+    background: #00edac;
+  }
+  67% {
+    background:#b34aff;
+  }
+  100% {
+    background:#3495fe;
+  }
+}
+
+@keyframes fontcolor {
+  0% {
+    color:#3495fe;
+  }
+  33% {
+    color: #00edac;
+  }
+  67% {
+    color:#b34aff;
+  }
+  100% {
+    color:#3495fe;
+  }
+}
+
+.scroll-box{
+    width: 100px;
+    height: 100px;
+    background-color: pink;
+    
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+
+
+
+.phone-box{
+    width: 40%;
+    height: 60%;
+    border-radius: 50px 50px 0 0;
+    background-color: #0f0e0e;
+    box-shadow: 0px 0px 20px 5px rgba(0,0,0,0.2);
+    
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    
+    transition: all 1.5s;
+}
+.phone-box::before{
+    content: '';
+    display: block;
+    background-color: #0f0e0e;
+    border-radius: 10px;
+    width: 103%;
+    height: 50px;
+    
+    position: absolute;
+    right: -1.5%;
+    top: 15%;
+}
+.phone-box::after{
+    content: '';
+    display: block;
+    background-color: #0f0e0e;
+    border-radius: 10px;
+    width: 3%;
+    height: 80px;
+    
+    position: absolute;
+    right: -2%;
+    top: 25%;
+}
+.phone-screen-box{
+    width: 95%;
+    height: 90%;
+    border-radius: 20px 20px 0 0;
+/*    background-image: linear-gradient(to bottom right, #2f2f2f, gray);*/
+    background-image: linear-gradient(#2f2f2f, gray);
+    position: absolute;
+    left: 50%;
+    top : 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+.phone-screen{
+    width: 100%;
+    height: 100%;
+    border-radius: 20px 20px 0 0;
+    background-color: white;
+    
+    position: absolute;
+    left: 50%;
+    top : 50%;
+    transform: translateX(-50%) translateY(-50%);
+    
+    animation-name: screenOn; 
+    animation-duration: 2.5s;
+}
+@keyframes screenOn{ 
+  0%{
+      width: 0px;
+      height: 0px;
+      border-radius: 20px;
+    }
+  15%{
+      width: 40px;
+      height: 30px;
+      border-radius: 20px;
+    }
+  30%{
+      width: 0px;
+      height: 0px;
+      border-radius: 20px;
+    }
+  50%{
+      width: 50px;
+      height: 10px;
+      border-radius: 20px;
+    }
+  60%{
+      width: 100%;
+      height: 20px;
+      border-radius: 20px;
+    }
+  70%{
+      width: 100%;
+      height:40px;
+      border-radius: 20px;
+    } 
+  80%{
+      width: 100%;
+      height: 100%;
+      border-radius: 20px 20px 0 0;
+    } 
+}
+
+
+.typing-box{
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 50px;
+}
+.typing-box p{
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 3rem;
+    font-weight: 600;
+    line-height: 1.5;
+}
+.typing-txt{
+    display: none;
+}
+.typing::after{
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+    width: 1px;
+    height: 40px;
+    animation-name: cursor; 
+  animation-duration: 0.5s; 
+  animation-iteration-count: infinite; 
+    animation-delay: 2.5s;
+}
+@keyframes cursor{ 
+  0%{ border-right: 1px solid #fff} 
+  50%{border-right: 1px solid #000} 
+  100%{border-right: 1px solid #fff} 
+}
+
+
+
+
+/*-------------------*/
+/*----content--------*/
+/*-------------------*/
+
+
 .content{
     background-color: #F5F6F9;
+    padding-bottom: 400px;
 
     position: absolute;
+    
     left: 0;
     right: 0;
     opacity: 0;
@@ -10,9 +217,10 @@
 
 .content.on{
     background-color: #F5F6F9;
+    padding-bottom: 400px;
     
     position: absolute;
-    top: 0;
+    
     left: 0;
     right: 0;
     opacity: 1;
@@ -51,8 +259,9 @@
     margin: 0 auto;
 }
 
-
-
+/*------------*/
+/* p-title */
+/*------------*/
 
 
 .p_title{
@@ -71,8 +280,12 @@
 }
 .p_title li.on{
     background-color: #00b1ff;
+    animation: backcolor 6s infinite;
+    
     box-shadow: 0px 0px 20px 5px rgba(0,0,0,0.2);
 }
+
+
 .p_title li+li{
     margin-left: 10px;
 }
@@ -90,12 +303,20 @@
 
 
 
+/*------------*/
+/* p-page */
+/*------------*/
+
+.p_page{
+    margin-bottom: 100px;
+}
 .p_page li{
     width: 100%;
 /* 높이는 미디어쿼리마다 바뀜   */
     height: 250px;
 }
-.p_page li::after {           content:"";
+.p_page li::after {
+    content:"";
     clear:both;
     display:block;
 }
@@ -109,15 +330,15 @@
 }
 
 /*-----------------*/
-/* ----레프트------ */
-/*-----------------*/
-.p_page .left{
+/* ---- p_page ------ */
+/*---- page-info ------*/
+.p_page .page-info{
     float: left;
     position: relative;
     width: 40%;
     height: 100%;
 }
-.p_page .left::before{
+.p_page .page-info::before{
     content: '';
     display: inline-block;
     position: absolute;
@@ -128,34 +349,35 @@
     background-color: black;
 }
 
-.p_page .left h4{
+.p_page .page-info h4{
     font-family: 'Noto Sans KR', sans-serif;
     font-size: 1rem;
     color: #00b1ff;
+    animation: fontcolor 6s infinite;
     font-weight: 600;
     margin-bottom: 15px;
 }
-.p_page .left h3{
+.p_page .page-info h3{
     font-family: 'Noto Sans KR', sans-serif;
     font-size: 2rem;
     color: black;
     font-weight: 600;
     margin-bottom: 15px;
 }
-.p_page .left p:nth-of-type(1){
+.p_page .page-info p:nth-of-type(1){
     font-family: 'Noto Sans KR', sans-serif;
     font-size: 1rem;
     color: black;
     line-height: 1.2;
     margin-bottom: 20px;
 }
-.p_page .left p:nth-of-type(2){
+.p_page .page-info p:nth-of-type(2){
     font-family: 'Noto Sans KR', sans-serif;
     font-size: 1rem;
     color: black;
     line-height: 1.5;
 }
-.p_page .left p:nth-of-type(3){
+.p_page .page-info p:nth-of-type(3){
     font-family: 'Noto Sans KR', sans-serif;
     font-size: 0.7rem;
     color: black;
@@ -166,9 +388,9 @@
 
 
 /*-----------------*/
-/* ----롸ㅣ이트------ */
-/*-----------------*/
-.p_page .right{
+/* ---- p_page ------ */
+/*------ page-pic -----------*/
+.p_page .page-pic{
     float: right;
     position: relative;
     width: 45%;
@@ -282,6 +504,175 @@
     font-stretch: expanded;
     font-weight: 500;
 }
+
+
+
+
+
+/* 아웃트로 */
+
+.p_outtro{
+    width: 100%;
+    text-align: center;
+}
+.p_outtro li{
+    display: none;
+}
+.p_outtro li.on{
+    display: block;
+}
+.p_outtro li.on h4{
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 30px;
+}
+.p_outtro li.on p{
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+.p_outtro li.on p:last-child{
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+
+
+
+
+/* 굿바이!!!! */
+
+.goodbye{
+    z-index: 999999999;
+    position: fixed;
+    
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    
+    background-color: black;
+    width: 100%;
+    max-height: 0%;
+    
+    opacity: 0;
+    transition: all .5s;
+}
+.goodbye.on{
+    z-index: 999999999;
+    position: fixed;
+    
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    
+    background-color: black;
+    width: 100%;
+    max-height: 100%;
+    
+    opacity: 1;
+    transition: all .5s;
+}
+
+.goodbye .g-txt{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-70%);
+    width: 100%;
+    height: 30%;
+    text-align: center;
+}
+.goodbye .g-txt h3{
+    color: white;
+     font-family: 'Noto Sans KR', sans-serif;
+    font-size: 0rem;
+    font-weight: 500;
+}
+.goodbye .g-txt h2{
+    color: white;
+     font-family: 'Noto Sans KR', sans-serif;
+    font-size: 0rem;
+    font-weight: 500;
+    margin: 70px 0 50px 0;
+}
+.goodbye .g-txt p{
+    color: white;
+     font-family: 'Noto Sans KR', sans-serif;
+    font-size: 0rem;
+    font-weight: 300;
+    line-height: 1.5;
+}
+
+/* 활성화 시 */
+.goodbye.on .g-txt{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-70%);
+    width: 100%;
+    height: 30%;
+    text-align: center;
+}
+.goodbye.on .g-txt h3{
+    color: white;
+     font-family: 'Noto Sans KR', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+.goodbye.on .g-txt h2{
+    color: white;
+     font-family: 'Noto Sans KR', sans-serif;
+    font-size: 3rem;
+    font-weight: 500;
+    margin: 70px 0 50px 0;
+}
+.goodbye.on .g-txt p{
+    color: white;
+     font-family: 'Noto Sans KR', sans-serif;
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.5;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
