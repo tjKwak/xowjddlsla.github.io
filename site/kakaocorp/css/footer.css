@@ -1,0 +1,113 @@
+.foot-wrap{
+    border-top: 1px solid lightgray;
+    padding: 30px;
+    min-width: 1300px;
+    max-width: 1920px;
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+/*-------------*/
+/* foot-row 1*/
+/*------------*/
+.foot-row1{
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+}
+
+.infos li{
+    display: inline-block;
+    margin-right: 15px;
+}
+.infos li a{
+    font-family: 'Noto Sans KR', sans-serif;
+    color: gray;
+    font-weight: 300;
+    font-size: 0.8rem;
+}
+.infos li a em{
+    font-family: 'Noto Sans KR', sans-serif;
+    color: black;
+    font-weight: 500;
+    font-size: 0.8rem;
+}
+.infos li a i{
+    color: #c7c7c7;
+    margin-left: 5px;
+    font-size: 0.8rem;
+}
+.sites{
+    
+}
+.sites > a{
+    display: flex;
+    justify-content: space-between;
+    width: 150px;
+    padding: 5px 0;
+    border-bottom: 1px solid black;
+}
+.sites > a em{
+    font-family: 'Noto Sans KR', sans-serif;
+    color: gray;
+    font-weight: 300;
+    font-size: 0.8rem;
+}
+.sites > a em.clicked{
+    font-family: 'Noto Sans KR', sans-serif;
+    color: black;
+    font-weight: 500;
+    font-size: 0.8rem;
+}
+.sites > a i{
+    font-size: 0.5rem;
+}
+.sites ul{
+    display: none;
+    position: absolute;
+    width: 150px;
+    margin-top: -225px;
+    border: 1px solid lightgray;
+    background-color: #fff;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+.sites ul li a{
+    font-family: 'Noto Sans KR', sans-serif;
+    color: #9b9b9b;
+    font-weight: 300;
+    font-size: 0.8rem;
+    line-height: 2.2;
+}
+.sites ul li a:hover{
+    border-bottom: 1px solid black;
+}
+
+
+
+/*-------------*/
+/* foot-row 2*/
+/*------------*/
+.foot-row2 p {
+    font-family: 'Noto Sans KR', sans-serif;
+    color: gray;
+    font-weight: 300;
+    font-size: 0.8rem;
+}
+
+.foot-row2 p a i{
+    color: gray;
+    font-size: 0.8rem;
+    margin: 0 5px;
+}
+.foot-row2 p a{
+    font-family: 'Noto Sans KR', sans-serif;
+    color: gray;
+    font-weight: 300;
+    font-size: 0.8rem;
+    margin: 0 5px;
+}
+.foot-row2 p a:hover{
+    text-decoration: underline;
+}
