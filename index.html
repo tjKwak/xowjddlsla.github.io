@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Document</title>
+    <title>Taejeong's Portfolio</title>
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/content.css">
     
@@ -77,31 +77,32 @@
                </div>
                <div class="portfolio">
                    <ul class="p_menu">
-                       <li class="on"><a href="#">Web</a></li>
-                       <li><a href="#">UI/UX</a></li>
-                       <li><a href="#">interaction</a></li>
-                       <li><a href="#">movie</a></li>
-                       <li><a href="#">3D</a></li>
+                       <li class="on"><a href="">Web</a></li>
+                       <li><a href="">UI/UX</a></li>
+                       <li><a href="">interaction</a></li>
+                       <li><a href="">movie</a></li>
+                       <li><a href="">3D</a></li>
                    </ul>
-                   <ul class="p_list">
-                       <li>
-                           <div class="page-info">
-                               <h4>Clone Coding</h4>
-                               <h3><a href="./site/29cm_taejeongKwak/index.html">29CM</a></h3>
-                               <p>React + Redux + Node.js(Koa) + MongoDB를 이용하여 로그인 기능이 구현된 간단한 SPA 팬사이트.</p>
-                               <p>개발기간 : 2019.05.10 ~ 2020.07.01</p>
-                               <p>#html #css #javascript</p>
-                           </div>
-                           <div class="page-pic">
-                               <div class="portImg">
-                                   <div class="img1">
-                                       <a class="more" href="./site/29cm_taejeongKwak/index.html">
-                                       </a>
+                   <div class="p_list">
+                       <ul class="on">
+                           <li>
+                               <div class="page-info">
+                                   <h4>Clone Coding</h4>
+                                   <h3><a href="./site/29cm_taejeongKwak/index.html">29CM</a>    </h3>
+                                   <p>React + Redux + Node.js(Koa) + MongoDB를 이용하여 로그인 기능이 구현된 간단한 SPA 팬사이트.</p>
+                                   <p>개발기간 : 2019.05.10 ~ 2020.07.01</p>
+                                   <p>#html #css #javascript</p>
+                               </div>
+                               <div class="page-pic">
+                                   <div class="portImg">
+                                       <div class="img1">
+                                           <a class="more" href="./site/29cm_taejeongKwak/index.html">
+                                           </a>
+                                       </div>
                                    </div>
                                </div>
-                           </div>
-                       </li>
-                       <li>
+                           </li>
+                           <li>
                            <div class="page-info">
                                <h4>Clone Coding</h4>
                                <a href="./site/kakaoBank/main.html"><h3>카카오 뱅크</h3></a>
@@ -118,10 +119,10 @@
                                </div>
                            </div>
                        </li>
-                       <li>
+                           <li>
                            <div class="page-info">
                                <h4>Clone Coding</h4>
-                               <a href="./site/kakao/main.html"><h3>카카오 Corp</h3></a>
+                               <a href="./site/kakaocorp/main.html"><h3>카카오 Corp</h3></a>
                                <p>React + Redux + Node.js(Koa) + MongoDB를 이용하여 로그인 기능이 구현된 간단한 SPA 팬사이트.</p>
                                <p>개발기간 : 2019.05.10 ~ 2020.07.01</p>
                                <p>#html #css #javascript</p>
@@ -129,13 +130,13 @@
                            <div class="page-pic">
                                <div class="portImg">
                                    <div class="img3">
-                                       <a class="more" href="./site/kakao/main.html">
+                                       <a class="more" href="./site/kakaocorp/main.html">
                                        </a>
                                    </div>
                                </div>
                            </div>
                        </li>
-                       <li>
+                           <li>
                            <div class="page-info">
                                <h4>Clone Coding</h4>
                                <a href="./site/naver/index.html"><h3>네이버 Corp</h3></a>
@@ -152,7 +153,7 @@
                                </div>
                            </div>
                        </li>
-                       <li>
+                           <li>
                            <div class="page-info">
                                <h4>Clone Coding</h4>
                                <a href="./site/ed_copy/ed.html"><h3>EARLY ADOPTER</h3></a>
@@ -169,7 +170,24 @@
                                </div>
                            </div>
                        </li>
-                   </ul>
+                       </ul>
+                       <ul>
+                           <li>UI/UX 칸</li>
+                           <li>뭘 넣을지 아직 못정했어유</li>
+                       </ul>
+                       <ul>
+                           <li>인터렉션 미디어 칸</li>
+                           <li>못정했어유 </li>
+                       </ul>
+                       <ul>
+                           <li>movie 칸</li>
+                           <li>못정했어유 </li>
+                       </ul>
+                       <ul>
+                           <li>3D 칸</li>
+                           <li>못정했어유 </li>
+                       </ul>
+                   </div>
                    <div class="p_outtro">
                    </div>
                </div>
@@ -335,7 +353,28 @@
 }
         
         
-
+        
+        //포트폴리오 - 선택한 메뉴에 on붙이는 기능
+        
+        var menuBtn = document.querySelector('.p_menu');
+        var menuBox = document.querySelectorAll('.p_menu li')
+        var listBox = document.querySelectorAll('.p_list ul');
+        
+        menuBtn.addEventListener('click',function(e){
+            e.preventDefault();
+            
+            for(let i=0; i<menuBox.length; i++){
+                menuBox[i].classList.remove('on');
+                listBox[i].classList.remove('on');
+                
+                menuBox[i].array = i;
+            }
+            var clicked = e.target.parentElement;
+            clicked.classList.add('on');
+            listBox[clicked.array].classList.add('on');
+            
+        })
+        
         
     </script>
 </body>
