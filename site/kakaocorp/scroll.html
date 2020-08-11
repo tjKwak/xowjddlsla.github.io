@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+<meta charset="utf-8" />
+<title>이벤트</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+* {margin:0; padding:0}
+li {list-style: none;}
+aside {height:80px; background-color: aqua; text-align:center; line-height: 80px;}
+header {position: static; background-color: gray; text-align: center; }
+header.on {
+    position: fixed; 
+    top:0; left:0; right:0; transition: top 0.5s ease;}
+header.on.hide {top:-80px;}
+section {min-height: 100vh;}
+section.num1 {background-color:lime; font-size: 40px; text-align: center;}
+section.num2 {background-color:yellow; padding-top:1px}
+section.num2 > p {margin-top:200px; opacity: 0; transition: all 0.5s ease;}
+section.num2 > p.on {text-align:center; opacity: 1; font-size: 100px; transition: all 0.5s ease;}
+section.num3 {background-color:pink; transition: all 0.5s ease;}
+section.num3.on {background-color:green}
+section.num3 > div {width:100px; height:100px; opacity: 0; background-color: black; transition: all 0.5s ease 1s;}
+section.num3.on > div {opacity: 1; background-color: red;}
+section.num4 {background-color:blue}
+header nav {
+    border:1px solid blue;
+    display: inline-block;
+}
+header nav > a {border:1px solid red}
+body {border:10px solid black}
+
+/* 메뉴 */
+* {margin:0; padding: 0;}
+li {list-style: none}
+ul#photo_list {
+	border:2px solid lime; 
+	display: inline-block; 
+	padding: 10px;
+}
+ul#photo_list > li {
+	border:1px solid orange;  
+	float:left; 
+	padding: 10px; 
+	position: relative;
+}
+ul#photo_list > li > a {
+	border:1px solid black;
+	padding: 10px;
+}
+ul#photo_list ul {
+	display: none;
+	background-color: yellow; 
+	position: absolute; 
+	top:40px; 
+	left:0; 
+	width: 100px;
+	padding: 10px;
+	z-index: 100;
+	border:1px solid lime;
+}
+ul#photo_list ul.on {
+	display: block
+}
+ul#photo_list ul > li {
+	border:1px solid orange;
+	padding: 5px;
+}
+ul#photo_list ul > li > a {
+	text-decoration: none;
+	border:1px solid black;
+}
+.grand {
+    width:50%; 
+    height: 300px; 
+    background-color: yellow;
+}
+.mother {
+    width: 73.943662%; /* 420 / 568 */
+    height: 200px; 
+    background-color: red; 
+    margin:0 auto
+}
+.mother > .son {
+    width: 74.285714%; /* 312 / 420 */
+    height: 100px; 
+    background-color: blue; 
+    margin:0 auto;
+}
+
+.col4 {
+    width:80%; 
+    margin:0 auto
+}
+.col4 > ul {overflow: hidden;}
+.col4 > ul > li {
+    float:left; 
+    width:23.125%; /* 185 / 800 */
+    height: 200px; 
+    background-color: black;
+}
+.col4 > ul > li + li {margin-left:2.5% /* 20 / 800 */}
+
+.fix_col4 {border:1px solid blue; width:80%; margin:0 auto}
+.fix_col4 > ul {
+    overflow: hidden; 
+    width:calc(100% + 20px); 
+    background-color: yellow;
+    margin-left:-10px;
+}
+.fix_col4 > ul > li {
+    height:200px; 
+    border:1px solid red;
+    width:25%;
+    padding:0 10px;
+    float:left;
+    box-sizing: border-box;
+}
+.fix_col4 > ul > li > img {
+    width:100%;
+}
+.num1 .bx-wrapper {border:none}
+.num1 .bx-wrapper .bx-controls-direction a {width:40px; height:100px; border:1px solid red}
+.num1 .bx-wrapper .bx-prev {
+    background:url('images/')
+}
+
+/* 420이하 */
+@media screen and (max-width:420px) {
+    /* body {border:10px solid yellow;} */
+    .fix_col4 > ul > li {width:50%}
+    header nav {display: block;}
+    ul#photo_list {display: block;}
+    ul#photo_list ul {
+        display:block; 
+        overflow:hidden; 
+        position: static; 
+        width:auto; 
+        max-height:0; 
+        padding:0; 
+        transition: all 0.3s linear;
+    } 
+    ul#photo_list ul.on {max-height: 200px; }
+    ul#photo_list > li {float:none; padding:0}
+    ul#photo_list > li > a {display: block;}
+}
+/* 421이상 768이하 */
+@media screen and (min-width:421px) and (max-width: 768px) {
+    body {border:10px solid red;}
+    .a {display: none;}
+    .col4 > ul > li {width: 30%;}
+    .fix_col4 > ul > li {width:33.333333%}
+}
+/* 769이이상 */
+@media screen and (min-width:769px) {
+    body {border:10px solid blue;}
+    .b {display: none;}
+}
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+<script>
+
+$(document).ready( function(){
+    var liElems = document.querySelectorAll('.e_slider > li')
+    var target = document.querySelector('header')
+    console.log(liElems);
+    
+    $('.e_slider').bxSlider({
+        onSlideBefore: function(){
+            var num = this.getCurrentSlide();
+            console.log(num);
+            setBg(num)
+        });
+
+    function setBg(eulsoo) {
+        target.style.backgroundColor = liElems[eulsoo].className
+    }
+} );
+
+</script>
+</head>
+
+<body>
+<aside>광고</aside>
+<header class="">
+    <nav>
+        <ul id="photo_list">
+            <li>
+                <a href="">건물</a>
+                <ul class="">
+                    <li><a href="">남산타워</a></li>
+                    <li><a href="">63빌딩</a></li>
+                    <li><a href="">63빌딩</a></li>
+                    <li><a href="">63빌딩</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="">커피</a>
+                <ul>
+                    <li><a href="">아메리카노</a></li>
+                    <li><a href="">카페라테</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="">불꽃놀이</a>
+                <ul>
+                    <li><a href="">한강축제</a></li>
+                    <li><a href="">금강축제</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="" onclick="  ">장미</a>
+                <!-- <ul>
+                    <li><a href="">백장미</a></li>
+                    <li><a href="">흑장미</a></li>
+                </ul> -->
+            </li>
+        </ul>
+    </nav>
+</header>
+<section class="num1">
+
+    <ul class="e_slider">
+        <li class="white"><img src="http://placehold.it/800x300"/></li>
+        <li class="black"><img src="http://placehold.it/800x300"/></li>
+        <li class="white"><img src="http://placehold.it/800x300"/></li>
+        <li class="black"><img src="http://placehold.it/800x300"/></li>
+        <li class="white"><img src="http://placehold.it/800x300"/></li>
+        <li class="black"><img src="http://placehold.it/800x300"/></li>
+        
+    </ul>
+
+
+
+
+    <div class="a">A</div>
+    <div class="b">B</div>
+    <div class="grand">
+        <div class="mother">
+            <div class="son"></div>
+        </div>
+    </div>
+
+    <div class="col4">
+        <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+    <div class="fix_col4">
+        <ul>
+            <li><img src="http://placehold.it/100x100"></li>
+            <li><img src="http://placehold.it/100x100"></li>
+            <li><img src="http://placehold.it/100x100"></li>
+            <li><img src="http://placehold.it/100x100"></li>
+        </ul>
+    </div>
+    
+</section>
+<section class="num2"><p>이제 도착!</p></section>
+<section class="num3"><div></div></section>
+<section class="num4"></section>
+</body>
+
+<script>
+// 광고를 지날때 헤더메뉴 스티키하기 (scroll)
+// num3에 왔을 때 등장하는 네모 (scroll)
+// num4에 왔을 때 변하는 배경색과 등장하는 글자들(scroll)
+// 창이 420이하로 줄을 때 스마트폰 메뉴 - 클릭 (resize , load)
+// 창이 421~768 일때 패드 메뉴 - 클릭 (resize , load)
+// 창이 769~ 일때 데스크톱 메뉴 - 호버 (resize , load)
+// 창이 420이하로 줄을 때 스마트폰 메뉴 css 변화, 배치 변화 (@media)
+// 창이 421~768 일때 패드 메뉴 css 변화, 배치 변화 (@media)
+// 창이 769~ 일때 데스크톱 메뉴 css 변화, 배치 변화 (@media)
+
+window.addEventListener('scroll', scrollWork);
+window.addEventListener('resize', resizeWork);
+window.addEventListener('load', resizeWork);
+
+const htmlElem = document.querySelector('html');
+const headerElem = document.querySelector('header');
+const yellowPelem = document.querySelector('.num2 > p');
+const pinkElem = document.querySelector('.num3');
+const aInfo = document.querySelector('.a');
+const bInfo = document.querySelector('.b');
+const menuBtns = document.querySelectorAll('#photo_list > li');
+
+function mobileMenu(ev) {
+    ev.preventDefault();
+    const targetUl = this.querySelector('ul')
+    if (targetUl === null) return; // 만약 서브메뉴없으면 없던걸로
+    if (targetUl.className === 'on') {
+        targetUl.className = '';
+    } else  {
+        targetUl.className = 'on';
+    }
+}
+function deskMenuEnter() {
+    if ( !this.querySelector('ul') ) return;
+    this.querySelector('ul').className = 'on';
+}
+function deskMenuLeave() {
+    if (this.querySelector('ul') === null) {
+        return;
+    }
+    this.querySelector('ul').className = '';
+}
+function resizeWork() {
+    if (window.innerWidth < 1000) {
+        for (let i = 0; i < menuBtns.length; i++) {
+            menuBtns[i].removeEventListener('mouseenter', deskMenuEnter);
+            menuBtns[i].removeEventListener('mouseleave', deskMenuLeave);
+            menuBtns[i].addEventListener('click', mobileMenu);
+        }
+    } else  {
+        for (let i = 0; i < menuBtns.length; i++) {
+            menuBtns[i].removeEventListener('click', mobileMenu)
+            menuBtns[i].addEventListener('mouseenter', deskMenuEnter);
+            menuBtns[i].addEventListener('mouseleave', deskMenuLeave);
+        }
+    }
+}
+var old = 0;
+function scrollWork() {
+    if (htmlElem.scrollTop <= 80) {
+        headerElem.classList.remove('on');
+    } else if (htmlElem.scrollTop > 80 && htmlElem.scrollTop < 140) {
+        headerElem.classList.add('on');
+    } else if (htmlElem.scrollTop > 500 && htmlElem.scrollTop < 600) {
+        console.log('500이상!')
+        yellowPelem.className = 'on';
+    } else if (htmlElem.scrollTop > 1200 && htmlElem.scrollTop < 1300) {
+        pinkElem.classList.add('on');
+    }
+
+    //
+    if (!headerElem.classList.contains('on')) return;
+
+    if (old < htmlElem.scrollTop && htmlElem.scrollTop > 300) { // 스크롤을 내렸으면
+        headerElem.classList.add('hide');
+    } else { // 스크롤을 올렸으면
+        headerElem.classList.remove('hide');
+    }
+
+    old = htmlElem.scrollTop;
+
+}
+
+</script>
+
+</html>
