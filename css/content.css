@@ -695,6 +695,10 @@ main{
     border-radius: 50px;
     border: 10px solid black;
     background-color: black;
+    background-image: url(../img/flower.gif);
+    background-size: 120%;
+    background-position: left bottom;
+    background-repeat: no-repeat;
     
     display: inline-block;
 }
@@ -705,17 +709,16 @@ main{
     grid-template-columns:1.5fr 2fr;
 }
 .a_profile{
-    border: 1px solid red;
+/*    border: 1px solid red;*/
     
 }
 .myPic{
     width: 220px;
     height: 130px;
-    background-image: url(../img/flower.gif);
     background-position: left center;
-    background-size: 300px;
     
-    background-color: white;
+    
+    background-color: rgba(255,255,255,0.2);
     border-radius: 20px;
     margin: 50px auto;
 }
@@ -726,7 +729,7 @@ main{
     font-weight: 200;
 }
 .a_work{
-    border: 1px solid blue;
+/*    border: 1px solid blue;*/
 }
 
 
