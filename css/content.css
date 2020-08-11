@@ -1,5 +1,9 @@
-#content{
+.whole-wrap{
+    z-index: -1;
+    width: 100%;
     position: relative;
+
+    animation: backcolor 6s infinite;
 }
 
 /*---------*/
@@ -12,13 +16,6 @@
 }
 */
 
-.intro{
-    z-index: -1;
-    width: 100%;
-    position: relative;
-    
-    animation: backcolor 6s infinite;
-}
 @keyframes backcolor {
   0% {
     background:#3495fe;
@@ -49,7 +46,37 @@
   }
 }
 
-/*-----stars animation---- */
+
+
+/*-----intro, stars animation---- */
+#content{
+    position: relative;
+}
+.intro{
+    z-index: -1;
+    width: 100%;
+    position: fixed;
+    top: 300px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    opacity: 0;
+    transition: all .5s;
+}
+.intro.on{
+    z-index: -1;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    opacity: 1;
+    transition: all .5s;
+}
+
 .stars{
     
 }
@@ -313,10 +340,6 @@
 
 
 .content{
-/*    background-color: #F5F6F9;*/
-    animation: backcolor 6s infinite;
-    padding-bottom: 400px;
-
     position: absolute;
     
     left: 0;
@@ -326,10 +349,6 @@
 }
 
 .content.on{
-    /*    background-color: #F5F6F9;*/
-    animation: backcolor 6s infinite;
-    padding-bottom: 400px;
-    
     position: absolute;
     
     left: 0;
@@ -460,7 +479,7 @@
 }
 
 .p_page li{
-    padding : 5% 0;
+    padding : 10% 0;
     border-bottom: 1px solid lightgray;
 }
 .p_page li:last-child{
@@ -651,32 +670,8 @@
 
 .p_outtro{
     width: 100%;
-    text-align: center;
-}
-.p_outtro li{
-    display: none;
-}
-.p_outtro li.on{
-    display: block;
-}
-.p_outtro li.on h4{
-    font-family: 'Noto Sans KR', sans-serif;
-    font-size: 1.5rem;
-    font-weight: 500;
-    margin-bottom: 30px;
-}
-.p_outtro li.on p{
-    font-family: 'Noto Sans KR', sans-serif;
-    font-size: 1rem;
-    font-weight: 300;
-    line-height: 1.2;
-    margin-bottom: 20px;
-}
-.p_outtro li.on p:last-child{
-    font-family: 'Noto Sans KR', sans-serif;
-    font-size: 1rem;
-    font-weight: 500;
-    margin-bottom: 10px;
+    height: 500px;
+    background-color: pink;
 }
 
 
