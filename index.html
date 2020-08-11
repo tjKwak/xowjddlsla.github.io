@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <title>Document</title>
     <link rel="stylesheet" href="css/header.css">
-    <link rel="stylesheet" href="css/aside.css">
     <link rel="stylesheet" href="css/content.css">
     
     <link rel="stylesheet" href="css/reset.css">
@@ -23,8 +22,7 @@
 <!--    <link rel="stylesheet" media="screen and (max-width:1200px)" href="css/main_min.css">-->
 </head>
 <body>
-  <div class="loading"></div>
-   <section class="whole-wrap">
+   <div class="whole-wrap">
        <header>
            <div class="header-wrap">
                <h1 class="logo"><a href="#">Taejeong's Website</a></h1>
@@ -40,16 +38,14 @@
            </div>
        </header>
        <aside>
-           <div class="contact-area">
-               <div class="contact-txt">
-                   <div class="contact-box">
-                       <a class="contact-icon" href="#">Contact</a>
-                       <h3 class="contact-hidden">xowjddlsla@naver.com</h3>
-                   </div>
-               </div>
-           </div>
+            <div class="contact-txt">
+                <div class="contact-box">
+                    <a class="contact-icon" href="#">Contact</a>
+                    <h3 class="contact-hidden">xowjddlsla@naver.com</h3>
+                </div>
+            </div>
        </aside>
-       <div id ="content">
+       <main>
            <section class="intro on">
                <div class="scroll-box">
                    <div class="scrollIcon">
@@ -75,19 +71,19 @@
                </div>
            </section>
            <section class="content">
-               <div class="c_title">
+               <div class="title">
                    <h3>"진실한 마음으로 포트폴리오를 만듭니다."</h3>
                    <h4>portfolio</h4>
                </div>
-               <div class="c_page">
-                   <ul class="p_title">
+               <div class="portfolio">
+                   <ul class="p_menu">
                        <li class="on"><a href="#">Web</a></li>
                        <li><a href="#">UI/UX</a></li>
                        <li><a href="#">interaction</a></li>
                        <li><a href="#">movie</a></li>
                        <li><a href="#">3D</a></li>
                    </ul>
-                   <ul class="p_page">
+                   <ul class="p_list">
                        <li>
                            <div class="page-info">
                                <h4>Clone Coding</h4>
@@ -175,18 +171,28 @@
                        </li>
                    </ul>
                    <div class="p_outtro">
-                   
                    </div>
                </div>
-           </section>
-           <section class="goodbye">
-               <div class="g-txt">
-                   <h3>이메일은 언제나 환영입니다:)</h3>
-                   <h2>xowjddlsla@naver.com</h2>
-                   <p>메일을 주시면 평일기준 2일 이내로 답장드리겠습니다.<br>감사합니다</p>
+               <div class="title">
+                   <h3>"진실한 마음으로 포트폴리오를 만듭니다."</h3>
+                   <h4>About Me</h4>
+               </div>
+               <div class="aboutMe">
+                  <div class="about-wrap">
+                      <div class="a_profile">
+                          <div class="myPic">
+                          </div>
+                          <div class="myWord">
+                              <p>안녕하세요. 웹디자이너 곽태정입니다.</p>
+                          </div>
+                      </div>
+                      <div class="a_work">
+                          
+                      </div>
+                  </div>
                </div>
            </section>
-       </div>
+       </main>
        <div class="stars">
            <div class="star s-1"></div>
            <div class="star s-2"></div>
@@ -195,20 +201,22 @@
            <div class="star s-5"></div>
            <div class="star s-6"></div>
        </div>
-   </section>
-   
+       <div class="goodbye">
+           <div class="g-txt">
+               <h3>이메일은 언제나 환영입니다:)</h3>
+               <h2>xowjddlsla@naver.com</h2>
+               <p>메일을 주시면 평일기준 2일 이내로 답장드리겠습니다.<br>감사합니다</p>
+           </div>
+       </div>
+   </div>
    
     <script>
-        
         const html = document.querySelector('html');
         var introSec = document.querySelector('.intro');
         var contSec = document.querySelector('.content');
         var byeSec = document.querySelector('.goodbye');
         var fullSec = document.querySelector('.whole-wrap');
-        var titleDiv = document.querySelector('.c_title'); //370px
-        var pageDiv = document.querySelector('.c_page'); //2278px
-        var contHeight = titleDiv.scrollHeight + pageDiv.scrollHeight;
-        var scrolled = 100; //스크롤 조금 내린영역이 흰색으로 보이기 싫어 intro의 height값을 스크롤양 만큼 늘림\
+        var scrolled = 100; //스크롤 조금 내린영역이 흰색으로 보이기 싫어 intro의 height값을 스크롤양 만큼 늘림
         
         
         //로드시 intro&footer의 height값 자동생성
@@ -216,7 +224,7 @@
             introSec.style.height = window.innerHeight + scrolled + 'px';
             contSec.style.top = introSec.style.height.split('px')[0]*1 - scrolled + 'px';
             byeSec.style.height = window.innerHeight + 'px';
-            fullSec.style.height = introSec.style.height.split('px')[0]*1 + contHeight + 'px';
+            fullSec.style.height = contSec.scrollHeight + scrolled + 'px';
         });
         
         
@@ -225,7 +233,7 @@
             introSec.style.height = window.innerHeight + scrolled + 'px';
             contSec.style.top = introSec.style.height.split('px')[0]*1 - scrolled + 'px';
             byeSec.style.height = window.innerHeight + 'px';
-            fullSec.style.height = introSec.style.height.split('px')[0]*1 + contHeight + 'px';
+            fullSec.style.height = contSec.scrollHeight + scrolled + 'px';
         });
         
         
@@ -249,20 +257,22 @@
             }
             
             //푸터쪽으로 스크롤 내렸을때
-            if( html.scrollTop > contHeight - 100 && old < html.scrollTop ){
+            if( html.scrollTop + introSec.scrollHeight > contSec.scrollHeight - 100 && old < html.scrollTop ){
                 byeSec.classList.add('on');
                 
                 console.log('푸터내린다');
             }
             //콘트쪽으로 스크롤 올렸을때
-            else if( html.scrollTop > contHeight - 100 && old > html.scrollTop ){
+            else if( html.scrollTop + introSec.scrollHeight > contSec.scrollHeight - 100 && old > html.scrollTop ){
                 byeSec.classList.remove('on');
                 
                 console.log('푸터올린다');
             }
             old = html.scrollTop;
-            console.log(html.scrollTop);
-            console.log(contHeight);
+            console.log('거리재기')
+            console.log(html.scrollTop);        //1864
+            console.log(contSec.scrollHeight);  //2715
+            console.log(introSec.scrollHeight); //1059
         }
         
         //컨택트 버튼
@@ -284,11 +294,9 @@
         var liIndex = 0;
         var liLength = $(".typing-txt>ul>li").length;
         var screen = document.querySelector('.phone-screen');
-
-        // 타이핑될 텍스트를 가져온다 
-        var typingTxt = $(".typing-txt>ul>li").eq(liIndex).text(); 
-        typingTxt=typingTxt.split(""); // 한글자씩 자른다. 
+        var typingTxt = $(".typing-txt>ul>li").eq(liIndex).text(); // 타이핑될 텍스트를 가져온다 
         
+        typingTxt=typingTxt.split(""); // 한글자씩 자른다.   
         if(typingBool==false){ // 타이핑이 진행되지 않았다면 
             typingBool=true; 
             //var tyInt = setInterval(typing,100);

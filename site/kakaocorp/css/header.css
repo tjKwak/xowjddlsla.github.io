@@ -6,11 +6,12 @@
 }
 
 header{
+    z-index: 100;
+    
     position: fixed;
     left: 0;
     right: 0;
     top: 0;
-    z-index: 999999999;
     transition: all .3s;
     /*바로 위 부모가 아니라 높이와 넓이값을 가진 애 영역 안에서 움직여야 하니까 얘가 렐러티브가 됨*/
 }
