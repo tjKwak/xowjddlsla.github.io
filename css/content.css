@@ -387,9 +387,6 @@ main{
 }
 .title{
     z-index: -1;
-    height: 170px;
-    width: 50%;
-    margin: 0 auto;
     text-align: center;
     padding-top: 200px;
     
@@ -414,7 +411,7 @@ main{
     z-index: 10; /*  content.on::after 버튼 때문에 z-index 설정함*/
     position: relative;
     
-    margin-top: -5px;
+    margin-top: -15px;
     border-radius: 30px;
     border: 10px solid black;
     padding: 50px 10%;
@@ -431,38 +428,36 @@ main{
 
 .p_menu{
     width: 100%;
-    height: 50px;
     margin : 30px 0;
     
     display: flex;
     text-align: center;
 }
 .p_menu li{
-    background-color: white;
-    border-radius: 50px;
     width: 100%;
-    box-shadow: 0px 0px 20px 5px rgba(0,0,0,0.2);
 }
-.p_menu li.on{
+.p_menu li.on a{
     background-color: #00b1ff;
     animation: backcolor 6s infinite;
-    
-    box-shadow: 0px 0px 20px 5px rgba(0,0,0,0.2);
 }
-
-
 .p_menu li+li{
     margin-left: 10px;
 }
 .p_menu li a{
-    padding: 15px 20px;
+    padding: 0 20px;
+    box-sizing: border-box;
+    background-color: white;
+    border-radius: 50px;
+    display: block;
+    width: 100%;
     
-    text-transform: uppercase;
     color: black;
     font-family: 'Noto Sans KR', sans-serif;
+    text-transform: uppercase;
     font-size: 1rem;
     line-height: 50px;
     font-weight: 800;
+    box-shadow: 0px 0px 20px 5px rgba(0,0,0,0.2);
 }
 
 
@@ -473,8 +468,8 @@ main{
 /*------------*/
 
 .p_list{
-    margin-bottom: 100px;
     text-align: left;
+    margin-bottom: 100px;
 }
 .p_list ul.on{
     display: block;
@@ -696,6 +691,7 @@ main{
 /*----레터 보내주세요----*/
 /*--------------------*/
 
+/*
 .aboutMe{
     margin: -5px 0 600px 0;
     width: 50%;
@@ -710,34 +706,130 @@ main{
     
     display: inline-block;
 }
+*/
+.aboutMe{
+    margin: -5px 0 600px 0;
+    width: 50%;
+    height: 500px;
+    padding: 50px 10%;
+    border-radius: 50px;
+    border: 10px solid black;
+    background-color: black;
+
+    display: inline-block;
+}
+.aboutMe *{
+    color: white;
+    text-align: left;
+}
 .about-wrap{
     width: 100%;
     height: 100%;
     display: inline-grid;
-    grid-template-columns:1.5fr 2fr;
+    grid-template-columns:1.5fr 1fr;
 }
+
+/* ---프로파일 (내사진, 이름 한마디)--- */
 .a_profile{
-/*    border: 1px solid red;*/
-    
+    padding-right: 20%;
+    box-sizing: border-box;
 }
+
 .myPic{
-    width: 220px;
-    height: 130px;
-    background-position: left center;
-    
-    
-    background-color: rgba(255,255,255,0.2);
+    width: 100%;
+    height: 70%;
+    background-image: url(../img/flosers.gif);
+    background-position: center;
+    background-size: cover;
+    border: 1px solid white;
     border-radius: 20px;
-    margin: 50px auto;
+    margin-bottom: 10px;
+    position: relative;
 }
-.myWord p{
-    color: white;
+.myName{
+    position: absolute;
+    bottom: 0;
+    padding: 5%;
+    box-sizing: border-box;
+    border-radius: 20px 20px 0 0;
+    background-color: rgba(0,0,0,0.5);
+}
+.myName p{
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 500;
+    line-height: 1.6;
+    margin-bottom: 5px;
+}
+.myName p:last-child{
     font-family: 'Noto Sans KR', sans-serif;
     font-size: 1rem;
     font-weight: 200;
+    line-height: 1.2;
+    color: lightgray;
 }
-.a_work{
-/*    border: 1px solid blue;*/
+.myWord img{
+    width: 50px;
+    filter: invert();
+    transform: scaleX(-1);
+}
+.myWord p{
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 500;
+    line-height: 1.6;
+}
+.myWord strong{
+    animation: fontcolor 6s infinite;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+
+/* ---인포(내 경력, 내 스킬)--- */
+
+.a_info{
+    
+}
+.a_info > ul + ul{
+    margin-top: 40px;
+}
+.a_info h3{
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+.a_info li{
+    line-height: 1.5;
+}
+.my_work{
+    position: relative;
+}
+.my_work::before{
+    content: '';
+    display: inline-block;
+    position: absolute;
+    left: -20px;
+    top: 0px;
+    width: 5px;
+    height: 40px;
+    background-color: white;
+}
+
+.my_skill{
+    position: relative;
+}
+.my_skill::before{
+    content: '';
+    display: inline-block;
+    position: absolute;
+    left: -20px;
+    top: 0px;
+    width: 5px;
+    height: 40px;
+    background-color: white;
 }
 
 

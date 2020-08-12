@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Taejeong's Portfolio</title>
+    <link rel="shortcut icon" type="image⁄x-icon" href="img/xowjddlsla_face.jpg">
+    
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/content.css">
     
@@ -20,6 +22,146 @@
     <!--미디어쿼리-->
     <meta name="viewport" content="width=device-width, initial-scale=1">
 <!--    <link rel="stylesheet" media="screen and (max-width:1200px)" href="css/main_min.css">-->
+    <style>
+        /* 420이하 */
+        @media screen and (max-width:420px) {
+            header{
+                display: none;
+            }
+            aside{
+                display: none;
+            }
+            .title h3{
+                font-size: 1.5rem;
+                font-weight: 300;
+                margin-bottom: 10px;
+            }
+            .title h4{
+                font-size: 3rem;
+                font-weight: 600;
+                line-height: 1.4;
+            }
+            .p_menu{
+                display: block;
+            }
+            .p_menu li{
+                display: block;
+                border-radius: 10px;
+            }
+            .p_menu li+li{
+                margin-left: 0px;
+                margin-top: 10px;
+            }
+            
+            .portfolio{
+                width: 100%;
+            }
+            .p_list li{
+                height: 400px;
+            }
+            .p_list .page-pic{
+                float: none;
+                display: block;
+                position: relative;
+                width: 100%;
+                height: 60%;
+                margin-bottom: 15px;
+            }
+            .p_list .page-info{
+                float: none;
+                position: relative;
+                display: block;
+                width: 100%;
+                height: 40%;
+            }
+            .p_list .page-info::before{
+                content: '';
+                display: inline-block;
+                position: absolute;
+                left: -20px;
+                top: 20px;
+                width: 5px;
+                height: 60px;
+                background-color: black;
+            }
+            .p_list .page-info p:nth-of-type(3){
+                font-family: 'Noto Sans KR', sans-serif;
+                font-size: 0.7rem;
+                color: black;
+                line-height: 1.5;
+                position: absolute;
+                bottom: 0;
+                right: 0;
+            }
+
+            
+        }
+        /* 421이상 768이하 */
+        @media screen and (min-width:421px) and (max-width: 1100px) {
+            
+            .title h4{
+                font-size: 4rem;
+                font-weight: 600;
+            }
+            .p_menu{
+                display: block;
+            }
+            .p_menu li{
+                display: block;
+                border-radius: 10px;
+            }
+            .p_menu li+li{
+                margin-left: 0px;
+                margin-top: 10px;
+            }
+
+            .portfolio{
+                padding: 30px 7%;
+            }
+            .p_list li{
+                height: 400px;
+            }
+            .p_list .page-pic{
+                float: none;
+                display: block;
+                position: relative;
+                width: 100%;
+                height: 60%;
+                margin-bottom: 15px;
+            }
+            .p_list .page-info{
+                float: none;
+                position: relative;
+                display: block;
+                width: 100%;
+                height: 40%;
+            }
+            .p_list .page-info::before{
+                content: '';
+                display: inline-block;
+                position: absolute;
+                left: -20px;
+                top: 20px;
+                width: 5px;
+                height: 60px;
+                background-color: black;
+            }
+            .p_list .page-info p:nth-of-type(3){
+                font-family: 'Noto Sans KR', sans-serif;
+                font-size: 0.7rem;
+                color: black;
+                line-height: 1.5;
+                position: absolute;
+                bottom: 0;
+                right: 0;
+            }
+            
+        }
+        /* 769이이상 */
+        @media screen and (min-width:769px) {
+            
+        }
+    </style>
 </head>
 <body>
    <div class="whole-wrap">
@@ -44,6 +186,17 @@
                     <h3 class="contact-hidden">xowjddlsla@naver.com</h3>
                 </div>
             </div>
+            <ul class="address-list">
+                <li class="kakao-box">
+                    <a href="https://open.kakao.com/o/sFAkd2pc"></a>
+                </li>
+                <li class="git-box">
+                    <a href="https://github.com/xowjddlsla/xowjddlsla.github.io"></a>
+                </li>
+                <li class="notefolio-box">
+                    <a href="https://notefolio.net/xowjddlsla"></a>
+                </li>
+            </ul>
        </aside>
        <main>
            <section class="intro on">
@@ -86,13 +239,7 @@
                    <div class="p_list">
                        <ul class="on">
                            <li>
-                               <div class="page-info">
-                                   <h4>Clone Coding</h4>
-                                   <h3><a href="./site/29cm_taejeongKwak/index.html">29CM</a>    </h3>
-                                   <p>React + Redux + Node.js(Koa) + MongoDB를 이용하여 로그인 기능이 구현된 간단한 SPA 팬사이트.</p>
-                                   <p>개발기간 : 2019.05.10 ~ 2020.07.01</p>
-                                   <p>#html #css #javascript</p>
-                               </div>
+
                                <div class="page-pic">
                                    <div class="portImg">
                                        <div class="img1">
@@ -101,8 +248,24 @@
                                        </div>
                                    </div>
                                </div>
+                               <div class="page-info">
+                                   <h4>Clone Coding</h4>
+                                   <h3><a href="./site/29cm_taejeongKwak/index.html">29CM</a>    </h3>
+                                   <p>React + Redux + Node.js(Koa) + MongoDB를 이용하여 로그인 기능이 구현된 간단한 SPA 팬사이트.</p>
+                                   <p>개발기간 : 2019.05.10 ~ 2020.07.01</p>
+                                   <p>#html #css #javascript</p>
+                               </div>
                            </li>
                            <li>
+
+                               <div class="page-pic">
+                                   <div class="portImg">
+                                       <div class="img2">
+                                           <a class="more" href="./site/kakaoBank/main.html">
+                                           </a>
+                                       </div>
+                                   </div>
+                               </div>
                            <div class="page-info">
                                <h4>Clone Coding</h4>
                                <a href="./site/kakaoBank/main.html"><h3>카카오 뱅크</h3></a>
@@ -110,16 +273,17 @@
                                <p>개발기간 : 2019.05.10 ~ 2020.07.01</p>
                                <p>#html #css #javascript</p>
                            </div>
-                           <div class="page-pic">
-                               <div class="portImg">
-                                   <div class="img2">
-                                       <a class="more" href="./site/kakaoBank/main.html">
-                                       </a>
-                                   </div>
-                               </div>
-                           </div>
                        </li>
                            <li>
+
+                               <div class="page-pic">
+                                   <div class="portImg">
+                                       <div class="img3">
+                                           <a class="more" href="./site/kakaocorp/main.html">
+                                           </a>
+                                       </div>
+                                   </div>
+                               </div>
                            <div class="page-info">
                                <h4>Clone Coding</h4>
                                <a href="./site/kakaocorp/main.html"><h3>카카오 Corp</h3></a>
@@ -127,16 +291,16 @@
                                <p>개발기간 : 2019.05.10 ~ 2020.07.01</p>
                                <p>#html #css #javascript</p>
                            </div>
-                           <div class="page-pic">
-                               <div class="portImg">
-                                   <div class="img3">
-                                       <a class="more" href="./site/kakaocorp/main.html">
-                                       </a>
-                                   </div>
-                               </div>
-                           </div>
                        </li>
                            <li>
+                                <div class="page-pic">
+                                   <div class="portImg">
+                                       <div class="img4">
+                                           <a class="more" href="./site/naver/index.html">
+                                           </a>
+                                       </div>
+                                   </div>
+                               </div>
                            <div class="page-info">
                                <h4>Clone Coding</h4>
                                <a href="./site/naver/index.html"><h3>네이버 Corp</h3></a>
@@ -144,30 +308,22 @@
                                <p>개발기간 : 2019.05.10 ~ 2020.07.01</p>
                                <p>#html #css #javascript</p>
                            </div>
-                           <div class="page-pic">
-                               <div class="portImg">
-                                   <div class="img4">
-                                       <a class="more" href="./site/naver/index.html">
-                                       </a>
-                                   </div>
-                               </div>
-                           </div>
                        </li>
                            <li>
+                               <div class="page-pic">
+                                   <div class="portImg">
+                                       <div class="img5">
+                                           <a class="more" href="./site/ed_copy/ed.html">
+                                           </a>
+                                       </div>
+                                   </div>
+                               </div>
                            <div class="page-info">
                                <h4>Clone Coding</h4>
                                <a href="./site/ed_copy/ed.html"><h3>EARLY ADOPTER</h3></a>
                                <p>React + Redux + Node.js(Koa) + MongoDB를 이용하여 로그인 기능이 구현된 간단한 SPA 팬사이트.</p>
                                <p>개발기간 : 2019.05.10 ~ 2020.07.01</p>
                                <p>#html #css #javascript</p>
-                           </div>
-                           <div class="page-pic">
-                               <div class="portImg">
-                                   <div class="img5">
-                                       <a class="more" href="./site/ed_copy/ed.html">
-                                       </a>
-                                   </div>
-                               </div>
                            </div>
                        </li>
                        </ul>
@@ -192,20 +348,36 @@
                    </div>
                </div>
                <div class="title">
-                   <h3>"진실한 마음으로 포트폴리오를 만듭니다."</h3>
+                   <h3>"돈을 많이 벌고싶은 웹디자이너"</h3>
                    <h4>About Me</h4>
                </div>
                <div class="aboutMe">
                   <div class="about-wrap">
                       <div class="a_profile">
                           <div class="myPic">
+                              <div class="myName">
+                                  <p>곽태정 (1993.06.27)</p>
+                                  <p>한국예술종합학교 인터렉션 디자인과 - 2019.02.27</p>
+                              </div>
                           </div>
                           <div class="myWord">
-                              <p>안녕하세요. 클라이언트의 니즈를 구현해줄 수 있는 코딩이 가능한 웹디자이너 곽태정입니다.</p>
+                              <img src="img/quatation.png" alt="">
+                              <p>모든 디자인은 <br><strong>재밌게XD</strong> 계획될 때<br>그 가치가 커진다고 믿음으로 작업을 하고 있습니다.</p>
                           </div>
                       </div>
-                      <div class="a_work">
-                          
+                      <div class="a_info">
+                          <ul class="my_work">
+                              <h3>Works</h3>
+                              <li>이제 채워질 예정입니다.</li>
+                          </ul>
+                          <ul class="my_skill">
+                              <h3>Skills</h3>
+                              <li>포토샵, 일러스트, 인디자인</li>
+                              <li>에프터이펙트, 프리미어</li>
+                              <li>XD, Sketch, 프로토파이</li>
+                              <li>HTml, Css, Js, Jquery</li>
+                              <li>아두이노, 프로세싱</li>
+                          </ul>
                       </div>
                   </div>
                </div>
@@ -248,10 +420,12 @@
         
         //리사이즈시 intro&footer의 height값 구하기
         window.addEventListener('resize', function(){
+            if(html.scrollTop < 100){
             introSec.style.height = window.innerHeight + scrolled + 'px';
             contSec.style.top = introSec.style.height.split('px')[0]*1 - scrolled + 'px';
             byeSec.style.height = window.innerHeight + 'px';
             fullSec.style.height = contSec.scrollHeight + scrolled + 'px';
+            }
         });
         
         

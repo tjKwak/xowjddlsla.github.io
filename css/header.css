@@ -294,16 +294,47 @@ aside{
 
 
 
+/*---adress-list------*/
 
+.address-list{
+    position: absolute;
+    bottom: 10%;
+    right: 30%;
+    display: flex;
+}
 
-
-
-
-
-
-
-
-
-
+.address-list li{
+    width: 35px;
+    height: 35px;
+    border-radius: 20px;
+    background-color: #fff;
+    box-shadow: 0px 0px 20px 5px rgba(0,0,0,0.2);
+    text-align: center;
+    margin-left: 15px;
+    transition: all .1s;
+}
+.address-list a{
+    background-repeat: no-repeat;
+    background-size: 130px;
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+.kakao-box a{
+    background-image: url(../img/snsIcons.png);
+    background-position: -47px 6px;
+}
+.git-box a{
+    background-image: url(../img/snsIcons.png);
+    background-position: -97.5px 3px;
+}
+.notefolio-box a{
+    background-image: url(../img/snsIcons.png);
+    background-position: 6px 3px;
+}
+.address-list li:hover{
+    transform: scale(1.2);
+    transition: all .1s;
+}
 
 
