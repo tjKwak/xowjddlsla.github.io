@@ -61,6 +61,8 @@ header{
     flex-direction: column;
     justify-content: space-between;
     text-align: center;
+    
+    transition: all 1.5s;
 }
 .header-wrap .menu li{
     width: 80px;
@@ -128,6 +130,8 @@ header{
     background-color: #fff;
     box-shadow: 0px 0px 20px 5px rgba(0,0,0,0.2);
     text-align: center;
+    
+    transition: all 1.5s;
 }
 .update p{
     font-family: 'Noto Sans KR', sans-serif;
@@ -172,6 +176,8 @@ aside{
     transform: translateY(-50%);
     width: 80px;
     height: 80px;
+    
+    transition: all 1.5s;
 }
 .contact-txt::after{
     content: 'Contact';
@@ -301,6 +307,8 @@ aside{
     bottom: 10%;
     right: 30%;
     display: flex;
+    
+    transition: all 1.5s;
 }
 
 .address-list li{
@@ -310,8 +318,11 @@ aside{
     background-color: #fff;
     box-shadow: 0px 0px 20px 5px rgba(0,0,0,0.2);
     text-align: center;
-    margin-left: 15px;
+    
     transition: all .1s;
+}
+.address-list li+li{
+    margin-left: 15px;
 }
 .address-list a{
     background-repeat: no-repeat;
@@ -332,8 +343,33 @@ aside{
     background-image: url(../img/snsIcons.png);
     background-position: 6px 3px;
 }
-.address-list li:hover{
+.address-list span{
+    color: white;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    
+    position: absolute;
+    bottom: 50px;
+    left: 0;
+    right: 0;
+    
+    background-color: rgba(0,0,0,0.7);
+    box-shadow: 0px 0px 20px 5px rgba(0,0,0,0.2);
+    padding: 10px;
+    border-radius: 10px;
+    
+    transition: all .1s;
+    opacity: 0;
+}
+/* ---호버 이펙트------*/
+.address-list li:hover a{
     transform: scale(1.2);
+    transition: all .1s;
+}
+
+.address-list li:hover span{
+    opacity: 1;
     transition: all .1s;
 }
 
