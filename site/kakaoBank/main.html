@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="css/tool.css">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/font.css">
+    <link rel="stylesheet" href="../../css/warning.css">
     
     <!--page-->
     <link rel="stylesheet" href="css/header.css">
@@ -26,6 +27,22 @@
 </head>
 
 <body>
+    <div class="warning">
+        <div class="warning-box">
+            <div class="txt-box">
+                <p>알려드려요 :)</p>
+                <p><strong>본 홈페이지는 스터디를 위한 카피 페이지</strong> 입니다.<br>일체의 저작권은 저에게 귀속되어있지 않습니다.</p>
+                <p>* HTML5, CSS3 기반으로 제작되었습니다.<br><strong>IE 9 버전 이하</strong>에서는 일부 기능이 정상적으로 작동하지 않습니다.</p>
+                <div class="download-box">
+                    <p>크롬브라우저 다운로드 받기</p>
+                    <a href="https://www.google.com/chrome">https://www.google.com/chrome</a>
+                </div>
+            </div>
+            <div class="btn-box">
+                <a href="#">확인했습니다</a>
+            </div>
+        </div>
+    </div>
     <div id="header" style="background-color: white;">
         <div class="gnb-pc">
             <div class="fl">
@@ -415,16 +432,15 @@
         
     </footer>
     <script>
-        //load
-        window.addEventListener("load", loadWork)
-        function loadWork() {
-            const loader = document.querySelector(".loading");
-            loading.classList.add("hidden");
-            setTimeout(function(){
-                loader.classList.remove("hidden");
-            }, 5000)
-        };
-        
+        //로드시 warningbox 팝업
+        window.addEventListener('load', function(){
+            var warningBox = document.querySelector('.warning');
+            var warningBtn = warningBox.querySelector('.btn-box');
+
+            warningBtn.addEventListener('click', function(){
+                warningBox.classList.add('off');
+            })
+        })
     </script>
 </body></html>
 

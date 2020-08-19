@@ -33,12 +33,15 @@
             aside{
                 left: 90%;
             }
-            .header-wrap .menu{
-                transform: scale(0.8);
-                top: 30%;
+            .header-pc{
+                display: none;
             }
-            .header-wrap .logo a{
-                border: 1px solid black;
+            .header-mobile{
+                display: block;
+            }
+            .header-mobile .logo a{
+                margin-top: 10px;
+                margin-left: 5px;
                 display: block;
                 background-image: url(img/xowjddlsla.png);
                 background-size: cover;
@@ -47,25 +50,172 @@
 
                 text-indent: -999999px;
             }
-            .header-wrap>p{
-                font-size: 0rem;
-            }
-            .header-wrap .update{
-                bottom: 5%;
-            }
-            aside .contact-txt{
-                transform: scale(0.8);
-                top: 43%;
-            }
-            aside .address-list{
-                bottom: 5%;
-            }
-            .hamburgerMenu{
+            .aside-mobile{
+                display: block;
+                margin-top: 10px;
                 width: 50px;
                 height: 50px;
-                border: 1px solid black;
+                position: absolute;
+                right: 10px;
+            }
+            .hamburger-btn{
+                width: 100%;
+                height: 100%;
+            }
+            .hamburger-icon{
+                width: 70%;
+                height: 10%;
+                background-color: black;
+                border-radius: 5px;
+                margin: 22px auto;
+                z-index: 999999;
+                position: relative;
+                transition: all .5s;
+            }
+            .hamburger-icon::before{
+                content: '';
+                display: block;
+                width: 100%;
+                height: 100%;
+                background-color: black;
+                border-radius: 5px;
+
+                position: absolute;
+                top: -200%;
+                transition: all .5s;
+            }
+            .hamburger-icon::after{
+                content: '';
+                display: block;
+                width: 100%;
+                height: 100%;
+                background-color: black;
+                border-radius: 5px;
+
+                position: absolute;
+                bottom: -200%;
+                transition: all .5s;
+            }
+            .hamburger-icon.on{
+                width: 70%;
+                height: 10%;
+                background-color: white;
+                border-radius: 5px;
+                margin: 22px auto;
+                z-index: 999999;
+                position: relative;
+                
+                transform: rotate(45deg);
+                transition: all .5s;
+            }
+            .hamburger-icon.on::before{
+                content: '';
+                display: block;
+                width: 100%;
+                height: 100%;
+                background-color: white;
+                border-radius: 5px;
+                position: absolute;
+                top: -200%;
+                
+                transform: rotate(90deg) translateX(10px);
+                transition: all .5s;
+            }
+            .hamburger-icon.on::after{
+                content: '';
+                display: block;
+                width: 100%;
+                height: 100%;
+                background-color: white;
+                border-radius: 5px;
+
+                position: absolute;
+                bottom: -200%;
+                opacity: 0;
+                transition: all .5s;
+            }
+            .hamburger-menu{
+                position: fixed;
+                top: 0;
+                left: 20%;
+                right: 0;
+                bottom: 0;
+                background-color: #101010;
+                box-shadow: 0px 0px 20px 5px rgba(0,0,0,0.2);
+                padding: 50px 20px;
             }
             
+            .mobile-menu li{
+                padding: 30px 0 10px 0;
+                border-bottom: 1px solid #2c2c2c;
+            }
+            .mobile-menu li a{
+                font-family: 'Noto Sans KR', sans-serif;
+                font-size: 1rem;
+                font-weight: 200;
+                letter-spacing: .5px;
+                color: white;
+            }
+            .mobile-menu i{
+                color: white;
+                margin-right: 10px;
+            }
+            
+            .mobile-info{
+                position: absolute;
+                bottom: 10%;
+                width: 85%;
+            }
+            .mobile-info .m-email{
+                width: 100%;
+                height: 50px;
+                background-color: #171717;
+                box-shadow: 0px 0px 20px 5px rgba(0,0,0,0.2);
+                border-radius: 100px;
+
+                margin-bottom: 20px;
+            }
+            .mobile-info .m-email h4{
+                color: white;
+                font-family: 'Noto Sans KR', sans-serif;
+                font-size: 1.1rem;
+                font-weight: 300;
+                letter-spacing: 1px;
+                text-align: center;
+                line-height: 48px;
+            }
+            .m-address-list{
+            }
+
+            .m-address-list li{
+                width: 100%;
+                height: 50px;
+                background-color: #171717;
+                box-shadow: 0px 0px 20px 5px rgba(0,0,0,0.2);
+                border-radius: 100px;
+
+                margin-bottom: 20px;
+            }
+            .m-address-list a{
+                width: 100%;
+                height: 100%;
+                display: block;
+                position: relative;
+                
+                text-align: center;
+                color: white;
+                font-family: 'Noto Sans KR', sans-serif;
+                font-size: 1rem;
+                font-weight: 300;
+                line-height: 50px;
+            }
+            .m-address-list a i{
+                color: white;
+                position: absolute;
+                left: 20px;
+                top: 15px;
+                font-size: 1.2rem;
+            }
             /* ---intro---- */
             .intro .scroll-box{
                 position: absolute;
@@ -190,11 +340,11 @@
             aside{
                 left: 90%;
             }
-            .header-wrap .menu{
+            .header-pc .menu{
                 transform: scale(0.8);
                 top: 30%;
             }
-            .header-wrap .update{
+            .header-pc .site-info{
                 bottom: 5%;
             }
             aside .contact-txt{
@@ -346,57 +496,85 @@
     </style>
 </head>
 <body>
-  <div class="warning">
-      <div class="warning-box">
-          <div class="txt-box">
-              <p>안녕하세요 :)</p>
-              <p><strong>본 홈페이지는 Chrome 브라우저에 최적화</strong> 되어 있으며,<br>FireFox, Microsoft Edge에서도 볼 수 있습니다.</p>
-              <p>* HTML5, CSS3 기반으로 제작되어 <strong>IE 9 버전 이하</strong>에서는 일부 기능이 정상적으로 작동하지 않습니다.</p>
-              <div class="download-box">
-                  <p>크롬브라우저 다운로드 받기</p>
-                  <a href="https://www.google.com/chrome">https://www.google.com/chrome</a>
-              </div>
-          </div>
-          <div class="btn-box">
-              <a href="#">확인했습니다</a>
-          </div>
-      </div>
+  <div class="loading">
+      
   </div>
    <div class="whole-wrap">
        <header>
-           <div class="header-wrap">
+           <div class="header-pc">
                <h1 class="logo"><a href="#">Taejeong's Website</a></h1>
                <p>Design is thinking made visual. </p>
-               <div class="hamburgerMenu">
                    <ul class="menu">
                        <li class="myIcon"><a href="#aboutMe">About Me</a></li>
                        <li class="portfolioIcon"><a href="#portfolio">Portfolio</a></li>
                        <li class="studyIcon"><a href="https://www.notion.so/55166c5992e84ef3b6d6058ccfb5c1ab?v=4a7bb4519d7b41e99ffb1b5c1bc600cb">Study</a></li>
                    </ul>
-                   <div class="update">
-                       <p>Last update - <strong>2020.08.09</strong></p>
+                   <div class="site-info">
+                    <div class="warn-box">
+                        <div class="close-button">x</div>
+                        <div class="warn">
+                            <img src="img/warning.png" alt="">
+                            <p>이 홈페이지는 <strong>IE 9 버전 이하</strong>에선<br>정상작동 하지 않습니다.</p>
+                        </div>
+                    </div>
+                    <div class="update-box">
+                        <p>Last update - <strong>2020.08.09</strong></p>
+                    </div>
                    </div>
-               </div>
+           </div>
+           <div class="header-mobile">
+               <h1 class="logo"><a href="#">Taejeong's Website</a></h1>
            </div>
        </header>
        <aside>
-            <div class="contact-txt">
-                <div class="contact-box">
-                    <a class="contact-icon" href="#">Contact</a>
-                    <h3 class="contact-hidden">xowjddlsla@naver.com</h3>
+           <div class="aside-pc">
+               <div class="contact-txt">
+                   <div class="contact-box">
+                       <a class="contact-icon" href="#">Contact</a>
+                       <h3>xowjddlsla@naver.com</h3>
+                   </div>
+               </div>
+               <ul class="address-list">
+                   <li class="kakao-box">
+                       <a href="https://open.kakao.com/o/sFAkd2pc"></a><span>Kakao Talk</span>
+                   </li>
+                   <li class="git-box">
+                       <a href="https://github.com/xowjddlsla/xowjddlsla.github.io"></a><span>Github</span>
+                   </li>
+                   <li class="notefolio-box">
+                       <a href="https://notefolio.net/xowjddlsla"></a><span>Notefolio</span>
+                   </li>
+               </ul>
+           </div>
+            <div class="aside-mobile">
+               <div class="hamburger-btn">
+                   <div class="hamburger-icon">
+                   </div>
+               </div>
+                <div class="hamburger-menu hidden">
+                   <ul class="mobile-menu">
+                       <li><a href="#aboutMe"><i class='far fa-meh-blank'></i>About Me</a></li>
+                       <li><a href="#portfolio"><i class='far fa-folder'></i>Portfolio</a></li>
+                       <li><a href="https://www.notion.so/55166c5992e84ef3b6d6058ccfb5c1ab?v=4a7bb4519d7b41e99ffb1b5c1bc600cb"><i class='fas fa-glasses'></i>Study</a></li>
+                    </ul>
+                    <div class="mobile-info">
+                        
+                        <ul class="m-address-list">
+                            <li class="m-email">
+                                <h4>xowjddlsla@naver.com</h4>
+                            </li>
+                            <li class="m-kakao-box">
+                                <a href="https://open.kakao.com/o/sFAkd2pc"><i class="fas fa-comments"></i>오픈카톡방</a>
+                            </li>
+                            <li class="m-git-box">
+                                <a href="https://github.com/xowjddlsla/xowjddlsla.github.io"><i class="fab fa-github"></i>깃허브</a>
+                            </li>
+                        </ul>
+                        <p>Design Portfolio by Taejeong</p>
+                        <p>last update 19.01.10</p>
+                    </div>
                 </div>
             </div>
-            <ul class="address-list">
-                <li class="kakao-box">
-                    <a href="https://open.kakao.com/o/sFAkd2pc"></a><span>Kakao Talk</span>
-                </li>
-                <li class="git-box">
-                    <a href="https://github.com/xowjddlsla/xowjddlsla.github.io"></a><span>Github</span>
-                </li>
-                <li class="notefolio-box">
-                    <a href="https://notefolio.net/xowjddlsla"></a><span>Notefolio</span>
-                </li>
-            </ul>
        </aside>
        <main>
            <section class="intro on">
@@ -600,20 +778,26 @@
        </div>
    </div>
     <script>
+        //load
+        window.addEventListener("load", loadWork)
+        function loadWork() {
+            const loader = document.querySelector(".loading");
+            setTimeout(function(){
+                loader.classList.add("hidden");
+            }, 5000)
+        };
+        
+        
+        
         const html = document.querySelector('html');
         var fullSec = document.querySelector('.whole-wrap');
         var introSec = fullSec.querySelector('.intro');
         var contSec = fullSec.querySelector('.content');
         var byeSec = fullSec.querySelector('.goodbye');
         
-        var warningBox = document.querySelector('.warning');
-        var warningBtn = warningBox.querySelector('.btn-box')
         var scrolled = 100; //스크롤 조금 내린영역이 흰색으로 보이기 싫어 intro의 height값을 스크롤양 만큼 늘림
         
-        //로드시 warningbox 팝업
-        warningBtn.addEventListener('click', function(){
-            warningBox.classList.add('off');
-        })
+        
         
         //로드시 intro&footer의 height값 자동생성
         window.addEventListener('load', function(){

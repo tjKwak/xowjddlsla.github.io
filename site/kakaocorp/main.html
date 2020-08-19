@@ -4,14 +4,13 @@
     <meta charset="UTF-8">
     <title>카카오홈페이지 카피</title>
 
-    <!--현재 페이지-->
+    <!--페이지-->
     <link rel="stylesheet" href="css/main.css">
-
-    <!--글로벌-->
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/tool.css">
     <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="../../css/warning.css">
 
     <!--폰트-->
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
@@ -64,8 +63,23 @@
 </head>
 
 <body>
-
-    <header class="">
+    <div class="warning">
+        <div class="warning-box">
+            <div class="txt-box">
+                <p>알려드려요 :)</p>
+                <p><strong>본 홈페이지는 스터디를 위한 카피 페이지</strong> 입니다.<br>일체의 저작권은 저에게 귀속되어있지 않습니다.</p>
+                <p>* HTML5, CSS3 기반으로 제작되었습니다.<br><strong>IE 9 버전 이하</strong>에서는 일부 기능이 정상적으로 작동하지 않습니다.</p>
+                <div class="download-box">
+                    <p>크롬브라우저 다운로드 받기</p>
+                    <a href="https://www.google.com/chrome">https://www.google.com/chrome</a>
+                </div>
+            </div>
+            <div class="btn-box">
+                <a href="#">확인했습니다</a>
+            </div>
+        </div>
+    </div>
+    <header>
         <div class="header-pc on">
             <div class="whole-wrap">
                 <div class="logo">
@@ -293,7 +307,18 @@
     <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     <script type="text/javascript" src="script/slick-1.8.1/slick/slick.min.js"></script>
 
-    <script type="text/javascript">
+    <script>
+        
+        //로드시 warningbox 팝업
+        window.addEventListener('load', function(){
+            var warningBox = document.querySelector('.warning');
+            var warningBtn = warningBox.querySelector('.btn-box');
+
+            warningBtn.addEventListener('click', function(){
+                warningBox.classList.add('off');
+            })
+        })
+        
         //메인배너 - 메인배너 슬라이더 옵션
         $('.slide-list').slick({
             //slidesToShow: 1,

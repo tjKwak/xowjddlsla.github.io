@@ -1,0 +1,99 @@
+/* --윈도우 로드시 경고팝업-----*/
+
+.warning.off{
+display: none;
+}
+.warning{
+z-index: 999999999;
+position: fixed;
+left: 0;
+right: 0;
+top: 0;
+bottom: 0;
+width: 100vw;
+height: 100vh;
+
+background-color: rgba(0,0,0,0.9);
+}
+.warning .warning-box{
+/*max-width: 40%;*/
+width : 420px;
+height: 50%;
+background-color: white;
+border-radius: 5px;
+text-align: center;
+overflow: hidden;
+
+position: absolute;
+left: 50%;
+top: 50%;
+transform: translateX(-50%) translateY(-50%);
+}
+
+.warning-box .txt-box{
+padding: 10%;
+}
+.warning-box .txt-box p{
+font-family: 'Noto Sans KR', sans-serif;
+font-size: 1rem;
+font-weight: 300;
+line-height: 1.5;
+
+}
+.warning-box .txt-box > p:nth-child(1){
+font-family: 'Noto Sans KR', sans-serif;
+font-size: 2rem;
+font-weight: 600;
+margin-bottom: 15px;
+}
+.warning-box .txt-box > p:nth-of-type(3){
+font-family: 'Noto Sans KR', sans-serif;
+font-size: 1rem;
+font-weight: 300;
+line-height: 1.5;
+color: red;
+margin-top: 15px;
+}
+.warning-box .txt-box strong{
+color: inherit;
+font-family: 'Noto Sans KR', sans-serif;
+font-size: 1rem;
+font-weight: 600;
+line-height: 1.5;
+margin-bottom: 15px;
+}
+.warning-box .download-box{
+background-color: lightgray;
+padding: 3%;
+margin-top: 15%;
+}
+.warning-box .download-box p{
+font-family: 'Noto Sans KR', sans-serif;
+font-size: 1rem;
+font-weight: 300;
+}
+.warning-box .download-box a{
+color: blue;
+}
+.warning-box .btn-box{
+background-color: orange;
+
+position: absolute;
+bottom: 0;
+left: 0;
+right: 0;
+transition: all .1s;
+}
+.warning-box .btn-box a{
+line-height: 60px;
+display: block;
+
+font-family: 'Noto Sans KR', sans-serif;
+font-size: 1.2rem;
+font-weight: 500;
+transition: all .3s;
+}
+.warning-box .btn-box:hover a{
+font-size: 1.5rem;
+transition: all .3s;
+}

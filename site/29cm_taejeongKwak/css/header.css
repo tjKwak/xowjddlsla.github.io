@@ -58,11 +58,12 @@
 /*---header - absolute -1 ----*/
 /*-------------*/
 .header-wrap.on{
-    z-index: 9999999999;
+    z-index: 99999;
     height: 200px;
     min-width: 960px;
     margin-bottom: 50px;
     position: relative;
+    background-color: #fff;
 }
 .logo-box.on{
     position: absolute;
@@ -85,7 +86,7 @@
     height: 100px;
     min-width: 960px;
     border-bottom: 1px solid lightgray;
-    z-index: 9999999999;
+    z-index: 99999;
     top: 0;
     left: 0;
     right: 0;

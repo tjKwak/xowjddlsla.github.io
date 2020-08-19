@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/font.css">
     <link rel="stylesheet" href="css/contents.css">
+    <link rel="stylesheet" href="../../css/warning.css">
 
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -50,6 +51,22 @@
 </head>
 
 <body>
+    <div class="warning">
+        <div class="warning-box">
+            <div class="txt-box">
+                <p>알려드려요 :)</p>
+                <p><strong>본 홈페이지는 스터디를 위한 카피 페이지</strong> 입니다.<br>일체의 저작권은 저에게 귀속되어있지 않습니다.</p>
+                <p>* HTML5, CSS3 기반으로 제작되었습니다.<br><strong>IE 9 버전 이하</strong>에서는 일부 기능이 정상적으로 작동하지 않습니다.</p>
+                <div class="download-box">
+                    <p>크롬브라우저 다운로드 받기</p>
+                    <a href="https://www.google.com/chrome">https://www.google.com/chrome</a>
+                </div>
+            </div>
+            <div class="btn-box">
+                <a href="#">확인했습니다</a>
+            </div>
+        </div>
+    </div>
     <div id="header">
         <div class="gnb-pc">
             <h1 class="hidden"><a href="#">얼리어답터</a></h1>
@@ -472,6 +489,15 @@
         </div>
     </footer>
     <script>
+        //로드시 warningbox 팝업
+        window.addEventListener('load', function(){
+            var warningBox = document.querySelector('.warning');
+            var warningBtn = warningBox.querySelector('.btn-box');
+
+            warningBtn.addEventListener('click', function(){
+                warningBox.classList.add('off');
+            })
+        })
     
         $('.banner-slider').bxSlider({
             auto : true

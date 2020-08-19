@@ -9,6 +9,7 @@
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link rel="stylesheet" type="text/css" href="css/main_content.css">
 	<link rel="stylesheet" type="text/css" href="css/footer.css">
+	<link rel="stylesheet" href="../../css/warning.css">
 
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
@@ -18,6 +19,22 @@
 
 </head>
 <body>
+    <div class="warning">
+        <div class="warning-box">
+            <div class="txt-box">
+                <p>알려드려요 :)</p>
+                <p><strong>본 홈페이지는 스터디를 위한 카피 페이지</strong> 입니다.<br>일체의 저작권은 저에게 귀속되어있지 않습니다.</p>
+                <p>* HTML5, CSS3 기반으로 제작되었습니다.<br><strong>IE 9 버전 이하</strong>에서는 일부 기능이 정상적으로 작동하지 않습니다.</p>
+                <div class="download-box">
+                    <p>크롬브라우저 다운로드 받기</p>
+                    <a href="https://www.google.com/chrome">https://www.google.com/chrome</a>
+                </div>
+            </div>
+            <div class="btn-box">
+                <a href="#">확인했습니다</a>
+            </div>
+        </div>
+    </div>
 	<div id="wrap">
 		<!-- header start -->
 		<header class="">
@@ -39,7 +56,8 @@
 								<li>
 									<ul class="nav_dropmenu_list">
 										<li class="depth_blank"><a class="dropmenu_item" href="#"><strong>주요관계사</strong></a></li>
-									</ul>
+                                    </ul>
+                                </li>
 								<li>
 									<ul class="nav_dropmenu_list">
 										<li class="depth_blank"><a class="dropmenu_item" href="#"><strong>제휴제안</strong></a></li>
@@ -53,7 +71,8 @@
 										<li class="depth_blank"><a class="dropmenu_item" href="http://localhost/bhiw/naver/contact.html"><strong>CONTACT</strong></a></li>
 									</ul>
 								</li>
-							</ul>
+                            </ul>
+                        </li>
 						<li class="main_menu"><a class="main_menu_item" class="main_menu_item" href="#"> 서비스</a>
 							<ul class="nav_dropmenu">
 								<li>
@@ -81,7 +100,8 @@
 										<li class="depth_blank"><a class="dropmenu_item" href="#" target="_bank"><strong>ALL SERVICE</strong></a></li>
 									</ul>
 								</li>
-							</ul>	
+                            </ul>
+                        </li>
 						<li class="main_menu"><a class="main_menu_item" href="http://localhost/bhiw/naver/projectFlower.html"> 가치실현</a>
 							<ul class="nav_dropmenu">
 								<li>
@@ -265,7 +285,7 @@
 									<li class="sitemap_menu_list"><a href=""><span class="depth">기업윤리 상담센터</span></a></li>
 								</ul>
 								<ul class="sitemap_menu">
-									<li class="sitemap_menu_list"><a href=""><strong><span>프라이버시 센터</span></strong></a></a></li>
+									<li class="sitemap_menu_list"><a href=""><strong><span>프라이버시 센터</span></strong></a></li>
 									<li class="sitemap_menu_list"><a href=""><span class="depth">네이버 리포트</span></a></li>
 									<li class="sitemap_menu_list"><a href=""><span class="depth">개인정보보호</span></a></li>
 									<li class="sitemap_menu_list"><a href=""><span class="depth">정보보호인증</span></a></li>
@@ -454,8 +474,8 @@
 
 						<button class="btn_prev" type="button"><span class="blind">이전</span></button>
 						<button class="btn_next" type="button"><span class="blind">다음</span></button><!-- button -->
+                        </a>
 						</div>
-					</a>
 				</div>
 			</div>	
 			<!-- slide end -->
@@ -681,6 +701,17 @@
 
 	</div>
     <script src="common.js"></script>
+    <script>
+        //로드시 warningbox 팝업
+        window.addEventListener('load', function(){
+            var warningBox = document.querySelector('.warning');
+            var warningBtn = warningBox.querySelector('.btn-box');
+
+            warningBtn.addEventListener('click', function(){
+                warningBox.classList.add('off');
+            })
+        })
+    </script>
 
 </body>
 </html>
