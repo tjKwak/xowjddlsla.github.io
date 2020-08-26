@@ -21,551 +21,45 @@
     
     <!--미디어쿼리-->
     <meta name="viewport" content="width=device-width, initial-scale=1">
-<!--    <link rel="stylesheet" media="screen and (max-width:1200px)" href="css/main_min.css">-->
+    <link rel="stylesheet" media="screen and (max-width:700px)" href="css/m_mobile.css">
+    <link rel="stylesheet" media="screen and (min-width:701px) and (max-width: 1100px)" href="css/m_tab.css">
     <style>
         /* 420이하 */
-        @media screen and (max-width:700px) {
-            
-            /* ---header,aside--- */
-            header{
-                right: 90%;
-            }
-            .header-pc{
-                display: none;
-            }
-            .header-mobile{
-                display: block;
-            }
-            .header-mobile .logo{
-                position: absolute;
-                left: 20px;
-                top: 20px;
-                
-                width: 50px;
-                height: 50px;
-                border-radius: 10px;
-                background-color: #fff;
-                box-shadow: 0px 0px 20px 5px rgba(0,0,0,0.2);
-
-                transition: all .3s;
-            }
-            .header-mobile .logo a{
-                display: block;
-                background-image: url(img/xowjddlsla.png);
-                background-size: cover;
-                width: 50px;
-                height: 50px;
-
-                text-indent: -999999px;
-            }
-            
-            aside{
-                left: 90%;
-            }
-            .aside-pc{
-                display: none;
-            }
-            .aside-mobile{
-                display: block;
-                position: absolute;
-                right: 20px;
-                top: 20px;
-                
-                width: 50px;
-                height: 50px;
-                border-radius: 10px;
-                background-color: #fff;
-                box-shadow: 0px 0px 20px 5px rgba(0,0,0,0.2);
-
-                transition: all .3s;
-            }
-            .hamburger-btn{
-                width: 100%;
-                height: 100%;
-            }
-            .hamburger-icon{
-                width: 70%;
-                height: 10%;
-                background-color: black;
-                border-radius: 5px;
-                margin: 22px auto;
-                z-index: 999999;
-                position: relative;
-                
-                transition: all .5s;
-            }
-            .hamburger-icon::before{
-                content: '';
-                display: block;
-                width: 100%;
-                height: 100%;
-                background-color: black;
-                border-radius: 5px;
-
-                position: absolute;
-                top: -200%;
-                transition: all .5s;
-            }
-            .hamburger-icon::after{
-                content: '';
-                display: block;
-                width: 100%;
-                height: 100%;
-                background-color: black;
-                border-radius: 5px;
-
-                position: absolute;
-                bottom: -200%;
-                transition: all .5s;
-            }
-            .hamburger-icon.on{
-                width: 70%;
-                height: 10%;
-                background-color: white;
-                border-radius: 5px;
-                margin: 22px auto;
-                z-index: 999999;
-                position: relative;
-                
-                transform: rotate(45deg);
-                transition: all .5s;
-            }
-            .hamburger-icon.on::before{
-                content: '';
-                display: block;
-                width: 100%;
-                height: 100%;
-                background-color: white;
-                border-radius: 5px;
-                position: absolute;
-                top: -200%;
-                
-                transform: rotate(90deg) translateX(10px);
-                transition: all .5s;
-            }
-            .hamburger-icon.on::after{
-                content: '';
-                display: block;
-                width: 100%;
-                height: 100%;
-                background-color: white;
-                border-radius: 5px;
-
-                position: absolute;
-                bottom: -200%;
-                opacity: 0;
-                transition: all .5s;
-            }
-            .hamburger-menu{
-                position: fixed;
-                top: 0;
-                left: 20%;
-                right: 0;
-                bottom: 0;
-                background-color: #101010;
-                box-shadow: 0px 0px 20px 5px rgba(0,0,0,0.2);
-                padding: 50px 30px;
-            }
-            
-            .mobile-menu li{
-                padding: 30px 0 10px 0;
-                border-bottom: 1px solid #2c2c2c;
-            }
-            .mobile-menu li a{
-                font-family: 'Noto Sans KR', sans-serif;
-                font-size: 1rem;
-                font-weight: 200;
-                letter-spacing: .5px;
-                color: white;
-            }
-            .mobile-menu i{
-                color: white;
-                margin-right: 15px;
-            }
-            
-            .mobile-info{
-                position: absolute;
-                bottom: 10%;
-                width: 85%;
-            }
-            
-            .m-address-list li{
-                width: 100%;
-                height: 50px;
-                background-color: #262626;
-                box-shadow: 0px 0px 20px 5px rgba(0,0,0,0.2);
-                border-radius: 100px;
-
-                margin-bottom: 20px;
-            }
-            .m-address-list a{
-                width: 100%;
-                height: 100%;
-                display: block;
-                position: relative;
-                
-                text-align: center;
-                color: white;
-                font-family: 'Noto Sans KR', sans-serif;
-                font-size: 1rem;
-                font-weight: 300;
-                line-height: 50px;
-            }
-            .m-address-list a i{
-                color: white;
-                position: absolute;
-                left: 20px;
-                top: 15px;
-                font-size: 1.2rem;
-            }
-            .mobile-info .m-email{
-                background-color: #262626;
-                border: 1px solid #404040;
-            }
-            .mobile-info .m-email h4{
-                color: white;
-                font-family: 'Noto Sans KR', sans-serif;
-                font-size: 1.1rem;
-                font-weight: 300;
-                letter-spacing: 1px;
-                text-align: center;
-                line-height: 48px;
-            }
-            .mobile-update{
-                position: absolute;
-                bottom: 3%;
-                width: 85%;
-            }
-            .mobile-update p{
-                color: white;
-                font-family: 'Noto Sans KR', sans-serif;
-                font-size: 1rem;
-                font-weight: 400;
-                line-height: 40px;
-            }
-            .mobile-update strong{
-                color: white;
-                font-family: 'Noto Sans KR', sans-serif;
-                font-size: 1.2rem;
-                margin: 0 5px;
-                font-weight: 900;
-                line-height: 40px;
-            }
-            
-            /* ---intro---- */
-            .intro .scroll-box{
-                position: absolute;
-                top: 30%;
-                left: 50%;
-                transform: translateX(-50%) translateY(-50%);
-            }
-            .intro .phone-box{
-                width: 90%;
-                height: 60%;
-            }
-            .intro .typing-box p{
-                font-family: 'Noto Sans KR', sans-serif;
-                font-size: 2rem;
-                font-weight: 600;
-                line-height: 1.5;
-            }
-            .title h3{
-                font-size: 1.2rem;
-                font-weight: 400;
-                margin-bottom: 0px;
-            }
-            .title h4{
-                font-size: 3.5rem;
-                font-weight: 600;
-                line-height: 1.4;
-            }
-            .p_menu{
-                display: block;
-            }
-            .p_menu li{
-                display: block;
-                border-radius: 10px;
-            }
-            .p_menu li+li{
-                margin-left: 0px;
-                margin-top: 10px;
-            }
-            
-            /* ---portfolio--- */
-            .portfolio{
-                width: 100%;
-                border: none;
-                box-sizing: border-box;
-            }
-            .p_list li{
-                height: 500px;
-            }
-            .p_list .page-pic{
-                float: none;
-                display: block;
-                position: relative;
-                width: 100%;
-                height: 50%;
-                margin-bottom: 15px;
-            }
-            .p_list .page-info{
-                float: none;
-                position: relative;
-                display: block;
-                width: 100%;
-                height: 40%;
-            }
-            .p_list .page-info::before{
-                content: '';
-                display: inline-block;
-                position: absolute;
-                left: -20px;
-                top: 20px;
-                width: 5px;
-                height: 60px;
-                background-color: black;
-            }
-            .p_list .page-info p:nth-of-type(3){
-                font-family: 'Noto Sans KR', sans-serif;
-                font-size: 0.7rem;
-                color: black;
-                line-height: 1.5;
-                position: absolute;
-                bottom: 0;
-                left: 0;
-            }
-            
-            /* ---aboutMe--- */
-            .aboutMe{
-                width: 100%;
-                box-sizing: border-box;
-                border-radius: 10px;
-            }
-            .a_profile{
-                display: block;
-                width: 100%;
-                margin-bottom: 20%;
-            }
-            .a_info{
-                display: block;
-                width: 100%;
-                padding: 0;
-            }
-            .myPic{
-                height: 150px;
-            }
-            .myName{
-                position: absolute;
-                top: 0;
-                bottom: 0;
-                left: 0;
-                right: 0;
-                padding: 5%;
-                background-color: rgba(0,0,0,0.5);
-            }
-
-            
-        }
+        /*@media screen and (max-width:700px) {
+        }*/
         /* 421이상 768이하 */
-        @media screen and (min-width:701px) and (max-width: 1100px) {
-            
-            /* ---header,aside--- */
-            .header-pc .logo a{
-                background-image: url(img/xowjddlsla.png);
-                width: 80px;
-                height: 80px;
-                transition: all .2s;
-            }
-            .header-pc .logo a::after{
-                margin-top: 60px;
-            }
-            .header-pc > p{
-                display: none;
-            }
-            header{
-                right: 90%;
-            }
-            aside{
-                left: 90%;
-            }
-            .header-pc .menu{
-                transform: scale(0.8);
-                top: 30%;
-            }
-            .header-pc .site-info{
-                bottom: 5%;
-            }
-            aside .contact-txt{
-                transform: scale(0.8);
-                top: 43%;
-            }
-            aside .address-list{
-                bottom: 5%;
-            }
-
-            /* ---intro---- */
-            .intro .scroll-box{
-                position: absolute;
-                top: 30%;
-                left: 50%;
-                transform: translateX(-50%) translateY(-50%);
-            }
-            .intro .phone-box{
-                width: 55%;
-                height: 60%;
-            }
-            .intro .typing-box p{
-                font-family: 'Noto Sans KR', sans-serif;
-                font-size: 2.5rem;
-                font-weight: 600;
-                line-height: 1.5;
-            }
-            .title h3{
-                font-size: 1.6rem;
-                font-weight: 400;
-                margin-bottom: 10px;
-            }
-            .title h4{
-                font-size: 5rem;
-                font-weight: 600;
-                line-height: 1.4;
-            }
-            .p_menu{
-                display: block;
-            }
-            .p_menu li{
-                display: block;
-                border-radius: 10px;
-            }
-            .p_menu li+li{
-                margin-left: 0px;
-                margin-top: 10px;
-            }
-
-            
-            /* ---tab menu btn--- */
-            .p_menu{
-                display: block;
-            }
-            .p_menu li{
-                display: block;
-                border-radius: 10px;
-            }
-            .p_menu li+li{
-                margin-left: 0px;
-                margin-top: 10px;
-            }
-            
-            
-            /* ---portfolio--- */
-            .portfolio{
-                padding: 50px 20%;
-                width: 100%;
-                border: none;
-                box-sizing: border-box;
-                margin-top: -25px;
-            }
-            .p_list li{
-                height: 450px;
-            }
-            .p_list .page-pic{
-                float: none;
-                display: block;
-                position: relative;
-                width: 100%;
-                height: 60%;
-                margin-bottom: 15px;
-            }
-            .p_list .page-info{
-                float: none;
-                position: relative;
-                display: block;
-                width: 100%;
-                height: 40%;
-                padding-top: 5px;
-            }
-            .p_list .page-info::before{
-                content: '';
-                display: inline-block;
-                position: absolute;
-                left: -20px;
-                top: 8px;
-                width: 5px;
-                height: 60px;
-                background-color: black;
-            }
-            .p_list .page-info p:nth-of-type(3){
-                font-family: 'Noto Sans KR', sans-serif;
-                font-size: 0.7rem;
-                color: black;
-                line-height: 1.5;
-                position: absolute;
-                bottom: 0;
-                right: 0;
-            }
-
-            /* ---aboutMe--- */
-            .aboutMe{
-                width: 100%;
-                box-sizing: border-box;
-                border-radius: 10px;
-                padding: 50px 20%;
-            }
-            .a_profile{
-                display: block;
-                width: 100%;
-                margin-bottom: 20%;
-            }
-            .a_info{
-                display: block;
-                width: 100%;
-                padding: 0;
-            }
-            .myPic{
-                height: 150px;
-            }
-            .myName{
-                position: absolute;
-                top: 0;
-                bottom: 0;
-                left: 0;
-                right: 0;
-                padding: 5%;
-                background-color: rgba(0,0,0,0.5);
-            }
-        }
-        /* 769이이상 */
-        @media screen and (min-width:769px) {
-            
-        }
+        /*@media screen and (min-width:701px) and (max-width: 1100px) { 
+        }*/
     </style>
 </head>
 <body>
   <div class="loading">
-      
+      <div><iframe src="https://giphy.com/embed/fwo0ajgmaJTVWIwmo0" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+      </div>
+      <p><a href="https://giphy.com/gifs/colors-fruit-vitamin-fwo0ajgmaJTVWIwmo0">via GIPHY</a></p>
   </div>
    <div class="whole-wrap">
        <header>
            <div class="header-pc">
                <h1 class="logo"><a href="#">Taejeong's Website</a></h1>
                <p>Design is thinking made visual. </p>
-                   <ul class="menu">
-                       <li class="myIcon"><a href="#aboutMe">About Me</a></li>
-                       <li class="portfolioIcon"><a href="#portfolio">Portfolio</a></li>
-                       <li class="studyIcon"><a href="https://www.notion.so/55166c5992e84ef3b6d6058ccfb5c1ab?v=4a7bb4519d7b41e99ffb1b5c1bc600cb">Study</a></li>
-                   </ul>
-                   <div class="site-info">
+               <ul class="menu">
+                    <li class="myIcon"><a href="#aboutMe">About Me</a></li>
+                    <li class="portfolioIcon"><a href="#portfolio">Portfolio</a></li>
+                    <li class="studyIcon"><a href="https://www.notion.so/55166c5992e84ef3b6d6058ccfb5c1ab?v=4a7bb4519d7b41e99ffb1b5c1bc600cb">Study</a></li>
+               </ul>
+               <div class="site-info">
                     <div class="warn-box">
-                        <div class="close-button">x</div>
+                        <button class="close-button"><i class="fas fa-times"></i>경고창 닫기</button>
                         <div class="warn">
-                            <img src="img/warning.png" alt="">
+                            <img src="img/warning.png" alt="warning">
                             <p>이 홈페이지는 <strong>IE 9 버전 이하</strong>에선<br>정상작동 하지 않습니다.</p>
                         </div>
                     </div>
                     <div class="update-box">
                         <p>Last update - <strong>2020.08.09</strong></p>
                     </div>
-                   </div>
+               </div>
            </div>
            <div class="header-mobile">
                <h1 class="logo"><a href="#">Taejeong's Website</a></h1>
@@ -823,15 +317,21 @@
        </div>
    </div>
     <script>
+        //워닝박스 닫기 기능
+        const warnBtn = document.querySelector('.close-button');
+        var warnBox = document.querySelector('.warn-box');
+        
+        warnBtn.addEventListener('click',function(){
+            warnBox.style.display = 'none';
+        })
+        
         //load
-        window.addEventListener("load", loadWork)
-        function loadWork() {
+        window.addEventListener("load", function(){
             const loader = document.querySelector(".loading");
             setTimeout(function(){
-                loader.classList.add("hidden");
+                loader.style.display = 'none';
             }, 5000)
-        };
-        
+        });
         
         
         const html = document.querySelector('html');
