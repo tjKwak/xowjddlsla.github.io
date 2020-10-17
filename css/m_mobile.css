@@ -316,9 +316,10 @@
             .a_profile{
                 display: block;
                 width: 100%;
-                margin-bottom: 20%;
+                margin-bottom: 15%;
             }
             .a_info{
+                margin-left: 20px;
                 display: block;
                 width: 100%;
                 padding: 0;
