@@ -375,7 +375,7 @@
     
     background-color: black;
     width: 100%;
-    max-height: 120%;
+    max-height: 100%;
     
     opacity: 1;
     transition: all .5s;
@@ -393,13 +393,13 @@
     height: 30%;
     text-align: center;
 }
-.goodbye.on .g-txt h3{
+.goodbye.on .g-txt h3:nth-of-type(1){
     color: white;
      font-family: 'Noto Sans KR', sans-serif;
     font-size: 1.5rem;
     font-weight: 500;
 }
-.goodbye.on .g-txt h2{
+.goodbye.on .g-txt h3:nth-of-type(2){
     color: white;
      font-family: 'Noto Sans KR', sans-serif;
     font-size: 1.6rem;
