@@ -85,7 +85,9 @@
                 margin-top: 10px;
             }
             
-            
+            .page-btn a{
+                width: 29%;
+            }
             /* ---portfolio--- */
             .portfolio{
                 padding: 50px 20%;
@@ -95,7 +97,7 @@
                 margin-top: -25px;
             }
             .p_list li{
-                height: 450px;
+                height: 550px;
             }
             .p_list .page-pic{
                 float: none;

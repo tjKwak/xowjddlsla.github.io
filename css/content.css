@@ -391,7 +391,7 @@ main{
     z-index: -1;
     text-align: center;
     padding-top: 200px;
-    
+    width: 100%;
     display: inline-block;
 }
 .title h3{
@@ -482,7 +482,7 @@ main{
 .p_list li{
     width: 100%;
 /* 높이는 미디어쿼리마다 바뀜   */
-    height: 250px;
+    height: 300px;
 }
 .p_list li::after {
     content:"";
@@ -496,63 +496,6 @@ main{
 }
 .p_list li:last-child{
     border-bottom: none;
-}
-
-/*-----------------*/
-/* ---- p_page ------ */
-/*---- page-info ------*/
-.p_list .page-info{
-    float: left;
-    position: relative;
-    width: 40%;
-    height: 100%;
-}
-.p_list .page-info::before{
-    content: '';
-    display: inline-block;
-    position: absolute;
-    left: -20px;
-    top: 20px;
-    width: 5px;
-    height: 60px;
-    background-color: black;
-}
-
-.p_list .page-info h4{
-    font-family: 'Noto Sans KR', sans-serif;
-    font-size: 1rem;
-    color: #00b1ff;
-    animation: fontcolor 6s infinite;
-    font-weight: 600;
-    margin-bottom: 15px;
-}
-.p_list .page-info h3{
-    font-family: 'Noto Sans KR', sans-serif;
-    font-size: 2rem;
-    color: black;
-    font-weight: 600;
-    margin-bottom: 15px;
-}
-.p_list .page-info p:nth-of-type(1){
-    font-family: 'Noto Sans KR', sans-serif;
-    font-size: 1rem;
-    color: black;
-    line-height: 1.2;
-    margin-bottom: 20px;
-}
-.p_list .page-info p:nth-of-type(2){
-    font-family: 'Noto Sans KR', sans-serif;
-    font-size: 1rem;
-    color: black;
-    line-height: 1.5;
-}
-.p_list .page-info p:nth-of-type(3){
-    font-family: 'Noto Sans KR', sans-serif;
-    font-size: 0.7rem;
-    color: black;
-    line-height: 1.5;
-    position: absolute;
-    bottom: 0;
 }
 
 
@@ -624,7 +567,6 @@ main{
     height: 100%;
 }
 
-
 /*-----------------*/
 /* 포트이미지에 호버시 */
 /*-----------------*/
@@ -673,6 +615,73 @@ main{
     font-stretch: expanded;
     font-weight: 500;
 }
+
+
+/*-----------------*/
+/* ---- p_page ------ */
+/*---- page-info ------*/
+.p_list .page-info{
+    float: left;
+    position: relative;
+    width: 40%;
+    height: 100%;
+}
+.p_list .page-info::before{
+    content: '';
+    display: inline-block;
+    position: absolute;
+    left: -20px;
+    top: 20px;
+    width: 5px;
+    height: 60px;
+    background-color: black;
+}
+
+.p_list .page-info h4{
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 1rem;
+    color: #00b1ff;
+    animation: fontcolor 6s infinite;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+.p_list .page-info h3{
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 2rem;
+    color: black;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+.p_list .page-info p{
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 1rem;
+    color: black;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+
+/* 페이지 버튼 */
+
+.page-btn{
+    width: 100%;
+    margin-top: 30px;
+}
+.page-btn a{
+    display: inline-block;
+
+    width: 40%;
+    padding: 10px 0;
+    text-align: center;
+    margin: 0 10px 10px 0;
+    border-radius: 10px;
+    background-color: lightgray;
+    
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 1rem;
+}
+
+
 
 
 /* 아웃트로 */
@@ -819,12 +828,16 @@ main{
     height: 40px;
     background-color: white;
 }
-.my_work li{
+.a_info li{
     margin-bottom: 5px;
+    display: flex;
 }
-.my_work span{
+.a_info h4{
     color: gray;
     margin-right: 20px;
+}
+.a_info p{
+    color: gray;
 }
 
 /*---------*/
