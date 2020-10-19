@@ -262,7 +262,12 @@
                 margin-left: 0px;
                 margin-top: 10px;
             }
-            
+
+            .page-btn a{
+                width: 28%;
+            }
+
+
             /* ---portfolio--- */
             .portfolio{
                 width: 100%;
