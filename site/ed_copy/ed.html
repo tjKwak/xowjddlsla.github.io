@@ -13,39 +13,43 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    
+
     <!--  bx슬라이드  -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
-    
+
     <style>
         /* 슬라이드 - 슬라이드 틀 */
-            .banner-pc .bx-wrapper {
-                box-shadow: none;
-                border: none;
-                width: 100%;
-                position: relative;
-            }
-            /* 슬라이드 - 버튼 */
-            .banner-pc .bx-controls-direction a{
-                display: none;
-            }
-            /* 슬라이드 - 페이지 원들 */
-            .banner-pc .bx-pager{
-                text-align: right;
-                right: 30px;
-                bottom: 30px;
-            }
-            .banner-pc .bx-wrapper .bx-pager.bx-default-pager a.active{
-                background: orange;
-            }
-            .banner-pc .bx-wrapper .bx-pager.bx-default-pager a{
-                background: gray;
-                width: 10px;
-                height: 10px;
-                border-radius: 100px;
-            }
+        .banner-pc .bx-wrapper {
+            box-shadow: none;
+            border: none;
+            width: 100%;
+            position: relative;
+        }
+
+        /* 슬라이드 - 버튼 */
+        .banner-pc .bx-controls-direction a {
+            display: none;
+        }
+
+        /* 슬라이드 - 페이지 원들 */
+        .banner-pc .bx-pager {
+            text-align: right;
+            right: 13px;
+            bottom: 18px;
+        }
+
+        .banner-pc .bx-wrapper .bx-pager.bx-default-pager a.active {
+            background: orange;
+        }
+
+        .banner-pc .bx-wrapper .bx-pager.bx-default-pager a {
+            background: #c1c1c1;
+            width: 10px;
+            height: 10px;
+            border-radius: 100px;
+        }
     </style>
 
 </head>
@@ -57,6 +61,10 @@
                 <p>알려드려요 :)</p>
                 <p><strong>본 홈페이지는 스터디를 위한 카피 페이지</strong> 입니다.<br>일체의 저작권은 저에게 귀속되어있지 않습니다.</p>
                 <p>* HTML5, CSS3 기반으로 제작되었습니다.<br><strong>IE 9 버전 이하</strong>에서는 일부 기능이 정상적으로 작동하지 않습니다.</p>
+                <div class="download-box">
+                    <p>크롬브라우저 다운로드 받기</p>
+                    <a href="https://www.google.com/chrome">https://www.google.com/chrome</a>
+                </div>
             </div>
             <div class="btn-box">
                 <a href="#">확인했습니다</a>
@@ -112,11 +120,97 @@
     <div id="contents">
         <div class="contents-wrap">
             <div class="banner-pc">
-              <ul class="banner-slider">
-                <li class="banner-list">
+                <ul class="banner-slider">
+                    <li class="banner-list">
                         <div class="img-box">
+                            <a href="#" class="banner-img b-img-1"></a>
+                        </div>
+                        <div class="txt-box">
+                            <h2 class="hidden">메인 배너</h2>
+                            <strong class="hidden">배너 본문</strong>
                             <a href="#">
-                                <div class="banner-img b-img-1"></div>
+                                <h4 class="bn-tit-txt">
+                                    접히고 돌아가고...폴더블폰,<br>한 때의 유행인가 아닌가
+                                </h4>
+                                <h5 class="bn-info-txt">
+                                    얼리어답터 뉴스에디터<br>10월 16, 2020
+                                </h5>
+                                <p class="bn-sub-txt">
+                                    기존 틀을 깨는 스마트폰 출시 소식이 점점 늘어나고 있다. 디스플레이가 반으로 접히는 '갤럭시 폴드', 힌지가 있는 접히는 화면의 '서피스 듀오' 그리고 바형태의 화면이 90도 회전하는 'LG 윙'은 자기네 디자인이 새로운 사용자 경험에 더 어울린다 주장한다. 커다란 카테고리로 나눠 보면 갤럭시 폴드와 LG윙으로 요약된다. ㅣ 갤럭시Z 폴드2...
+                                </p>
+                            </a>
+                            <strong class="hidden">본문 관련 해쉬태그</strong>
+                            <ul class="hashtags">
+                                <li class="hashtag"><a href="#news">#갤럭시Z 폴드2</a></li>
+                                <li class="hashtag"><a href="#samsung">#갤럭시폴드</a></li>
+                                <li class="hashtag"><a href="#smartphone">#마이크로소프트</a></li>
+                                <li class="hashtag"><a href="#tech">#서피스</a></li>
+                                <li class="hashtag"><a href="#tech">#서피스듀오</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="banner-list">
+                        <div class="img-box">
+                            <a href="#" class="banner-img b-img-2"></a>
+                        </div>
+                        <div class="txt-box">
+                            <h2 class="hidden">메인 배너</h2>
+                            <strong class="hidden">배너 본문</strong>
+                            <a href="#">
+                                <h4 class="bn-tit-txt">
+                                    방구석 1열의 완성, 홈 시네마 프로젝터
+                                </h4>
+                                <h5 class="bn-info-txt">
+                                    얼리어답터 뉴스에디터<br>10월 19, 2020
+                                </h5>
+                                <p class="bn-sub-txt">
+                                    코로나19 팬데믹 선언에 '집콕' 문화가 활발해졌다. 넷플릭스 같은 OTT(인터넷 스트리밍 서비스)가 대표적이다. 집에 있는 시간이 늘어난 소비자들의 선택을 받았다. 가입자는 급격히 늘었고, 매출도 상승했다. 국내서도 왓챠를 비롯한 웨이브, 티빙 등이 등장했고 점점 영토를 넓히고 있다. OTT 가입자의 폭발적 증가는 집에서도 영화관 못지않은 커다란...
+                                </p>
+                            </a>
+                            <strong class="hidden">본문 관련 해쉬태그</strong>
+                            <ul class="hashtags">
+                                <li class="hashtag"><a href="#news">#LG시네빔레이저4K</a></li>
+                                <li class="hashtag"><a href="#samsung">#더프리미어</a></li>
+                                <li class="hashtag"><a href="#smartphone">#삼성프로젝터</a></li>
+                                <li class="hashtag"><a href="#tech">#코로나19</a></li>
+                                <li class="hashtag"><a href="#tech">#프로젝터</a></li>
+                                <li class="hashtag"><a href="#tech">#홈시네마</a></li>
+                                <li class="hashtag"><a href="#tech">#홈시네마프로젝터</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="banner-list">
+                        <div class="img-box">
+                            <a href="#" class="banner-img b-img-3">
+                            </a>
+                        </div>
+                        <div class="txt-box">
+                            <h2 class="hidden">메인 배너</h2>
+                            <strong class="hidden">배너 본문</strong>
+                            <a href="#">
+                                <h4 class="bn-tit-txt">
+                                    "SF 영화처럼"...아우디 '디지털 헤드라이트'
+                                </h4>
+                                <h5 class="bn-info-txt">
+                                    얼리어답터 뉴스에디터<br>8월 4, 2020
+                                </h5>
+                                <p class="bn-sub-txt">
+                                    2021년형 아우디 e-트론, 스포트백에 적용되는 미래형 헤드라이트 '디지털 매트릭스 LED 헤더라이트(DML)'가 공개됐다. 뭔가 대단해 보인다. 헤드라이트 하나 당 130만 개 마이크로 미러가 내장돼 미세하게 움직이며 수집된 도로 정보를 알려준다. 조금 과장해 영상을 투영하고 감상할 수 있는 수준이다. 물론 흑백 화면이 되겠다. ...
+                                </p>
+                            </a>
+                            <strong class="hidden">본문 관련 해쉬태그</strong>
+                            <ul class="hashtags">
+                                <li class="hashtag"><a href="#news">#e트론스포트팩</a></li>
+                                <li class="hashtag"><a href="#samsung">#디지털매트릭스 LED헤드라이트</a></li>
+                                <li class="hashtag"><a href="#smartphone">#디지털헤드라이트</a></li>
+                                <li class="hashtag"><a href="#tech">#아우디</a></li>
+                                <li class="hashtag"><a href="#tech">#전기차</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="banner-list">
+                        <div class="img-box">
+                            <a href="#" class="banner-img b-img-4">
                             </a>
                         </div>
                         <div class="txt-box">
@@ -127,7 +221,7 @@
                                     갤럭시 Z 플립의 새로운 색상
                                 </h4>
                                 <h5 class="bn-info-txt">
-                                    김희정<br>5월 4, 2020
+                                    김희정<br>7월 4, 2020
                                 </h5>
                                 <p class="bn-sub-txt">
                                     삼성전자가 폴더블폰 갤럭시 Z 플립의 새로운 색상을 추가 출시할 예정이라고 하네요. 미러 퍼플(Mirror Purple), 미러 블랙(Mirror Black)에 이어서 이번에는 미러 골드(Mirror Gold)입니다.미러 골드 색상은 이미 해외 일부 국가에 한정해서 출시되었죠. 이제 국내에서도 미러 골드 색상을 만나볼 수 있겠네요...
@@ -142,10 +236,9 @@
                             </ul>
                         </div>
                     </li>
-                <li class="banner-list">
+                    <li class="banner-list">
                         <div class="img-box">
-                            <a href="#">
-                                <div class="banner-img b-img-1"></div>
+                            <a href="#" class="banner-img b-img-5">
                             </a>
                         </div>
                         <div class="txt-box">
@@ -153,112 +246,27 @@
                             <strong class="hidden">배너 본문</strong>
                             <a href="#">
                                 <h4 class="bn-tit-txt">
-                                    갤럭시 Z 플립의 새로운 색상
+                                    드리프트 마니아의 키덜트'나인봇 고카트 프로'
                                 </h4>
                                 <h5 class="bn-info-txt">
-                                    김희정<br>5월 4, 2020
+                                    얼리어답터 뉴스에디터<br>4월 4, 2020
                                 </h5>
                                 <p class="bn-sub-txt">
-                                    삼성전자가 폴더블폰 갤럭시 Z 플립의 새로운 색상을 추가 출시할 예정이라고 하네요. 미러 퍼플(Mirror Purple), 미러 블랙(Mirror Black)에 이어서 이번에는 미러 골드(Mirror Gold)입니다.미러 골드 색상은 이미 해외 일부 국가에 한정해서 출시되었죠. 이제 국내에서도 미러 골드 색상을 만나볼 수 있겠네요...
+                                    '나인봇 고카트 프로'는 영화 같은 드리프트 레이싱 영화에서 도로를 미끄러지며 달리는 '드리프트'를 하고 싶은 어른들을 위한 장난감이다. 샤오미 자회사 나인봇 '고카트'시리즈는 두 바퀴로 균형을 잡고 달리는 나인봇 미니가 카트에 결합되는 모듈 타입 모빌리티다. 국내서도 큰 관심을 받고 있다. 신제품은 지난 8월 공개된 슈퍼카 브랜드...
                                 </p>
                             </a>
                             <strong class="hidden">본문 관련 해쉬태그</strong>
                             <ul class="hashtags">
-                                <li class="hashtag"><a href="#news">#뉴스</a></li>
-                                <li class="hashtag"><a href="#samsung">#삼성</a></li>
-                                <li class="hashtag"><a href="#smartphone">#스마트폰/태블릿</a></li>
-                                <li class="hashtag"><a href="#tech">#테크</a></li>
+                                <li class="hashtag"><a href="#news">#나인봇</a></li>
+                                <li class="hashtag"><a href="#samsung">#나인봇고카트프로</a></li>
+                                <li class="hashtag"><a href="#smartphone">#드리프트</a></li>
+                                <li class="hashtag"><a href="#tech">#람보르기니</a></li>
+                                <li class="hashtag"><a href="#tech">#샤오미</a></li>
+                                <li class="hashtag"><a href="#tech">#키덜트</a></li>
                             </ul>
                         </div>
                     </li>
-                <li class="banner-list">
-                        <div class="img-box">
-                            <a href="#">
-                                <div class="banner-img b-img-1"></div>
-                            </a>
-                        </div>
-                        <div class="txt-box">
-                            <h2 class="hidden">메인 배너</h2>
-                            <strong class="hidden">배너 본문</strong>
-                            <a href="#">
-                                <h4 class="bn-tit-txt">
-                                    갤럭시 Z 플립의 새로운 색상
-                                </h4>
-                                <h5 class="bn-info-txt">
-                                    김희정<br>5월 4, 2020
-                                </h5>
-                                <p class="bn-sub-txt">
-                                    삼성전자가 폴더블폰 갤럭시 Z 플립의 새로운 색상을 추가 출시할 예정이라고 하네요. 미러 퍼플(Mirror Purple), 미러 블랙(Mirror Black)에 이어서 이번에는 미러 골드(Mirror Gold)입니다.미러 골드 색상은 이미 해외 일부 국가에 한정해서 출시되었죠. 이제 국내에서도 미러 골드 색상을 만나볼 수 있겠네요...
-                                </p>
-                            </a>
-                            <strong class="hidden">본문 관련 해쉬태그</strong>
-                            <ul class="hashtags">
-                                <li class="hashtag"><a href="#news">#뉴스</a></li>
-                                <li class="hashtag"><a href="#samsung">#삼성</a></li>
-                                <li class="hashtag"><a href="#smartphone">#스마트폰/태블릿</a></li>
-                                <li class="hashtag"><a href="#tech">#테크</a></li>
-                            </ul>
-                        </div>
-                    </li>
-                <li class="banner-list">
-                        <div class="img-box">
-                            <a href="#">
-                                <div class="banner-img b-img-1"></div>
-                            </a>
-                        </div>
-                        <div class="txt-box">
-                            <h2 class="hidden">메인 배너</h2>
-                            <strong class="hidden">배너 본문</strong>
-                            <a href="#">
-                                <h4 class="bn-tit-txt">
-                                    갤럭시 Z 플립의 새로운 색상
-                                </h4>
-                                <h5 class="bn-info-txt">
-                                    김희정<br>5월 4, 2020
-                                </h5>
-                                <p class="bn-sub-txt">
-                                    삼성전자가 폴더블폰 갤럭시 Z 플립의 새로운 색상을 추가 출시할 예정이라고 하네요. 미러 퍼플(Mirror Purple), 미러 블랙(Mirror Black)에 이어서 이번에는 미러 골드(Mirror Gold)입니다.미러 골드 색상은 이미 해외 일부 국가에 한정해서 출시되었죠. 이제 국내에서도 미러 골드 색상을 만나볼 수 있겠네요...
-                                </p>
-                            </a>
-                            <strong class="hidden">본문 관련 해쉬태그</strong>
-                            <ul class="hashtags">
-                                <li class="hashtag"><a href="#news">#뉴스</a></li>
-                                <li class="hashtag"><a href="#samsung">#삼성</a></li>
-                                <li class="hashtag"><a href="#smartphone">#스마트폰/태블릿</a></li>
-                                <li class="hashtag"><a href="#tech">#테크</a></li>
-                            </ul>
-                        </div>
-                    </li>
-                <li class="banner-list">
-                        <div class="img-box">
-                            <a href="#">
-                                <div class="banner-img b-img-1"></div>
-                            </a>
-                        </div>
-                        <div class="txt-box">
-                            <h2 class="hidden">메인 배너</h2>
-                            <strong class="hidden">배너 본문</strong>
-                            <a href="#">
-                                <h4 class="bn-tit-txt">
-                                    갤럭시 Z 플립의 새로운 색상
-                                </h4>
-                                <h5 class="bn-info-txt">
-                                    김희정<br>5월 4, 2020
-                                </h5>
-                                <p class="bn-sub-txt">
-                                    삼성전자가 폴더블폰 갤럭시 Z 플립의 새로운 색상을 추가 출시할 예정이라고 하네요. 미러 퍼플(Mirror Purple), 미러 블랙(Mirror Black)에 이어서 이번에는 미러 골드(Mirror Gold)입니다.미러 골드 색상은 이미 해외 일부 국가에 한정해서 출시되었죠. 이제 국내에서도 미러 골드 색상을 만나볼 수 있겠네요...
-                                </p>
-                            </a>
-                            <strong class="hidden">본문 관련 해쉬태그</strong>
-                            <ul class="hashtags">
-                                <li class="hashtag"><a href="#news">#뉴스</a></li>
-                                <li class="hashtag"><a href="#samsung">#삼성</a></li>
-                                <li class="hashtag"><a href="#smartphone">#스마트폰/태블릿</a></li>
-                                <li class="hashtag"><a href="#tech">#테크</a></li>
-                            </ul>
-                        </div>
-                    </li>
-              </ul>
+                </ul>
             </div>
             <div class="news-pc">
                 <div class="cont-title">
@@ -365,7 +373,8 @@
                         <h3 class="cont-tit-txt">REVIEW</h3>
                     </div>
                     <div class="fr">
-                        <a class="continue-txt" href="">Continue to the category<i style="margin-left: 10px;" class="fa fa-arrow-right"></i></a></div>
+                        <a class="continue-txt" href="">Continue to the category<i style="margin-left: 10px;" class="fa fa-arrow-right"></i></a>
+                    </div>
                 </div>
                 <div class="cont-column">
                     <figure>
@@ -472,36 +481,56 @@
                 <div class="cont-box">
                     <ul>
                         <li>
-                            <a href="#" class="insta-item img-1"><div class="effect-box"></div></a>
+                            <a href="#" class="insta-item img-1">
+                                <div class="effect-box"></div>
+                            </a>
                         </li>
                         <li>
-                            <a href="#" class="insta-item img-2"><div class="effect-box"></div></a>
+                            <a href="#" class="insta-item img-2">
+                                <div class="effect-box"></div>
+                            </a>
                         </li>
                         <li>
-                            <a href="#" class="insta-item img-3"><div class="effect-box"></div></a>
+                            <a href="#" class="insta-item img-3">
+                                <div class="effect-box"></div>
+                            </a>
                         </li>
                         <li>
-                            <a href="#" class="insta-item img-4"><div class="effect-box"></div></a>
+                            <a href="#" class="insta-item img-4">
+                                <div class="effect-box"></div>
+                            </a>
                         </li>
                         <li>
-                            <a href="#" class="insta-item img-5"><div class="effect-box"></div></a>
+                            <a href="#" class="insta-item img-5">
+                                <div class="effect-box"></div>
+                            </a>
                         </li>
                     </ul>
                     <ul>
                         <li>
-                            <a href="#" class="insta-item img-6"><div class="effect-box"></div></a>
+                            <a href="#" class="insta-item img-6">
+                                <div class="effect-box"></div>
+                            </a>
                         </li>
                         <li>
-                            <a href="#" class="insta-item img-7"><div class="effect-box"></div></a>
+                            <a href="#" class="insta-item img-7">
+                                <div class="effect-box"></div>
+                            </a>
                         </li>
                         <li>
-                            <a href="#" class="insta-item img-8"><div class="effect-box"></div></a>
+                            <a href="#" class="insta-item img-8">
+                                <div class="effect-box"></div>
+                            </a>
                         </li>
                         <li>
-                            <a href="#" class="insta-item img-9"><div class="effect-box"></div></a>
+                            <a href="#" class="insta-item img-9">
+                                <div class="effect-box"></div>
+                            </a>
                         </li>
                         <li>
-                            <a href="#" class="insta-item img-10"><div class="effect-box"></div></a>
+                            <a href="#" class="insta-item img-10">
+                                <div class="effect-box"></div>
+                            </a>
                         </li>
                     </ul>
                 </div>
@@ -510,22 +539,22 @@
     </div>
     <footer>
         <div class="footer-wrap">
-            
+
         </div>
     </footer>
     <script>
         //로드시 warningbox 팝업
-        window.addEventListener('load', function(){
+        window.addEventListener('load', function() {
             var warningBox = document.querySelector('.warning');
             var warningBtn = warningBox.querySelector('.btn-box');
 
-            warningBtn.addEventListener('click', function(){
+            warningBtn.addEventListener('click', function() {
                 warningBox.classList.add('off');
             })
         })
-    
+
         $('.banner-slider').bxSlider({
-            auto : true
+            auto: true
         });
     </script>
 </body></html>
