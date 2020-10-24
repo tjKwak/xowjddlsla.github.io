@@ -67,6 +67,7 @@
 
 
 ul.hashtags{
+    display: block;
 }
 li.hashtag{
     display: inline-block;

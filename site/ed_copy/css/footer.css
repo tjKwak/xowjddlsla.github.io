@@ -2,6 +2,174 @@
 
 footer {
     background-color: rgb(50,50,50);
-    width:1000%;
-    height: 500px;
+    color: white;
+    overflow: hidden;
 }
+.footer-wrap{
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 50px;
+}
+
+/*--1. 메세지박스---*/
+footer .message-box{
+    border: 1px solid white;
+    background-color: black;
+    padding: 50px;
+    max-width: 650px;
+    margin-bottom: 50px;
+}
+footer .message-box h3{
+    font-weight: bold;
+    font-size: 1.5rem;
+    margin-bottom: 50px;
+}
+footer .message-box p{
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+.m1{
+    margin-bottom: 50px;
+}
+.m2{
+    margin-bottom: 50px;
+}
+.m2 input{
+    width: 99.5%;
+    height: 43px;
+    margin: 10px 0 30px 0;
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+.m2 input::placeholder{
+    color: darkgray;
+    letter-spacing: 1px;
+}
+.m2 button{
+    width: 100%;
+    height: 50px;
+    background-color: orange;
+    color: white;
+}
+.m3 p:nth-of-type(1){
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+.m3 li{
+    list-style:square;
+    margin-left: 21px;
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+
+/*--2. 어바웃박스---*/
+footer .info-box{
+    width: 100%;
+    display: inline-flex;
+}
+.info-box div+div{
+    margin-left: 5%;
+}
+.info-box h4{
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+.info-box .logo-box a{
+    display: block;
+    margin-top: 3px;
+    width: 165px;
+    height: 15px;
+    background-image: url(../img/logo_white.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-indent: -99999px;
+    font-size: 0;
+}
+.info-box .about-box ul{
+    margin-bottom: 30px;
+}
+.info-box .about-box li{
+    line-height: 1.5;
+}
+.info-box .about-box p{
+    display: inline-block;
+    margin-right: 5px;
+}
+.info-box .about-box a{
+    color: orange;
+}
+
+.info-box .follow-box li{
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background-color: #3e3e3e;
+    border: 1px solid #5d5d5d;
+    margin: 0 10px 10px 0;
+}
+.info-box .follow-box a{
+    color: white;
+    font-size: 0;
+    text-align: center;
+    display: block;
+    line-height: 55px;
+}
+.info-box .follow-box i{
+    color: white;
+    font-size: 1rem;
+    transition: all .3s;
+}
+.info-box li:hover .facebook i{
+    color: #4b4bff;
+    transition: all .3s;
+}
+.info-box li:hover .insta i{
+    color: #c84bff;
+    transition: all .3s;
+}
+.info-box li:hover .youtube i{
+    color: #e60808;
+    transition: all .3s;
+}
+
+/*--3. 맨밑 박스---*/
+.black-wrap{
+    background-color: black;
+}
+.black-wrap .black-box{
+    height: 50px;
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0 50px;
+}
+.black-wrap .black-box ul{
+    font-size: 0;
+    display: flex;
+    justify-content: space-between;
+}
+.black-wrap .black-box a{
+    color: gray;
+    line-height: 50px;
+    font-size: 1rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
