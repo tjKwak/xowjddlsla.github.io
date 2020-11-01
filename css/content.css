@@ -442,6 +442,9 @@ main{
     background-color: #00b1ff;
     animation: backcolor 6s infinite;
 }
+.p_menu li.on a:hover{
+    color: black;
+}
 .p_menu li+li{
     margin-left: 10px;
 }
@@ -460,8 +463,13 @@ main{
     line-height: 50px;
     font-weight: 800;
     box-shadow: 0px 0px 20px 5px rgba(0,0,0,0.2);
+    transition: all .3s;
 }
-
+.p_menu li a:hover{
+    background-color: black;
+    color: white;
+    transition: all .3s;
+}
 
 
 
@@ -660,7 +668,9 @@ main{
     font-size: 1rem;
 }
 
-
+.page-btn a:hover{
+    background-color: gray;
+}
 
 
 /* 아웃트로 */
