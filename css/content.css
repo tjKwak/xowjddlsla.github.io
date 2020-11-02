@@ -552,8 +552,40 @@ main{
     background-image: url(../img/ed.PNG);
 }
 .img6{
-    background-image: url(../img/keepgoing.png);
+    background-image: url(../img/portfolio/p14.png);
 }
+.img7{
+    background-image: url(../img/portfolio/p21.png);
+}
+.img8{
+    background-image: url(../img/portfolio/p27.png);
+}
+.img9{
+    background-image: url(../img/portfolio/p5.png);
+}
+.img10{
+    background-image: url(../img/portfolio/p9.png);
+}
+.img11{
+    background-image: url(../img/portfolio/p34.png);
+}
+.img12{
+    background-image: url(../img/portfolio/p35.png);
+}
+.img13{
+    background-image: url(../img/portfolio/p36.png);
+}
+.img14{
+    background-image: url(../img/portfolio/p37.png);
+}
+.img15{
+    background-image: url(../img/portfolio/p38.png);
+}
+
+
+
+
+
 /*-----------------*/
 /* 포트이미지에 호버시 */
 /*-----------------*/

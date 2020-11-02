@@ -267,11 +267,43 @@
                                    <h3><a href="http://www.kartsdesign.net/portfolio/keep-going/">킵고잉</a></h3>
                                    <p>하루 15시간을 앉아서 지내는 너 나 그리고 우리의 하루. 운동이 필요한 현대인들을 위해, 걸음으로 음악을 재생시키는 워킹뮤직 어플리케이션 ‘킵고잉(Keepgoing)’을 소개합니다.
                                    </p>
-                                   <p>개발기간 : 2018.03.01 ~ 2019.01.10</p>
-                                   <p>#html #css #javascript</p>
+                                   <p>개발기간 : 2018.03.20 ~ 2018.10.05</p>
                                </div>
                            </li>
-                           <li>업데이트 예정입니다. </li>
+                           <li>
+                               <div class="page-pic">
+                                   <div class="portImg">
+                                       <div class="img7 img">
+                                           <a class="more" href="#">
+                                           </a>
+                                       </div>
+                                   </div>
+                               </div>
+                               <div class="page-info">
+                                   <h4>Personal Project</h4>
+                                   <h3><a href="http://www.kartsdesign.net/portfolio/keep-going/">티봇</a></h3>
+                                   <p>매일 해야하지만 귀찮고 까먹기 쉬운 양치질. 우리아이는 스스로 이빨을 잘 닦고 있나요? 매일 챙겨주기 힘든 부모님과 스스로하는 양치질에 재미를 붙이고 싶은 아이, 가족구성원 모두를 위해 디자인했습니다.
+                                   </p>
+                                   <p>개발기간 : 2019.03.20 ~ 2019.05.04</p>
+                               </div>
+                           </li>
+                           <li>
+                               <div class="page-pic">
+                                   <div class="portImg">
+                                       <div class="img8 img">
+                                           <a class="more" href="#">
+                                           </a>
+                                       </div>
+                                   </div>
+                               </div>
+                               <div class="page-info">
+                                   <h4>Re design</h4>
+                                   <h3><a href="http://www.kartsdesign.net/portfolio/keep-going/">TOMS</a></h3>
+                                   <p>TOMS는 기부문화의 아이콘이기에 기아와 난민같은 무거운 이미지가 먼저 떠오릅니다. 누구나 쉽게 참여할 수 있도록 경쾌한 톤앤매너로 TOMS의 웹페이지를 밝고 경쾌하게 리디자인 했습니다.
+                                   </p>
+                                   <p>개발기간 : 2019.03.20 ~ 2019.05.04</p>
+                               </div>
+                           </li>
                        </ul>
                        <ul>
                            <li>인터렉션 미디어 칸</li>
@@ -393,10 +425,13 @@
             
         });
         
-        
+        //메뉴 클릭시 전체사이즈 리사이징
         //리사이즈시 intro&footer의 height값 구하기
-        window.addEventListener('resize', function(){
+        window.addEventListener('resize', resizeWork);
+        window.addEventListener('click',resizeWork);
+        function resizeWork(){
             if(html.scrollTop < 100){
+            //old = html.scrollTop;
             introSec.style.height = window.innerHeight + scrolled + 'px';
             contSec.style.top = introSec.style.height.split('px')[0]*1 - scrolled + 'px';
             byeSec.style.height = window.innerHeight + 'px';
@@ -404,19 +439,22 @@
             fullSec.style.height = contSec.scrollHeight + scrolled + 'px';
             console.log('풀섹높이');
             console.log(contSec.scrollHeight);
-            console.log(fullSec.style.height);
-        });
+            
+        }
         
         
         //스크롤시 smooth 스크롤
         window.addEventListener('scroll', scrollWork);
         var old = html.scrollTop;
+        
         function scrollWork(){
+            console.log(html.scrollTop);
             //콘트쪽으로 스크롤 내렸을때
             if( html.scrollTop > 100 && old < html.scrollTop ){
                 introSec.classList.remove('on');
                 contSec.classList.add('on');
                 contSec.style.top = scrolled + 'px';
+                console.log(introSec.className);
                 console.log('내린다');
             }
             //인트로쪽으로 스크롤 올렸을때
@@ -424,6 +462,7 @@
                 introSec.classList.add('on');
                 contSec.classList.remove('on');
                 contSec.style.top = introSec.style.height.split('px')[0]*1 - scrolled + 'px';
+                console.log(introSec.className);
                 console.log('올린다');
             }
             
