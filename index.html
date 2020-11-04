@@ -522,38 +522,27 @@
         var byeSec = fullSec.querySelector('.goodbye');
         var portSec = contSec.querySelector('.portfolio');
         var mySec = contSec.querySelector('.aboutMe');
-        
-        var scrolled = 100; //스크롤 조금 내린영역이 흰색으로 보이기 싫어 intro의 height값을 스크롤양 만큼 늘림
-        
-        
+
         
         //로드시 intro&footer의 height값 자동생성
         window.addEventListener('load', function(){
-            
-            introSec.style.height = window.innerHeight + scrolled + 'px';
-            contSec.style.top = introSec.style.height.split('px')[0]*1 - scrolled + 'px';
-            byeSec.style.height = window.innerHeight + 'px';
-            fullSec.style.height = contSec.scrollHeight + scrolled + 'px';
-            
+            resizeWork();
             fullSec.style.animation = 'backcolor 6s infinite';
-            
         });
+        
         
         //메뉴 클릭시 전체사이즈 리사이징
         //리사이즈시 intro&footer의 height값 구하기
         window.addEventListener('resize', resizeWork);
-        window.addEventListener('click',resizeWork);
+        window.addEventListener('click', resizeWork);
         function resizeWork(){
             if(html.scrollTop < 100){
-            //old = html.scrollTop;
-            introSec.style.height = window.innerHeight + scrolled + 'px';
-            contSec.style.top = introSec.style.height.split('px')[0]*1 - scrolled + 'px';
+            old = html.scrollTop;
+            introSec.style.height = window.innerHeight + 'px';
+            contSec.style.top = introSec.style.height.split('px')[0]*1 + 'px';
             byeSec.style.height = window.innerHeight + 'px';
             }
-            fullSec.style.height = contSec.scrollHeight + scrolled + 'px';
-            console.log('풀섹높이');
-            console.log(contSec.scrollHeight);
-            
+            fullSec.style.height = contSec.scrollHeight + 'px';
         }
         
         
@@ -564,10 +553,10 @@
         function scrollWork(){
             console.log(html.scrollTop);
             //콘트쪽으로 스크롤 내렸을때
-            if( html.scrollTop > 100 && old < html.scrollTop ){
+            if( html.scrollTop > 100 && old < html.scrollTop && old < 100 ){
                 introSec.classList.remove('on');
                 contSec.classList.add('on');
-                contSec.style.top = scrolled + 'px';
+                contSec.style.top = '0px';
                 console.log(introSec.className);
                 console.log('내린다');
             }
@@ -575,7 +564,7 @@
             else if( html.scrollTop < 100 && old > html.scrollTop ){
                 introSec.classList.add('on');
                 contSec.classList.remove('on');
-                contSec.style.top = introSec.style.height.split('px')[0]*1 - scrolled + 'px';
+                contSec.style.top = introSec.style.height.split('px')[0]*1 + 'px';
                 console.log(introSec.className);
                 console.log('올린다');
             }
@@ -674,61 +663,30 @@
             var clicked = e.target.parentElement;
             clicked.classList.add('on');
             listBox[clicked.array].classList.add('on');
-            
         })
+
         
-        //포트폴리오 - more 버튼 //for구문으로 빨리 수정할것
+        //포트폴리오 - more 버튼
+        var moreBtns = document.querySelectorAll('.modal');
+        var moreCloseBtns = document.querySelectorAll('.more-close-btn');
+        var moreSecs = document.querySelectorAll('.page-more');
         
-        var moreBtn = document.querySelectorAll('.modal');
-        var moreCloseBtn = document.querySelectorAll('.more-close-btn');
-        var moreSec = document.querySelectorAll('.page-more');
+        for(let i=0; i<moreBtns.length; i++){
+            moreBtns[i].addEventListener('click',function(e){
+                e.preventDefault();
+                moreSecs[i].classList.remove('hidden');
+            })
+            moreCloseBtns[i].addEventListener('click',function(e){
+                e.preventDefault();
+                moreSecs[i].classList.add('hidden');
+            })
+        }
         
-        moreBtn[0].addEventListener('click',function(e){
-            e.preventDefault();
-            moreSec[0].classList.remove('hidden');
-        })
-        moreBtn[1].addEventListener('click',function(e){
-            e.preventDefault();
-            moreSec[1].classList.remove('hidden');
-        })
-        moreBtn[2].addEventListener('click',function(e){
-            e.preventDefault();
-            moreSec[2].classList.remove('hidden');
-        })
-        moreBtn[3].addEventListener('click',function(e){
-            e.preventDefault();
-            moreSec[3].classList.remove('hidden');
-        })
-        moreBtn[4].addEventListener('click',function(e){
-            e.preventDefault();
-            moreSec[4].classList.remove('hidden');
-        })
-        moreCloseBtn[0].addEventListener('click',function(e){
-            e.preventDefault();
-            moreSec[0].classList.add('hidden');
-        })
-        moreCloseBtn[1].addEventListener('click',function(e){
-            e.preventDefault();
-            moreSec[1].classList.add('hidden');
-        })
-        moreCloseBtn[2].addEventListener('click',function(e){
-            e.preventDefault();
-            moreSec[2].classList.add('hidden');
-        })
-        moreCloseBtn[3].addEventListener('click',function(e){
-            e.preventDefault();
-            moreSec[3].classList.add('hidden');
-        })
-        moreCloseBtn[4].addEventListener('click',function(e){
-            e.preventDefault();
-            moreSec[4].classList.add('hidden');
-        })
         
         //모바일 햄버거메뉴
         const hamMenu = document.querySelector('.aside-mobile .hamburger-menu');
         const hamMenuIcon = document.querySelector('.aside-mobile .hamburger-icon');
         const hamMenuBtn = document.querySelector('.aside-mobile .hamburger-btn')
-        
         
         hamMenuBtn.addEventListener('click',function(){
             hamMenu.classList.toggle('hidden');
