@@ -1,5 +1,6 @@
 .whole-wrap{
     position: relative;
+    overflow: scroll;
 }
 
 /*---------*/
