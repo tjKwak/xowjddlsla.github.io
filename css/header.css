@@ -17,6 +17,9 @@ header{
     right: 85%;
     z-index: 100;
 }
+header.hidden{
+    z-index: -1;
+}
 .header-mobile{
     display: none;
 }
@@ -238,6 +241,9 @@ aside{
     bottom: 0;
     left: 85%;
     display: block;
+}
+aside.hidden{
+    z-index: -1;
 }
 
 .contact-txt{
