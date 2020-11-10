@@ -1,18 +1,11 @@
 .whole-wrap{
     position: relative;
     overflow: hidden;
-/*    animation: backcolor 6s infinite;  */
 }
 
 /*---------*/
 /* intro*/
 /*------------*/
-
-/*
-* {
-    scroll-behavior: smooth;
-}
-*/
 
 @keyframes backcolor {
   0% {
@@ -46,16 +39,17 @@
 
 
 
-/*-----intro, stars animation---- */
+/*-----intro, back, stars animation---- */
 main{
     position: relative;
     z-index: 50;
 }
 
+/*    포지션fixed 스크롤버그 */
 .intro{
     z-index: 1;
     width: 100%;
-    position: fixed;
+/*    position: fixed;*/
     top: 300px;
     left: 0;
     right: 0;
@@ -67,7 +61,7 @@ main{
 .intro.on{
     z-index: 1;
     width: 100%;
-    position: fixed;
+/*    position: fixed;*/
     top: 0;
     left: 0;
     right: 0;
@@ -75,6 +69,16 @@ main{
 
     opacity: 1;
     transition: all .5s;
+}
+
+.back{
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position:fixed;
+    z-index: 30;
+    animation: backcolor 6s infinite;
 }
 
 .stars{
@@ -99,7 +103,7 @@ main{
   width:10px;
   height:10px;
   border-radius: 50px;
-  background-color:white;
+/*  background-color:white;*/
   position:fixed;
   animation-name:particleAnimation;
   animation-timing-function: ease-in-out;

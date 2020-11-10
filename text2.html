@@ -479,8 +479,6 @@
                </div>
            </section>
        </main>
-       <div class="back">
-       </div>
        <div class="stars">
            <div class="star s-1"></div>
            <div class="star s-2"></div>
@@ -498,14 +496,69 @@
        </div>
    </div>
     <script>
+        //워닝박스 닫기 기능
+        const warnBtn = document.querySelector('.close-button');
+        var warnBox = document.querySelector('.warn-box');
         
-        //첫 로드시 애니메이션
+        warnBtn.addEventListener('click',function(){
+            warnBox.style.display = 'none';
+        })
+        
+        
+        //인트로의 글자 써지는 효과
+        var typingBool = false; 
+        var typingIdx=0; 
+        var liIndex = 0;
+        var liLength = $(".typing-txt>ul>li").length;
+        var screen = document.querySelector('.phone-screen');
+        var typingTxt = $(".typing-txt>ul>li").eq(liIndex).text(); // 타이핑될 텍스트를 가져온다 
+        
+        typingTxt=typingTxt.split(""); // 한글자씩 자른다.   
+        if(typingBool==false){ // 타이핑이 진행되지 않았다면 
+            typingBool=true; 
+            //var tyInt = setInterval(typing,100);
+            var tyInt;
+            clearInterval(tyInt);
+            setTimeout(function(){
+            //화면이 켜지기전까지 3.3초 쉬고 시작한다.
+                tyInt = setInterval(typing,80)
+            },3300);
+        } 
+     
+        function typing(){ 
+            if(typingIdx<typingTxt.length){ // 타이핑될 텍스트 길이만큼 반복 
+                $(".typing").append(typingTxt[typingIdx]); // 한글자씩 이어준다. 
+                typingIdx++; 
+            }
+            else{ //한문장이끝나면
+                //다음문장으로.. 마지막문장이면 다시 첫번째 문장으로 
+                if( liIndex>=liLength-1){ liIndex=0; }
+                else{ liIndex++; }
+     
+                //다음문장을 타이핑하기위한 셋팅
+                typingIdx=0;
+                typingBool = false; 
+                typingTxt = $(".typing-txt>ul>li").eq(liIndex).text(); 
+
+                //다음문장 타이핑전 1.5초 쉰다
+                clearInterval(tyInt);
+
+                setTimeout(function(){
+                    $(".typing").html('');
+                   tyInt = setInterval(typing,80);
+                },1500);
+            } 
+        }
+        
+        
+        //load
 //        window.addEventListener("load", function(){
 //            const loader = document.querySelector(".loading");
 //            setTimeout(function(){
 //                loader.style.display = 'none';
-//            }, 2000)
+//            }, 5000)
 //        });
+        
         
         const html = document.querySelector('html');
         var fullSec = document.querySelector('.whole-wrap');
@@ -515,9 +568,11 @@
         var portSec = contSec.querySelector('.portfolio');
         var mySec = contSec.querySelector('.aboutMe');
 
+        
         //로드시 intro&footer의 height값 자동생성
         window.addEventListener('load', function(){
             resizeWork();
+            fullSec.style.animation = 'backcolor 6s infinite';
         });
         
         
@@ -526,20 +581,55 @@
         window.addEventListener('resize', resizeWork);
         function resizeWork(){
             if(html.scrollTop < 100){
+            old = html.scrollTop;
             introSec.style.height = window.innerHeight + 'px';
             contSec.style.top = introSec.style.height.split('px')[0]*1 + 'px';
             byeSec.style.height = window.innerHeight + 'px';
             }
-            //fullSec.style.height = contSec.scrollHeight + 'px';
-            //console.log('리사이즈함');
+            fullSec.style.height = contSec.scrollHeight + 'px';
         }
         
         
         //스크롤시 smooth 스크롤
-        window.addEventListener('scroll', scrollWork);
         var old = html.scrollTop;
+        var timer;
+//        window.addEventListener('scroll', scrollIntro);
+//        window.addEventListener('scroll', scrollFooter);
+//        
+//        function scrollIntro(){
+//            if (!timer) {
+//                timer = setTimeout(function() {
+//                    timer = null;
+//                    console.log(html.scrollTop);
+//
+//                    if(html.scrollTop === 0){
+//                        contSec.classList.remove('on');
+//                        contSec.style.top = introSec.style.height.split('px')[0]*1 + 'px';
+//                        introSec.classList.add('on');
+//                    }
+//                    else{
+//                        contSec.classList.add('on');
+//                        contSec.style.top = '0px';
+//                        introSec.classList.remove('on');
+//                    }
+//                }, 200);
+//            }
+//        }
+//        function scrollFooter(){
+//            //푸터쪽으로 스크롤 내렸을때
+//            if( html.scrollTop + introSec.scrollHeight > contSec.scrollHeight - 100 && old < html.scrollTop ){
+//                byeSec.classList.add('on');
+//            }
+//            //콘트쪽으로 스크롤 올렸을때
+//            else if( html.scrollTop + introSec.scrollHeight > contSec.scrollHeight - 100 && old > html.scrollTop ){
+//                byeSec.classList.remove('on');
+//            }
+//            old = html.scrollTop;
+//        }
         
-        function scrollWork(){
+        
+        window.addEventListener('scroll', function(){
+            console.log(html.scrollTop);
             //콘트쪽으로 스크롤 내렸을때
             if( html.scrollTop > 100 && old < html.scrollTop && old < 100 ){
                 introSec.classList.remove('on');
@@ -552,7 +642,6 @@
                 contSec.classList.remove('on');
                 contSec.style.top = introSec.style.height.split('px')[0]*1 + 'px';
             }
-            
             //푸터쪽으로 스크롤 내렸을때
             if( html.scrollTop + introSec.scrollHeight > contSec.scrollHeight - 100 && old < html.scrollTop ){
                 byeSec.classList.add('on');
@@ -562,10 +651,20 @@
                 byeSec.classList.remove('on');
             }
             old = html.scrollTop;
-        }
+        });
         
         
-        /////////////////////////////////
+        //컨택트 버튼
+        var contactBox = document.querySelector('.contact-box');
+        contactBox.addEventListener('mouseover',function(e){
+            e.preventDefault();
+            contactBox.classList.add('on');
+        })
+        contactBox.addEventListener('mouseleave',function(e){
+            e.preventDefault();
+            contactBox.classList.remove('on');
+        })
+        
         
         //포트폴리오 - 선택한 메뉴에 on붙이는 기능
         var menuBtn = document.querySelector('.p_menu');
@@ -574,16 +673,16 @@
         
         menuBtn.addEventListener('click',function(e){
             e.preventDefault();
+            
             for(let i=0; i<menuBox.length; i++){
                 menuBox[i].classList.remove('on');
                 listBox[i].classList.remove('on');
+                
                 menuBox[i].array = i;
             }
             var clicked = e.target.parentElement;
             clicked.classList.add('on');
             listBox[clicked.array].classList.add('on');
-            
-            resizeWork();
         })
 
         
@@ -604,19 +703,7 @@
         }
         
         
-        //어사이드 - 컨택트 버튼 마우스오버
-        var contactBox = document.querySelector('.contact-box');
-        contactBox.addEventListener('mouseover',function(e){
-            e.preventDefault();
-            contactBox.classList.add('on');
-        })
-        contactBox.addEventListener('mouseleave',function(e){
-            e.preventDefault();
-            contactBox.classList.remove('on');
-        })
-        
-        
-        //어사이드 - 모바일 햄버거메뉴
+        //모바일 햄버거메뉴
         const hamMenu = document.querySelector('.aside-mobile .hamburger-menu');
         const hamMenuIcon = document.querySelector('.aside-mobile .hamburger-icon');
         const hamMenuBtn = document.querySelector('.aside-mobile .hamburger-btn')
@@ -625,57 +712,6 @@
             hamMenu.classList.toggle('hidden');
             hamMenuIcon.classList.toggle('on');
         });
-        
-        
-        //어사이드 - 워닝박스 닫기 기능
-        const warnBtn = document.querySelector('.close-button');
-        var warnBox = document.querySelector('.warn-box');
-        
-        warnBtn.addEventListener('click',function(){
-            warnBox.style.display = 'none';
-        })
-        
-        
-        //인트로 - 글자 써지는 효과
-        var typingBool = false; 
-        var typingIdx=0; 
-        var liIndex = 0;
-        var liLength = $(".typing-txt>ul>li").length;
-        var screen = document.querySelector('.phone-screen');
-        var typingTxt = $(".typing-txt>ul>li").eq(liIndex).text(); // 타이핑될 텍스트를 가져온다 
-        
-        typingTxt=typingTxt.split(""); // 한글자씩 자른다.   
-        if(typingBool==false){ // 타이핑이 진행되지 않았다면 
-            typingBool=true; 
-            //var tyInt = setInterval(typing,100);
-            var tyInt;
-            clearInterval(tyInt);
-            setTimeout(function(){
-            //화면이 켜지기전까지 3.3초 쉬고 시작한다.
-                tyInt = setInterval(typing,80)
-            },3300);
-        } 
-        function typing(){ 
-            if(typingIdx<typingTxt.length){ // 타이핑될 텍스트 길이만큼 반복 
-            $(".typing").append(typingTxt[typingIdx]); // 한글자씩 이어준다. 
-            typingIdx++; 
-            }
-            else{ //한문장이끝나면
-                 //다음문장으로.. 마지막문장이면 다시 첫번째 문장으로 
-                if( liIndex>=liLength-1){ liIndex=0; }
-                else{ liIndex++; }
-                //다음문장을 타이핑하기위한 셋팅
-                typingIdx=0;
-                typingBool = false; 
-                typingTxt = $(".typing-txt>ul>li").eq(liIndex).text(); 
-                clearInterval(tyInt);
-                //다음문장 타이핑전 1.5초 쉰다
-                setTimeout(function(){
-                    $(".typing").html('');
-                    tyInt = setInterval(typing,80);
-                },1500);
-            } 
-        }
         
         
     </script>

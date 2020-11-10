@@ -116,6 +116,30 @@
 //            1: div2(node),
 //            length:2
 //        }
+        
+        
+        //intro에서 portfolio - 스크롤 디바운스
+        var timer;
+        
+        window.addEventListener('scroll', function (e) {
+            if (!timer) {
+                timer = setTimeout(function() {
+                timer = null;
+                    
+                if(html.scrollTop === 0){
+                    contSec.classList.remove('on');
+                    contSec.style.top = introSec.style.height.split('px')[0]*1 + 'px';
+                    introSec.classList.add('on');
+                }
+                else{
+                    contSec.classList.add('on');
+                    contSec.style.top = '0px';
+                    introSec.classList.remove('on');
+                }
+            }, 200);
+            }
+            
+        });
     
     </script>
 </body>
