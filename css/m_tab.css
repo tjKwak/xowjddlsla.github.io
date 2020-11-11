@@ -89,7 +89,7 @@
                 width: 29%;
             }
             /* ---portfolio--- */
-            .portfolio{
+            #portfolio{
                 padding: 50px 20%;
                 width: 100%;
                 border: none;
@@ -136,7 +136,7 @@
             }
 
             /* ---aboutMe--- */
-            .aboutMe{
+            #aboutMe{
                 width: 100%;
                 box-sizing: border-box;
                 border-radius: 10px;

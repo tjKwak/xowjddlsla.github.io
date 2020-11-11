@@ -269,7 +269,7 @@
 
 
             /* ---portfolio--- */
-            .portfolio{
+            #portfolio{
                 width: 100%;
                 border: none;
                 box-sizing: border-box;
@@ -313,7 +313,7 @@
             }
             
             /* ---aboutMe--- */
-            .aboutMe{
+            #aboutMe{
                 width: 100%;
                 box-sizing: border-box;
                 border-radius: 10px;
