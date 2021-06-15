@@ -69,7 +69,7 @@ header.fixOn .header-pc{
     max-width: 1920px;
     height: 80px;
 }
-.header-pc>.whole-wrap{
+.header-pc>.root{
     height: 80px;
     display: flex;
     justify-content: space-between;

@@ -50,7 +50,7 @@
 /* banner */
 #banner {}
 
-#banner .whole-wrap {}
+#banner .root {}
 
 #banner .slide {
     width: 100%;
@@ -153,7 +153,7 @@
 /* year */
 #history {}
 
-#history .whole-wrap {
+#history .root {
     padding: 70px 100px 0 200px;
 }
 
@@ -209,7 +209,7 @@
 /* movie */
 #movie {}
 
-#movie .whole-wrap {
+#movie .root {
     background-color: #fafafa;
     text-align: center;
     padding: 100px 0;
@@ -384,7 +384,7 @@
 /* BI */
 #BI {}
 
-#BI > .whole-wrap {
+#BI > .root {
     text-align: center;
     margin-top:80px;
 }

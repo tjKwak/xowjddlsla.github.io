@@ -1,0 +1,210 @@
+// GENERIC
+
+$body-bg: #fff;
+
+// Colors
+
+//---cool gray----
+// $white: #fff;
+// $gray-100: #EBEBEB;
+// $gray-200: #e6eaee;
+// $gray-300: #dee2e6;
+// $gray-400: #ced4da; //disable-bg
+// $gray-500: #adb5bd; //form-border
+// $gray-600: #868e96;
+// $gray-700: #495057;
+// $gray-800: #343a40;
+// $gray-900: #212529;
+// $black: #000;
+
+//---warm gray----
+// $white: #fff;
+// $gray-100: #EBEBEB;
+// $gray-200: #eee6e6;
+// $gray-300: #e6dede;
+// $gray-400: #dacece; //disable-bg
+// $gray-500: #bdadad; //form-border
+// $gray-600: #968686;
+// $gray-700: #574949;
+// $gray-800: #403434;
+// $gray-900: #292121;
+// $black: #000;
+
+$white: #fff;
+$gray-100: #EBEBEB;
+$gray-200: #e2e2e2;
+$gray-300: #dbdbdf;
+$gray-400: #cfcfd3; //disable-bg
+$gray-500: #b3b3b6; //form-border
+$gray-600: #929294;
+$gray-700: #585252;
+$gray-800: #423c3c;
+$gray-900: #2c2828;
+$black: #000;
+
+$grays: ();
+
+$grays: map-merge(
+                (
+                        "100": $gray-100,
+                        "200": $gray-200,
+                        "300": $gray-300,
+                        "400": $gray-400,
+                        "500": $gray-500,
+                        "600": $gray-600,
+                        "700": $gray-700,
+                        "800": $gray-800,
+                        "900": $gray-900
+                ),
+                $grays
+);
+
+// 글자색상
+$f-b-1: rgba(0,0,0,1);
+$f-b-2: rgba(0,0,0,0.85);
+$f-b-3: rgba(0,0,0,0.75); //selected-font
+$f-b-4: rgba(0,0,0,0.60);
+$f-b-5: rgba(0,0,0,0.45);
+$f-b-6: rgba(0,0,0,0.35); //placehold-font
+$f-b-7: rgba(0,0,0,0.25);
+$f-b-8: rgba(0,0,0,0.15); //disable-font
+$f-b-9: rgba(0,0,0,0.05);
+
+$f-w-1: rgba(255,255,255,1);
+$f-w-2: rgba(255,255,255,0.85); //selected-font
+$f-w-3: rgba(255,255,255,0.75);
+$f-w-4: rgba(255,255,255,0.60);
+$f-w-5: rgba(255,255,255,0.45);
+$f-w-6: rgba(255,255,255,0.35);
+$f-w-7: rgba(255,255,255,0.25);
+$f-w-8: rgba(255,255,255,0.15);
+$f-w-9: rgba(255,255,255,0.05);
+
+
+//--#{$color}
+$brand: #FF7800;
+$blue: #3E66FB; 
+$indigo: #6610f2; //사용안함
+$purple: #6f42c1; //사용안함
+$pink: #e83e8c; //사용안함
+$red: #ff3333;
+$orange: #FF7800;
+$yellow: #FFC107;
+$green: #3acc5c;
+$cyan: #00bee9;
+$lime: #25CFD0;
+$blue-light: $gray-300;
+
+$primary: $brand;
+$secondary: $blue;
+$success: $green;
+$info: $cyan;
+$warning: $yellow;
+$danger: $red;
+$light: $blue-light;
+$dark: $gray-800;
+$focus: $blue;
+$alt: $lime;
+
+$brand-d4: #401E00;
+$brand-d3: #6E4321;
+$brand-d2: #C43E00;
+$brand-d1: #E66B00;
+$brand-l1: #FF9820;
+$brand-l2: #FFB930;
+$brand-l3: #FFE3B8;
+$brand-l4: #FFFAF5;
+
+$secondary-d4: mix($secondary, black, 40%);
+$secondary-d3: mix($secondary, black, 55%);
+$secondary-d2: mix($secondary, black, 70%);
+$secondary-d1: mix($secondary, black, 83%);
+$secondary-l1: mix($secondary, white, 20%);
+$secondary-l2: mix($secondary, white, 50%);
+$secondary-l3: mix($secondary, white, 65%);
+$secondary-l4: mix($secondary, white, 80%);
+
+$danger-d4: mix($danger, black, 40%);
+$danger-d3: mix($danger, black, 55%);
+$danger-d2: mix($danger, black, 70%);
+$danger-d1: mix($danger, black, 83%);
+$danger-l1: mix($danger, white, 20%);
+$danger-l2: mix($danger, white, 50%);
+$danger-l3: mix($danger, white, 65%);
+$danger-l4: mix($danger, white, 80%);
+
+$warning-d4: mix($warning, black, 40%);
+$warning-d3: mix($warning, black, 55%);
+$warning-d2: mix($warning, black, 70%);
+$warning-d1: mix($warning, black, 83%);
+$warning-l1: mix($warning, white, 20%);
+$warning-l2: mix($warning, white, 40%);
+$warning-l3: mix($warning, white, 60%);
+$warning-l4: mix($warning, white, 80%);
+
+$success-d4: mix($success, black, 40%);
+$success-d3: mix($success, black, 55%);
+$success-d2: mix($success, black, 70%);
+$success-d1: mix($success, black, 83%);
+$success-l1: mix($success, white, 20%);
+$success-l2: mix($success, white, 50%);
+$success-l3: mix($success, white, 80%);
+$success-l4: mix($success, white, 95%);
+
+$info-d4: mix($info, black, 40%);
+$info-d3: mix($info, black, 55%);
+$info-d2: mix($info, black, 70%);
+$info-d1: mix($info, black, 83%);
+$info-l1: mix($info, white, 20%);
+$info-l2: mix($info, white, 50%);
+$info-l3: mix($info, white, 80%);
+$info-l4: mix($info, white, 95%);
+
+$theme-colors: ();
+
+$theme-colors: map-merge(
+                (
+                        "primary": $primary,
+                        "secondary": $secondary,
+                        "success": $success,
+                        "info": $info,
+                        "warning": $warning,
+                        "danger": $danger,
+                        "light": $light,
+                        "dark": $dark,
+                        "focus": $focus,
+                        "alternate": $alt
+                ),
+                $theme-colors
+);
+
+//폰트 관련 값
+
+$headings-font-weight: 400;
+
+$font-size-base: 1rem; //0.88rem
+$font-size-lg: ($font-size-base * 1.35);
+$font-size-sm: ($font-size-base * 1.1);
+$font-size-xs: ($font-size-base / 1.1);
+
+
+//폼 관련 값
+
+$form-height: 38px;
+$form-radius: 5px;
+$form-gap : 5px;
+$form-bg-color: $white;
+$form-txt-color: $gray-700;
+$table-txt-color: $gray-600;
+$form-border-color : $gray-300;
+$form-border-color-hover : $gray-600;
+$form-disable-bg : $gray-100;
+$form-disable-font : $gray-500;
+$form-placeholder-txt : $gray-600;
+$card-shadow : 0px 0px 10px rgba(0,0,0,0.2);
+$form-shadow : 0px 0px 10px rgba(0,0,0,0.2);
+$form-active-shadow : 0px 0px 10px rgba(255,50,50,0.2);
+
+//트렌지션
+
+$all-transition : all .2s;

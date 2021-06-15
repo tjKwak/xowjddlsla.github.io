@@ -1,0 +1,252 @@
+#root{
+    position: relative;
+
+    & .intro{
+        position: fixed;
+        -webkit-transform: translateZ(0);
+        z-index: 50;
+
+        transition: all .5s;
+        top: 300px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        opacity: 0;
+        &.on{
+            transition: all .5s;
+            top: 0;
+            opacity: 1;
+        }
+
+        & .scroll-box{}
+        & .phone-box{
+            z-index: -1;
+            width: 40%;
+            height: 70%;
+            border-radius: 50px 50px 0 0;
+            background-color: #0f0e0e;
+            box-shadow: 0px 0px 20px 5px rgba(0,0,0,0.2);
+            
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            transform: translateX(-50%);
+            
+            transition: all 1.5s;
+            &::before{
+                content: '';
+                display: block;
+                background-color: #0f0e0e;
+                border-radius: 10px;
+                width: 103%;
+                height: 50px;
+                
+                position: absolute;
+                right: -1.5%;
+                top: 15%;
+            }
+            &::after{
+                content: '';
+                display: block;
+                background-color: #0f0e0e;
+                border-radius: 10px;
+                width: 3%;
+                height: 80px;
+                
+                position: absolute;
+                right: -2%;
+                top: 25%;
+            }
+            & .phone-screen-box{
+                width: 95%;
+                height: 85%;
+                border-radius: 20px 20px 0 0;
+                background-image: linear-gradient(#2f2f2f, gray);
+                position: absolute;
+                left: 50%;
+                top : 50%;
+                transform: translateX(-50%) translateY(-50%);
+
+                & .phone-screen{
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 20px 20px 0 0;
+                    background-color: white;
+                    
+                    position: absolute;
+                    left: 50%;
+                    top : 50%;
+                    transform: translateX(-50%) translateY(-50%);
+                    
+                    animation-name: screenOn; 
+                    animation-duration: 2.5s;
+
+                    & .typing-box{
+                        width: 80%;
+                        margin: 0 auto;
+                        margin-top: 50px;
+                        & .typing-txt{
+                            display: none;
+                            &::after{
+                                content: '';
+                                display: inline-block;
+                                vertical-align: middle;
+                                width: 1px;
+                                height: 40px;
+                                animation-name: cursor; 
+                                animation-duration: 0.5s; 
+                                animation-iteration-count: infinite; 
+                                animation-delay: 2.5s;
+                            }
+                            @keyframes cursor{ 
+                                0%{ border-right: 1px solid #fff} 
+                                50%{border-right: 1px solid #000} 
+                                100%{border-right: 1px solid #fff} 
+                            }
+                        }
+                        & .typing{
+                            font-family: 'Noto Sans KR', sans-serif;
+                            font-size: 3rem;
+                            font-weight: 600;
+                            line-height: 1.5;
+                        }
+                    }
+                    @keyframes screenOn{ 
+                        0%{
+                            width: 0px;
+                            height: 0px;
+                            border-radius: 20px;
+                          }
+                        15%{
+                            width: 40px;
+                            height: 30px;
+                            border-radius: 20px;
+                          }
+                        30%{
+                            width: 0px;
+                            height: 0px;
+                            border-radius: 20px;
+                          }
+                        50%{
+                            width: 50px;
+                            height: 10px;
+                            border-radius: 20px;
+                          }
+                        60%{
+                            width: 100%;
+                            height: 20px;
+                            border-radius: 20px;
+                          }
+                        70%{
+                            width: 100%;
+                            height:40px;
+                            border-radius: 20px;
+                          } 
+                        80%{
+                            width: 100%;
+                            height: 100%;
+                            border-radius: 20px 20px 0 0;
+                          } 
+                      }
+                }
+            }
+        }
+    }
+
+    // 뒤 배경화면
+    & .back{
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        position:fixed;
+        z-index: -1;
+        animation: backcolor 6s infinite;
+
+        & .stars{
+            position: relative;
+            z-index: 40;
+
+            & .star{
+                position:absolute;
+                z-index: -1;
+                left:0px;
+                top:50px;
+                width:10px;
+                height:10px;
+                border-radius: 50px;
+                background-color:white;
+                position:fixed;
+                animation-name:particleAnimation;
+                animation-timing-function: ease-in-out;
+                animation-iteration-count: infinite;
+                &::before{
+                    content:"";
+                    display:block;
+                    width:100px;
+                    height:100%;
+                    background: linear-gradient(to right, rgba(0,0,0,0) 0%,rgba(255,255,255,0.4) 100%);
+                        
+                    position:absolute;
+                    right: 0;
+                    top:50%;
+                    transform: translateY(-50%);
+                }
+                &.s-1{
+                animation-duration:10s;
+                top: 10%;
+                }
+                &.s-2{
+                animation-duration:5s;
+                top:60%;
+                }
+                &.s-3{
+                animation-duration:20s;
+                top:90%;
+                }
+                &.s-4{
+                animation-duration:3s;
+                top: 50%;
+                }
+                &.s-5{
+                animation-duration:7s;
+                top:70%;
+                }
+                &.s-6{
+                animation-duration:15s;
+                top:40%;
+                }
+            }
+            @keyframes particleAnimation
+            {
+                from {
+                    left: -100px;
+                }
+                to {
+                    left: calc( 100% + 100px );
+                }
+            }
+        }
+    }
+    //가장 하단
+    & .goodbye{
+        z-index: 999999999;
+        position: fixed;
+        
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        
+        background-color: black;
+        width: 100%;
+        max-height: 0%;
+        
+        opacity: 0;
+        transition: all .5s;
+    }
+}
+
+.content{
+
+}

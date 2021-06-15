@@ -1,0 +1,197 @@
+// @mixin font($weight, $lineheight:auto) {
+//     @if $weight == 'b' {
+//         font-weight: 400;
+//     }
+//     @else if $weight == 'n' {
+//         font-weight: 300;
+//     }
+//     line-height: $lineheight;
+// }
+
+@mixin fontset($size, $weight) {
+    font: {
+        size: $size;
+        weight: $weight;
+    }
+}
+
+//cover font
+@mixin cover-b($lineheight:auto) {
+    line-height: $lineheight;
+    @include fontset(60px, 700)
+}
+@mixin cover-n($lineheight:auto) {
+    line-height: $lineheight;
+    @include fontset(60px, 400)
+}
+@mixin cover-l ($lineheight:auto) {
+    line-height: $lineheight;
+    @include fontset(60px, 300)
+}
+
+@mixin title-b ($lineheight:auto) {
+    line-height: $lineheight;
+    @include fontset(50px, 700)
+}
+@mixin title-n ($lineheight:auto) {
+    line-height: $lineheight;
+    @include fontset(50px, 400)
+}
+@mixin title-l ($lineheight:auto) {
+    line-height: $lineheight;
+    @include fontset(50px, 300)
+}
+
+@mixin mcover-b ($lineheight:auto) {
+    line-height: $lineheight;
+    @include fontset(40px, 700)
+}
+@mixin mcover-n ($lineheight:auto) {
+    line-height: $lineheight;
+    @include fontset(40px, 400)
+}
+@mixin mcover-l ($lineheight:auto) {
+    line-height: $lineheight;
+    @include fontset(40px, 300)
+}
+
+//heading font
+@mixin h1-b ($lineheight:auto) {
+    line-height: $lineheight;
+    @include fontset(2rem, 700)
+}
+@mixin h1-n ($lineheight:auto) {
+    line-height: $lineheight;
+    @include fontset(2rem, 400)
+}
+@mixin h1-l ($lineheight:auto) {
+    line-height: $lineheight;
+    @include fontset(2rem, 300)
+}
+
+
+@mixin h2-b ($lineheight:auto) {
+    line-height: $lineheight;
+    @include fontset(1.8rem, 700)
+}
+@mixin h2-n ($lineheight:auto) {
+    line-height: $lineheight;
+    @include fontset(1.8rem, 400)
+}
+@mixin h2-l ($lineheight:auto) {
+    line-height: $lineheight;
+    @include fontset(1.8rem, 300)
+}
+
+
+@mixin h3-b ($lineheight:auto) {
+    line-height: $lineheight;
+    @include fontset(1.5rem, 700)
+}
+@mixin h3-n ($lineheight:auto) {
+    line-height: $lineheight;
+    @include fontset(1.5rem, 400)
+}
+@mixin h3-l ($lineheight:auto) {
+    line-height: $lineheight;
+    @include fontset(1.5rem, 300)
+}
+
+
+@mixin h4-b ($lineheight:auto) {
+    line-height: $lineheight;
+    @include fontset(1.3rem, 700)
+}
+@mixin h4-n ($lineheight:auto) {
+    line-height: $lineheight;
+    @include fontset(1.3rem, 400)
+}
+@mixin h4-l ($lineheight:auto) {
+    line-height: $lineheight;
+    @include fontset(1.3rem, 300)
+}
+
+
+@mixin h5-b ($lineheight:auto) {
+    line-height: $lineheight;
+    @include fontset(1.2rem, 700)
+}
+@mixin h5-n ($lineheight:auto) {
+    line-height: $lineheight;
+    @include fontset(1.2rem, 400)
+}
+@mixin h5-l ($lineheight:auto) {
+    line-height: $lineheight;
+    @include fontset(1.2rem, 300)
+}
+
+//subscribe font
+
+@mixin p1-b ($lineheight:auto) {
+    line-height: $lineheight;
+    @include fontset(1.1rem, 700)
+}
+@mixin p1-n ($lineheight:auto) {
+    line-height: $lineheight;
+    @include fontset(1.1rem, 400)
+}
+@mixin p1-l ($lineheight:auto) {
+    line-height: $lineheight;
+    @include fontset(1.1rem, 300)
+}
+
+
+@mixin p2-b ($lineheight:auto) {
+    line-height: $lineheight;
+    @include fontset(1rem, 700)
+}
+@mixin p2-n ($lineheight:auto) {
+    line-height: $lineheight;
+    @include fontset(1rem, 400)
+}
+@mixin p2-l ($lineheight:auto) {
+    line-height: $lineheight;
+    @include fontset(1rem, 300)
+}
+
+// ---- form 기본 글자, 본문 기본 글자 ------
+@mixin p3-b ($lineheight:auto) {
+    line-height: $lineheight;
+    @include fontset(.9rem, 700)
+}
+@mixin p3-n ($lineheight:auto) {
+    line-height: $lineheight;
+    @include fontset(.9rem, 400)
+}
+@mixin p3-l ($lineheight:auto) {
+    line-height: $lineheight;
+    @include fontset(.9rem, 300)
+}
+
+
+@mixin p4-b ($lineheight:auto) {
+    line-height: $lineheight;
+    @include fontset(.8rem, 700)
+}
+@mixin p4-n ($lineheight:auto) {
+    line-height: $lineheight;
+    @include fontset(.8rem, 400)
+}
+@mixin p4-l ($lineheight:auto) {
+    line-height: $lineheight;
+    @include fontset(.8rem, 300)
+}
+
+
+@mixin p5-b ($lineheight:auto) {
+    line-height: $lineheight;
+    @include fontset(.7rem, 700)
+}
+@mixin p5-n ($lineheight:auto) {
+    line-height: $lineheight;
+    @include fontset(.7rem, 400)
+}
+@mixin p5-l ($lineheight:auto) {
+    line-height: $lineheight;
+    @include fontset(.7rem, 300)
+}

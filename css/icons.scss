@@ -1,0 +1,321 @@
+@mixin icon-util{
+  background-image: url('../images/util.svg');
+  background-repeat: no-repeat;
+  border: none;
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 0;
+  background-size: 240px;
+  width: 20px;
+  height: 20px;
+  flex: 0 0 20px;
+  &.icon-small{
+    transform: scale(.7);
+  }
+}
+@mixin icon-direction{
+  background-image: url('../images/direction.svg');
+  background-repeat: no-repeat;
+  background-color: transparent;
+  border: none;
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 0;
+  background-size: 130px;
+  width: 20px;
+  height: 20px;
+  flex: 0 0 20px;
+  &.icon-small{
+    transform: scale(.7);
+  }
+}
+@mixin icon-map{
+  background-image: url('../images/map.svg');
+  background-repeat: no-repeat;
+  border: none;
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 0;
+  background-size: 60px;
+  width: 20px;
+  height: 20px;
+  flex: 0 0 20px;
+  &.icon-small{
+    transform: scale(.7);
+  }
+}
+//아이콘 보더
+.icon-border{
+  position: relative;
+  &::after{
+    content: '';
+    width: 200%;
+    height: 200%;
+    border: 1px solid lightgray !important;
+    border-radius: .25rem;
+    display: block;
+    position: absolute;
+    top: -50%;
+    left: -50%;
+  }
+}
+//아이콘 필터
+.icon-filter-red{
+  filter: invert(20%) sepia(100%) saturate(3000%) hue-rotate(359deg) brightness(94%) contrast(100%);
+}
+.icon-filter-blue{
+  filter: invert(20%) sepia(100%) saturate(3000%) hue-rotate(230deg) brightness(94%) contrast(100%);
+}
+.icon-filter-gray{
+  opacity: .3;
+}
+.icon-filter-white{
+  filter: invert(1);
+}
+//아이콘 애니메이션
+.btn-animation-move{
+  padding-right: 4rem !important;
+  position: relative;
+  & span{
+    animation-name: moving;
+    animation-iteration-count: infinite;
+    animation-duration: .7s;
+    -webkit-animation-name: moving;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-duration: .7s;
+    -moz-animation-name: moving;
+    -moz-animation-iteration-count: infinite;
+    -moz-animation-duration: .7s;
+  
+    position: absolute;
+    top: 12px;
+    right: 5px;
+  }
+}
+@keyframes moving {
+  from {
+    right: 5px;
+  }
+  to {
+    right: 10px;
+  }
+}
+@-webkit-keyframes moving {
+  from {
+    right: 5px;
+  }
+  to {
+    right: 10px;
+  }
+}
+@-moz-keyframes moving {
+  from {
+    right: 5px;
+  }
+  to {
+    right: 10px;
+  }
+}
+
+//아이콘
+//only 아이콘
+
+////////////////////////////////////////
+//icon-direction
+.icon-back{
+  @include icon-direction();
+  background-position: -29px -16px;
+}
+.icon-back-double{
+  @include icon-direction();
+  background-position: -70px -9px;
+}
+.icon-next{
+  @include icon-direction();
+  background-position: -20px -62px;
+}
+.icon-next-double{
+  @include icon-direction();
+  background-position: -68px -55px;
+}
+.icon-up{
+  @include icon-direction();
+  background-position: -25px -109px;
+}
+.icon-down{
+  @include icon-direction();
+  background-position: -25px -153px;
+}
+
+////////////////////////////////////////
+//icon-util
+.icon-close{
+  @include icon-util();
+  background-position: -20px -474px;
+}
+.icon-globe{
+  @include icon-util();
+  background-position: -57.5px -139px;
+}
+.icon-lock {
+  @include icon-util();
+  background-position: -20px -257.5px;
+  &.on{
+    background-position: -58px -257.5px;
+    filter: none !important;
+    transition: none !important;
+  }
+}
+.icon-eye {
+  @include icon-util();
+  background-position: -20px -219.5px;
+  &.on{
+    background-position: -58px -219.5px;
+    filter: none !important;
+    transition: none !important;
+  }
+}
+.icon-check{
+  @include icon-util();
+  background-position: -58.5px -474px;
+  &.checked{
+    filter: invert(20%) sepia(100%) saturate(3000%) hue-rotate(230deg) brightness(94%) contrast(100%);
+  }
+  &.nonchecked{
+    opacity: .2;
+  }
+}
+.icon-plus{
+  @include icon-util();
+  background-position: -96px -475px;
+}
+.icon-minus{
+  @include icon-util();
+  background-position: -96px -440px;
+}
+.icon-delete{
+  @include icon-util();
+  background-position: -20px -60px;
+}
+.icon-editnote{
+  @include icon-util();
+  background-position: -96px -140px;
+}
+.icon-edit{
+  @include icon-util();
+  background-position: -96px -180px;
+}
+.icon-sizing{
+  @include icon-util();
+  background-position: -96px -333px;
+}
+.icon-search{
+  @include icon-util();
+  background-position: -21px -19px;
+}
+.icon-hamburger{
+  @include icon-util();
+  background-position: -20px -100px;
+}
+.icon-info{
+  @include icon-util();
+  background-position: -96px -295px;
+}
+.icon-infofill{
+  @include icon-util();
+  background-position: -96px -258px;
+}
+.icon-warning{
+  @include icon-util();
+  background-position: -96px -220px;
+}
+.icon-save{
+  @include icon-util();
+  background-position: -96px -405px;
+}
+.icon-download{
+  @include icon-util();
+  background-position: -58px -405px;
+}
+.icon-more{
+  @include icon-util();
+  background-position: -96px -99px;
+}
+.icon-refresh{
+  @include icon-util();
+  background-position: -58.5px -440px;
+}
+.icon-wifi{
+  @include icon-util();
+  background-position: -139px -20px;
+  &.wifi-none{
+    background-position: -139px -59px;
+  }
+}
+.icon-pause{
+  @include icon-util();
+  background-position: -139px -440px;
+}
+.icon-play{
+  @include icon-util();
+  background-position: -139px -475px;
+}
+.icon-star{
+  @include icon-util();
+  background-position: -20px -368px;
+}
+.icon-dashboard{
+  @include icon-util();
+  background-position: -58.5px -333px;
+}
+.icon-picture{
+  @include icon-util();
+  background-position: -20px -335px;
+}
+.icon-profile{
+  @include icon-util();
+  background-position: -139px -139px;
+}
+.icon-profile-fill{
+  @include icon-util();
+  background-position: -139px -99px;
+}
+.icon-category{
+  @include icon-util();
+  background-position: -182px -220px;
+}
+
+
+.icon-profile-setting{
+  @include icon-util();
+  background-position: -158px -202px;
+}
+.icon-app-setting{
+  @include icon-util();
+  background-position: -158px -247px;
+}
+.icon-language-setting{
+  @include icon-util();
+  background-position: -158px -290px;
+}
+
+
+
+////////////////////////////////////////
+// icon-map
+.icon-geofence{
+  @include icon-map();
+  background-position: -20px -62px;
+}
+.icon-gps{
+  @include icon-map();
+  background-position: -20px -20px;
+}
+.icon-shild{
+  @include icon-map();
+  background-position: -20px -104px;
+}
+.icon-gps-fill{
+  @include icon-map();
+  background-position: -20px -153.2px;
+}
