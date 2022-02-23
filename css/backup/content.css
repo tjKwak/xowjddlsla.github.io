@@ -1,0 +1,1103 @@
+#root{
+    position: relative;
+}
+
+/*---------*/
+/* intro*/
+/*------------*/
+
+@keyframes backcolor {
+  0% {
+    background:#3495fe;
+  }
+  33% {
+    background: #00edac;
+  }
+  67% {
+    background:#b34aff;
+  }
+  100% {
+    background:#3495fe;
+  }
+}
+
+@keyframes fontcolor {
+  0% {
+    color:#3495fe;
+  }
+  33% {
+    color: #00edac;
+  }
+  67% {
+    color:#b34aff;
+  }
+  100% {
+    color:#3495fe;
+  }
+}
+
+
+
+/*-----intro, back, stars animation---- */
+
+/*    포지션fixed 스크롤버그 */
+.intro{
+    position: fixed;
+    -webkit-transform: translateZ(0);
+    z-index: 50;
+    
+    top: 300px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    opacity: 0;
+    transition: all .5s;
+}
+.intro.on{
+    position: fixed;
+    -webkit-transform: translateZ(0);
+    z-index: 50;
+    
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    opacity: 1;
+    transition: all .5s;
+}
+
+.back{
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position:fixed;
+    z-index: -1;
+    animation: backcolor 6s infinite;
+}
+
+.stars{
+    position: relative;
+    z-index: 40;
+}
+@keyframes particleAnimation
+{
+    from {
+        left: -100px;
+    }
+    to {
+        left: calc( 100% + 100px );
+    }
+}
+
+.star{
+  position:absolute;
+  z-index: -1;
+  left:0px;
+  top:50px;
+  width:10px;
+  height:10px;
+  border-radius: 50px;
+  background-color:white;
+  position:fixed;
+  animation-name:particleAnimation;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+.star::before{
+  content:"";
+  display:block;
+  width:100px;
+  height:100%;
+  background: linear-gradient(to right, rgba(0,0,0,0) 0%,rgba(255,255,255,0.4) 100%);
+    
+  position:absolute;
+  right: 0;
+  top:50%;
+  transform: translateY(-50%);
+}
+.s-1{
+  animation-duration:10s;
+  top: 10%;
+}
+.s-2{
+  animation-duration:5s;
+  top:60%;
+}
+.s-3{
+  animation-duration:20s;
+  top:90%;
+}
+.s-4{
+  animation-duration:3s;
+  top: 50%;
+}
+.s-5{
+  animation-duration:7s;
+  top:70%;
+}
+.s-6{
+  animation-duration:15s;
+  top:40%;
+}
+
+
+/*----스크롤 박스 -----*/
+
+.scroll-box{
+    width: 100px;
+    height: 100px;
+    
+    text-align: center;
+    
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    
+    transition: all 1.5s;
+}
+.scrollIcon{
+    border: 2px solid black;
+    background-color: #fff;
+    box-shadow: 0 0 10px 10px rgba(255,255,255,0.5);
+    width: 40px;
+    height: 60px;
+    border-radius: 50px;
+    margin: 0 auto;
+}
+.scrolling{
+    width: 7px;
+    height: 18px;
+    background-color: black;
+    border-radius: 50px;
+    margin: 0 auto;
+    margin-top: 15px;
+    
+    animation: scrolling 1s infinite;
+}
+@keyframes scrolling{ 
+    0%{
+    margin-top: 15px;
+    }
+    50%{
+    margin-top: 5px; 
+    }
+    100%{
+    margin-top: 15px;
+    }
+}
+.scroll-box p{
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-top: 20px;
+    line-height: 0.8;
+/*    background-color: rgba(255,255,255,0.5);*/
+    border-radius: 50px;
+}
+
+
+
+.phone-box{
+    z-index: -1;
+    width: 40%;
+    height: 70%;
+    border-radius: 50px 50px 0 0;
+    background-color: #0f0e0e;
+    box-shadow: 0px 0px 20px 5px rgba(0,0,0,0.2);
+    
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    
+    transition: all 1.5s;
+}
+.phone-box::before{
+    content: '';
+    display: block;
+    background-color: #0f0e0e;
+    border-radius: 10px;
+    width: 103%;
+    height: 50px;
+    
+    position: absolute;
+    right: -1.5%;
+    top: 15%;
+}
+.phone-box::after{
+    content: '';
+    display: block;
+    background-color: #0f0e0e;
+    border-radius: 10px;
+    width: 3%;
+    height: 80px;
+    
+    position: absolute;
+    right: -2%;
+    top: 25%;
+}
+.phone-screen-box{
+    width: 95%;
+    height: 85%;
+    border-radius: 20px 20px 0 0;
+/*    background-image: linear-gradient(to bottom right, #2f2f2f, gray);*/
+    background-image: linear-gradient(#2f2f2f, gray);
+    position: absolute;
+    left: 50%;
+    top : 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+.phone-screen{
+    width: 100%;
+    height: 100%;
+    border-radius: 20px 20px 0 0;
+    background-color: white;
+    
+    position: absolute;
+    left: 50%;
+    top : 50%;
+    transform: translateX(-50%) translateY(-50%);
+    
+    animation-name: screenOn; 
+    animation-duration: 2.5s;
+}
+@keyframes screenOn{ 
+  0%{
+      width: 0px;
+      height: 0px;
+      border-radius: 20px;
+    }
+  15%{
+      width: 40px;
+      height: 30px;
+      border-radius: 20px;
+    }
+  30%{
+      width: 0px;
+      height: 0px;
+      border-radius: 20px;
+    }
+  50%{
+      width: 50px;
+      height: 10px;
+      border-radius: 20px;
+    }
+  60%{
+      width: 100%;
+      height: 20px;
+      border-radius: 20px;
+    }
+  70%{
+      width: 100%;
+      height:40px;
+      border-radius: 20px;
+    } 
+  80%{
+      width: 100%;
+      height: 100%;
+      border-radius: 20px 20px 0 0;
+    } 
+}
+
+
+.typing-box{
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 50px;
+}
+.typing-box p{
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 3rem;
+    font-weight: 600;
+    line-height: 1.5;
+
+    border: 1px solid red;
+}
+.typing-txt{
+    display: none;
+}
+.typing::after{
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+    width: 1px;
+    height: 40px;
+    animation-name: cursor; 
+  animation-duration: 0.5s; 
+  animation-iteration-count: infinite; 
+    animation-delay: 2.5s;
+}
+@keyframes cursor{ 
+  0%{ border-right: 1px solid #fff} 
+  50%{border-right: 1px solid #000} 
+  100%{border-right: 1px solid #fff} 
+}
+
+
+
+
+/*-------------------*/
+/*----content--------*/
+/*-------------------*/
+
+
+.content{
+    position: relative;
+    z-index: 50;
+    opacity: 0;
+    text-align: center;
+
+    transition: all .5s;
+}
+
+.content.on{
+    position: relative;
+    z-index: 50;
+    opacity: 1;
+    text-align: center;
+    
+    transition: all .5s;
+}
+.content.on::before{
+    content: '';
+    display: block;
+    background-color: #0f0e0e;
+    border-radius: 10px;
+    width: 72%;
+    height: 50px;
+    
+    position: absolute;
+    left: 50%;
+    top: 20%;
+    transform: translateX(-50%) translateY(-50%);
+}
+.content.on::after{
+    content: '';
+    display: block;
+    background-color: #0f0e0e;
+    border-radius: 10px;
+    width: 50%;
+    height: 80px;
+    
+    position: absolute;
+    right: 14%;
+    top: 23%;
+    
+}
+.title{
+    z-index: -1;
+    text-align: center;
+    padding-top: 200px;
+    width: 100%;
+    display: inline-block;
+}
+.title h3{
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+.title h4{
+    text-transform: uppercase;
+/*    color: #ECEDEF;*/
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 8rem;
+    font-weight: 600;
+}
+
+#portfolio{
+    background-color: white;
+    z-index: 10; /*  content.on::after 버튼 때문에 z-index 설정함*/
+    position: relative;
+    
+    margin-top: -15px;
+    border-radius: 30px;
+    border: 10px solid black;
+    padding: 50px 10%;
+    width: 50%;
+    
+    display: inline-block;
+    /*    box-shadow: 0px -10px 20px 10px #ECEDEF;*/
+}
+
+/*------------*/
+/* p-title */
+/*------------*/
+
+
+.p_menu{
+    width: 100%;
+    margin : 30px 0;
+    
+    display: flex;
+    text-align: center;
+}
+.p_menu li{
+    width: 100%;
+}
+.p_menu li.on a{
+    background-color: #00b1ff;
+    animation: backcolor 6s infinite;
+}
+.p_menu li.on a:hover{
+    color: black;
+}
+.p_menu li+li{
+    margin-left: 10px;
+}
+.p_menu li a{
+    padding: 0 20px;
+    box-sizing: border-box;
+    background-color: white;
+    border-radius: 50px;
+    display: block;
+    width: 100%;
+    
+    color: black;
+    font-family: 'Noto Sans KR', sans-serif;
+    text-transform: uppercase;
+    font-size: 1rem;
+    line-height: 50px;
+    font-weight: 800;
+    box-shadow: 0px 0px 20px 5px rgba(0,0,0,0.2);
+    transition: all .3s;
+}
+.p_menu li a:hover{
+    background-color: black;
+    color: white;
+    transition: all .3s;
+}
+
+
+
+/*------------*/
+/* p-page */
+/*------------*/
+
+.p_list{
+    text-align: left;
+    margin-bottom: 100px;
+}
+.p_list ul.on{
+    display: block;
+}
+.p_list ul{
+    display: none;
+}
+.p_list li{
+    width: 100%;
+/* 높이는 미디어쿼리마다 바뀜   */
+    height: 300px;
+}
+
+
+/* 높이는 미디어쿼리마다 바뀜   */
+/* 3D칸 CSS 수정해야함*/
+/*
+.p_list ul:last-child li{
+    padding: 5% 0;
+}
+*/
+/*
+.p_list ul:last-child .page-pic img{
+    width: 100%;
+}
+*/
+
+.p_list li::after {
+    content:"";
+    clear:both;
+    display:block;
+}
+
+.p_list li{
+    padding : 10% 0;
+    border-bottom: 1px solid lightgray;
+}
+.p_list li:last-child{
+    border-bottom: none;
+}
+
+
+/*-----------------*/
+/* ---- p_page ------ */
+/*------ page-pic -----------*/
+.p_list .page-pic{
+    float: right;
+    position: relative;
+    width: 45%;
+    height: 100%;
+}
+
+.portImg{
+    box-shadow: 0 30px 60px rgba(17, 20, 39, 0.25);
+    
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition: all .5s;
+}
+.portImg .img{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top center;
+    
+    width: 100%;
+    height: 100%;
+}
+/*-----------------*/
+/* 이미지 모음 */
+/*-----------------*/
+.img1{
+    background-image: url(../img/29cm.PNG);
+}
+.img2{
+    background-image: url(../img/kakaobank.PNG);
+}
+.img3{
+    background-image: url(../img/kakao.jpg);
+}
+.img4{
+    background-image: url(../img/naver.PNG);
+}
+.img5{
+    background-image: url(../img/ed.PNG);
+}
+.img6{
+    background-image: url(../img/portfolio/p14.png);
+}
+.img7{
+    background-image: url(../img/portfolio/p21.png);
+}
+.img8{
+    background-image: url(../img/portfolio/p27.png);
+}
+.img9{
+    background-image: url(../img/portfolio/p5.png);
+}
+.img10{
+    background-image: url(../img/portfolio/p9.png);
+}
+.img11{
+    background-image: url(../img/portfolio/p34.png);
+}
+.img12{
+    background-image: url(../img/portfolio/p35.png);
+}
+.img13{
+    background-image: url(../img/portfolio/p36.png);
+}
+.img14{
+    background-image: url(../img/portfolio/p37.png);
+}
+.img15{
+    background-image: url(../img/portfolio/p38.png);
+}
+
+
+
+
+
+/*-----------------*/
+/* 포트이미지에 호버시 */
+/*-----------------*/
+.portImg:hover{
+    transform: scale(1.1);
+    box-shadow: 0 30px 80px rgba(17, 20, 39, 0.7);
+    transition: all .5s;
+}
+.portImg:hover .more{
+    display: block;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    background-color: rgba(0,0,0,0.7);
+    transition: all .5s;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.portImg:hover .more::after{
+    display: block;
+    content: 'MORE';
+    color: yellow;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    transition: all .5s;
+    
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 2rem;
+    font-weight: 500;
+}
+.portImg .more::after{
+    content: 'MORE';
+    display: block;
+    color: transparent;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    transition: all .5s;
+
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 4rem;
+    font-stretch: expanded;
+    font-weight: 500;
+}
+
+
+/*-----------------*/
+/* ---- p_page ------ */
+/*---- page-info ------*/
+.p_list .page-info{
+    float: left;
+    position: relative;
+    width: 40%;
+    height: 100%;
+}
+.p_list .page-info::before{
+    content: '';
+    display: inline-block;
+    position: absolute;
+    left: -20px;
+    top: 20px;
+    width: 5px;
+    height: 60px;
+    background-color: black;
+}
+
+.p_list .page-info h4{
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 1rem;
+    color: #00b1ff;
+    animation: fontcolor 6s infinite;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+.p_list .page-info h3{
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 2rem;
+    color: black;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+.p_list .page-info p{
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 1rem;
+    color: black;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+/* 포폴 클릭 모달창 */
+.page-more{
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 9999;
+    background-color: rgba(0,0,0,0.9);
+    overflow: scroll;
+}
+.page-more.hidden{
+    position: none;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 100;
+    background-color: rgba(0,0,0,0.9);
+}
+.more-wrap{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 200;
+}
+.more-wrap .more-img{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 100px 0 ;
+    width: 60%;
+    box-shadow: 0px 0px 20px 5px rgba(0,0,0,0.2);
+}
+.more-img img{
+    width: 100%;
+    box-shadow: 0px 0px 20px 5px rgba(0,0,0,0.2);
+}
+.more-img img+img{
+    margin-top: 30px;
+}
+/* 포폴 클릭 모달창 클로스버튼 */
+.more-wrap .more-close{
+    position: absolute;
+    left: 80%;
+    margin-top: 60px;
+    width: 40px;
+    height: 40px;
+}
+.more-close-btn{
+    width: 100%;
+    height: 100%;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    font-size: 0;
+}
+.more-close-btn i{
+    color: white;
+    font-size: 2rem;
+}
+
+/* 페이지 버튼 */
+
+.page-btn{
+    width: 100%;
+    margin-top: 30px;
+}
+.page-btn a{
+    display: inline-block;
+
+    width: 40%;
+    padding: 10px 0;
+    text-align: center;
+    margin: 0 10px 10px 0;
+    border-radius: 10px;
+    background-color: lightgray;
+    
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 1rem;
+}
+
+.page-btn a:hover{
+    background-color: gray;
+}
+
+
+/* 아웃트로 */
+
+.p_outtro{
+    width: 100%;
+    padding: 5px 0;
+    margin-top: 100px;
+    background-color: gray;
+    border-radius: 50px;
+}
+
+
+
+
+
+/*--------------------*/
+/*----레터 보내주세요----*/
+/*--------------------*/
+
+/*
+#aboutMe{
+    margin: -5px 0 600px 0;
+    width: 50%;
+    padding: 50px 10%;
+    border-radius: 50px;
+    border: 10px solid black;
+    background-color: black;
+    background-image: url(../img/flower.gif);
+    background-size: 120%;
+    background-position: left bottom;
+    background-repeat: no-repeat;
+    
+    display: inline-block;
+}
+*/
+#aboutMe{
+    margin: -28px 0 800px 0;
+    width: 60%;
+    padding: 100px 5%;
+    border-radius: 50px;
+    border: 10px solid black;
+    background-color: black;
+
+    display: inline-block;
+}
+#aboutMe *{
+    color: white;
+    text-align: left;
+}
+
+/* ---프로파일 (내사진, 이름 한마디)--- */
+.a_profile{
+    display: inline-block;
+    vertical-align: top;
+    width: 50%;
+}
+
+.myPic{
+    width: 100%;
+    height: 300px;
+/*  반응형에선 높이가 달라짐  */
+    background-image: url(../img/cat.gif);
+    background-position: center;
+    background-size: cover;
+    border: 1px solid white;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    position: relative;
+}
+.myName{
+    position: absolute;
+    bottom: 0;
+    padding: 5%;
+    box-sizing: border-box;
+    border-radius: 20px 20px 0 0;
+    background-color: rgba(0,0,0,0.5);
+}
+.myName p{
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 500;
+    line-height: 1.6;
+    margin-bottom: 5px;
+}
+.myName p:last-child{
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 1rem;
+    font-weight: 200;
+    line-height: 1.2;
+    color: lightgray;
+}
+.myWord img{
+    width: 50px;
+    filter: invert();
+    transform: scaleX(-1);
+}
+.myWord p{
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 500;
+    line-height: 1.6;
+}
+.myWord strong{
+    animation: fontcolor 6s infinite;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+
+/* ---인포(내 경력, 내 스킬)--- */
+
+.a_info{
+    display: inline-block;
+    width: 48%;
+
+    padding-left: 6%;
+    box-sizing: border-box;
+}
+.a_info > ul + ul{
+    margin-top: 40px;
+}
+.a_info h3{
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+.a_info li{
+    line-height: 1.5;
+    color: gray;
+}
+.my_work{
+    position: relative;
+}
+.my_work::before{
+    content: '';
+    display: inline-block;
+    position: absolute;
+    left: -20px;
+    top: 0px;
+    width: 5px;
+    height: 40px;
+    background-color: white;
+}
+.a_info li{
+    margin-bottom: 5px;
+    display: flex;
+    color: white;
+}
+.a_info h4{
+    margin-right: 20px;
+    font-weight: bold;
+    opacity: .8;
+}
+.a_info p{
+    opacity: .6;
+}
+
+/*---------*/
+.my_study{
+    position: relative;
+}
+.my_study::before{
+    content: '';
+    display: inline-block;
+    position: absolute;
+    left: -20px;
+    top: 0px;
+    width: 5px;
+    height: 40px;
+    background-color: white;
+}
+.my_study li{
+    margin-bottom: 5px;
+}
+.my_study span{
+    color: gray;
+    margin-right: 20px;
+}
+
+/*----------*/
+.my_skill{
+    position: relative;
+}
+
+.my_skill::before{
+    content: '';
+    display: inline-block;
+    position: absolute;
+    left: -20px;
+    top: 0px;
+    width: 5px;
+    height: 40px;
+    background-color: white;
+}
+
+
+
+
+
+
+
+
+
+
+/* 굿바이!!!! */
+
+
+.goodbye{
+    z-index: 999999999;
+    position: fixed;
+    
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    
+    background-color: black;
+    width: 100%;
+    max-height: 0%;
+    
+    opacity: 0;
+    transition: all .5s;
+}
+.goodbye.on{
+    z-index: 999999999;
+    position: fixed;
+    
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    
+    background-color: black;
+    width: 100%;
+    max-height: 100%;
+    
+    opacity: 1;
+    transition: all .5s;
+}
+
+.goodbye .g-txt{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-60%);
+    width: 100%;
+    height: 30%;
+    text-align: center;
+}
+.goodbye .g-txt h3{
+    color: white;
+     font-family: 'Noto Sans KR', sans-serif;
+    font-size: 0rem;
+    font-weight: 500;
+}
+.goodbye .g-txt h2{
+    color: white;
+     font-family: 'Noto Sans KR', sans-serif;
+    font-size: 0rem;
+    font-weight: 500;
+    margin: 70px 0 50px 0;
+}
+.goodbye .g-txt p{
+    color: white;
+     font-family: 'Noto Sans KR', sans-serif;
+    font-size: 0rem;
+    font-weight: 300;
+    line-height: 1.5;
+}
+
+
+/* 활성화 시 */
+
+.goodbye.on .g-txt{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-60%);
+    width: 100%;
+    height: 30%;
+    text-align: center;
+}
+.goodbye.on .g-txt h3:nth-of-type(1){
+    color: white;
+     font-family: 'Noto Sans KR', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+.goodbye.on .g-txt h3:nth-of-type(2){
+    color: white;
+     font-family: 'Noto Sans KR', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 500;
+    margin: 70px 0 50px 0;
+}
+.goodbye.on .g-txt p{
+    color: white;
+     font-family: 'Noto Sans KR', sans-serif;
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.5;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

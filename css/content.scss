@@ -1,0 +1,497 @@
+#root{
+    & .content{
+        position: relative;
+        z-index: 50;
+        opacity: 0;
+        text-align: center;
+        padding-top: 20rem;
+        transition: all .5s;
+        &.on{
+            opacity: 1;
+            //로켓 날개
+            &::before, &::after{
+                content: '';
+                display: block;
+                background: linear-gradient(gray, white);
+                //box-shadow: inset 0 0 10px gray;
+                width: 30rem;
+                height: 90rem;
+                position: absolute;
+                top: 20%;
+            }
+            &::before{
+                left: calc(20% - 10rem);
+                transform: rotate(15deg);
+                border-radius: 20px 20px 100rem 20px;
+            }
+            &::after{
+                right: calc(20% - 10rem);
+                transform: rotate(-15deg);
+                border-radius: 20px 20px 20px 100rem;
+            }
+        }
+        //로켓 바디
+        & #portfolio{
+            background-color: white;
+            //box-shadow: inset 0 0 10px gray;
+            z-index: 10; /*  content.on::after 버튼 때문에 z-index 설정함*/
+            position: relative;
+            margin-top: -15px;
+            border-radius: 100rem 100rem 30px 30px;
+            width: 60%;
+            display: inline-block;
+            overflow: hidden;
+
+            //로켓 머리
+            & .rocket-head{
+                & .head{
+                    border-bottom: 20px solid gray;
+                    height: 20rem;
+                    background-color: #D9272E;
+                }
+                & .window-wrap{
+                    height: 30rem;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    & .window{
+                        border: 20px solid rgb(184, 184, 255);
+                        width: 12rem;
+                        height: 12rem;
+                        border-radius: 100rem;
+                        background-image: url('../img/profile.png');
+                        background-size: cover;
+                    }
+                }
+            }
+            & .rocket-body{
+                padding: 50px 20%;
+                //탭메뉴
+                & .p_menu{
+                    width: 100%;
+                    margin : 30px 0;
+                    
+                    display: flex;
+                    text-align: center;
+                    & li{
+                        width: 100%;
+                        &.on{
+                            & a{
+                                background-color: #00b1ff;
+                                animation: backcolor 6s infinite;
+                                &:hover{color: black;}
+                            }
+                        }
+                        & a{
+                            padding: 0 20px;
+                            box-sizing: border-box;
+                            background-color: white;
+                            border-radius: 50px;
+                            display: block;
+                            width: 100%;
+                            
+                            color: black;
+                            font-family: 'Noto Sans KR', sans-serif;
+                            text-transform: uppercase;
+                            font-size: 1rem;
+                            line-height: 50px;
+                            font-weight: 800;
+                            box-shadow: 0px 0px 20px 5px rgba(0,0,0,0.2);
+                            transition: all .3s;
+                            &:hover{
+                                background-color: black;
+                                color: white;
+                                transition: all .3s;
+                            }
+                        }
+                    }
+                    & li+li{
+                        margin-left: 10px;
+                    }
+
+                }
+                //탭바디
+                & .p_list{
+                    text-align: left;
+                    margin-bottom: 100px;
+                    & ul{
+                        display: none;
+                        &.on{
+                            display: block;
+                        }
+                        & li{
+                            width: 100%;
+                            height: 200px;
+                            padding : 10% 0;
+                            border-bottom: 1px solid rgb(240, 240, 240);
+                            &::after{
+                                content:"";
+                                clear:both;
+                                display:block;
+                            }
+                            &:last-child{
+                                border-bottom: none;
+                            }
+                            //그림
+                            & .page-pic{
+                                float: right;
+                                position: relative;
+                                width: 45%;
+                                height: 100%;
+                                & .portImg{
+                                    box-shadow: 0 30px 60px rgba(17, 20, 39, 0.25);
+                                    width: 100%;
+                                    height: 100%;
+                                    position: relative;
+                                    border-radius: 20px;
+                                    overflow: hidden;
+                                    transition: all .5s;
+                                    & .img{
+                                        background-repeat: no-repeat;
+                                        background-size: cover;
+                                        background-position: top center;
+                                        
+                                        width: 100%;
+                                        height: 100%;
+                                    }
+                                    & .more{
+                                        display: block;
+                                        width: 100%;
+                                        height: 100%;
+                                        z-index: 100;
+                                        background-color: transparent;
+                                        transition: all .5s;
+                                        position: absolute;
+                                        top: 0;
+                                        left: 0;
+                                        &::after{
+                                            content: 'MORE';
+                                            display: block;
+                                            color: transparent;
+                                            position: absolute;
+                                            top: 50%;
+                                            left: 50%;
+                                            transform: translateX(-50%) translateY(-50%);
+                                            transition: all .5s;
+                                        
+                                            font-family: 'Noto Sans KR', sans-serif;
+                                            font-size: 4rem;
+                                            font-stretch: expanded;
+                                            font-weight: 500;
+                                        }
+                                    }
+                                    &:hover{
+                                        transform: scale(1.1);
+                                        box-shadow: 0 30px 80px rgba(17, 20, 39, 0.7);
+                                        transition: all .5s;
+                                        & .more{
+                                            background-color: rgba(0,0,0,0.7);
+                                        }
+                                        & .more::after{
+                                            color: yellow;
+                                            font-size: 2rem;
+                                        }
+                                    }
+                                }
+                            }
+                            //설명
+                            & .page-info{
+                                float: left;
+                                position: relative;
+                                width: 40%;
+                                height: 100%;
+                                &::before{
+                                    content: '';
+                                    display: inline-block;
+                                    position: absolute;
+                                    left: -20px;
+                                    top: 20px;
+                                    width: 5px;
+                                    height: 60px;
+                                    background-color: black;
+                                }
+                                & h4{
+                                    font-family: 'Noto Sans KR', sans-serif;
+                                    font-size: 1rem;
+                                    color: #00b1ff;
+                                    font-weight: 600;
+                                    margin-bottom: 15px;
+                                }
+                                & h3{
+                                    font-family: 'Noto Sans KR', sans-serif;
+                                    font-size: 2rem;
+                                    color: black;
+                                    font-weight: 600;
+                                    margin-bottom: 15px;
+                                }
+                                & p{
+                                    font-family: 'Noto Sans KR', sans-serif;
+                                    font-size: 1rem;
+                                    color: black;
+                                    line-height: 1.2;
+                                    margin-bottom: 20px;
+                                }
+                                & .page-btn{
+                                    width: 100%;
+                                    margin-top: 30px;
+                                    & a{
+                                        display: inline-block;
+                                        width: 40%;
+                                        padding: 10px 0;
+                                        text-align: center;
+                                        margin: 0 10px 10px 0;
+                                        border-radius: 10px;
+                                        background-color: lightgray;
+                                        
+                                        font-family: 'Noto Sans KR', sans-serif;
+                                        font-size: 1rem;
+                                        &:hover{
+                                            background-color: gray;
+                                        }
+                                    }
+                                }
+                            }
+                            //클릭시 팝업
+                            & .page-more{
+                                position: fixed;
+                                left: 0;
+                                right: 0;
+                                top: 0;
+                                bottom: 0;
+                                z-index: 9999;
+                                background-color: rgba(0,0,0,0.9);
+                                overflow: scroll;
+                                &.hidden{
+                                    position: none;
+                                    z-index: 100;
+                                }
+                                & .more-wrap{
+                                    position: relative;
+                                    width: 100%;
+                                    height: 100%;
+                                    z-index: 200;
+                                    & .more-close{
+                                        position: absolute;
+                                        left: 80%;
+                                        margin-top: 60px;
+                                        width: 40px;
+                                        height: 40px;
+                                        & .more-close-btn{
+                                            width: 100%;
+                                            height: 100%;
+                                            border: none;
+                                            background-color: transparent;
+                                            cursor: pointer;
+                                            font-size: 0;
+                                            & i{
+                                                color: white;
+                                                font-size: 2rem;
+                                            }
+                                        }
+                                    }
+                                    & .more-img{
+                                        position: absolute;
+                                        left: 50%;
+                                        transform: translateX(-50%);
+                                        margin: 100px 0 ;
+                                        width: 60%;
+                                        box-shadow: 0px 0px 20px 5px rgba(0,0,0,0.2);
+                                        & img{
+                                            width: 100%;
+                                            box-shadow: 0px 0px 20px 5px rgba(0,0,0,0.2);
+                                        }
+                                        & img+img{ margin-top: 30px; }
+                                    }
+                                    
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            //탭 아웃트로
+            & .rocket-tail{
+                width: 100%;
+                padding: 5px 0;
+                margin-top: 100px;
+                background-color: gray;
+                border-radius: 50px;
+            }
+
+        }
+        //어바웃미
+        & #aboutMe{
+            display: inline-block;
+            margin: -28px 0 800px 0;
+            width: 60%;
+            padding: 100px 5%;
+            border-radius: 50px;
+            border: 10px solid black;
+            background-color: black;
+            & *{
+                color: white;
+                text-align: left;
+            }
+            /* ---프로파일 (내사진, 이름 한마디)--- */
+            & .a_profile{
+                display: inline-block;
+                vertical-align: top;
+                width: 50%;
+                & .myPic{
+                    width: 100%;
+                    height: 300px;
+                /*  반응형에선 높이가 달라짐  */
+                    background-image: url(../img/cat.gif);
+                    background-position: center;
+                    background-size: cover;
+                    border: 1px solid white;
+                    border-radius: 20px;
+                    margin-bottom: 10px;
+                    position: relative;
+                    & .myName{
+                        position: absolute;
+                        bottom: 0;
+                        padding: 5%;
+                        box-sizing: border-box;
+                        border-radius: 20px 20px 0 0;
+                        background-color: rgba(0,0,0,0.5);
+                        & p{
+                            font-family: 'Noto Sans KR', sans-serif;
+                            font-size: 1.2rem;
+                            font-weight: 500;
+                            line-height: 1.6;
+                            margin-bottom: 5px;
+                            &:last-child{
+                                font-family: 'Noto Sans KR', sans-serif;
+                                font-size: 1rem;
+                                font-weight: 200;
+                                line-height: 1.2;
+                                color: lightgray;
+                            }
+                        }
+                    }
+                }
+                & .myWord{
+                    & img{
+                        width: 50px;
+                        //filter: invert();
+                        transform: scaleX(-1);
+                    }
+                    & p{
+                        font-family: 'Noto Sans KR', sans-serif;
+                        font-size: 1.2rem;
+                        font-weight: 500;
+                        line-height: 1.6;
+                    }
+                    & strong{
+                        animation: backcolor 6s infinite;
+                        font-family: 'Noto Sans KR', sans-serif;
+                        font-size: 1.2rem;
+                        font-weight: 600;
+                    }
+                }
+            }
+            /* ---프로파일 (내사진, 이름 한마디)--- */
+            & .a_info{
+                display: inline-block;
+                width: 48%;
+            
+                padding-left: 6%;
+                box-sizing: border-box;
+                ul + ul{
+                    margin-top: 40px;
+                }
+                & ul{
+                    position: relative;
+                    &::before{
+                        content: '';
+                        display: inline-block;
+                        position: absolute;
+                        left: -20px;
+                        top: 0px;
+                        width: 5px;
+                        height: 40px;
+                        background-color: white;
+                    }
+                    & h3{
+                        font-family: 'Noto Sans KR', sans-serif;
+                        font-size: 1.2rem;
+                        font-weight: 600;
+                        margin-bottom: 10px;
+                    }
+                    & li{
+                        margin-bottom: 5px;
+                        display: flex;
+                        color: white;
+                        line-height: 1.5;
+                        color: gray;
+                        & h4{
+                            margin-right: 20px;
+                            font-weight: bold;
+                            opacity: .8;
+                        }
+                        & p{
+                            opacity: .6;
+                        }
+                    }
+                }
+                & .my_study span{
+                    color: gray;
+                    margin-right: 20px;
+                }
+            }
+        }
+    }
+}
+
+
+/*-----------------*/
+/* 이미지 모음 */
+/*-----------------*/
+.img{
+    &.img1{
+        background-image: url(../img/29cm.PNG);
+    }
+    &.img2{
+        background-image: url(../img/kakaobank.PNG);
+    }
+    &.img3{
+        background-image: url(../img/kakao.jpg);
+    }
+    &.img4{
+        background-image: url(../img/naver.PNG);
+    }
+    &.img5{
+        background-image: url(../img/ed.PNG);
+    }
+    &.img6{
+        background-image: url(../img/portfolio/p14.png);
+    }
+    &.img7{
+        background-image: url(../img/portfolio/p21.png);
+    }
+    &.img8{
+        background-image: url(../img/portfolio/p27.png);
+    }
+    &.img9{
+        background-image: url(../img/portfolio/p5.png);
+    }
+    &.img10{
+        background-image: url(../img/portfolio/p9.png);
+    }
+    &.img11{
+        background-image: url(../img/portfolio/p34.png);
+    }
+    &.img12{
+        background-image: url(../img/portfolio/p35.png);
+    }
+    &.img13{
+        background-image: url(../img/portfolio/p36.png);
+    }
+    &.img14{
+        background-image: url(../img/portfolio/p37.png);
+    }
+    &.img15{
+        background-image: url(../img/portfolio/p38.png);
+    }
+}

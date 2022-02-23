@@ -1,0 +1,371 @@
+// 목차 (Update. 2021-11-10)
+// 1. 기본 컬러 세팅 - form, layout, commons에 사용
+// 2. 값 세팅 - form, layout, commons, content에 사용
+// 3. 자주 쓰는 문법
+
+
+//////////////////////////////////////////////////////
+/* 1. 기본 컬러 세팅 - form, layout, commons에 사용 */
+
+//---warm gray----
+// $white: #fff;
+// $gray-100: #EBEBEB;
+// $gray-200: #e2e2e2;
+// $gray-300: #dbdbdf;
+// $gray-400: #cfcfd3; //disable-bg
+// $gray-500: #b3b3b6; //form-border
+// $gray-600: #929294;
+// $gray-700: #585252;
+// $gray-800: #423c3c;
+// $gray-900: #2c2828;
+// $black: #000;
+
+//---cool gray----
+// $white: #fff;
+// $gray-100: #F8FAFE;
+// $gray-200: #EAEFF3;
+// $gray-300: #DCE1E5;
+// $gray-400: #CED4DA; //disable-bg
+// $gray-500: #adb5bd; //form-border
+// $gray-600: #868E96;
+// $gray-700: #575E66;
+// $gray-800: #343A40;
+// $gray-900: #212529;
+// $black: #000;
+
+//---violet gray----
+$white: #fff;
+$gray-100: #F6F6F9;
+$gray-200: #ECEAF2;
+$gray-300: #DCD9E1;
+$gray-400: #CAC8CF; //disable-bg
+$gray-500: #A8A7AC; //form-border
+$gray-600: #86858A;
+$gray-700: #656467;
+$gray-800: #434245;
+$gray-900: #212122;
+$black: #000;
+
+
+
+
+// GENERIC
+$body-bg: #fff;
+
+// 글자색상
+$f-b-1: rgba(0,0,0,1);
+$f-b-2: rgba(0,0,0,0.85);
+$f-b-3: rgba(0,0,0,0.75); //selected-font
+$f-b-4: rgba(0,0,0,0.60);
+$f-b-5: rgba(0,0,0,0.45);
+$f-b-6: rgba(0,0,0,0.35); //placehold-font
+$f-b-7: rgba(0,0,0,0.25); //disable-font
+$f-b-8: rgba(0,0,0,0.15);
+$f-b-9: rgba(0,0,0,0.05);
+
+$f-w-1: rgba(255,255,255,1);
+$f-w-2: rgba(255,255,255,0.85); //selected-font
+$f-w-3: rgba(255,255,255,0.75);
+$f-w-4: rgba(255,255,255,0.60);
+$f-w-5: rgba(255,255,255,0.45);
+$f-w-6: rgba(255,255,255,0.35);
+$f-w-7: rgba(255,255,255,0.25);
+$f-w-8: rgba(255,255,255,0.15);
+$f-w-9: rgba(255,255,255,0.05);
+
+//form의 기본 셋팅을 위한 컬러
+$default-brand : #FF7800;
+$default-secondary : #3E66FB;
+$default-success : #3ac062;
+$default-warning : #FFC107;
+$default-danger : #ff3333;
+$default-info : #3bc1ff;
+$default-brand-l: mix($default-brand, white, 20%);
+$default-brand-d: mix($default-brand, black, 80%);
+$default-secondary-l: mix($default-secondary, white, 20%);
+$default-secondary-d: mix($default-secondary, black, 80%);
+$default-success-l: mix($default-success, white, 20%);
+$default-success-d: mix($default-success, black, 80%);
+$default-warning-l: mix($default-warning, white, 20%);
+$default-warning-d: mix($default-warning, black, 80%);
+$default-danger-l: mix($default-danger, white, 20%);
+$default-danger-d: mix($default-danger, black, 80%);
+$default-info-l: mix($default-info, white, 20%);
+$default-info-d: mix($default-info, black, 80%);
+
+
+//////////////////////////////////////////////////////
+/* 2. 값 세팅 - form, layout, commons, content에 사용  */
+
+//폰트 관련 값
+$headings-font-weight: 400;
+$font-size-base: 1rem; //0.88rem
+$font-size-lg: ($font-size-base * 1.35);
+$font-size-sm: ($font-size-base * 1.1);
+$font-size-xs: ($font-size-base / 1.1);
+
+//폼 관련 값
+$form-height-small: 32px;
+$form-height: 38px;
+$form-height-big: 44px;
+
+$form-radius: 5px;
+$form-gap : 5px;
+$form-left-padding : .8rem;
+
+$form-bg-color: white;
+$form-border-color : $gray-200;
+$form-disable-bg : $gray-100;
+$form-txt : $f-b-4;
+$form-disable-txt : $f-b-5;
+$form-placeholder-txt : $f-b-5;
+$form-shadow : 1.5px 1.5px 4.5px rgba(29, 12, 23, 0.18);
+$card-shadow : 0rem 0.47rem 2.19rem rgba(8,10,37,0.03), 0rem 0.94rem 1.41rem rgba(8,10,37,0.03), 0rem 0.25rem 0.53rem rgba(8,10,37,0.05), 0rem 0.13rem 0.19rem rgba(8,10,37,0.03);
+$form-active-shadow : 0px 0px 10px rgba(255,50,50,0.2);
+
+//트렌지션
+$form-transition : all .2s;
+
+//반응형 관련 값
+$breakpoint-mobile: 570px;
+$breakpoint-tablet: 758px;
+$breakpoint-labtop: 1024px;
+$breakpoint-desktop: 1200px;
+$breakpoint-widemonitor: 1700px;
+
+// layout
+$spacer-lg : 3rem;
+$spacer-sm : 1.5rem;
+$layout-spacer-lg : 3rem;
+$layout-spacer-x : 1.5rem;
+$app-sidebar-width : 280px;
+$app-sidebar-width-collapsed : 80px;
+$logo-height : 23px;
+$logo-width : 97px;
+$app-header-height : 60px;
+$layout-shadow : 0 0 1rem rgba(30,10,10,0.15);
+
+//////////////////////////////////////////////////////
+/* 3. 자주 쓰는 문법  */
+//컬러들
+.color-brand{ color: $default-brand; }
+.color-secondary{ color: $default-secondary; }
+.color-success{ color: $default-success; }
+.color-info{ color: $default-info; }
+.color-warning{ color: $default-warning; }
+.color-danger{ color: $default-danger; }
+.color-lightgray{ color: $gray-300; }
+.color-gray{ color: $gray-500; }
+.color-darkgray{ color: $gray-800; }
+.color-white{ color: white; }
+.color-black{ color: black; }
+
+
+.bg-brand{
+    background-color: $default-brand;
+    &.bg-light{ background-color: $default-brand-l; }
+}
+.bg-secondary{
+    background-color: $default-secondary;
+    &.bg-light{ background-color: $default-secondary-l; }
+}
+.bg-success{
+    background-color: $default-success;
+    &.bg-light{ background-color: $default-success-l; }
+}
+.bg-info{
+    background-color: $default-info;
+    &.bg-light{ background-color: $default-info-l; }
+}
+.bg-warning{
+    background-color: $default-warning;
+    &.bg-light{ background-color: $default-warning-l; }
+}
+.bg-danger{
+    background-color: $default-danger;
+    &.bg-light{
+        background-color: $default-danger-l;
+    }
+}
+.bg-gray{
+    background-color: $gray-500;
+    &.bg-light{ background-color: $gray-400; }
+}
+.bg-lightgray{
+    background-color: $gray-300;
+    &.bg-light{ background-color: $gray-200; }
+}
+.bg-darkgray{
+    background-color: $gray-800;
+    &.bg-light{ background-color: $gray-700; }
+}
+
+//////////////////////////////////////////////////////
+/* 3. 자주 쓰는 문법  */
+
+//font
+.ws-none{white-space: nowrap;}
+
+
+//scale
+.scale-1{transform: scale(1.2);}
+.scale-2{transform: scale(1.5);}
+.scale-3{transform: scale(2);}
+.scale-4{transform: scale(3);}
+.scale-5{transform: scale(5);}
+
+//flex 정렬
+.tr{ text-align: right;}
+.tl{ text-align: left;}
+.tc{ text-align: center;}
+.fr{ float: right;}
+.fl{ float: left;}
+.flx-1{ flex: 1;}
+.flx-shrink-0{ flex-shrink: 0;}
+
+.flx-full{
+    & > * { width: 100%;}
+}
+.flx-row{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    align-content: center;
+    &.gap-0{
+        gap: 0;
+    }
+    &.gap-1{
+        gap: .5rem;
+    }
+    &.gap-2{
+        gap: 1rem;
+    }
+    &.gap-3{
+        gap: 2rem;
+    }
+    &.row-top{
+        align-items: unset;
+    }
+}
+.flx-col{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: .5rem;
+    &.gap-0{
+        gap: 0;
+    }
+    &.gap-1{
+        gap: .5rem;
+    }
+    &.gap-2{
+        gap: 1rem;
+    }
+    &.gap-3{
+        gap: 2rem;
+    }
+}
+.flx-sb{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &.flx-top{
+        align-items: flex-start;
+    }
+}
+.flx-center-center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.flx-right{ justify-content: flex-end !important; }
+.flx-left{ justify-content: flex-start !important; }
+.flx-center{ justify-content: center !important; }
+.flx-bottom{
+    align-content:flex-end !important;
+    align-items:flex-end !important;
+}
+.flx-top{
+    align-content: flex-start !important;
+    align-items: flex-start !important;
+}
+
+.w-10{ width: 10% !important; }
+.w-20{ width: 20% !important; }
+.w-30{ width: 30% !important; }
+.w-40{ width: 40% !important; }
+.w-50{ width: 50% !important; }
+.w-60{ width: 60% !important; }
+.w-70{ width: 70% !important; }
+.w-80{ width: 80% !important; }
+.w-90{ width: 90% !important; }
+.w-100{ width: 100% !important; }
+
+.h-10{ height: 10% !important; }
+.h-20{ height: 20% !important; }
+.h-30{ height: 30% !important; }
+.h-40{ height: 40% !important; }
+.h-50{ height: 50% !important; }
+.h-60{ height: 60% !important; }
+.h-70{ height: 70% !important; }
+.h-80{ height: 80% !important; }
+.h-90{ height: 90% !important; }
+.h-100{ height: 100% !important; }
+.h-100-m{ height: calc(100% - 1rem); }
+
+.br-0{ border-radius: 0px; }
+.br-1{ border-radius: .5rem; }
+.br-2{ border-radius: 1rem; }
+.br-3{ border-radius: 2rem; }
+.br-4{ border-radius: 3rem; }
+.br-5{ border-radius: 100rem; }
+
+.min-w-none{ min-width: unset !important;}
+.max-w-none{ max-width: unset !important;}
+.min-h-none{ min-height: unset !important;}
+.max-h-none{ max-height: unset !important;}
+
+//--[옵션] 모바일에서만 보이는 것
+.show__under-mobile{
+    display: none !important;
+    @media (max-width: $breakpoint-mobile) {
+        display: block !important;
+    }
+}
+.show__under-tablet{
+    display: none !important;
+    @media (max-width: $breakpoint-tablet) {
+        display: block !important;
+    }
+}
+.show__under-desktop{
+    display: none !important;
+    @media (max-width: $breakpoint-desktop) {
+        display: block !important;
+    }
+}
+.show__only-labtop{
+    display: none !important;
+    @media (min-width:$breakpoint-labtop) and (max-width:$breakpoint-widemonitor){
+        display: block !important;
+    }
+}
+.show__over-mobile{
+    display: block !important;
+    @media (max-width: $breakpoint-mobile) {
+        display: none !important;
+    }
+}
+
+.mini-box{
+    border-radius: $form-radius;
+    box-shadow: $form-shadow;
+    padding: 1rem;
+    background-color: white;
+}
+
+.shadow-none{ box-shadow: none !important; }
+.shadow-big{ box-shadow: $card-shadow !important; }
+.shadow-small{ box-shadow: $form-shadow !important; }

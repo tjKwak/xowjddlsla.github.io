@@ -1,0 +1,683 @@
+@-webkit-keyframes backcolor {
+  0% {
+    background: #3495fe;
+  }
+  33% {
+    background: #00edac;
+  }
+  67% {
+    background: #b34aff;
+  }
+  100% {
+    background: #3495fe;
+  }
+}
+
+@keyframes backcolor {
+  0% {
+    background: #3495fe;
+  }
+  33% {
+    background: #00edac;
+  }
+  67% {
+    background: #b34aff;
+  }
+  100% {
+    background: #3495fe;
+  }
+}
+
+@-webkit-keyframes space {
+  0% {
+    background: #07042e;
+  }
+  33% {
+    background: #17125a;
+  }
+  67% {
+    background: #251a23;
+  }
+  100% {
+    background: #07042e;
+  }
+}
+
+@keyframes space {
+  0% {
+    background: #07042e;
+  }
+  33% {
+    background: #17125a;
+  }
+  67% {
+    background: #251a23;
+  }
+  100% {
+    background: #07042e;
+  }
+}
+
+@-webkit-keyframes blink {
+  0% {
+    opacity: .8;
+  }
+  50% {
+    opacity: 0.4;
+  }
+  100% {
+    opacity: .8;
+  }
+}
+
+@keyframes blink {
+  0% {
+    opacity: .8;
+  }
+  50% {
+    opacity: 0.4;
+  }
+  100% {
+    opacity: .8;
+  }
+}
+
+@-webkit-keyframes screenOn {
+  0% {
+    width: 0px;
+    height: 0px;
+    border-radius: 20px;
+  }
+  15% {
+    width: 40px;
+    height: 30px;
+    border-radius: 20px;
+  }
+  30% {
+    width: 0px;
+    height: 0px;
+    border-radius: 20px;
+  }
+  50% {
+    width: 50px;
+    height: 10px;
+    border-radius: 20px;
+  }
+  60% {
+    width: 100%;
+    height: 20px;
+    border-radius: 20px;
+  }
+  70% {
+    width: 100%;
+    height: 40px;
+    border-radius: 20px;
+  }
+  80% {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px 20px 0 0;
+  }
+}
+
+@keyframes screenOn {
+  0% {
+    width: 0px;
+    height: 0px;
+    border-radius: 20px;
+  }
+  15% {
+    width: 40px;
+    height: 30px;
+    border-radius: 20px;
+  }
+  30% {
+    width: 0px;
+    height: 0px;
+    border-radius: 20px;
+  }
+  50% {
+    width: 50px;
+    height: 10px;
+    border-radius: 20px;
+  }
+  60% {
+    width: 100%;
+    height: 20px;
+    border-radius: 20px;
+  }
+  70% {
+    width: 100%;
+    height: 40px;
+    border-radius: 20px;
+  }
+  80% {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px 20px 0 0;
+  }
+}
+
+@-webkit-keyframes scrolling {
+  0% {
+    margin-top: 15px;
+  }
+  50% {
+    margin-top: 5px;
+  }
+  100% {
+    margin-top: 15px;
+  }
+}
+
+@keyframes scrolling {
+  0% {
+    margin-top: 15px;
+  }
+  50% {
+    margin-top: 5px;
+  }
+  100% {
+    margin-top: 15px;
+  }
+}
+
+@-webkit-keyframes cursor {
+  0% {
+    border-right: 1px solid #fff;
+  }
+  50% {
+    border-right: 1px solid #000;
+  }
+  100% {
+    border-right: 1px solid #fff;
+  }
+}
+
+@keyframes cursor {
+  0% {
+    border-right: 1px solid #fff;
+  }
+  50% {
+    border-right: 1px solid #000;
+  }
+  100% {
+    border-right: 1px solid #fff;
+  }
+}
+
+#root {
+  position: relative;
+}
+
+#root .intro {
+  position: fixed;
+  -webkit-transform: translateZ(0);
+  z-index: 50;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+  top: 300px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+}
+
+#root .intro.on {
+  -webkit-transition: all .5s;
+  transition: all .5s;
+  top: 0;
+  opacity: 1;
+}
+
+#root .intro .scroll-box {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  text-align: center;
+  -webkit-transform: translateX(-50%) scale(0.5);
+          transform: translateX(-50%) scale(0.5);
+  -webkit-transition: all 1.5s;
+  transition: all 1.5s;
+}
+
+#root .intro .scroll-box .scrollIcon {
+  border: 1px solid transparent;
+  background-color: rgba(255, 255, 255, 0.2);
+  width: 40px;
+  height: 60px;
+  border-radius: 50px;
+  margin: 0 auto;
+}
+
+#root .intro .scroll-box .scrollIcon .scrolling {
+  width: 7px;
+  height: 18px;
+  background-color: white;
+  border-radius: 50px;
+  margin: 0 auto;
+  margin-top: 15px;
+  -webkit-animation: scrolling 1s infinite;
+          animation: scrolling 1s infinite;
+}
+
+#root .intro .scroll-box .icon-down {
+  margin-top: 1rem;
+  -webkit-filter: invert(1);
+          filter: invert(1);
+  -webkit-animation: blink 1s infinite;
+          animation: blink 1s infinite;
+}
+
+#root .intro .phone-box {
+  z-index: -1;
+  width: 40%;
+  height: 70%;
+  border-radius: 30px 30px 0 0;
+  background: -webkit-gradient(linear, left top, left bottom, from(white), to(#07042e));
+  background: linear-gradient(white, #07042e);
+  -webkit-box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.2);
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  -webkit-transition: all 1.5s;
+  transition: all 1.5s;
+}
+
+#root .intro .phone-box::before, #root .intro .phone-box::after {
+  content: '';
+  display: block;
+  background-color: white;
+  border-radius: 10px;
+  position: absolute;
+}
+
+#root .intro .phone-box::before {
+  width: 102%;
+  height: 50px;
+  right: -1%;
+  top: 15%;
+}
+
+#root .intro .phone-box::after {
+  width: 2%;
+  height: 80px;
+  right: -1%;
+  top: 25%;
+}
+
+#root .intro .phone-box .phone-screen-box {
+  width: 98%;
+  height: 92%;
+  border-radius: 20px 20px 0 0;
+  background: -webkit-gradient(linear, left top, left bottom, from(#2f2f2f), to(gray));
+  background: linear-gradient(#2f2f2f, gray);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+          transform: translateX(-50%) translateY(-50%);
+}
+
+#root .intro .phone-box .phone-screen-box .phone-screen {
+  width: 100%;
+  height: 100%;
+  border-radius: 20px 20px 0 0;
+  background: -webkit-gradient(linear, left top, left bottom, from(black), to(#07042e));
+  background: linear-gradient(black, #07042e);
+  -webkit-box-shadow: 0 0 2px black;
+          box-shadow: 0 0 2px black;
+  overflow: hidden;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+          transform: translateX(-50%) translateY(-50%);
+  -webkit-animation-name: screenOn;
+          animation-name: screenOn;
+  -webkit-animation-duration: 2.5s;
+          animation-duration: 2.5s;
+}
+
+#root .intro .phone-box .phone-screen-box .phone-screen .typing-box {
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+
+#root .intro .phone-box .phone-screen-box .phone-screen .typing-box .typing-txt {
+  display: none;
+}
+
+#root .intro .phone-box .phone-screen-box .phone-screen .typing-box .typing-txt::after {
+  content: '';
+  border: 10px solid red;
+  display: inline-block;
+  vertical-align: middle;
+  width: 1px;
+  height: 40px;
+  -webkit-animation-name: cursor;
+          animation-name: cursor;
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-delay: 2.5s;
+          animation-delay: 2.5s;
+}
+
+#root .intro .phone-box .phone-screen-box .phone-screen .typing-box .typing {
+  font-family: 'Lobster', cursive;
+  font-size: 5.2rem;
+  font-weight: 100;
+  line-height: 1.6;
+  color: white;
+}
+
+#root .back {
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: fixed;
+  z-index: -1;
+  -webkit-animation: space 20s infinite;
+          animation: space 20s infinite;
+}
+
+#root .back::before {
+  content: '';
+  width: 100%;
+  height: 30rem;
+  display: block;
+  position: absolute;
+  bottom: 0;
+  background: -webkit-gradient(linear, left top, left bottom, from(transparent), to(rgba(255, 255, 255, 0.212)));
+  background: linear-gradient(transparent, rgba(255, 255, 255, 0.212));
+}
+
+#root .back .clouds {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+#root .back .clouds .img-cloud-1 {
+  bottom: 0;
+  width: 500px;
+  height: 240px;
+  position: absolute;
+  background: url("../img/cloud_1.png");
+  background-size: cover;
+}
+
+#root .back .clouds .img-cloud-1.left-1 {
+  left: 10rem;
+  -webkit-transform: scale(0.8);
+          transform: scale(0.8);
+  opacity: .5;
+}
+
+#root .back .clouds .img-cloud-1.left-2 {
+  left: -10rem;
+  -webkit-transform: scale(1.5);
+          transform: scale(1.5);
+  opacity: .2;
+}
+
+#root .back .clouds .img-cloud-1.left-3 {
+  left: 8rem;
+  -webkit-transform: scale(2);
+          transform: scale(2);
+  opacity: .2;
+}
+
+#root .back .clouds .img-cloud-2 {
+  bottom: 0;
+  width: 500px;
+  height: 263px;
+  position: absolute;
+  background: url("../img/cloud_2.png");
+  background-size: cover;
+}
+
+#root .back .clouds .img-cloud-2.right-1 {
+  right: 10rem;
+  -webkit-transform: scale(0.8);
+          transform: scale(0.8);
+  opacity: .5;
+}
+
+#root .back .clouds .img-cloud-2.right-2 {
+  bottom: 10rem;
+  right: 0;
+  -webkit-transform: scale(1.5);
+          transform: scale(1.5);
+  opacity: .2;
+}
+
+#root .back .clouds .img-cloud-2.right-3 {
+  bottom: 0rem;
+  right: -2rem;
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  opacity: .2;
+}
+
+#root .back .img-planet {
+  position: absolute;
+  opacity: .5;
+  top: -10%;
+  left: -10%;
+  width: 700px;
+  height: 700px;
+  background-size: cover;
+}
+
+#root .back .stars {
+  position: relative;
+  z-index: 40;
+}
+
+#root .back .stars .star {
+  position: absolute;
+  z-index: -1;
+  left: 0px;
+  top: 50px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50px;
+  background-color: white;
+  position: fixed;
+  -webkit-animation-name: particleAnimation;
+          animation-name: particleAnimation;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+
+#root .back .stars .star::before {
+  content: "";
+  display: block;
+  height: 100px;
+  width: 100%;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0)), to(rgba(255, 255, 255, 0.4)));
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(255, 255, 255, 0.4) 100%);
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+#root .back .stars .star.s-1 {
+  -webkit-animation-duration: 10s;
+          animation-duration: 10s;
+  left: 10%;
+}
+
+#root .back .stars .star.s-2 {
+  -webkit-animation-duration: 5s;
+          animation-duration: 5s;
+  left: 60%;
+}
+
+#root .back .stars .star.s-3 {
+  -webkit-animation-duration: 20s;
+          animation-duration: 20s;
+  left: 90%;
+}
+
+#root .back .stars .star.s-4 {
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+  left: 50%;
+}
+
+#root .back .stars .star.s-5 {
+  -webkit-animation-duration: 7s;
+          animation-duration: 7s;
+  left: 70%;
+}
+
+#root .back .stars .star.s-6 {
+  -webkit-transform: scale(0.8);
+          transform: scale(0.8);
+  -webkit-animation-duration: 11s;
+          animation-duration: 11s;
+  left: 40%;
+}
+
+#root .back .stars .star.s-7 {
+  -webkit-transform: scale(0.8);
+          transform: scale(0.8);
+  -webkit-animation-duration: 20s;
+          animation-duration: 20s;
+  left: 14%;
+}
+
+#root .back .stars .star.s-8 {
+  -webkit-transform: scale(0.8);
+          transform: scale(0.8);
+  -webkit-animation-duration: 8s;
+          animation-duration: 8s;
+  left: 78%;
+}
+
+#root .back .stars .star.s-9 {
+  -webkit-transform: scale(0.8);
+          transform: scale(0.8);
+  -webkit-animation-duration: 14s;
+          animation-duration: 14s;
+  left: 84%;
+}
+
+#root .back .stars .star.s-10 {
+  -webkit-transform: scale(0.8);
+          transform: scale(0.8);
+  -webkit-animation-duration: 5s;
+          animation-duration: 5s;
+  left: 21%;
+}
+
+#root .back .stars .star.s-11 {
+  -webkit-transform: scale(0.8);
+          transform: scale(0.8);
+  -webkit-animation-duration: 17s;
+          animation-duration: 17s;
+  left: 68%;
+}
+
+#root .back .stars .star.s-12 {
+  -webkit-transform: scale(0.8);
+          transform: scale(0.8);
+  -webkit-animation-duration: 20s;
+          animation-duration: 20s;
+  left: 48%;
+}
+
+@-webkit-keyframes particleAnimation {
+  from {
+    top: -100px;
+  }
+  to {
+    top: calc( 100% + 100px);
+  }
+}
+
+@keyframes particleAnimation {
+  from {
+    top: -100px;
+  }
+  to {
+    top: calc( 100% + 100px);
+  }
+}
+
+#root .goodbye {
+  z-index: 999999999;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: black;
+  width: 100%;
+  max-height: 0%;
+  opacity: 0;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+}
+
+#root .goodbye .g-txt {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translateX(-50%) translateY(-60%);
+          transform: translateX(-50%) translateY(-60%);
+  width: 100%;
+  height: 30%;
+  text-align: center;
+}
+
+#root .goodbye .g-txt * {
+  color: white;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 0rem;
+}
+
+#root .goodbye .g-txt h3 {
+  font-weight: 500;
+}
+
+#root .goodbye .g-txt h2 {
+  font-weight: 500;
+  margin: 70px 0 50px 0;
+}
+
+#root .goodbye .g-txt p {
+  font-weight: 300;
+  line-height: 1.5;
+}
+
+#root .goodbye .g-txt.on {
+  max-height: 100%;
+  opacity: 1;
+}
+
+#root .goodbye .g-txt.on .g-txt h3 {
+  font-size: 1.5rem;
+}
+
+#root .goodbye .g-txt.on .g-txt h2 {
+  font-size: 1.6rem;
+}
+
+#root .goodbye .g-txt.on .g-txt p {
+  font-size: 1rem;
+}

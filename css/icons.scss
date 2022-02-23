@@ -1,3 +1,9 @@
+//아이콘 사이즈
+.icon-tiny{ transform: scale(.5); }
+.icon-small{ transform: scale(.7); }
+.icon-big{ transform: scale(1.3); }
+.icon-large{ transform: scale(2); }
+
 @mixin icon-util{
   background-image: url('../images/util.svg');
   background-repeat: no-repeat;
@@ -12,6 +18,9 @@
   &.icon-small{
     transform: scale(.7);
   }
+  &.icon-big{
+    transform: scale(1.2);
+  }
 }
 @mixin icon-direction{
   background-image: url('../images/direction.svg');
@@ -21,12 +30,15 @@
   display: inline-block;
   vertical-align: middle;
   font-size: 0;
-  background-size: 130px;
+  background-size: 128.5px;
   width: 20px;
   height: 20px;
   flex: 0 0 20px;
   &.icon-small{
     transform: scale(.7);
+  }
+  &.icon-big{
+    transform: scale(1.2);
   }
 }
 @mixin icon-map{
@@ -43,8 +55,59 @@
   &.icon-small{
     transform: scale(.7);
   }
+  &.icon-big{
+    transform: scale(1.2);
+  }
 }
-//아이콘 보더
+@mixin icon-menu{
+  background-image: url('../images/menu.svg');
+  background-repeat: no-repeat;
+  border: none;
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 0;
+  background-size: 60px;
+  width: 20px;
+  height: 20px;
+  flex: 0 0 20px;
+  &.icon-small{
+    transform: scale(.7);
+  }
+  &.icon-big{
+    transform: scale(1.2);
+  }
+}
+@mixin icon-logo{
+  background-image: url('../images/logo_indoorplus.svg');
+  width: 140px;
+  height: 26px;
+  background-repeat: no-repeat;
+  background-size: 140px;
+  display: block;
+  &.logo-small{
+    transform: scale(.7);
+  }
+  &.logo-big{
+    transform: scale(1.2);
+  }
+}
+@mixin icon-figure{
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  &.figure-small{
+    transform: scale(.7);
+  }
+  &.figure-big{
+    transform: scale(1.3);
+  }
+  &.figure-bigger{
+    transform: scale(2);
+  }
+}
+
+
+//아이콘용 보더
 .icon-border{
   position: relative;
   &::after{
@@ -59,19 +122,28 @@
     left: -50%;
   }
 }
+
 //아이콘 필터
 .icon-filter-red{
-  filter: invert(20%) sepia(100%) saturate(3000%) hue-rotate(359deg) brightness(94%) contrast(100%);
+  filter: invert(20%) sepia(100%) saturate(3000%) hue-rotate(359deg) brightness(94%) contrast(100%) !important;
 }
 .icon-filter-blue{
-  filter: invert(20%) sepia(100%) saturate(3000%) hue-rotate(230deg) brightness(94%) contrast(100%);
+  filter: invert(20%) sepia(100%) saturate(3000%) hue-rotate(230deg) brightness(94%) contrast(100%) !important;
 }
 .icon-filter-gray{
-  opacity: .3;
+  filter: none !important;
+  opacity: .3 !important;
 }
 .icon-filter-white{
-  filter: invert(1);
+  filter: invert(1) !important;
 }
+.icon-filter-brand{
+  filter: invert(49%) sepia(82%) saturate(2656%) hue-rotate(1deg) brightness(105%) contrast(103%) !important;
+}
+.icon-filter-black{
+  filter: none !important;
+}
+
 //아이콘 애니메이션
 .btn-animation-move{
   padding-right: 4rem !important;
@@ -117,6 +189,7 @@
   }
 }
 
+
 //아이콘
 //only 아이콘
 
@@ -124,198 +197,484 @@
 //icon-direction
 .icon-back{
   @include icon-direction();
-  background-position: -29px -16px;
-}
-.icon-back-double{
-  @include icon-direction();
-  background-position: -70px -9px;
+  background-position: -10px -20px;
 }
 .icon-next{
   @include icon-direction();
-  background-position: -20px -62px;
-}
-.icon-next-double{
-  @include icon-direction();
-  background-position: -68px -55px;
+  background-position: -10px -60px;
 }
 .icon-up{
   @include icon-direction();
-  background-position: -25px -109px;
+  background-position: -10px -100px;
 }
 .icon-down{
   @include icon-direction();
-  background-position: -25px -153px;
+  background-position: -10px -140px;
 }
+.icon-back-arrow{
+  @include icon-direction();
+  background-position: -10px -180px;
+}
+.icon-next-arrow{
+  @include icon-direction();
+  background-position: -10px -220px;
+}
+.icon-up-arrow{
+  @include icon-direction();
+  background-position: -10px -260px;
+}
+.icon-back-arrow-circle{
+  @include icon-direction();
+  background-position: -10px -300px;
+}
+.icon-next-arrow-circle{
+  @include icon-direction();
+  background-position: -10px -340px;
+}
+.icon-up-arrow-circle{
+  @include icon-direction();
+  background-position: -10px -380px;
+}
+
+
+.icon-back-double{
+  @include icon-direction();
+  background-position: -50px -20px;
+}
+.icon-next-double{
+  @include icon-direction();
+  background-position: -50px -60px;
+}
+.icon-up-double{
+  @include icon-direction();
+  background-position: -50px -100px;
+}
+.icon-down-double{
+  @include icon-direction();
+  background-position: -50px -140px;
+}
+.icon-down-arrow{
+  @include icon-direction();
+  background-position: -50px -180px;
+}
+.icon-side-arrow{
+  @include icon-direction();
+  background-position: -50px -220px;
+}
+.icon-updown-arrow{
+  @include icon-direction();
+  background-position: -50px -260px;
+}
+.icon-down-arrow-circle{
+  @include icon-direction();
+  background-position: -50px -300px;
+}
+.icon-side-arrow-circle{
+  @include icon-direction();
+  background-position: -50px -340px;
+}
+.icon-updown-arrow-circle{
+  @include icon-direction();
+  background-position: -50px -380px;
+}
+
+.icon-lefty{
+  @include icon-direction();
+  background-position: -14px -20px;
+}
+.icon-righty{
+  @include icon-direction();
+  background-position: -6px -60px;
+}
+
+
 
 ////////////////////////////////////////
 //icon-util
-.icon-close{
+.icon-search{
   @include icon-util();
-  background-position: -20px -474px;
+  background-position: -10px -20px;
 }
-.icon-globe{
+.icon-delete{
   @include icon-util();
-  background-position: -57.5px -139px;
+  background-position: -10px -60px;
 }
-.icon-lock {
+.icon-hamburger{
   @include icon-util();
-  background-position: -20px -257.5px;
-  &.on{
-    background-position: -58px -257.5px;
-    filter: none !important;
+  background-position: -10px -100px;
+}
+.icon-wifi{
+  @include icon-util();
+  background-position: -10px -140px;
+  &.off{
+    background-position: -50px -140px;
+    transition: none !important;
+  }
+}
+.icon-alarm{
+  @include icon-util();
+  background-position: -10px -180px;
+  &.off{
+    background-position: -50px -180px;
     transition: none !important;
   }
 }
 .icon-eye {
   @include icon-util();
-  background-position: -20px -219.5px;
-  &.on{
-    background-position: -58px -219.5px;
-    filter: none !important;
+  background-position: -10px -220px;
+  &.off{
+    background-position: -50px -220px;
     transition: none !important;
   }
 }
-.icon-check{
+.icon-lock {
   @include icon-util();
-  background-position: -58.5px -474px;
-  &.checked{
-    filter: invert(20%) sepia(100%) saturate(3000%) hue-rotate(230deg) brightness(94%) contrast(100%);
-  }
-  &.nonchecked{
-    opacity: .2;
+  background-position: -10px -260px;
+  &.off{
+    background-position: -50px -260px;
+    transition: none !important;
   }
 }
-.icon-plus{
+.icon-filter{
   @include icon-util();
-  background-position: -96px -475px;
-}
-.icon-minus{
-  @include icon-util();
-  background-position: -96px -440px;
-}
-.icon-delete{
-  @include icon-util();
-  background-position: -20px -60px;
-}
-.icon-editnote{
-  @include icon-util();
-  background-position: -96px -140px;
-}
-.icon-edit{
-  @include icon-util();
-  background-position: -96px -180px;
-}
-.icon-sizing{
-  @include icon-util();
-  background-position: -96px -333px;
-}
-.icon-search{
-  @include icon-util();
-  background-position: -21px -19px;
-}
-.icon-hamburger{
-  @include icon-util();
-  background-position: -20px -100px;
-}
-.icon-info{
-  @include icon-util();
-  background-position: -96px -295px;
-}
-.icon-infofill{
-  @include icon-util();
-  background-position: -96px -258px;
-}
-.icon-warning{
-  @include icon-util();
-  background-position: -96px -220px;
-}
-.icon-save{
-  @include icon-util();
-  background-position: -96px -405px;
-}
-.icon-download{
-  @include icon-util();
-  background-position: -58px -405px;
-}
-.icon-more{
-  @include icon-util();
-  background-position: -96px -99px;
-}
-.icon-refresh{
-  @include icon-util();
-  background-position: -58.5px -440px;
-}
-.icon-wifi{
-  @include icon-util();
-  background-position: -139px -20px;
-  &.wifi-none{
-    background-position: -139px -59px;
-  }
-}
-.icon-pause{
-  @include icon-util();
-  background-position: -139px -440px;
-}
-.icon-play{
-  @include icon-util();
-  background-position: -139px -475px;
-}
-.icon-star{
-  @include icon-util();
-  background-position: -20px -368px;
-}
-.icon-dashboard{
-  @include icon-util();
-  background-position: -58.5px -333px;
+  background-position: -10px -300px;
 }
 .icon-picture{
   @include icon-util();
-  background-position: -20px -335px;
+  background-position: -10px -340px;
 }
-.icon-profile{
+.icon-star{
   @include icon-util();
-  background-position: -139px -139px;
+  background-position: -10px -380px;
 }
-.icon-profile-fill{
+.icon-file{
   @include icon-util();
-  background-position: -139px -99px;
+  background-position: -10px -420px;
+}
+.icon-backpage{
+  @include icon-util();
+  background-position: -10px -460px;
+}
+.icon-close{
+  @include icon-util();
+  background-position: -10px -500px;
+}
+
+
+
+.icon-view{
+  @include icon-util();
+  background-position: -50px -20px;
+}
+.icon-person{
+  @include icon-util();
+  background-position: -50px -60px;
+}
+.icon-people{
+  @include icon-util();
+  background-position: -50px -100px;
+}
+.icon-list{
+  @include icon-util();
+  background-position: -50px -300px;
+}
+.icon-add-board{
+  @include icon-util();
+  background-position: -50px -340px;
+}
+.icon-heart{
+  @include icon-util();
+  background-position: -50px -380px;
+}
+.icon-download{
+  @include icon-util();
+  background-position: -50px -420px;
+}
+.icon-replay{
+  @include icon-util();
+  background-position: -50px -460px;
+}
+.icon-check{
+  @include icon-util();
+  background-position: -50px -500px;
+}
+
+
+
+.icon-info-fill{
+  @include icon-util();
+  background-position: -90px -20px;
+}
+.icon-globe{
+  @include icon-util();
+  background-position: -90px -60px;
+}
+.icon-setting{
+  @include icon-util();
+  background-position: -90px -100px;
+}
+.icon-create{
+  @include icon-util();
+  background-position: -90px -140px;
+}
+.icon-edit{
+  @include icon-util();
+  background-position: -90px -180px;
+}
+.icon-warning{
+  @include icon-util();
+  background-position: -90px -220px;
+}
+.icon-warning-balloon{
+  @include icon-util();
+  background-position: -90px -260px;
+}
+.icon-more{
+  @include icon-util();
+  background-position: -90px -300px;
+}
+.icon-resize{
+  @include icon-util();
+  background-position: -90px -340px;
+}
+.icon-copyright{
+  @include icon-util();
+  background-position: -90px -380px;
+}
+.icon-upload{
+  @include icon-util();
+  background-position: -90px -420px;
+}
+.icon-minus{
+  @include icon-util();
+  background-position: -90px -460px;
+}
+.icon-plus{
+  @include icon-util();
+  background-position: -90px -500px;
+}
+
+
+
+.icon-info{
+  @include icon-util();
+  background-position: -130px -20px;
+}
+.icon-building{
+  @include icon-util();
+  background-position: -130px -60px;
+}
+.icon-camera{
+  @include icon-util();
+  background-position: -130px -100px;
+}
+.icon-phone{
+  @include icon-util();
+  background-position: -130px -140px;
+}
+.icon-alert{
+  @include icon-util();
+  background-position: -130px -180px;
+}
+.icon-graph{
+  @include icon-util();
+  background-position: -130px -220px;
 }
 .icon-category{
   @include icon-util();
-  background-position: -182px -220px;
+  background-position: -130px -260px;
 }
-
-
-.icon-profile-setting{
+.icon-target{
   @include icon-util();
-  background-position: -158px -202px;
+  background-position: -130px -300px;
 }
-.icon-app-setting{
+.icon-move{
   @include icon-util();
-  background-position: -158px -247px;
+  background-position: -130px -340px;
 }
-.icon-language-setting{
+.icon-add{
   @include icon-util();
-  background-position: -158px -290px;
+  background-position: -130px -380px;
 }
+.icon-copy{
+  @include icon-util();
+  background-position: -130px -420px;
+}
+.icon-pause{
+  @include icon-util();
+  background-position: -130px -460px;
+}
+.icon-play{
+  @include icon-util();
+  background-position: -130px -500px;
+}
+ 
 
+.icon-board{
+  @include icon-util();
+  background-position: -170px -20px;
+}
+.icon-home{
+  @include icon-util();
+  background-position: -170px -60px;
+}
+.icon-message{
+  @include icon-util();
+  background-position: -170px -100px;
+}
+.icon-message-fill{
+  @include icon-util();
+  background-position: -170px -140px;
+}
+.icon-calendar{
+  @include icon-util();
+  background-position: -170px -180px;
+}
+.icon-history{
+  @include icon-util();
+  background-position: -170px -220px;
+}
+.icon-favorite{
+  @include icon-util();
+  background-position: -170px -260px;
+}
+.icon-clip{
+  @include icon-util();
+  background-position: -170px -300px;
+}
+.icon-tools{
+  @include icon-util();
+  background-position: -170px -340px;
+}
+.icon-tool{
+  @include icon-util();
+  background-position: -170px -380px;
+}
+.icon-save{
+  @include icon-util();
+  background-position: -170px -420px;
+}
+.icon-refresh{
+  @include icon-util();
+  background-position: -170px -460px;
+}
+.icon-stop{
+  @include icon-util();
+  background-position: -170px -500px;
+}
 
 
 ////////////////////////////////////////
 // icon-map
-.icon-geofence{
-  @include icon-map();
-  background-position: -20px -62px;
-}
 .icon-gps{
   @include icon-map();
-  background-position: -20px -20px;
+  background-position: -10px -20px;
+}
+.icon-geofence{
+  @include icon-map();
+  background-position: -10px -60px;
 }
 .icon-shild{
   @include icon-map();
-  background-position: -20px -104px;
+  background-position: -10px -100px;
+}
+.icon-gps-deco{
+  @include icon-map();
+  background-position: -10px -140px;
 }
 .icon-gps-fill{
   @include icon-map();
-  background-position: -20px -153.2px;
+  background-position: -10px -180px;
+}
+
+
+.icon-profile-setting{
+  @include icon-map();
+  background-position: -10px -300px;
+  filter: none !important;
+}
+.icon-app-setting{
+  @include icon-map();
+  background-position: -10px -340px;
+  filter: none !important;
+}
+.icon-language-setting{
+  @include icon-map();
+  background-position: -10px -380px;
+  filter: none !important;
+}
+.icon-profile{
+  @include icon-map();
+  background-position: -10px -420px;
+  filter: none !important;
+}
+
+
+
+/////////////////////////////////////////
+// 기본도형
+.figure-box{
+  @include icon-figure();
+}
+.figure-circle{
+  @include icon-figure();
+  border-radius: 100px;
+}
+
+
+
+///////////////////////////////////////
+//메뉴 아이콘
+.icon-menu-first{
+  @include icon-menu();
+  background-position: -10px -20px;
+}
+.icon-menu-second{
+  @include icon-menu();
+  background-position: -10px -60px;
+}
+.icon-menu-third{
+  @include icon-menu();
+  background-position: -10px -100px;
+}
+.icon-menu-fourth{
+  @include icon-menu();
+  background-position: -10px -140px;
+}
+.icon-menu-fifth{
+  @include icon-menu();
+  background-position: -10px -180px;
+}
+.icon-menu-six{
+  @include icon-menu();
+  background-position: -10px -220px;
+}
+.icon-menu-seven{
+  @include icon-menu();
+  background-position: -10px -260px;
+}
+.icon-menu-eight{
+  @include icon-menu();
+  background-position: -10px -300px;
+}
+.icon-menu-nine{
+  @include icon-menu();
+  background-position: -10px -340px;
+}
+
+
+///////////////////////////////////////
+//로고
+.pnt-logo{
+  @include icon-logo();
+  background-position: 0px -34px;
+  &.logo-o-o{ background-position: 0px 0px; }
+  &.logo-o-w{ background-position: 0px -33px; }
+  &.logo-w-o{ background-position: 0px -69px; }
+  &.logo-b-o{ background-position: 0px -104px; }
+  &.logo-b-w{ background-position: 0px -139px; }
+  &.logo-w-b{ background-position: 0px -174px; }
+  &.logo-w-w{ background-position: 0px -209px; }
+  &.logo-b-b{ background-position: 0px -244px; }
+  &.logo-o-b{ background-position: 0px -279px; }
 }
