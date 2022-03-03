@@ -184,25 +184,25 @@
 
 @-webkit-keyframes cursor {
   0% {
-    border-right: 1px solid #fff;
+    opacity: 1;
   }
   50% {
-    border-right: 1px solid #000;
+    opacity: 0;
   }
   100% {
-    border-right: 1px solid #fff;
+    opacity: 1;
   }
 }
 
 @keyframes cursor {
   0% {
-    border-right: 1px solid #fff;
+    opacity: 1;
   }
   50% {
-    border-right: 1px solid #000;
+    opacity: 0;
   }
   100% {
-    border-right: 1px solid #fff;
+    opacity: 1;
   }
 }
 
@@ -354,29 +354,36 @@
   display: none;
 }
 
-#root .intro .phone-box .phone-screen-box .phone-screen .typing-box .typing-txt::after {
-  content: '';
-  border: 10px solid red;
-  display: inline-block;
-  vertical-align: middle;
-  width: 1px;
-  height: 40px;
-  -webkit-animation-name: cursor;
-          animation-name: cursor;
-  -webkit-animation-duration: 0.5s;
-          animation-duration: 0.5s;
-  -webkit-animation-iteration-count: infinite;
-          animation-iteration-count: infinite;
-  -webkit-animation-delay: 2.5s;
-          animation-delay: 2.5s;
-}
-
 #root .intro .phone-box .phone-screen-box .phone-screen .typing-box .typing {
   font-family: 'Lobster', cursive;
   font-size: 5.2rem;
   font-weight: 100;
   line-height: 1.6;
   color: white;
+}
+
+#root .intro .phone-box .phone-screen-box .phone-screen .typing-box .typing::after {
+  content: '';
+  display: none;
+  vertical-align: middle;
+  background: white;
+  opacity: 0;
+  margin-left: 20px;
+  margin-bottom: 20px;
+  width: 3px;
+  height: 60px;
+  -webkit-animation-name: cursor;
+          animation-name: cursor;
+  -webkit-animation-duration: 1.2s;
+          animation-duration: 1.2s;
+  -webkit-animation-timing-function: steps(1, end);
+          animation-timing-function: steps(1, end);
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+
+#root .intro .phone-box .phone-screen-box .phone-screen .typing-box .typing.end::after {
+  display: inline-block;
 }
 
 #root .back {
@@ -441,7 +448,7 @@
 #root .back .clouds .img-cloud-2 {
   bottom: 0;
   width: 500px;
-  height: 263px;
+  height: 240px;
   position: absolute;
   background: url("../img/cloud_2.png");
   background-size: cover;
@@ -449,16 +456,16 @@
 
 #root .back .clouds .img-cloud-2.right-1 {
   right: 10rem;
-  -webkit-transform: scale(0.8);
-          transform: scale(0.8);
+  -webkit-transform: scale(1);
+          transform: scale(1);
   opacity: .5;
 }
 
 #root .back .clouds .img-cloud-2.right-2 {
-  bottom: 10rem;
-  right: 0;
-  -webkit-transform: scale(1.5);
-          transform: scale(1.5);
+  bottom: 0rem;
+  right: 5rem;
+  -webkit-transform: scale(2);
+          transform: scale(2);
   opacity: .2;
 }
 
@@ -620,64 +627,50 @@
 }
 
 #root .goodbye {
-  z-index: 999999999;
   position: fixed;
-  top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: black;
-  width: 100%;
-  max-height: 0%;
+  width: 100vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
   opacity: 0;
   -webkit-transition: all .5s;
   transition: all .5s;
 }
 
-#root .goodbye .g-txt {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translateX(-50%) translateY(-60%);
-          transform: translateX(-50%) translateY(-60%);
-  width: 100%;
-  height: 30%;
-  text-align: center;
-}
-
-#root .goodbye .g-txt * {
-  color: white;
-  font-family: 'Noto Sans KR', sans-serif;
-  font-size: 0rem;
-}
-
-#root .goodbye .g-txt h3 {
-  font-weight: 500;
-}
-
-#root .goodbye .g-txt h2 {
-  font-weight: 500;
-  margin: 70px 0 50px 0;
-}
-
-#root .goodbye .g-txt p {
-  font-weight: 300;
-  line-height: 1.5;
-}
-
-#root .goodbye .g-txt.on {
-  max-height: 100%;
+#root .goodbye.on {
   opacity: 1;
 }
 
-#root .goodbye .g-txt.on .g-txt h3 {
-  font-size: 1.5rem;
+#root .goodbye .cont-wrap * {
+  color: white;
 }
 
-#root .goodbye .g-txt.on .g-txt h2 {
+#root .goodbye .cont-wrap h3 {
+  display: inline-block;
+  font-size: 3rem;
+  font-weight: 700;
+  padding: 1rem 3rem 1.5rem 3rem;
+  border-radius: 100rem;
+  background: #292564;
+}
+
+#root .goodbye .cont-wrap p:nth-of-type(1) {
   font-size: 1.6rem;
+  font-weight: 500;
+  margin: 70px 0 30px 0;
 }
 
-#root .goodbye .g-txt.on .g-txt p {
-  font-size: 1rem;
+#root .goodbye .cont-wrap p:nth-of-type(2) {
+  font-weight: 200;
+  line-height: 1.5;
 }

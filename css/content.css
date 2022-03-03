@@ -4,7 +4,10 @@
   z-index: 50;
   opacity: 0;
   text-align: center;
-  padding-top: 20rem;
+  padding: 20rem 0;
+  overflow: hidden;
+  -webkit-transform: none;
+          transform: none;
   -webkit-transition: all .5s;
   transition: all .5s;
 }
@@ -13,54 +16,64 @@
   opacity: 1;
 }
 
-#root .content.on::before, #root .content.on::after {
+#root .content.off {
+  -webkit-transform: translateY(-100rem);
+          transform: translateY(-100rem);
+}
+
+#root .content::before, #root .content::after {
   content: '';
   display: block;
   background: -webkit-gradient(linear, left top, left bottom, from(gray), to(white));
   background: linear-gradient(gray, white);
-  width: 30rem;
+  width: 50vw;
   height: 90rem;
   position: absolute;
-  top: 20%;
+  top: 30%;
+  border-radius: 20px;
 }
 
-#root .content.on::before {
-  left: calc(20% - 10rem);
+#root .content::before {
+  left: 13%;
   -webkit-transform: rotate(15deg);
           transform: rotate(15deg);
-  border-radius: 20px 20px 100rem 20px;
+  border-bottom-right-radius: 100rem;
 }
 
-#root .content.on::after {
-  right: calc(20% - 10rem);
+#root .content::after {
+  right: 13%;
   -webkit-transform: rotate(-15deg);
           transform: rotate(-15deg);
-  border-radius: 20px 20px 20px 100rem;
+  border-bottom-left-radius: 100rem;
 }
 
-#root .content #portfolio {
+#root .content #rocket {
   background-color: white;
   z-index: 10;
-  /*  content.on::after 버튼 때문에 z-index 설정함*/
+  /*  로켓날개 때문에 z-index 설정함*/
   position: relative;
-  margin-top: -15px;
-  border-radius: 100rem 100rem 30px 30px;
+  border-radius: 100rem;
   width: 60%;
   display: inline-block;
   overflow: hidden;
 }
 
-#root .content #portfolio .rocket-head .head {
+#root .content #rocket .rocket-head .head {
   border-bottom: 20px solid gray;
   height: 20rem;
   background-color: #D9272E;
 }
 
-#root .content #portfolio .rocket-head .window-wrap {
-  height: 30rem;
+#root .content #rocket .rocket-head .window-wrap {
+  padding: 7rem 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: .6rem;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -69,111 +82,131 @@
           justify-content: center;
 }
 
-#root .content #portfolio .rocket-head .window-wrap .window {
-  border: 20px solid #b8b8ff;
+#root .content #rocket .rocket-head .window-wrap p:nth-of-type(1) {
+  font-family: 'Lobster', cursive;
+  font-size: 3rem;
+  font-weight: 100;
+}
+
+#root .content #rocket .rocket-head .window-wrap p:nth-of-type(2) {
+  color: #07042e;
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+#root .content #rocket .rocket-head .window-wrap p:nth-of-type(3), #root .content #rocket .rocket-head .window-wrap p:nth-of-type(4) {
+  margin: .2rem 0;
+}
+
+#root .content #rocket .rocket-head .window-wrap p:nth-of-type(5) {
+  margin-top: 1rem;
+  display: block;
+  width: 40%;
+  opacity: .6;
+  line-height: 1.4;
+}
+
+#root .content #rocket .rocket-head .window-wrap .window {
+  border: 20px solid #B8B8FF;
   width: 12rem;
   height: 12rem;
   border-radius: 100rem;
   background-image: url("../img/profile.png");
   background-size: cover;
+  margin-bottom: 1rem;
 }
 
-#root .content #portfolio .rocket-body {
+#root .content #rocket .rocket-body {
   padding: 50px 20%;
 }
 
-#root .content #portfolio .rocket-body .p_menu {
+#root .content #rocket .rocket-body .p_menu {
   width: 100%;
-  margin: 30px 0;
+  margin: 3rem 0 5rem 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   text-align: center;
+  gap: 10px;
 }
 
-#root .content #portfolio .rocket-body .p_menu li {
+#root .content #rocket .rocket-body .p_menu li {
   width: 100%;
+  height: 2.4rem;
+  border-radius: 100rem;
+  background: #B8B8FF;
+  position: relative;
+  overflow: hidden;
+  -webkit-transition: all .3s;
+  transition: all .3s;
 }
 
-#root .content #portfolio .rocket-body .p_menu li.on a {
-  background-color: #00b1ff;
-  -webkit-animation: backcolor 6s infinite;
-          animation: backcolor 6s infinite;
+#root .content #rocket .rocket-body .p_menu li.on {
+  background: #07042e;
+  -webkit-box-shadow: -2px 6px 20px 5px rgba(7, 4, 46, 0.2);
+          box-shadow: -2px 6px 20px 5px rgba(7, 4, 46, 0.2);
 }
 
-#root .content #portfolio .rocket-body .p_menu li.on a:hover {
-  color: black;
+#root .content #rocket .rocket-body .p_menu li.on:hover {
+  background: #07042e;
 }
 
-#root .content #portfolio .rocket-body .p_menu li a {
-  padding: 0 20px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  background-color: white;
-  border-radius: 50px;
+#root .content #rocket .rocket-body .p_menu li:hover {
+  background: #8d8dd8;
+}
+
+#root .content #rocket .rocket-body .p_menu li a {
   display: block;
-  width: 100%;
-  color: black;
-  font-family: 'Noto Sans KR', sans-serif;
-  text-transform: uppercase;
-  font-size: 1rem;
-  line-height: 50px;
-  font-weight: 800;
-  -webkit-box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.2);
-          box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.2);
-  -webkit-transition: all .3s;
-  transition: all .3s;
-}
-
-#root .content #portfolio .rocket-body .p_menu li a:hover {
-  background-color: black;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
   color: white;
+  font-size: 1rem;
+  line-height: 2.4rem;
+  font-weight: 600;
   -webkit-transition: all .3s;
   transition: all .3s;
 }
 
-#root .content #portfolio .rocket-body .p_menu li + li {
-  margin-left: 10px;
-}
-
-#root .content #portfolio .rocket-body .p_list {
+#root .content #rocket .rocket-body .p_list {
   text-align: left;
   margin-bottom: 100px;
 }
 
-#root .content #portfolio .rocket-body .p_list ul {
+#root .content #rocket .rocket-body .p_list ul {
   display: none;
 }
 
-#root .content #portfolio .rocket-body .p_list ul.on {
+#root .content #rocket .rocket-body .p_list ul.on {
   display: block;
 }
 
-#root .content #portfolio .rocket-body .p_list ul li {
-  width: 100%;
-  height: 200px;
-  padding: 10% 0;
+#root .content #rocket .rocket-body .p_list ul li {
+  padding: 3rem 0;
   border-bottom: 1px solid #f0f0f0;
 }
 
-#root .content #portfolio .rocket-body .p_list ul li::after {
+#root .content #rocket .rocket-body .p_list ul li::after {
   content: "";
   clear: both;
   display: block;
 }
 
-#root .content #portfolio .rocket-body .p_list ul li:last-child {
+#root .content #rocket .rocket-body .p_list ul li:last-child {
   border-bottom: none;
 }
 
-#root .content #portfolio .rocket-body .p_list ul li .page-pic {
+#root .content #rocket .rocket-body .p_list ul li .page-pic {
   float: right;
   position: relative;
   width: 45%;
-  height: 100%;
+  height: 200px;
 }
 
-#root .content #portfolio .rocket-body .p_list ul li .page-pic .portImg {
+#root .content #rocket .rocket-body .p_list ul li .page-pic .portImg {
   -webkit-box-shadow: 0 30px 60px rgba(17, 20, 39, 0.25);
           box-shadow: 0 30px 60px rgba(17, 20, 39, 0.25);
   width: 100%;
@@ -185,7 +218,7 @@
   transition: all .5s;
 }
 
-#root .content #portfolio .rocket-body .p_list ul li .page-pic .portImg .img {
+#root .content #rocket .rocket-body .p_list ul li .page-pic .portImg .img {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: top center;
@@ -193,7 +226,7 @@
   height: 100%;
 }
 
-#root .content #portfolio .rocket-body .p_list ul li .page-pic .portImg .more {
+#root .content #rocket .rocket-body .p_list ul li .page-pic .portImg .more {
   display: block;
   width: 100%;
   height: 100%;
@@ -206,7 +239,7 @@
   left: 0;
 }
 
-#root .content #portfolio .rocket-body .p_list ul li .page-pic .portImg .more::after {
+#root .content #rocket .rocket-body .p_list ul li .page-pic .portImg .more::after {
   content: 'MORE';
   display: block;
   color: transparent;
@@ -223,7 +256,7 @@
   font-weight: 500;
 }
 
-#root .content #portfolio .rocket-body .p_list ul li .page-pic .portImg:hover {
+#root .content #rocket .rocket-body .p_list ul li .page-pic .portImg:hover {
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
   -webkit-box-shadow: 0 30px 80px rgba(17, 20, 39, 0.7);
@@ -232,79 +265,85 @@
   transition: all .5s;
 }
 
-#root .content #portfolio .rocket-body .p_list ul li .page-pic .portImg:hover .more {
+#root .content #rocket .rocket-body .p_list ul li .page-pic .portImg:hover .more {
   background-color: rgba(0, 0, 0, 0.7);
 }
 
-#root .content #portfolio .rocket-body .p_list ul li .page-pic .portImg:hover .more::after {
+#root .content #rocket .rocket-body .p_list ul li .page-pic .portImg:hover .more::after {
   color: yellow;
   font-size: 2rem;
 }
 
-#root .content #portfolio .rocket-body .p_list ul li .page-info {
+#root .content #rocket .rocket-body .p_list ul li .page-info {
   float: left;
   position: relative;
   width: 40%;
   height: 100%;
 }
 
-#root .content #portfolio .rocket-body .p_list ul li .page-info::before {
-  content: '';
-  display: inline-block;
-  position: absolute;
-  left: -20px;
-  top: 20px;
-  width: 5px;
-  height: 60px;
-  background-color: black;
+#root .content #rocket .rocket-body .p_list ul li .page-info * {
+  display: block;
+  margin-bottom: 10px;
+  font-family: 'Noto Sans KR', sans-serif;
 }
 
-#root .content #portfolio .rocket-body .p_list ul li .page-info h4 {
-  font-family: 'Noto Sans KR', sans-serif;
-  font-size: 1rem;
-  color: #00b1ff;
+#root .content #rocket .rocket-body .p_list ul li .page-info h4 {
+  color: #512aff;
   font-weight: 600;
   margin-bottom: 15px;
 }
 
-#root .content #portfolio .rocket-body .p_list ul li .page-info h3 {
-  font-family: 'Noto Sans KR', sans-serif;
+#root .content #rocket .rocket-body .p_list ul li .page-info h3 {
   font-size: 2rem;
-  color: black;
+  color: #07042e;
   font-weight: 600;
-  margin-bottom: 15px;
+  letter-spacing: -1px;
+  word-spacing: 2px;
 }
 
-#root .content #portfolio .rocket-body .p_list ul li .page-info p {
-  font-family: 'Noto Sans KR', sans-serif;
-  font-size: 1rem;
-  color: black;
-  line-height: 1.2;
-  margin-bottom: 20px;
+#root .content #rocket .rocket-body .p_list ul li .page-info p {
+  opacity: .6;
 }
 
-#root .content #portfolio .rocket-body .p_list ul li .page-info .page-btn {
+#root .content #rocket .rocket-body .p_list ul li .page-info p:nth-of-type(1) {
+  line-height: 1.4;
+  margin: 2rem 0;
+  word-break: keep-all;
+}
+
+#root .content #rocket .rocket-body .p_list ul li .page-info p:last-of-type {
+  font-weight: 600;
+}
+
+#root .content #rocket .rocket-body .p_list ul li .page-info .page-btn {
   width: 100%;
   margin-top: 30px;
 }
 
-#root .content #portfolio .rocket-body .p_list ul li .page-info .page-btn a {
+#root .content #rocket .rocket-body .p_list ul li .page-info .page-btn a {
   display: inline-block;
   width: 40%;
-  padding: 10px 0;
+  height: 2.4rem;
   text-align: center;
   margin: 0 10px 10px 0;
-  border-radius: 10px;
+  border-radius: 100rem;
   background-color: lightgray;
-  font-family: 'Noto Sans KR', sans-serif;
-  font-size: 1rem;
+  opacity: .8;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  line-height: 2.4rem;
 }
 
-#root .content #portfolio .rocket-body .p_list ul li .page-info .page-btn a:hover {
-  background-color: gray;
+#root .content #rocket .rocket-body .p_list ul li .page-info .page-btn a:hover {
+  background-color: #adadad;
 }
 
-#root .content #portfolio .rocket-body .p_list ul li .page-more {
+#root .content #rocket .rocket-body .p_list ul li .page-info .page-btn a span {
+  display: block;
+  border: 1px solid red;
+}
+
+#root .content #rocket .rocket-body .p_list ul li .page-more {
   position: fixed;
   left: 0;
   right: 0;
@@ -315,19 +354,19 @@
   overflow: scroll;
 }
 
-#root .content #portfolio .rocket-body .p_list ul li .page-more.hidden {
+#root .content #rocket .rocket-body .p_list ul li .page-more.hidden {
   position: none;
   z-index: 100;
 }
 
-#root .content #portfolio .rocket-body .p_list ul li .page-more .more-wrap {
+#root .content #rocket .rocket-body .p_list ul li .page-more .more-wrap {
   position: relative;
   width: 100%;
   height: 100%;
   z-index: 200;
 }
 
-#root .content #portfolio .rocket-body .p_list ul li .page-more .more-wrap .more-close {
+#root .content #rocket .rocket-body .p_list ul li .page-more .more-wrap .more-close {
   position: absolute;
   left: 80%;
   margin-top: 60px;
@@ -335,7 +374,7 @@
   height: 40px;
 }
 
-#root .content #portfolio .rocket-body .p_list ul li .page-more .more-wrap .more-close .more-close-btn {
+#root .content #rocket .rocket-body .p_list ul li .page-more .more-wrap .more-close .more-close-btn {
   width: 100%;
   height: 100%;
   border: none;
@@ -344,12 +383,12 @@
   font-size: 0;
 }
 
-#root .content #portfolio .rocket-body .p_list ul li .page-more .more-wrap .more-close .more-close-btn i {
+#root .content #rocket .rocket-body .p_list ul li .page-more .more-wrap .more-close .more-close-btn i {
   color: white;
   font-size: 2rem;
 }
 
-#root .content #portfolio .rocket-body .p_list ul li .page-more .more-wrap .more-img {
+#root .content #rocket .rocket-body .p_list ul li .page-more .more-wrap .more-img {
   position: absolute;
   left: 50%;
   -webkit-transform: translateX(-50%);
@@ -360,164 +399,74 @@
           box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.2);
 }
 
-#root .content #portfolio .rocket-body .p_list ul li .page-more .more-wrap .more-img img {
+#root .content #rocket .rocket-body .p_list ul li .page-more .more-wrap .more-img img {
   width: 100%;
   -webkit-box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.2);
           box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.2);
 }
 
-#root .content #portfolio .rocket-body .p_list ul li .page-more .more-wrap .more-img img + img {
+#root .content #rocket .rocket-body .p_list ul li .page-more .more-wrap .more-img img + img {
   margin-top: 30px;
 }
 
-#root .content #portfolio .rocket-tail {
-  width: 100%;
-  padding: 5px 0;
-  margin-top: 100px;
-  background-color: gray;
-  border-radius: 50px;
-}
-
-#root .content #aboutMe {
-  display: inline-block;
-  margin: -28px 0 800px 0;
-  width: 60%;
-  padding: 100px 5%;
-  border-radius: 50px;
-  border: 10px solid black;
-  background-color: black;
-  /* ---프로파일 (내사진, 이름 한마디)--- */
-  /* ---프로파일 (내사진, 이름 한마디)--- */
-}
-
-#root .content #aboutMe * {
-  color: white;
-  text-align: left;
-}
-
-#root .content #aboutMe .a_profile {
-  display: inline-block;
-  vertical-align: top;
-  width: 50%;
-}
-
-#root .content #aboutMe .a_profile .myPic {
-  width: 100%;
-  height: 300px;
-  /*  반응형에선 높이가 달라짐  */
-  background-image: url(../img/cat.gif);
-  background-position: center;
-  background-size: cover;
-  border: 1px solid white;
-  border-radius: 20px;
-  margin-bottom: 10px;
+#root .content #rocket .rocket-end {
+  padding: 3rem;
+  margin-top: 5rem;
+  background-color: #8d8dd8;
   position: relative;
+  border-bottom: 5rem solid gray;
 }
 
-#root .content #aboutMe .a_profile .myPic .myName {
-  position: absolute;
-  bottom: 0;
-  padding: 5%;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  border-radius: 20px 20px 0 0;
-  background-color: rgba(0, 0, 0, 0.5);
-}
-
-#root .content #aboutMe .a_profile .myPic .myName p {
-  font-family: 'Noto Sans KR', sans-serif;
-  font-size: 1.2rem;
-  font-weight: 500;
-  line-height: 1.6;
-  margin-bottom: 5px;
-}
-
-#root .content #aboutMe .a_profile .myPic .myName p:last-child {
-  font-family: 'Noto Sans KR', sans-serif;
-  font-size: 1rem;
-  font-weight: 200;
-  line-height: 1.2;
-  color: lightgray;
-}
-
-#root .content #aboutMe .a_profile .myWord img {
-  width: 50px;
-  -webkit-transform: scaleX(-1);
-          transform: scaleX(-1);
-}
-
-#root .content #aboutMe .a_profile .myWord p {
-  font-family: 'Noto Sans KR', sans-serif;
-  font-size: 1.2rem;
-  font-weight: 500;
-  line-height: 1.6;
-}
-
-#root .content #aboutMe .a_profile .myWord strong {
-  -webkit-animation: backcolor 6s infinite;
-          animation: backcolor 6s infinite;
-  font-family: 'Noto Sans KR', sans-serif;
-  font-size: 1.2rem;
-  font-weight: 600;
-}
-
-#root .content #aboutMe .a_info {
-  display: inline-block;
-  width: 48%;
-  padding-left: 6%;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
-
-#root .content #aboutMe .a_info ul + ul {
-  margin-top: 40px;
-}
-
-#root .content #aboutMe .a_info ul {
+#root .content .rocket-tail {
   position: relative;
+  width: 100%;
 }
 
-#root .content #aboutMe .a_info ul::before {
+#root .content .rocket-tail::before, #root .content .rocket-tail::after {
   content: '';
-  display: inline-block;
+  display: block;
+  background: -webkit-gradient(linear, left top, left bottom, from(gray), to(white));
+  background: linear-gradient(gray, white);
+  width: 25%;
+  height: 20rem;
   position: absolute;
-  left: -20px;
-  top: 0px;
-  width: 5px;
-  height: 40px;
-  background-color: white;
+  top: -10rem;
+  border-radius: 20px;
 }
 
-#root .content #aboutMe .a_info ul h3 {
-  font-family: 'Noto Sans KR', sans-serif;
-  font-size: 1.2rem;
-  font-weight: 600;
-  margin-bottom: 10px;
+#root .content .rocket-tail::before {
+  right: 50%;
+  -webkit-transform: rotate(-10deg) translate(0, -50%);
+          transform: rotate(-10deg) translate(0, -50%);
+  border-top-left-radius: 100rem;
 }
 
-#root .content #aboutMe .a_info ul li {
-  margin-bottom: 5px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  color: white;
-  line-height: 1.5;
-  color: gray;
+#root .content .rocket-tail::after {
+  left: 50%;
+  -webkit-transform: rotate(10deg) translate(0, -50%);
+          transform: rotate(10deg) translate(0, -50%);
+  border-top-right-radius: 100rem;
 }
 
-#root .content #aboutMe .a_info ul li h4 {
-  margin-right: 20px;
-  font-weight: bold;
-  opacity: .8;
+#root .content .rocket-tail-front {
+  z-index: 10;
+  position: relative;
+  width: 100%;
 }
 
-#root .content #aboutMe .a_info ul li p {
-  opacity: .6;
-}
-
-#root .content #aboutMe .a_info .my_study span {
-  color: gray;
-  margin-right: 20px;
+#root .content .rocket-tail-front::before {
+  content: '';
+  width: 5rem;
+  height: 25rem;
+  display: block;
+  background: -webkit-gradient(linear, left top, left bottom, from(white), to(gray));
+  background: linear-gradient(white, gray);
+  border-radius: 100rem;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  -webkit-transform: translate(-50%, -90%);
+          transform: translate(-50%, -90%);
 }
 
 /*-----------------*/

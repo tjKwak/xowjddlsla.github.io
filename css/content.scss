@@ -1,43 +1,53 @@
+$form-height : 2.4rem;
+$blue-dark : #07042e;
+$blue : #512aff;
+$blue-l1 : #8d8dd8;
+$blue-l2 : #B8B8FF;
+
 #root{
     & .content{
         position: relative;
         z-index: 50;
         opacity: 0;
         text-align: center;
-        padding-top: 20rem;
+        padding: 20rem 0;
+        overflow: hidden;
+        transform: none;
         transition: all .5s;
         &.on{
             opacity: 1;
-            //로켓 날개
-            &::before, &::after{
-                content: '';
-                display: block;
-                background: linear-gradient(gray, white);
-                //box-shadow: inset 0 0 10px gray;
-                width: 30rem;
-                height: 90rem;
-                position: absolute;
-                top: 20%;
-            }
-            &::before{
-                left: calc(20% - 10rem);
-                transform: rotate(15deg);
-                border-radius: 20px 20px 100rem 20px;
-            }
-            &::after{
-                right: calc(20% - 10rem);
-                transform: rotate(-15deg);
-                border-radius: 20px 20px 20px 100rem;
-            }
         }
-        //로켓 바디
-        & #portfolio{
+        &.off{
+            transform: translateY(-100rem);
+        }
+        //로켓 날개
+        &::before, &::after{
+            content: '';
+            display: block;
+            background: linear-gradient(gray, white);
+            width: 50vw;
+            height: 90rem;
+            position: absolute;
+            top: 30%;
+            border-radius: 20px;
+        }
+        &::before{
+            left: 13%;
+            transform: rotate(15deg);
+            border-bottom-right-radius: 100rem;
+        }
+        &::after{
+            right: 13%;
+            transform: rotate(-15deg);
+            border-bottom-left-radius: 100rem;
+        }
+
+        & #rocket{
             background-color: white;
             //box-shadow: inset 0 0 10px gray;
-            z-index: 10; /*  content.on::after 버튼 때문에 z-index 설정함*/
+            z-index: 10; /*  로켓날개 때문에 z-index 설정함*/
             position: relative;
-            margin-top: -15px;
-            border-radius: 100rem 100rem 30px 30px;
+            border-radius: 100rem;
             width: 60%;
             display: inline-block;
             overflow: hidden;
@@ -50,65 +60,104 @@
                     background-color: #D9272E;
                 }
                 & .window-wrap{
-                    height: 30rem;
+                    padding: 7rem 0;
                     display: flex;
+                    flex-direction: column;
+                    gap: .6rem;
                     align-items: center;
                     justify-content: center;
+                    & p{
+                        &:nth-of-type(1){
+                            font-family: 'Lobster', cursive;
+                            font-size: 3rem;
+                            font-weight: 100;
+                        }
+                        &:nth-of-type(2){
+                            color: $blue-dark;
+                            font-size: 1.3rem;
+                            font-weight: 600;
+                            margin-bottom: 1rem;
+                        }
+                        &:nth-of-type(3),&:nth-of-type(4){
+                            margin: .2rem 0;
+                        }
+                        &:nth-of-type(5){
+                            margin-top: 1rem;
+                            display: block;
+                            width: 40%;
+                            opacity: .6;
+                            line-height: 1.4;
+                        }
+                    }
                     & .window{
-                        border: 20px solid rgb(184, 184, 255);
+                        border: 20px solid $blue-l2;
                         width: 12rem;
                         height: 12rem;
                         border-radius: 100rem;
                         background-image: url('../img/profile.png');
                         background-size: cover;
+                        margin-bottom: 1rem;
                     }
                 }
             }
+            //로켓 바디
             & .rocket-body{
                 padding: 50px 20%;
                 //탭메뉴
                 & .p_menu{
                     width: 100%;
-                    margin : 30px 0;
-                    
+                    margin : 3rem 0 5rem 0;
                     display: flex;
                     text-align: center;
+                    gap: 10px;
                     & li{
                         width: 100%;
+                        height: $form-height;
+                        border-radius: 100rem;
+                        background: $blue-l2;
+                        position: relative;
+                        overflow: hidden;
+                        transition: all .3s;
+                        // &::before{
+                        //     content: '';
+                        //     border-radius: 100rem;
+                        //     background: red;
+                        //     display: block;
+                        //     position: absolute;
+                        //     top: 0;
+                        //     bottom: 0;
+                        //     left: 0;
+                        //     width: 0%;
+                        //     transition: all .3s;
+                        // }
+                        //클릭시
                         &.on{
-                            & a{
-                                background-color: #00b1ff;
-                                animation: backcolor 6s infinite;
-                                &:hover{color: black;}
+                            //animation: backcolor 6s infinite;
+                            background: $blue-dark;
+                            box-shadow: -2px 6px 20px 5px rgba($blue-dark, 0.2);
+                            &:hover{
+                                background: $blue-dark;
                             }
+                        }
+                        //호버시
+                        &:hover{
+                            background: $blue-l1;
                         }
                         & a{
-                            padding: 0 20px;
-                            box-sizing: border-box;
-                            background-color: white;
-                            border-radius: 50px;
                             display: block;
-                            width: 100%;
-                            
-                            color: black;
-                            font-family: 'Noto Sans KR', sans-serif;
-                            text-transform: uppercase;
+                            position: absolute;
+                            top: 0;
+                            bottom: 0;
+                            left: 0;
+                            right: 0;
+
+                            color: white;
                             font-size: 1rem;
-                            line-height: 50px;
-                            font-weight: 800;
-                            box-shadow: 0px 0px 20px 5px rgba(0,0,0,0.2);
+                            line-height: $form-height;
+                            font-weight: 600;
                             transition: all .3s;
-                            &:hover{
-                                background-color: black;
-                                color: white;
-                                transition: all .3s;
-                            }
                         }
                     }
-                    & li+li{
-                        margin-left: 10px;
-                    }
-
                 }
                 //탭바디
                 & .p_list{
@@ -120,9 +169,8 @@
                             display: block;
                         }
                         & li{
-                            width: 100%;
-                            height: 200px;
-                            padding : 10% 0;
+                            //border: 1px solid red;
+                            padding : 3rem 0;
                             border-bottom: 1px solid rgb(240, 240, 240);
                             &::after{
                                 content:"";
@@ -137,7 +185,7 @@
                                 float: right;
                                 position: relative;
                                 width: 45%;
-                                height: 100%;
+                                height: 200px;
                                 & .portImg{
                                     box-shadow: 0 30px 60px rgba(17, 20, 39, 0.25);
                                     width: 100%;
@@ -200,36 +248,33 @@
                                 position: relative;
                                 width: 40%;
                                 height: 100%;
-                                &::before{
-                                    content: '';
-                                    display: inline-block;
-                                    position: absolute;
-                                    left: -20px;
-                                    top: 20px;
-                                    width: 5px;
-                                    height: 60px;
-                                    background-color: black;
+                                & *{
+                                    display: block;
+                                    margin-bottom: 10px;
+                                    font-family: 'Noto Sans KR', sans-serif;
                                 }
                                 & h4{
-                                    font-family: 'Noto Sans KR', sans-serif;
-                                    font-size: 1rem;
-                                    color: #00b1ff;
+                                    color: $blue;
                                     font-weight: 600;
                                     margin-bottom: 15px;
                                 }
                                 & h3{
-                                    font-family: 'Noto Sans KR', sans-serif;
                                     font-size: 2rem;
-                                    color: black;
+                                    color: $blue-dark;
                                     font-weight: 600;
-                                    margin-bottom: 15px;
+                                    letter-spacing: -1px;
+                                    word-spacing: 2px;
                                 }
                                 & p{
-                                    font-family: 'Noto Sans KR', sans-serif;
-                                    font-size: 1rem;
-                                    color: black;
-                                    line-height: 1.2;
-                                    margin-bottom: 20px;
+                                    opacity: .6;
+                                    &:nth-of-type(1){
+                                        line-height: 1.4;
+                                        margin: 2rem 0;
+                                        word-break: keep-all;
+                                    }
+                                    &:last-of-type{
+                                        font-weight: 600;
+                                    }
                                 }
                                 & .page-btn{
                                     width: 100%;
@@ -237,16 +282,21 @@
                                     & a{
                                         display: inline-block;
                                         width: 40%;
-                                        padding: 10px 0;
+                                        height: $form-height;
                                         text-align: center;
                                         margin: 0 10px 10px 0;
-                                        border-radius: 10px;
+                                        border-radius: 100rem;
                                         background-color: lightgray;
+                                        opacity: .8;
+                                        transition: all .2s;
                                         
-                                        font-family: 'Noto Sans KR', sans-serif;
-                                        font-size: 1rem;
+                                        line-height: $form-height;
                                         &:hover{
-                                            background-color: gray;
+                                            background-color: rgb(173, 173, 173);
+                                        }
+                                        & span{
+                                            display: block;
+                                            border: 1px solid red;
                                         }
                                     }
                                 }
@@ -310,135 +360,53 @@
                 }
             }
             //탭 아웃트로
-            & .rocket-tail{
-                width: 100%;
-                padding: 5px 0;
-                margin-top: 100px;
-                background-color: gray;
-                border-radius: 50px;
+            & .rocket-end{
+                padding: 3rem;
+                margin-top: 5rem;
+                background-color: $blue-l1;
+                position: relative;
+                border-bottom: 5rem solid gray;
             }
-
         }
-        //어바웃미
-        & #aboutMe{
-            display: inline-block;
-            margin: -28px 0 800px 0;
-            width: 60%;
-            padding: 100px 5%;
-            border-radius: 50px;
-            border: 10px solid black;
-            background-color: black;
-            & *{
-                color: white;
-                text-align: left;
+        & .rocket-tail{
+            position: relative;
+            width: 100%;
+            &::before, &::after{
+                content: '';
+                display: block;
+                background: linear-gradient(gray, white);
+                width: 25%;
+                height: 20rem;
+                position: absolute;
+                top: -10rem;
+                border-radius: 20px;
             }
-            /* ---프로파일 (내사진, 이름 한마디)--- */
-            & .a_profile{
-                display: inline-block;
-                vertical-align: top;
-                width: 50%;
-                & .myPic{
-                    width: 100%;
-                    height: 300px;
-                /*  반응형에선 높이가 달라짐  */
-                    background-image: url(../img/cat.gif);
-                    background-position: center;
-                    background-size: cover;
-                    border: 1px solid white;
-                    border-radius: 20px;
-                    margin-bottom: 10px;
-                    position: relative;
-                    & .myName{
-                        position: absolute;
-                        bottom: 0;
-                        padding: 5%;
-                        box-sizing: border-box;
-                        border-radius: 20px 20px 0 0;
-                        background-color: rgba(0,0,0,0.5);
-                        & p{
-                            font-family: 'Noto Sans KR', sans-serif;
-                            font-size: 1.2rem;
-                            font-weight: 500;
-                            line-height: 1.6;
-                            margin-bottom: 5px;
-                            &:last-child{
-                                font-family: 'Noto Sans KR', sans-serif;
-                                font-size: 1rem;
-                                font-weight: 200;
-                                line-height: 1.2;
-                                color: lightgray;
-                            }
-                        }
-                    }
-                }
-                & .myWord{
-                    & img{
-                        width: 50px;
-                        //filter: invert();
-                        transform: scaleX(-1);
-                    }
-                    & p{
-                        font-family: 'Noto Sans KR', sans-serif;
-                        font-size: 1.2rem;
-                        font-weight: 500;
-                        line-height: 1.6;
-                    }
-                    & strong{
-                        animation: backcolor 6s infinite;
-                        font-family: 'Noto Sans KR', sans-serif;
-                        font-size: 1.2rem;
-                        font-weight: 600;
-                    }
-                }
+            &::before{
+                right: 50%;
+                transform: rotate(-10deg) translate(0, -50%);
+                border-top-left-radius: 100rem;
             }
-            /* ---프로파일 (내사진, 이름 한마디)--- */
-            & .a_info{
-                display: inline-block;
-                width: 48%;
-            
-                padding-left: 6%;
-                box-sizing: border-box;
-                ul + ul{
-                    margin-top: 40px;
-                }
-                & ul{
-                    position: relative;
-                    &::before{
-                        content: '';
-                        display: inline-block;
-                        position: absolute;
-                        left: -20px;
-                        top: 0px;
-                        width: 5px;
-                        height: 40px;
-                        background-color: white;
-                    }
-                    & h3{
-                        font-family: 'Noto Sans KR', sans-serif;
-                        font-size: 1.2rem;
-                        font-weight: 600;
-                        margin-bottom: 10px;
-                    }
-                    & li{
-                        margin-bottom: 5px;
-                        display: flex;
-                        color: white;
-                        line-height: 1.5;
-                        color: gray;
-                        & h4{
-                            margin-right: 20px;
-                            font-weight: bold;
-                            opacity: .8;
-                        }
-                        & p{
-                            opacity: .6;
-                        }
-                    }
-                }
-                & .my_study span{
-                    color: gray;
-                    margin-right: 20px;
-                }
+            &::after{
+                left: 50%;
+                transform: rotate(10deg) translate(0, -50%);
+                border-top-right-radius: 100rem;
+            }
+        }
+        & .rocket-tail-front{
+            z-index: 10;
+            position: relative;
+            width: 100%;
+            &::before{
+                content: '';
+                width: 5rem;
+                height: 25rem;
+                display: block;
+                background: linear-gradient(white, gray);
+                border-radius: 100rem;
+                position: absolute;
+                top: 0;
+                left: 50%;
+                transform: translate(-50%, -90%);
             }
         }
     }
