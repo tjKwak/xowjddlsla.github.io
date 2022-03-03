@@ -110,7 +110,7 @@
                 </div>
             </div>
         </aside>
-        <section class="intro on">
+        <section class="intro scrollTopUp">
             <div class="scroll-box">
                 <div class="scrollIcon">
                     <div class="scrolling"></div>
@@ -134,7 +134,7 @@
                 </div>
             </div>
         </section>
-        <section class="content">
+        <section class="content scrollTopUp">
             <div id="rocket">
                 <div class="rocket-head">
                     <div class="head"></div>
@@ -444,12 +444,16 @@
         </section>
         <div class="back">
             <div class="clouds">
-                <div class="img-cloud-1 left-1"></div>
-                <div class="img-cloud-1 left-2"></div>
-                <div class="img-cloud-1 left-3"></div>
-                <div class="img-cloud-2 right-1"></div>
-                <div class="img-cloud-2 right-2"></div>
-                <div class="img-cloud-2 right-3"></div>
+                <div class="left">
+                    <div class="img-cloud-1 size-s"></div>
+                    <div class="img-cloud-1 size-m"></div>
+                    <div class="img-cloud-1 size-l"></div>
+                </div>
+                <div class="right">
+                    <div class="img-cloud-2 size-s"></div>
+                    <div class="img-cloud-2 size-l"></div>
+                    <div class="img-cloud-2 size-m"></div>
+                </div>
             </div>
             <div class="stars">
                 <div class="star s-1"></div>
@@ -469,67 +473,55 @@
     </div>
     <script>
         const html = document.querySelector('html');
-        var headerSec = document.querySelector('header');
-        var asideSec = document.querySelector('aside');
-        var introSec = document.querySelector('.intro');
-        var contSec = document.querySelector('.content');
-        var byeSec = document.querySelector('.goodbye');
+        const headerSec = document.querySelector('header');
+        const asideSec = document.querySelector('aside');
+        const introSec = document.querySelector('.intro');
+        const contSec = document.querySelector('.content');
+        const byeSec = document.querySelector('.goodbye');
+
         var old = html.scrollTop;
+
         
-        html.scrollTop = 0;
-        //로드시 intro&footer의 height값 자동생성
-        //height 값 만큼 contSec을 화면 밑으로 보냄
-        window.addEventListener('load', function() {
-            contSec.style.marginTop = window.innerHeight + 'px';
-            html.scrollTop = 0;
-            resizeWork();
-            
-            //리사이즈시 intro&footer의 height값 구하기
-            window.addEventListener('resize', resizeWork);
-            //스크롤시 smooth 스크롤
-            window.addEventListener('scroll', scrollWork);
+
+        
+        //새로고침시 맨 위로
+        $(document).ready(function(){
+            setTimeout(function(){
+                $('html, body').scrollTop(0);
+            }, 100);
         });
 
-
-        function resizeWork() {
-            introSec.style.height = window.innerHeight + 'px';
-            byeSec.style.height = window.innerHeight + 'px';
-        }
-
+        //스크롤 애니메이션
+        window.addEventListener('scroll', scrollWork);
         function scrollWork(e) {
             e.preventDefault();
-            // console.log('스크롤');
-            // console.log(html.scrollTop);
-            // console.log(old);
-            // console.log(html.scrollTop - old);
-            // console.log(contSec.scrollHeight);
+            console.log(html.scrollTop);
             //콘트쪽으로 스크롤 내렸을때
             if (html.scrollTop > 80 && old < html.scrollTop && html.scrollTop < 500) {
-                introSec.classList.remove('on');
-                contSec.classList.add('on');
-                contSec.style.marginTop = '0px';
-                console.log('인트로 > 콘트')
+                introSec.className = 'intro scrollTopDown';
+                contSec.className = 'content scrollTopDown';
+                byeSec.classList.remove('on');
+                $('.clouds').addClass('moveOut');
             }
             //인트로쪽으로 스크롤 올렸을때
             else if (html.scrollTop < 80 && old > html.scrollTop) {
-                introSec.classList.add('on');
-                contSec.classList.remove('on');
-                contSec.style.marginTop = window.innerHeight + 'px';
-                //contSec.style.marginTop = introSec.style.height.split('px')[0] * 1 + 'px';
-                console.log('콘트 > 인트로')
+                introSec.className = 'intro scrollTopUp';
+                contSec.className = 'content scrollTopUp';
+                byeSec.classList.remove('on');
+                $('.clouds').removeClass('moveOut');
             }
 
             //푸터쪽으로 스크롤 내렸을때
             else if (html.scrollTop + 950 > contSec.scrollHeight && old < html.scrollTop) {
-                contSec.classList.add('off');
+                contSec.className = 'content scrollBottomDown';
                 byeSec.classList.add('on');
-                console.log('콘트 > 푸터')
+                $('.clouds').removeClass('moveOut');
             }
             //콘트쪽으로 스크롤 올렸을때
             else if(html.scrollTop + 950 > contSec.scrollHeight && old > html.scrollTop) {
-                contSec.classList.remove('off');
+                contSec.className = 'content scrollBottomUp';
                 byeSec.classList.remove('on');
-                console.log('푸터 > 콘트')
+                $('.clouds').addClass('moveOut');
             }
             old = html.scrollTop;
         }

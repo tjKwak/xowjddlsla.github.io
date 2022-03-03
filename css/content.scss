@@ -8,17 +8,31 @@ $blue-l2 : #B8B8FF;
     & .content{
         position: relative;
         z-index: 50;
-        opacity: 0;
         text-align: center;
         padding: 20rem 0;
         overflow: hidden;
-        transform: none;
         transition: all .5s;
-        &.on{
+        // &.on{
+        //     opacity: 1;
+        // }
+        // &.off{
+        //     transform: translateY(-100rem);
+        // }
+        &.scrollTopDown{
             opacity: 1;
+            transform: none;
         }
-        &.off{
+        &.scrollTopUp{
+            opacity: 0;
+            transform: translateY(100rem);
+        }
+        &.scrollBottomDown{
+            opacity: 0;
             transform: translateY(-100rem);
+        }
+        &.scrollBottomUp{
+            opacity: 1;
+            transform: none;
         }
         //로켓 날개
         &::before, &::after{

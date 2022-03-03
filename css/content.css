@@ -2,23 +2,35 @@
 #root .content {
   position: relative;
   z-index: 50;
-  opacity: 0;
   text-align: center;
   padding: 20rem 0;
   overflow: hidden;
-  -webkit-transform: none;
-          transform: none;
   -webkit-transition: all .5s;
   transition: all .5s;
 }
 
-#root .content.on {
+#root .content.scrollTopDown {
   opacity: 1;
+  -webkit-transform: none;
+          transform: none;
 }
 
-#root .content.off {
+#root .content.scrollTopUp {
+  opacity: 0;
+  -webkit-transform: translateY(100rem);
+          transform: translateY(100rem);
+}
+
+#root .content.scrollBottomDown {
+  opacity: 0;
   -webkit-transform: translateY(-100rem);
           transform: translateY(-100rem);
+}
+
+#root .content.scrollBottomUp {
+  opacity: 1;
+  -webkit-transform: none;
+          transform: none;
 }
 
 #root .content::before, #root .content::after {

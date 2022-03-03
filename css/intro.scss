@@ -96,17 +96,16 @@
 
     & .intro{
         position: fixed;
-        -webkit-transform: translateZ(0);
-        z-index: 50;
-
-        transition: all .5s;
-        top: 300px;
         left: 0;
         right: 0;
         bottom: 0;
         opacity: 0;
-        &.on{
-            transition: all .5s;
+        transition: all .5s;
+        
+        &.scrollTopDown{
+            top: 300px;
+        }
+        &.scrollTopUp{
             top: 0;
             opacity: 1;
         }
@@ -269,9 +268,23 @@
         }
         & .clouds{
             position: absolute;
-            bottom: 0;
             left: 0;
             right: 0;
+            bottom: 0;
+            & .left{
+                position: absolute;
+                left: 0;
+                transition: all 1s;
+            }
+            & .right{
+                position: absolute;
+                right: 0;
+                transition: all 1s;
+            }
+            &.moveOut{
+                & .left{ transform: translateX(-70rem); }
+                & .right{ transform: translateX(70rem); }
+            }
             & .img-cloud-1{
                 bottom: 0;
                 width: 500px;
@@ -279,18 +292,18 @@
                 position: absolute;
                 background: url('../img/cloud_1.png');
                 background-size: cover;
-                &.left-1{
-                    left: 10rem;
+                &.size-s{
+                    left: 3rem;
                     transform: scale(.8);
                     opacity: .5;
                 }
-                &.left-2{
-                    left: -10rem;
+                &.size-m{
+                    left: 8rem;
                     transform: scale(1.5);
                     opacity: .2;
                 }
-                &.left-3{
-                    left: 8rem;
+                &.size-l{
+                    left: 0rem;
                     transform: scale(2);
                     opacity: .2;
                 }
@@ -299,28 +312,22 @@
                 bottom: 0;
                 width: 500px;
                 height: 240px;
-                //height: 263px;
                 position: absolute;
                 background: url('../img/cloud_2.png');
                 background-size: cover;
-                &.right-1{
+                transition: all .3s;
+                &.size-s{
                     right: 10rem;
                     transform: scale(1);
                     opacity: .5;
                 }
-                &.right-2{
+                &.size-l{
                     bottom: 0rem;
                     right: 5rem;
                     transform: scale(2);
                     opacity: .2;
                 }
-                // &.right-2{
-                //     bottom: 10rem;
-                //     right: 0;
-                //     transform: scale(1.5);
-                //     opacity: .2;
-                // }
-                &.right-3{
+                &.size-m{
                     bottom: 0rem;
                     right: -2rem;
                     transform: scale(1.2);
@@ -439,6 +446,7 @@
     //가장 하단
     & .goodbye{
         position: fixed;
+        top: 0;
         left: 0;
         right: 0;
         bottom: 0;
