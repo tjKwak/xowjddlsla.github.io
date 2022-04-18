@@ -1,3 +1,5 @@
+@import 'tools';
+
 header{
     position: fixed;
     top: 0;
@@ -8,13 +10,17 @@ header{
     &.hidden{
         z-index: -1;
     }
-    & .header-pc{
+    & .header-wrap{
         width: 100%;
         height: 100%;
         box-sizing: border-box;
         padding: 30%;
         & .logo{
             display: inline-block;
+            & span{
+                filter: invert(1);
+                transform: scale(2);
+            }
             & a{
                 color: white;
                 font-family: 'Lobster', cursive;
@@ -86,7 +92,7 @@ header{
                         display: block;
                         width: 100%;
                         height: 100%;
-                        background-image: url(../img/icons.png);
+                        background-image: url(../images/icons.png);
                         filter: invert(1);
                         transform: scale(.7) translateX(-5%) translateY(-5%);
                         &.myIcon{
@@ -136,9 +142,6 @@ header{
             }
         }
     }
-    & .header-mobile{
-        display: none;
-    }
 }
 
 aside{
@@ -150,96 +153,91 @@ aside{
     bottom: 0;
     left: 85%;
     display: block;
-    &.hidden{
-        z-index: -1;
-    }
-    & .aside-pc{
-        & .contact-box{
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            & .planet{
-                width: 180px;
-                height: 180px;
-                border-radius: 100rem;
-                background-color: white;
-                opacity: .2;
-            }
+    & .address-list{
+        position: absolute;
+        bottom: 10%;
+        right: 30%;
+        display: flex;
+        
+        transition: all 1.5s;
+        & li+li{
+            margin-left: 15px;
         }
-        & .address-list{
-            position: absolute;
-            bottom: 10%;
-            right: 30%;
-            display: flex;
+        & li{
+            width: 35px;
+            height: 35px;
+            border-radius: 20px;
+            background-color: #fff;
+            box-shadow: 0px 0px 20px 5px rgba(0,0,0,0.2);
+            text-align: center;
             
-            transition: all 1.5s;
-            & li+li{
-                margin-left: 15px;
+            transition: all .1s;
+
+            & a{
+                background-image: url(../images/snsIcons.png);
+                background-repeat: no-repeat;
+                background-size: 130px;
+                width: 100%;
+                height: 100%;
+                display: block;
             }
-            & li{
-                width: 35px;
-                height: 35px;
-                border-radius: 20px;
-                background-color: #fff;
+
+            & span{
+                color: white;
+                font-family: 'Noto Sans KR', sans-serif;
+                font-size: 1rem;
+                font-weight: 400;
+                
+                position: absolute;
+                bottom: 50px;
+                left: 0;
+                right: 0;
+                
+                background-color: rgba(0,0,0,0.7);
                 box-shadow: 0px 0px 20px 5px rgba(0,0,0,0.2);
-                text-align: center;
+                padding: 10px;
+                border-radius: 10px;
                 
                 transition: all .1s;
+                opacity: 0;
+            }
 
+            &.kakao-box a{
+                background-position: -47px 6px;
+            }
+            &.git-box a{
+                background-position: -97.5px 3px;
+            }
+            &.notefolio-box a{
+                background-position: 6px 3px;
+            }
+            &:hover{
                 & a{
-                    background-image: url(../img/snsIcons.png);
-                    background-repeat: no-repeat;
-                    background-size: 130px;
-                    width: 100%;
-                    height: 100%;
-                    display: block;
-                }
-
-                & span{
-                    color: white;
-                    font-family: 'Noto Sans KR', sans-serif;
-                    font-size: 1rem;
-                    font-weight: 400;
-                    
-                    position: absolute;
-                    bottom: 50px;
-                    left: 0;
-                    right: 0;
-                    
-                    background-color: rgba(0,0,0,0.7);
-                    box-shadow: 0px 0px 20px 5px rgba(0,0,0,0.2);
-                    padding: 10px;
-                    border-radius: 10px;
-                    
+                    transform: scale(1.2);
                     transition: all .1s;
-                    opacity: 0;
                 }
-
-                &.kakao-box a{
-                    background-position: -47px 6px;
-                }
-                &.git-box a{
-                    background-position: -97.5px 3px;
-                }
-                &.notefolio-box a{
-                    background-position: 6px 3px;
-                }
-                &:hover{
-                    & a{
-                        transform: scale(1.2);
-                        transition: all .1s;
-                    }
-                    & span{
-                        opacity: 1;
-                        transition: all .1s;
-                    }
+                & span{
+                    opacity: 1;
+                    transition: all .1s;
                 }
             }
-            
         }
+        
     }
-    & .aside-mobile{
-        display: none;
+}
+
+@media (max-width:$breakpoint-desktop){
+    header{
+        & .logo{
+            &::after{
+                display: none !important;
+            }
+            & *{
+                font-size: 0 !important;
+            }
+        }
+        & .menu, .site-info{
+            display: none !important;
+        }
     }
 }

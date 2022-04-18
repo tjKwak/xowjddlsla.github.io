@@ -65,7 +65,7 @@
     height: 700px;
 }
 .slide-list1{
-    background-image: url(../img/banner13\.jpg);
+    background-image: url(../images/banner13\.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: bottom;
@@ -73,7 +73,7 @@
     height: 100%;
 }
 .slide-list2{
-    background-image: url(../img/banner1.jpg);
+    background-image: url(../images/banner1.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: bottom;
@@ -81,7 +81,7 @@
     height: 100%;
 }
 .slide-list3{
-    background-image: url(../img/banner7.jpg);
+    background-image: url(../images/banner7.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: bottom;
@@ -89,7 +89,7 @@
     height: 100%;
 }
 .slide-list4{
-    background-image: url(../img/banner3.jpg);
+    background-image: url(../images/banner3.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: bottom;
@@ -97,7 +97,7 @@
     height: 100%;
 }
 .slide-list5{
-    background-image: url(../img/banner2.jpg);
+    background-image: url(../images/banner2.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: bottom;
@@ -372,28 +372,28 @@
 /*  백그라운드 이미지를 넣을땐
     꼭 width height대신 padding-top을 넣어도 됨*/
     padding-top: 70%;
-    background-image: url(../img/banner6.jpg);
+    background-image: url(../images/banner6.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
 }
 .intro-list2 .img-bg{
     padding-top: 70%;
-    background-image: url(../img/22.jpg);
+    background-image: url(../images/22.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
 }
 .intro-list3 .img-bg{
     padding-top: 70%;
-    background-image: url(../img/banner5.jpg);
+    background-image: url(../images/banner5.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
 }
 .intro-list4 .img-bg{
     padding-top: 70%;
-    background-image: url(../img/8b6c26187ede43ada1bd811f40a0c2ad_20200710154552.jpg);
+    background-image: url(../images/8b6c26187ede43ada1bd811f40a0c2ad_20200710154552.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -530,65 +530,65 @@ ul.tab-conts .like-box button i{
     background-position: center;
 }
 li.tab1 .img-box{
-    background-image: url(../img/8b6c26187ede43ada1bd811f40a0c2ad_20200710154552.jpg);
+    background-image: url(../images/8b6c26187ede43ada1bd811f40a0c2ad_20200710154552.jpg);
     
 }
 li.tab2 .img-box{
-    background-image: url(../img/72a684312314469bab4ac80de26e75b6_20200511132344.jpg);
+    background-image: url(../images/72a684312314469bab4ac80de26e75b6_20200511132344.jpg);
 }
 li.tab3 .img-box{
-    background-image: url(../img/507eeb51bf0e446491e04b1673e60961_20200625111535.jpg);
+    background-image: url(../images/507eeb51bf0e446491e04b1673e60961_20200625111535.jpg);
 }
 li.tab4 .img-box{
-    background-image: url(../img/740cb11c1c1d49b799a748aacc19a615_20200429174408.jpg);
+    background-image: url(../images/740cb11c1c1d49b799a748aacc19a615_20200429174408.jpg);
 }
 li.tab5 .img-box{
-    background-image: url(../img/41f608b79872496eaccc2c9ca774aaf7_20200708104353.jpg);
+    background-image: url(../images/41f608b79872496eaccc2c9ca774aaf7_20200708104353.jpg);
 }
 li.tab6 .img-box{
-    background-image: url(../img/1216d00f169f4fb2a084e26bba049669_20200708104847.jpg);
+    background-image: url(../images/1216d00f169f4fb2a084e26bba049669_20200708104847.jpg);
 }
 li.tab7 .img-box{
-    background-image: url(../img/146add2d4ece4691b2d469651f71d0f7_20200402012127.jpg);
+    background-image: url(../images/146add2d4ece4691b2d469651f71d0f7_20200402012127.jpg);
 }
 li.tab8 .img-box{
-    background-image: url(../img/316fa2dfe23246009965bc083b51d3b5_20200703102905.jpg);
+    background-image: url(../images/316fa2dfe23246009965bc083b51d3b5_20200703102905.jpg);
 }
 li.tab9 .img-box{
-    background-image: url(../img/310510bfec604d78a095ba11c8625dd6_20200206164009.jpg);
+    background-image: url(../images/310510bfec604d78a095ba11c8625dd6_20200206164009.jpg);
 }
 li.tab10 .img-box{
-    background-image: url(../img/91d1405fb0044165ad6ab54dee261d15_20190621163840.jpg);
+    background-image: url(../images/91d1405fb0044165ad6ab54dee261d15_20190621163840.jpg);
 }
 li.tab11 .img-box{
-    background-image: url(../img/497faaeccf2c4770aabaeeba49c61139_20200618074825.jpg);
+    background-image: url(../images/497faaeccf2c4770aabaeeba49c61139_20200618074825.jpg);
 }
 li.tab12 .img-box{
-    background-image: url(../img/44318c094dbc447b96eee24909630054_20200525143838.jpg);
+    background-image: url(../images/44318c094dbc447b96eee24909630054_20200525143838.jpg);
 }
 li.tab13 .img-box{
-    background-image: url(../img/740cb11c1c1d49b799a748aacc19a615_20200429174408.jpg);
+    background-image: url(../images/740cb11c1c1d49b799a748aacc19a615_20200429174408.jpg);
 }
 li.tab14 .img-box{
-    background-image: url(../img/7ddff9e9700645719488cc4f08fd4fe5_20200710142124.jpg);
+    background-image: url(../images/7ddff9e9700645719488cc4f08fd4fe5_20200710142124.jpg);
 }
 li.tab15 .img-box{
-    background-image: url(../img/7462504471c64081bc01e3d60b41ec80_20200713113659.jpg);
+    background-image: url(../images/7462504471c64081bc01e3d60b41ec80_20200713113659.jpg);
 }
 li.tab16 .img-box{
-    background-image: url(../img/41f608b79872496eaccc2c9ca774aaf7_20200708104353.jpg);
+    background-image: url(../images/41f608b79872496eaccc2c9ca774aaf7_20200708104353.jpg);
 }
 li.tab17 .img-box{
-    background-image: url(../img/8dcd011a34c64258a217d664f009eca7_20200413103905.jpg);
+    background-image: url(../images/8dcd011a34c64258a217d664f009eca7_20200413103905.jpg);
 }
 li.tab18 .img-box{
-    background-image: url(../img/84ff11281dd1482aa0f32b0585010d27_20200414165342.jpg);
+    background-image: url(../images/84ff11281dd1482aa0f32b0585010d27_20200414165342.jpg);
 }
 li.tab19 .img-box{
-    background-image: url(../img/919b10143f8f48148dd4f0428e2f4d18_20200618113147.jpg);
+    background-image: url(../images/919b10143f8f48148dd4f0428e2f4d18_20200618113147.jpg);
 }
 li.tab20 .img-box{
-    background-image: url(../img/90a4e5c498a24a88b93f3d4dec82c89a_20200713111405.jpg);
+    background-image: url(../images/90a4e5c498a24a88b93f3d4dec82c89a_20200713111405.jpg);
 }
 
 

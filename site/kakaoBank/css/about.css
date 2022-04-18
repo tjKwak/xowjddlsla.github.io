@@ -59,7 +59,7 @@
 }
 
 .bn-slide-1 {
-    background-image: url(../img/img_1_20200415.jpg);
+    background-image: url(../images/img_1_20200415.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;
@@ -67,7 +67,7 @@
 }
 
 .bn-slide-2 {
-    background-image: url(../img/img_2_20180109.jpg);
+    background-image: url(../images/img_2_20180109.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;
@@ -75,7 +75,7 @@
 }
 
 .bn-slide-3 {
-    background-image: url(../img/img_3_20180109.jpg);
+    background-image: url(../images/img_3_20180109.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;
@@ -83,7 +83,7 @@
 }
 
 .bn-slide-4 {
-    background-image: url(../img/img_4_20180109.jpg);
+    background-image: url(../images/img_4_20180109.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;
@@ -106,42 +106,42 @@
 
 @-webkit-keyframes MovingSlide {
     0% {
-        background-image: url(img/img_1_20200415.jpg);
+        background-image: url(images/img_1_20200415.jpg);
         background-position: right;
     }
 
     30% {
-        background-image: url(img/img_2_20180109.jpg);
+        background-image: url(images/img_2_20180109.jpg);
     }
 
     60% {
-        background-image: url(img/img_3_20180109.jpg);
+        background-image: url(images/img_3_20180109.jpg);
     }
 
     80% {
-        background-image: url(img/img_4_20180109.jpg);
+        background-image: url(images/img_4_20180109.jpg);
         background-position: left;
     }
 }
 
 @keyframes MovingSlide {
     20% {
-        background-image: url(../img/img_1_20200415.jpg);
+        background-image: url(../images/img_1_20200415.jpg);
         background-position: right;
     }
 
     40% {
-        background-image: url(../img/img_2_20180109.jpg);
+        background-image: url(../images/img_2_20180109.jpg);
         background-position: left;
     }
 
     60% {
-        background-image: url(../img/img_3_20180109.jpg);
+        background-image: url(../images/img_3_20180109.jpg);
         background-position: right;
     }
 
     80% {
-        background-image: url(../img/img_4_20180109.jpg);
+        background-image: url(../images/img_4_20180109.jpg);
         background-position: left;
     }
 }
@@ -223,7 +223,7 @@
 }
 
 .btn-left {
-    background-image: url(../img/btn-arrow-l.png);
+    background-image: url(../images/btn-arrow-l.png);
     background-repeat: no-repeat;
     width: 40px;
     height: 50px;
@@ -234,7 +234,7 @@
 }
 
 .btn-right {
-    background-image: url(../img/btn-arrow-r.png);
+    background-image: url(../images/btn-arrow-r.png);
     background-repeat: no-repeat;
     width: 40px;
     height: 50px;
@@ -297,7 +297,7 @@
 
 /* slide-img */
 #movie .slide > .img1 {
-    background-image: url(../img/brand_movie_09.png);
+    background-image: url(../images/brand_movie_09.png);
     background-repeat: no-repeat;
     width: 300px;
     height: 180px;
@@ -305,7 +305,7 @@
 }
 
 #movie .slide > .img2 {
-    background-image: url(../img/brand_movie_10.png);
+    background-image: url(../images/brand_movie_10.png);
     background-repeat: no-repeat;
     width: 300px;
     height: 180px;
@@ -313,7 +313,7 @@
 }
 
 #movie .slide > .img3 {
-    background-image: url(../img/brand_movie_11.png);
+    background-image: url(../images/brand_movie_11.png);
     background-repeat: no-repeat;
     width: 300px;
     height: 180px;
@@ -321,7 +321,7 @@
 }
 
 #movie .slide > .img4 {
-    background-image: url(../img/brand_movie_12.png);
+    background-image: url(../images/brand_movie_12.png);
     background-repeat: no-repeat;
     width: 300px;
     height: 180px;
@@ -329,7 +329,7 @@
 }
 
 #movie .slide > .img5 {
-    background-image: url(../img/brand_movie_13.png);
+    background-image: url(../images/brand_movie_13.png);
     background-repeat: no-repeat;
     width: 300px;
     height: 180px;
@@ -337,7 +337,7 @@
 }
 
 #movie .slide > .img6 {
-    background-image: url(../img/brand_movie_08.png);
+    background-image: url(../images/brand_movie_08.png);
     background-repeat: no-repeat;
     width: 300px;
     height: 180px;
@@ -390,7 +390,7 @@
 }
 
 .bi-img {
-    background-image: url(../img/bi.jpg);
+    background-image: url(../images/bi.jpg);
     width: 400px;
     height: 144px;
     background-size: contain;

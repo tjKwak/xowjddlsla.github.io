@@ -23,15 +23,15 @@ header.hidden{
 .header-mobile{
     display: none;
 }
-.header-pc{
+.header-wrap{
     width: 100%;
     height: 100%;
     box-sizing: border-box;
     padding: 30%;
 }
-.header-pc .logo a{
+.header-wrap .logo a{
     display: block;
-    background-image: url(../img/tjlogo.png);
+    background-image: url(../images/tjlogo.png);
     background-size: cover;
     width: 210px;
     height: 50px;
@@ -39,7 +39,7 @@ header.hidden{
     text-indent: -999999px;
     transition: all .2s;
 }
-.header-pc .logo a::after{
+.header-wrap .logo a::after{
     content: '';
     display: block;
     width: 100%;
@@ -53,11 +53,11 @@ header.hidden{
     -webkit-transform-origin: 0 0;
     transition: all .3s;
 }
-.header-pc .logo a:hover::after{
+.header-wrap .logo a:hover::after{
     transform: scaleX(1);
     transition: all .3s;
 }
-.header-pc>p{
+.header-wrap>p{
     font-family: 'Noto Sans KR', sans-serif;
     font-size: 0.8rem;
     font-weight: 400;
@@ -68,7 +68,7 @@ header.hidden{
 
 
 /* 메뉴들 */
-.header-pc .menu{
+.header-wrap .menu{
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -81,7 +81,7 @@ header.hidden{
     
     transition: all 1.5s;
 }
-.header-pc .menu li{
+.header-wrap .menu li{
     width: 80px;
     height: 80px;
     border-radius: 20px;
@@ -90,7 +90,7 @@ header.hidden{
     
     transition: all .3s;
 }
-.header-pc .menu li:hover{
+.header-wrap .menu li:hover{
     width: 80px;
     height: 80px;
     border-radius: 20px;
@@ -101,24 +101,24 @@ header.hidden{
     transition: all .3s;
 }
 
-.header-pc .myIcon{
-    background-image: url(../img/icons.png);
+.header-wrap .myIcon{
+    background-image: url(../images/icons.png);
     background-position: 0px 5px;
     width: 100%;
     height: 100%;
     display: block;
     margin-bottom: 5px;
 }
-.header-pc .portfolioIcon{
-    background-image: url(../img/icons.png);
+.header-wrap .portfolioIcon{
+    background-image: url(../images/icons.png);
     background-position: -87px 3px;
     width: 100%;
     height: 100%;
     display: block;
     margin-bottom: 5px;
 }
-.header-pc .studyIcon{
-    background-image: url(../img/icons.png);
+.header-wrap .studyIcon{
+    background-image: url(../images/icons.png);
     background-position: -176px 0px;
     width: 100%;
     height: 100%;
@@ -126,7 +126,7 @@ header.hidden{
     margin-bottom: 5px;
 }
 
-.header-pc .menu a{
+.header-wrap .menu a{
     font-family: 'Noto Sans KR', sans-serif;
     font-size: 0.8rem;
     font-weight: 400;
@@ -284,7 +284,7 @@ aside.hidden{
     transition: all .5s;
 }
 .contact-box .contact-icon{
-    background-image: url(../img/icons.png);
+    background-image: url(../images/icons.png);
     background-position: -262px -3px;
     width: 80px;
     height: 80px;
@@ -347,7 +347,7 @@ aside.hidden{
 }
 
 .contact-box.on .contact-icon{
-    background-image: url(../img/icons.png);
+    background-image: url(../images/icons.png);
     background-position: -262px -3px;
     width: 80px;
     height: 80px;
@@ -406,7 +406,7 @@ aside.hidden{
     margin-left: 15px;
 }
 .address-list a{
-    background-image: url(../img/snsIcons.png);
+    background-image: url(../images/snsIcons.png);
     background-repeat: no-repeat;
     background-size: 130px;
     width: 100%;

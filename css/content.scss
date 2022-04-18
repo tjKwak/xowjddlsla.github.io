@@ -1,3 +1,5 @@
+@import 'tools';
+
 $form-height : 2.4rem;
 $blue-dark : #07042e;
 $blue : #512aff;
@@ -12,12 +14,7 @@ $blue-l2 : #B8B8FF;
         padding: 20rem 0;
         overflow: hidden;
         transition: all .5s;
-        // &.on{
-        //     opacity: 1;
-        // }
-        // &.off{
-        //     transform: translateY(-100rem);
-        // }
+
         &.scrollTopDown{
             opacity: 1;
             transform: none;
@@ -34,6 +31,7 @@ $blue-l2 : #B8B8FF;
             opacity: 1;
             transform: none;
         }
+
         //로켓 날개
         &::before, &::after{
             content: '';
@@ -63,6 +61,7 @@ $blue-l2 : #B8B8FF;
             position: relative;
             border-radius: 100rem;
             width: 60%;
+            min-width: 50rem;
             display: inline-block;
             overflow: hidden;
 
@@ -108,7 +107,7 @@ $blue-l2 : #B8B8FF;
                         width: 12rem;
                         height: 12rem;
                         border-radius: 100rem;
-                        background-image: url('../img/profile.png');
+                        background-image: url('../images/profile.png');
                         background-size: cover;
                         margin-bottom: 1rem;
                     }
@@ -317,6 +316,7 @@ $blue-l2 : #B8B8FF;
                             }
                             //클릭시 팝업
                             & .page-more{
+                                display: none;
                                 position: fixed;
                                 left: 0;
                                 right: 0;
@@ -424,6 +424,24 @@ $blue-l2 : #B8B8FF;
             }
         }
     }
+    @media (min-width:$breakpoint-tablet) and (max-width:$breakpoint-desktop){
+        //border: 10px solid red !important;
+        & #rocket{
+            width: 80% !important;
+            & .rocket-body{
+                padding: 50px 10% !important;
+            }
+        }
+    }
+    @media (max-width:$breakpoint-tablet){
+        //border: 10px solid yellow !important;
+        & #rocket{
+            width: calc(100% - 1rem) !important;
+            & .rocket-body{
+                padding: 50px 2rem !important;
+            }
+        }
+    }
 }
 
 
@@ -432,48 +450,48 @@ $blue-l2 : #B8B8FF;
 /*-----------------*/
 .img{
     &.img1{
-        background-image: url(../img/29cm.PNG);
+        background-image: url(../images/29cm.PNG);
     }
     &.img2{
-        background-image: url(../img/kakaobank.PNG);
+        background-image: url(../images/kakaobank.PNG);
     }
     &.img3{
-        background-image: url(../img/kakao.jpg);
+        background-image: url(../images/kakao.jpg);
     }
     &.img4{
-        background-image: url(../img/naver.PNG);
+        background-image: url(../images/naver.PNG);
     }
     &.img5{
-        background-image: url(../img/ed.PNG);
+        background-image: url(../images/ed.PNG);
     }
     &.img6{
-        background-image: url(../img/portfolio/p14.png);
+        background-image: url(../images/portfolio/p14.png);
     }
     &.img7{
-        background-image: url(../img/portfolio/p21.png);
+        background-image: url(../images/portfolio/p21.png);
     }
     &.img8{
-        background-image: url(../img/portfolio/p27.png);
+        background-image: url(../images/portfolio/p27.png);
     }
     &.img9{
-        background-image: url(../img/portfolio/p5.png);
+        background-image: url(../images/portfolio/p5.png);
     }
     &.img10{
-        background-image: url(../img/portfolio/p9.png);
+        background-image: url(../images/portfolio/p9.png);
     }
     &.img11{
-        background-image: url(../img/portfolio/p34.png);
+        background-image: url(../images/portfolio/p34.png);
     }
     &.img12{
-        background-image: url(../img/portfolio/p35.png);
+        background-image: url(../images/portfolio/p35.png);
     }
     &.img13{
-        background-image: url(../img/portfolio/p36.png);
+        background-image: url(../images/portfolio/p36.png);
     }
     &.img14{
-        background-image: url(../img/portfolio/p37.png);
+        background-image: url(../images/portfolio/p37.png);
     }
     &.img15{
-        background-image: url(../img/portfolio/p38.png);
+        background-image: url(../images/portfolio/p38.png);
     }
 }

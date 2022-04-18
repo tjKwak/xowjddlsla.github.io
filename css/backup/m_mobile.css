@@ -2,7 +2,7 @@
             header{
                 right: 90%;
             }
-            .header-pc{
+            .header-wrap{
                 display: none;
             }
             .header-mobile{
@@ -23,7 +23,7 @@
             }
             .header-mobile .logo a{
                 display: block;
-                background-image: url(../img/xowjddlsla.png);
+                background-image: url(../images/xowjddlsla.png);
                 background-size: cover;
                 width: 50px;
                 height: 50px;

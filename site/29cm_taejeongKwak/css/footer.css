@@ -181,7 +181,7 @@ footer{
     margin-left: 5px;
 }
 .lucyIcon{
-    background-image: url(../img/sp_29cm.png);
+    background-image: url(../images/sp_29cm.png);
     background-size: 220px;
     background-position: -360px -30px;
     width: 25px;
@@ -192,7 +192,7 @@ footer{
     text-indent: -999999px;
 }
 .appleIcon{
-    background-image: url(../img/sp_29cm.png);
+    background-image: url(../images/sp_29cm.png);
     background-size: 220px;
     background-position: -360px -58px;
     width: 25px;
@@ -203,7 +203,7 @@ footer{
     text-indent: -999999px;
 }
 .googleIcon{
-    background-image: url(../img/sp_29cm.png);
+    background-image: url(../images/sp_29cm.png);
     background-size: 220px;
     background-position: -360px -84px;
     width: 25px;

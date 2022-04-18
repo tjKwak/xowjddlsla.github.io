@@ -553,49 +553,49 @@
 /* 이미지 모음 */
 /*-----------------*/
 .img1{
-    background-image: url(../img/29cm.PNG);
+    background-image: url(../images/29cm.PNG);
 }
 .img2{
-    background-image: url(../img/kakaobank.PNG);
+    background-image: url(../images/kakaobank.PNG);
 }
 .img3{
-    background-image: url(../img/kakao.jpg);
+    background-image: url(../images/kakao.jpg);
 }
 .img4{
-    background-image: url(../img/naver.PNG);
+    background-image: url(../images/naver.PNG);
 }
 .img5{
-    background-image: url(../img/ed.PNG);
+    background-image: url(../images/ed.PNG);
 }
 .img6{
-    background-image: url(../img/portfolio/p14.png);
+    background-image: url(../images/portfolio/p14.png);
 }
 .img7{
-    background-image: url(../img/portfolio/p21.png);
+    background-image: url(../images/portfolio/p21.png);
 }
 .img8{
-    background-image: url(../img/portfolio/p27.png);
+    background-image: url(../images/portfolio/p27.png);
 }
 .img9{
-    background-image: url(../img/portfolio/p5.png);
+    background-image: url(../images/portfolio/p5.png);
 }
 .img10{
-    background-image: url(../img/portfolio/p9.png);
+    background-image: url(../images/portfolio/p9.png);
 }
 .img11{
-    background-image: url(../img/portfolio/p34.png);
+    background-image: url(../images/portfolio/p34.png);
 }
 .img12{
-    background-image: url(../img/portfolio/p35.png);
+    background-image: url(../images/portfolio/p35.png);
 }
 .img13{
-    background-image: url(../img/portfolio/p36.png);
+    background-image: url(../images/portfolio/p36.png);
 }
 .img14{
-    background-image: url(../img/portfolio/p37.png);
+    background-image: url(../images/portfolio/p37.png);
 }
 .img15{
-    background-image: url(../img/portfolio/p38.png);
+    background-image: url(../images/portfolio/p38.png);
 }
 
 
@@ -807,7 +807,7 @@
     border-radius: 50px;
     border: 10px solid black;
     background-color: black;
-    background-image: url(../img/flower.gif);
+    background-image: url(../images/flower.gif);
     background-size: 120%;
     background-position: left bottom;
     background-repeat: no-repeat;
@@ -841,7 +841,7 @@
     width: 100%;
     height: 300px;
 /*  반응형에선 높이가 달라짐  */
-    background-image: url(../img/cat.gif);
+    background-image: url(../images/cat.gif);
     background-position: center;
     background-size: cover;
     border: 1px solid white;

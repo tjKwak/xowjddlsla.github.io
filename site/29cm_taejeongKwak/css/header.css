@@ -41,7 +41,7 @@
 .download::after{
     content: '';
     display: inline-block;
-    background-image: url(../img/icon.png);
+    background-image: url(../images/icon.png);
     filter: invert();
     background-position: -242px -178px;
     background-size: 500px;
@@ -73,7 +73,7 @@
 .logo-box a.on{
     text-align: left;
     text-indent: -99999px;
-    background-image: url(../img/sp_29cm_m.png);
+    background-image: url(../images/sp_29cm_m.png);
     background-size: 120px;
     display: block;
     width: 120px;
@@ -99,7 +99,7 @@
 .logo-box a.off{
     text-align: left;
     text-indent: -99999px;
-    background-image: url(../img/sp_29cm.png);
+    background-image: url(../images/sp_29cm.png);
     background-size: 200px;
     background-position: 0px -25px;
     display: block;
@@ -139,7 +139,7 @@
     display: inline-block;
     vertical-align:bottom;
     margin-right: 2px;
-    background-image: url(../img/sp_29cm.png);
+    background-image: url(../images/sp_29cm.png);
     background-size: 200px;
     background-position: 0px 0px;
     width: 18px;
@@ -149,7 +149,7 @@
     display: inline-block;
     vertical-align:bottom;
     margin-right: 2px;
-    background-image: url(../img/sp_29cm.png);
+    background-image: url(../images/sp_29cm.png);
     background-size: 200px;
     background-position: -25px 0px;
     width: 18px;
@@ -159,7 +159,7 @@
     display: inline-block;
     vertical-align:bottom;
     margin-right: 3px;
-    background-image: url(../img/sp_29cm.png);
+    background-image: url(../images/sp_29cm.png);
     background-size: 200px;
     background-position: -48px 0px;
     width: 18px;
@@ -169,7 +169,7 @@
     display: inline-block;
     vertical-align:bottom;
     margin-right: 2px;
-    background-image: url(../img/sp_29cm.png);
+    background-image: url(../images/sp_29cm.png);
     background-size: 200px;
     background-position: -100px 0px;
     width: 18px;

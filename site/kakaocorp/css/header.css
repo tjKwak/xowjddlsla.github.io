@@ -41,7 +41,7 @@ header.fixOn{
     background-color: white;
     transition: all .3s;
 }
-header.fixOn .header-pc{
+header.fixOn .header-wrap{
     border-bottom: 1px solid #eee;
     transition: all .3s;
     box-sizing: border-box;
@@ -62,14 +62,14 @@ header.fixOn .header-pc{
 
 
 
-.header-pc{
+.header-wrap{
     z-index: 9999;
     margin: 0 auto;
     min-width: 1300px;
     max-width: 1920px;
     height: 80px;
 }
-.header-pc>.root{
+.header-wrap>.root{
     height: 80px;
     display: flex;
     justify-content: space-between;
@@ -85,7 +85,7 @@ header.fixOn .header-pc{
     padding-left: 80px;
 }
 .logo>h1>a{
-    background-image: url(../img/logo_kakao.png);
+    background-image: url(../images/logo_kakao.png);
     background-repeat: no-repeat;
     width: 70px;
     height: 25px;
@@ -110,7 +110,7 @@ header.fixOn .header-pc{
 .gnb-item>a>span{
     content: '';
     display: inline-block;
-    background-image: url(../img/ico_corp_181031.png);
+    background-image: url(../images/ico_corp_181031.png);
     background-position: -153px 0px;
     vertical-align: middle;
     margin-left: 3px;

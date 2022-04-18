@@ -463,7 +463,7 @@
   display: none !important;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1300px) {
   .show__under-desktop {
     display: block !important;
   }
@@ -473,7 +473,7 @@
   display: none !important;
 }
 
-@media (min-width: 1024px) and (max-width: 1700px) {
+@media (min-width: 1024px) and (max-width: 1500px) {
   .show__only-labtop {
     display: block !important;
   }

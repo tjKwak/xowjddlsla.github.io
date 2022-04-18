@@ -15,23 +15,23 @@
 /*    height: 38rem !important;*/
 }
 .slide-1{
-    background-image: url(../img/banner_1.png);
+    background-image: url(../images/banner_1.png);
     background-repeat: no-repeat;
     background-size: cover;
 }
 
 .slide-2{
-    background-image: url(../img/banner_2.png);
+    background-image: url(../images/banner_2.png);
     background-repeat: no-repeat;
     background-size: cover;
 }
 .slide-3{
-    background-image: url(../img/banner_4.png);
+    background-image: url(../images/banner_4.png);
     background-repeat: no-repeat;
     background-size: cover;
 }
 .slide-4{
-    background-image: url(../img/banner_3.png);
+    background-image: url(../images/banner_3.png);
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -95,7 +95,7 @@
 .banner-cont-box a::after{
     content: '';
     display: inline-block;
-    background-image: url(../img/ico_corp_181031.png);
+    background-image: url(../images/ico_corp_181031.png);
     background-position: -112px -65px;
     margin-left: 20px;
     width: 10px;
@@ -112,7 +112,7 @@
     left: 0;
     top: 50%;
     transform: translateY(-50%);
-    background-image: url(../img/ico_corp_181031.png);
+    background-image: url(../images/ico_corp_181031.png);
     background-repeat: no-repeat;
     background-position: -155px -110px;
     text-indent: 99999999px;
@@ -127,7 +127,7 @@
     right: 0;
     top: 50%;
     transform: translateY(-50%);
-    background-image: url(../img/ico_corp_181031.png);
+    background-image: url(../images/ico_corp_181031.png);
     background-repeat: no-repeat;
     background-position: -205px -110px;
     text-indent: 99999999px;

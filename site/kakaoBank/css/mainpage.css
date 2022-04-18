@@ -75,7 +75,7 @@
     justify-content: center;
     min-width: 1080px;
 }
-.bn-img{ background-image: url(../img/main-bg2.png);
+.bn-img{ background-image: url(../images/main-bg2.png);
     background-repeat: no-repeat;
     background-size: 1200px;
     
@@ -101,7 +101,7 @@
     background-color: white;
 }
 .google {
-    background-image: url(../img/img-kabang-200417.png);
+    background-image: url(../images/img-kabang-200417.png);
     background-repeat: no-repeat;
     width: 25px;
     height: 25px;
@@ -112,7 +112,7 @@
     vertical-align: middle;
 }
 .apple {
-    background-image: url(../img/img-kabang-200417.png);
+    background-image: url(../images/img-kabang-200417.png);
     background-repeat: no-repeat;
     width: 25px;
     height: 25px;
@@ -214,7 +214,7 @@
 .cont5-bg{
     width: 100%;
     height: 700px;
-    background-image: url(../img/home-map.png);
+    background-image: url(../images/home-map.png);
     background-repeat: no-repeat;
     background-position: 0 50%;
 }
@@ -317,7 +317,7 @@
     float: left;
     filter: invert(100%);
     opacity: 30%;
-    background-image: url(../img/img-kabang-200417.png);
+    background-image: url(../images/img-kabang-200417.png);
     background-position: 185px 205px;
     width: 50px;
     height: 90px;
@@ -326,7 +326,7 @@
     float: right;
     filter: invert(100%);
     opacity: 30%;
-    background-image: url(../img/img-kabang-200417.png);
+    background-image: url(../images/img-kabang-200417.png);
     background-position: 135px 205px;
     width: 50px;
     height: 90px;

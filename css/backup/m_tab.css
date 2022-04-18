@@ -1,14 +1,14 @@
 /* ---header,aside--- */
-            .header-pc .logo a{
-                background-image: url(../img/xowjddlsla.png);
+            .header-wrap .logo a{
+                background-image: url(../images/xowjddlsla.png);
                 width: 80px;
                 height: 80px;
                 transition: all .2s;
             }
-            .header-pc .logo a::after{
+            .header-wrap .logo a::after{
                 margin-top: 60px;
             }
-            .header-pc > p{
+            .header-wrap > p{
                 display: none;
             }
             header{
@@ -17,11 +17,11 @@
             aside{
                 left: 90%;
             }
-            .header-pc .menu{
+            .header-wrap .menu{
                 transform: scale(0.8);
                 top: 30%;
             }
-            .header-pc .site-info{
+            .header-wrap .site-info{
                 bottom: 5%;
             }
             aside .contact-txt{
