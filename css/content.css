@@ -827,18 +827,22 @@
   word-spacing: 2px;
 }
 
-#root .content #rocket .rocket-body .p_list ul li .page-info p {
+#root .content #rocket .rocket-body .p_list ul li .page-info b {
   opacity: .6;
+  font-weight: 500;
+  line-height: 1.2;
 }
 
 #root .content #rocket .rocket-body .p_list ul li .page-info p:nth-of-type(1) {
   line-height: 1.4;
   margin: 2rem 0;
   word-break: keep-all;
+  opacity: .6;
 }
 
-#root .content #rocket .rocket-body .p_list ul li .page-info p:last-of-type {
+#root .content #rocket .rocket-body .p_list ul li .page-info p:nth-of-type(2) {
   font-weight: 600;
+  opacity: .6;
 }
 
 #root .content #rocket .rocket-body .p_list ul li .page-info .page-btn {
@@ -847,8 +851,13 @@
 }
 
 #root .content #rocket .rocket-body .p_list ul li .page-info .page-btn a {
-  display: inline-block;
-  width: 40%;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 1rem;
   height: 2.4rem;
   text-align: center;
   margin: 0 10px 10px 0;
@@ -865,8 +874,7 @@
 }
 
 #root .content #rocket .rocket-body .p_list ul li .page-info .page-btn a span {
-  display: block;
-  border: 1px solid red;
+  margin: 0;
 }
 
 #root .content #rocket .rocket-body .p_list ul li .page-more {
@@ -1076,3 +1084,4 @@
 .img.img15 {
   background-image: url(../images/portfolio/p38.png);
 }
+/*# sourceMappingURL=content.css.map */

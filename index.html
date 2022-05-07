@@ -7,19 +7,15 @@
 
     <!-- base.css -->
     <link rel="stylesheet" href="css/base.css">
+    <script src="js/index.js"></script>
 
     <!--폰트어썸 / 폰트-->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src='https://kit.fontawesome.com/a076d05399.js'></script>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Kreon:wght@300;400;500;515;600;700&family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Patua+One&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Kreon:wght@300;400;500;515;600;700&family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Patua+One&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet"> -->
 
     <!--제이쿼리-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
-    <!--미디어쿼리-->
-    <!-- <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" media="screen and (max-width:700px)" href="css/m_mobile.css">
-    <link rel="stylesheet" media="screen and (min-width:701px) and (max-width: 1100px)" href="css/m_tab.css"> -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 
     <!-- 폰트 -->
     <style>
@@ -116,14 +112,37 @@
                 </div>
                 <div class="rocket-body">
                     <ul class="p_menu">
-                        <li class="on"><a href="#">Publishing</a></li>
+                        <li class="on"><a href="#">Product Design</a></li>
                         <li><a href="#">UI UX</a></li>
-                        <li><a href="#">Interaction</a></li>
-                        <li><a href="#">3D / Ect</a></li>
+                        <li><a href="#">Publishing</a></li>
+                        <li><a href="#">취미 / Ect</a></li>
                     </ul>
                     <div class="p_list">
-                        <!-- 퍼블리싱 -->
+                        <!-- Product Design -->
                         <ul class="on">
+                            <li>
+                                <div class="page-pic">
+                                    <div class="portImg">
+                                        <div class="img1 img">
+                                            <a class="more" href="./site/29cm_taejeongKwak/index.html">
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="page-info">
+                                    <h4>Design System</h4>
+                                    <h3>PNT 디자인 시스템</h3>
+                                    <b>대시보드형 웹사이트 서비스를 위한 디자인 시스템 확립 및 컴포넌트의 퍼블리싱 파일 구축</p>
+                                    <p>개발기간 :</p>
+                                    <p>[6month] 2021.12.01 </p>
+                                    <div class="page-btn">
+                                        <a href="#"><span class="icon-download icon-small"></span> 설명 PDF 다운로드 </a>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                        <!-- 퍼블리싱 -->
+                        <ul>
                             <li>
                                 <div class="page-pic">
                                     <div class="portImg">
@@ -469,10 +488,7 @@
                                 </div>
                             </li>
                         </ul>
-                        <!-- 3D -->
-                        <ul>
-                            <li>업데이트 중입니다. </li>
-                        </ul>
+                        
                     </div>
                 </div>
                 <div class="rocket-end"></div>
@@ -517,152 +533,7 @@
         </div>
     </div>
     <script>
-        const html = document.querySelector('html');
-        const headerSec = document.querySelector('header');
-        const introSec = document.querySelector('.intro');
-        const contSec = document.querySelector('.content');
-        const byeSec = document.querySelector('.goodbye');
-
-        var old = html.scrollTop;
-
-        
-
-        
-        //새로고침시 맨 위로
-        $(document).ready(function(){
-            setTimeout(function(){
-                $('html, body').scrollTop(0);
-            }, 100);
-        });
-
-        //스크롤 애니메이션
-        window.addEventListener('scroll', scrollWork);
-        function scrollWork(e) {
-            e.preventDefault();
-            //콘트쪽으로 스크롤 내렸을때
-            if (html.scrollTop > 80 && old < html.scrollTop && html.scrollTop < 500) {
-                introSec.className = 'intro scrollTopDown';
-                contSec.className = 'content scrollTopDown';
-                byeSec.classList.remove('on');
-                $('.clouds').addClass('moveOut');
-            }
-            //인트로쪽으로 스크롤 올렸을때
-            else if (html.scrollTop < 80 && old > html.scrollTop) {
-                introSec.className = 'intro scrollTopUp';
-                contSec.className = 'content scrollTopUp';
-                byeSec.classList.remove('on');
-                $('.clouds').removeClass('moveOut');
-            }
-
-            //푸터쪽으로 스크롤 내렸을때
-            else if (html.scrollTop + 950 > contSec.scrollHeight && old < html.scrollTop) {
-                contSec.className = 'content scrollBottomDown';
-                byeSec.classList.add('on');
-                $('.clouds').removeClass('moveOut');
-            }
-            //콘트쪽으로 스크롤 올렸을때
-            else if(html.scrollTop + 950 > contSec.scrollHeight && old > html.scrollTop) {
-                contSec.className = 'content scrollBottomUp';
-                byeSec.classList.remove('on');
-                $('.clouds').addClass('moveOut');
-            }
-            old = html.scrollTop;
-        }
-
-
-        /////////////////////////////////
-        //////////클릭, 스크롤 기능////////
-        /////////////////////////////////
-
-
-        //포트폴리오 - 선택한 메뉴에 on붙이는 기능
-        var menuBtn = document.querySelector('.p_menu');
-        var menuBox = document.querySelectorAll('.p_menu li')
-        var listBox = document.querySelectorAll('.p_list ul');
-
-        menuBtn.addEventListener('click', function(e) {
-            e.preventDefault();
-            e.stopPropagation();
-            console.log('메뉴 눌렀다');
-            console.log(e);
-            for (let i = 0; i < menuBox.length; i++) {
-                menuBox[i].classList.remove('on');
-                listBox[i].classList.remove('on');
-                menuBox[i].array = i;
-            }
-            var clicked = e.target.parentElement;
-            clicked.classList.add('on');
-            listBox[clicked.array].classList.add('on');
-        })
-
-
-        // //포트폴리오 - more 버튼
-        // var moreBtns = document.querySelectorAll('.modal');
-        // var moreCloseBtns = document.querySelectorAll('.more-close-btn');
-        // var moreSecs = document.querySelectorAll('.page-more');
-
-        // for (let i = 0; i < moreBtns.length; i++) {
-        //     moreBtns[i].addEventListener('click', function(e) {
-        //         e.preventDefault();
-        //         moreSecs[i].classList.remove('hidden');
-        //         headerSec.classList.add('hidden');
-        //     })
-        //     moreCloseBtns[i].addEventListener('click', function(e) {
-        //         e.preventDefault();
-        //         moreSecs[i].classList.add('hidden');
-        //         headerSec.classList.remove('hidden');
-        //     })
-        // }
-
-
-        //인트로 - 글자 써지는 효과
-        var typingBool = false;
-        var typingIdx = 0;
-        var liIndex = 0;
-        var liLength = $(".typing-txt>ul>li").length;
-        var screen = document.querySelector('.phone-screen');
-        var typingTxt = $(".typing-txt>ul>li").eq(liIndex).text(); // 타이핑될 텍스트를 가져온다 
-        typingTxt = typingTxt.split(""); // 한글자씩 자른다.   
-
-        if (typingBool == false) { // 타이핑이 진행되지 않았다면 
-            typingBool = true;
-            //var tyInt = setInterval(typing,100);
-            var tyInt;
-            clearInterval(tyInt);
-            setTimeout(function() {
-                //화면이 켜지기전까지 3.3초 쉬고 시작한다.
-                tyInt = setInterval(typing, 80)
-            }, 3300);
-        }
-
-        function typing() {
-            $(".typing").removeClass('end');//커서를 감춘다
-
-            if (typingIdx < typingTxt.length) { // 타이핑될 텍스트 길이만큼 반복 
-                $(".typing").append(typingTxt[typingIdx]); // 한글자씩 이어준다. 
-                typingIdx++;
-            } else { //한문장이끝나면
-                //다음문장으로.. 마지막문장이면 다시 첫번째 문장으로 
-                if (liIndex >= liLength - 1) {
-                    liIndex = 0;
-                } else {
-                    liIndex++;
-                }
-                //다음문장을 타이핑하기위한 셋팅
-                typingIdx = 0;
-                typingBool = false;
-                typingTxt = $(".typing-txt>ul>li").eq(liIndex).text();
-                clearInterval(tyInt);
-                $(".typing").addClass('end'); //문장이 끝나면 커서효과를 킨다
-
-                //다음문장 타이핑전 2초 쉰다
-                setTimeout(function() {
-                    $(".typing").html('');
-                    tyInt = setInterval(typing, 80);
-                }, 2000);
-            }
-        }
-    
-    
+        //test
+        //agsdgjalsgjdlk
     </script>
 </body></html>

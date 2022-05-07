@@ -278,23 +278,31 @@ $blue-l2 : #B8B8FF;
                                     letter-spacing: -1px;
                                     word-spacing: 2px;
                                 }
-                                & p{
+                                & b{
                                     opacity: .6;
+                                    font-weight: 500;
+                                    line-height: 1.2;
+                                }
+                                & p{
+                                    
                                     &:nth-of-type(1){
                                         line-height: 1.4;
                                         margin: 2rem 0;
                                         word-break: keep-all;
+                                        opacity: .6;
                                     }
-                                    &:last-of-type{
+                                    &:nth-of-type(2){
                                         font-weight: 600;
+                                        opacity: .6;
                                     }
                                 }
                                 & .page-btn{
                                     width: 100%;
                                     margin-top: 30px;
                                     & a{
-                                        display: inline-block;
-                                        width: 40%;
+                                        display: inline-flex;
+                                        align-items: center;
+                                        padding: 0 1rem;
                                         height: $form-height;
                                         text-align: center;
                                         margin: 0 10px 10px 0;
@@ -308,8 +316,7 @@ $blue-l2 : #B8B8FF;
                                             background-color: rgb(173, 173, 173);
                                         }
                                         & span{
-                                            display: block;
-                                            border: 1px solid red;
+                                            margin: 0;
                                         }
                                     }
                                 }
